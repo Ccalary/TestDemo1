@@ -1,0 +1,20 @@
+PODS:
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
+  - Realm (2.4.3):
+    - Realm/Headers (= 2.4.3)
+  - Realm/Headers (2.4.3)
+
+DEPENDENCIES:
+  - MBProgressHUD (~> 1.0.0)
+  - MJRefresh
+  - Realm
+
+SPEC CHECKSUMS:
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
+
+PODFILE CHECKSUM: 86371a1d5abd5e381653ad4d7f48cb6f69cb501b
+
+COCOAPODS: 1.2.0

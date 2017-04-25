@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  TestDemo1
+//
+//  Created by caohouhong on 17/3/28.
+//  Copyright © 2017年 caohouhong. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "GlobalDefine.h"//全局宏定义
+#import "LCProgressHUD.h"//HUD
+#import "HHRefreshNormalHeader.h"//自定义的加载头部
+#import "HHRefreshNormalFooter.h"//自定义的加载底部
+
+#endif /* PrefixHeader_pch */
