@@ -10,6 +10,7 @@
 #import "HomeViewController.h"
 #import "BaseNavigationController.h"
 #import "MineViewController.h"
+#import "DiscoverViewController.h"
 
 @interface BaseTabBarController ()
 
@@ -37,7 +38,7 @@
     homeVC.tabBarItem.badgeValue = @"1";
     
     [self addChildrenViewController:homeVC andTitle:@"首页" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
-    [self addChildrenViewController:[[HomeViewController alloc] init] andTitle:@"发现" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
+    [self addChildrenViewController:[[DiscoverViewController alloc] init] andTitle:@"发现" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
     [self addChildrenViewController:[[MineViewController alloc] init] andTitle:@"我" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
 }
 

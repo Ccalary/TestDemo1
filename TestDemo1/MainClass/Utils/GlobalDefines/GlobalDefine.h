@@ -32,7 +32,13 @@
 #define FONT_SYSTEM(x)               [UIFont systemFontOfSize:x]
 #define FONT_SYSTEM_BOLD(a)          [UIFont boldSystemFontOfSize:a]
 
- 
+#define COLOR_BLACK                  HEXCOLOR(0x000000)
+#define COLOR_WHITE                  HEXCOLOR(0xffffff)
+#define COLOR_LIGHT_GRAY             HEXCOLOR(0x999999)
+#define COLOR_DARK_GRAY              HEXCOLOR(0x666666)
+#define COLOR_Background             HEXCOLOR(0xd2d2d2)
+
+
 //Debug信息
 #ifdef DEBUG
 # define DLog(fmt, ...) NSLog((@"%s" " [行号:%d] " fmt),__FUNCTION__, __LINE__, ##__VA_ARGS__);

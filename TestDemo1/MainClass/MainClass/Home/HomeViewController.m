@@ -37,6 +37,11 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
+    [self initView];
+}
+
+- (void)initView{
     UIView *holdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
     holdView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:holdView];
@@ -66,13 +71,13 @@
     [self.view addSubview:nameLabel];
     
     UIButton *nextMonthBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 100, 100, 50)];
-    [nextMonthBtn setTitle:@"下一页" forState:UIControlStateNormal];
+    [nextMonthBtn setTitle:@"按钮" forState:UIControlStateNormal];
     [nextMonthBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [nextMonthBtn addTarget:self action:@selector(nextMonthBtnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:nextMonthBtn];
     
     
-
+    
     RLMResults *result = [IndustrayData allObjects];
     
     [realm transactionWithBlock:^{
@@ -80,10 +85,11 @@
     }];
     
     if (result.count == 0){
-         [self requestData];
+        [self requestData];
     }
     
     NSLog(@"IndustrayData==%@",result);
+
 }
 
 - (void)requestData{

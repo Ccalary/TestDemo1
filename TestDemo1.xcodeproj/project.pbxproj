@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D0061E11E842320007BDBAE /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0061E01E842320007BDBAE /* Post.m */; };
+		0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */; };
 		0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1641EAEE1F30034CC47 /* HHRefreshNormalHeader.m */; };
 		0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1671EAEE9D70034CC47 /* HHRefreshNormalFooter.m */; };
 		0D4F944C1E8AB98900070950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D4F944B1E8AB98900070950 /* Assets.xcassets */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		0D0061DF1E842320007BDBAE /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		0D0061E01E842320007BDBAE /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		0D08192F1EB0F22F00F4E034 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		0D1FF1631EAEE1F30034CC47 /* HHRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHRefreshNormalHeader.h; sourceTree = "<group>"; };
 		0D1FF1641EAEE1F30034CC47 /* HHRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHRefreshNormalHeader.m; sourceTree = "<group>"; };
 		0D1FF1661EAEE9D70034CC47 /* HHRefreshNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHRefreshNormalFooter.h; sourceTree = "<group>"; };
@@ -132,6 +135,15 @@
 				0DE270DE1E88012300F6571A /* IndustrayData.m */,
 			);
 			path = RealmTest;
+			sourceTree = "<group>";
+		};
+		0D08192E1EB0F19E00F4E034 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				0D08192F1EB0F22F00F4E034 /* DiscoverViewController.h */,
+				0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */,
+			);
+			path = Discover;
 			sourceTree = "<group>";
 		};
 		0D1FF1621EAEE1C40034CC47 /* HHMJRefresh */ = {
@@ -243,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				0DB44FE41EA3C2DF00ABC0E6 /* Home */,
+				0D08192E1EB0F19E00F4E034 /* Discover */,
 				0DB44FE01EA3C2B000ABC0E6 /* Mine */,
 			);
 			path = MainClass;
@@ -563,6 +576,7 @@
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
 				0D4F94621E8ABA5B00070950 /* BaseNavigationController.m in Sources */,
+				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
 				0D0061E11E842320007BDBAE /* Post.m in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
 				0DB44FE31EA3C2CD00ABC0E6 /* MineViewController.m in Sources */,
