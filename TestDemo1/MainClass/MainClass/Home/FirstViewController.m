@@ -14,6 +14,9 @@
 @interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+
+@property (nonatomic, strong) UIRefreshControl *refresh;
+
 @end
 
 @implementation FirstViewController
@@ -53,6 +56,18 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
+    
+    //系统自带下拉刷新
+    _refresh = [[UIRefreshControl alloc] init];
+    _refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"松开刷新"];
+    [_refresh addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView addSubview:_refresh];
+    
+}
+
+- (void)refreshAction{
+    [_refresh endRefreshing];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

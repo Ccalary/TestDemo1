@@ -10,6 +10,7 @@
 
 @interface DiscoverViewController ()
 @property (nonatomic, strong) UILabel *countLabel;
+@property (nonatomic, strong) UIImageView *gifImageView;
 @end
 
 @implementation DiscoverViewController
@@ -20,6 +21,8 @@
     [self initUIStepperView];
     
     [self initToolBar];
+    
+    [self initGifImageView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,9 +66,9 @@
 - (void)initToolBar{
     
     UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 100, ScreenWidth, 50)];
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"按钮1" style:UIBarButtonItemStylePlain target:self action:@selector(barItemAction)];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"开始" style:UIBarButtonItemStylePlain target:self action:@selector(barItemAction)];
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"按钮2" style:UIBarButtonItemStylePlain target:self action:@selector(backItemAction)];
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"结束" style:UIBarButtonItemStylePlain target:self action:@selector(backItemAction)];
     toolBar.barTintColor = COLOR_Background;
     toolBar.tintColor = COLOR_BLACK;
     
@@ -75,11 +78,27 @@
 }
 
 - (void)barItemAction{
-    
+    [_gifImageView startAnimating];
 }
 
 - (void)backItemAction{
+    [_gifImageView stopAnimating];
+}
+
+#pragma mark - GifImageView(UIImageView 动画)
+- (void)initGifImageView{
     
+    _gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth - 30*UIRate)/2.0, 180, 30*UIRate, 30*UIRate)];
+    
+    NSMutableArray *imageArray = [[NSMutableArray alloc] init];
+    for(int i = 1; i < 60 ; i ++){
+        
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%i",i]];
+        [imageArray addObject:image];
+    }
+    _gifImageView.image = [UIImage imageNamed:@"dropdown_loading_01"];
+    _gifImageView.animationImages = imageArray;
+    [self.view addSubview:_gifImageView];
 }
 
 @end
