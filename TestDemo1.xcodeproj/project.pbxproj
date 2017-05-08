@@ -29,7 +29,6 @@
 		0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */; };
 		0DE270DC1E87FFA100F6571A /* IndustryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE270DB1E87FFA100F6571A /* IndustryList.m */; };
 		0DE270DF1E88012300F6571A /* IndustrayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE270DE1E88012300F6571A /* IndustrayData.m */; };
-		0DF5FA001EBA33CF006DEC9B /* Draw2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5F9FF1EBA33CF006DEC9B /* Draw2DView.m */; };
 		2252B96B185E6808FC1BB764 /* Pods_TestDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,8 +93,6 @@
 		0DE270DB1E87FFA100F6571A /* IndustryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustryList.m; sourceTree = "<group>"; };
 		0DE270DD1E88012300F6571A /* IndustrayData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustrayData.h; sourceTree = "<group>"; };
 		0DE270DE1E88012300F6571A /* IndustrayData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustrayData.m; sourceTree = "<group>"; };
-		0DF5F9FE1EBA33CF006DEC9B /* Draw2DView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw2DView.h; sourceTree = "<group>"; };
-		0DF5F9FF1EBA33CF006DEC9B /* Draw2DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw2DView.m; sourceTree = "<group>"; };
 		14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,7 +142,6 @@
 			children = (
 				0D08192F1EB0F22F00F4E034 /* DiscoverViewController.h */,
 				0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */,
-				0DF5F9FD1EBA33BB006DEC9B /* View */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -364,15 +360,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		0DF5F9FD1EBA33BB006DEC9B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0DF5F9FE1EBA33CF006DEC9B /* Draw2DView.h */,
-				0DF5F9FF1EBA33CF006DEC9B /* Draw2DView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		46FA32F811BCD5AF2A1BBA76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,7 +572,6 @@
 				0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */,
 				0DE270DF1E88012300F6571A /* IndustrayData.m in Sources */,
 				0D4F94631E8ABA5B00070950 /* BaseTabBarController.m in Sources */,
-				0DF5FA001EBA33CF006DEC9B /* Draw2DView.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,

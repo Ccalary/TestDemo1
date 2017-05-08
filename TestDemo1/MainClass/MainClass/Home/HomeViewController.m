@@ -47,50 +47,49 @@
     [self.view addSubview:holdView];
     
     
-//    //创建数据库
-//    Dog *dog = [[Dog alloc] init];
-//    dog.name = @"Peter";
-//    dog.age = 1;
-//    
-//    Post *post = [[Post alloc] init];
-//    post.title = @"开心1";
-//    post.content = @"今天是个好日子1";
-//    
-//    RLMRealm *realm = [RLMRealm defaultRealm];
-//    [realm transactionWithBlock:^{
-//        [realm addObject:dog];
-//        [realm addObject:post];
-//    }];
-//    
-//    NSLog(@"dog%@",dog);
-//    
-//    
-//    
-//    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 200, 200, 30)];
-//    nameLabel.text = dog.name;
-//    [self.view addSubview:nameLabel];
-//    
+    //创建数据库
+    Dog *dog = [[Dog alloc] init];
+    dog.name = @"Peter";
+    dog.age = 1;
+    
+    Post *post = [[Post alloc] init];
+    post.title = @"开心1";
+    post.content = @"今天是个好日子1";
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [realm addObject:dog];
+        [realm addObject:post];
+    }];
+    
+    NSLog(@"dog%@",dog);
+    
+    
+    
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 200, 200, 30)];
+    nameLabel.text = dog.name;
+    [self.view addSubview:nameLabel];
+    
     UIButton *nextMonthBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 100, 100, 50)];
     [nextMonthBtn setTitle:@"按钮" forState:UIControlStateNormal];
     [nextMonthBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [nextMonthBtn addTarget:self action:@selector(nextMonthBtnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:nextMonthBtn];
-//
-//    
-//    
-//    RLMResults *result = [IndustrayData allObjects];
-//    
-//    [realm transactionWithBlock:^{
-//        [realm deleteObjects:result];
-//    }];
-//    
-//    if (result.count == 0){
-//        [self requestData];
-//    }
-//    
-//    NSLog(@"IndustrayData==%@",result);
-
     
+    
+    
+    RLMResults *result = [IndustrayData allObjects];
+    
+    [realm transactionWithBlock:^{
+        [realm deleteObjects:result];
+    }];
+    
+    if (result.count == 0){
+        [self requestData];
+    }
+    
+    NSLog(@"IndustrayData==%@",result);
+
 }
 
 - (void)requestData{
