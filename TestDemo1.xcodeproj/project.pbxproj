@@ -22,6 +22,7 @@
 		0D5B07351EA84B8200FB1AC2 /* LCProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B07321EA84B8200FB1AC2 /* LCProgressHUD.bundle */; };
 		0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B07341EA84B8200FB1AC2 /* LCProgressHUD.m */; };
 		0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B073D1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m */; };
+		0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D840ADB1EBFFF28005E078A /* Draw2DView.m */; };
 		0DAD4D131E7960F5008018BB /* TestDemo1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D121E7960F5008018BB /* TestDemo1Tests.m */; };
 		0DAD4D1E1E7960F5008018BB /* TestDemo1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D1D1E7960F5008018BB /* TestDemo1UITests.m */; };
 		0DB44FE31EA3C2CD00ABC0E6 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE21EA3C2CD00ABC0E6 /* MineViewController.m */; };
@@ -76,6 +77,8 @@
 		0D5B07341EA84B8200FB1AC2 /* LCProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProgressHUD.m; sourceTree = "<group>"; };
 		0D5B073C1EA8AECC00FB1AC2 /* NSMutableArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Extension.h"; sourceTree = "<group>"; };
 		0D5B073D1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Extension.m"; sourceTree = "<group>"; };
+		0D840ADA1EBFFF28005E078A /* Draw2DView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw2DView.h; sourceTree = "<group>"; };
+		0D840ADB1EBFFF28005E078A /* Draw2DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw2DView.m; sourceTree = "<group>"; };
 		0DAD4CF51E7960F4008018BB /* TestDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAD4D0E1E7960F5008018BB /* TestDemo1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestDemo1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAD4D121E7960F5008018BB /* TestDemo1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemo1Tests.m; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		0D08192E1EB0F19E00F4E034 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				0D840AD81EBFFEE7005E078A /* View */,
 				0D08192F1EB0F22F00F4E034 /* DiscoverViewController.h */,
 				0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */,
 			);
@@ -286,6 +290,15 @@
 				0D5B073D1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m */,
 			);
 			path = ExceptionDeal;
+			sourceTree = "<group>";
+		};
+		0D840AD81EBFFEE7005E078A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D840ADA1EBFFF28005E078A /* Draw2DView.h */,
+				0D840ADB1EBFFF28005E078A /* Draw2DView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0DAD4CEC1E7960F4008018BB = {
@@ -572,6 +585,7 @@
 				0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */,
 				0DE270DF1E88012300F6571A /* IndustrayData.m in Sources */,
 				0D4F94631E8ABA5B00070950 /* BaseTabBarController.m in Sources */,
+				0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,

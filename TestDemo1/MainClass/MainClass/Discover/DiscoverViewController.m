@@ -7,6 +7,7 @@
 //
 
 #import "DiscoverViewController.h"
+#import "Draw2DView.h"
 
 @interface DiscoverViewController ()
 @property (nonatomic, strong) UILabel *countLabel;
@@ -23,6 +24,8 @@
     [self initToolBar];
     
     [self initGifImageView];
+    
+    [self init2DView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,7 +91,7 @@
 #pragma mark - GifImageView(UIImageView 动画)
 - (void)initGifImageView{
     
-    _gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth - 30*UIRate)/2.0, 180, 30*UIRate, 30*UIRate)];
+     _gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth - 30*UIRate)/2.0, 110, 30*UIRate, 30*UIRate)];
     
     NSMutableArray *imageArray = [[NSMutableArray alloc] init];
     for(int i = 1; i < 60 ; i ++){
@@ -97,8 +100,18 @@
         [imageArray addObject:image];
     }
     _gifImageView.image = [UIImage imageNamed:@"dropdown_loading_01"];
-    _gifImageView.animationImages = imageArray;
+//    _gifImageView.animationImages = imageArray;
+    //这个代码会自动识别这个名字dropdown_anim__000开头的图片，然后按顺序展示他们，实现动画效果
+    _gifImageView.image = [UIImage animatedImageNamed:@"dropdown_anim__000" duration:10];
+    //    _gifImageView.animationImages = imageArray;
     [self.view addSubview:_gifImageView];
+}
+
+#pragma mark - Quartz 2D 绘图
+- (void)init2DView{
+    Draw2DView *drawView = [[Draw2DView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 100)];
+    drawView.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:drawView];
 }
 
 @end

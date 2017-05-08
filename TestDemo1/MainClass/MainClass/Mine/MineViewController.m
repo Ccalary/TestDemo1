@@ -9,9 +9,16 @@
 #import "MineViewController.h"
 #import "HomeViewController.h"
 
-@interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface MineViewController ()<UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UISearchBar *searchBar;
+//保存原始数据
 @property (nonatomic, strong) NSMutableArray *dataArray;
+//保存搜索数据
+@property (nonatomic, strong) NSArray *searchArray;
+//是否是搜索状态
+@property (nonatomic, assign) BOOL isSearch;
+
 @end
 
 @implementation MineViewController
@@ -27,7 +34,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    NSArray *array = @[@"showHUD",@"runningTime",@"异常捕获",@"抛出异常"];
+    self.searchArray = [[NSArray alloc] init];
+    
+    NSArray *array = @[@"showHUD",@"runningTime",@"异常捕获",@"抛出异常",@"rrrr",@"run",@"shang"];
     
     [self.dataArray addObjectsFromArray:array];
     
@@ -50,6 +59,21 @@
     _tableView.dataSource = self;
     _tableView.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:_tableView];
+    
+    
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 180, ScreenWidth, 80)];
+    //提示文字
+    _searchBar.placeholder = @"搜索";
+    //搜索框上方标题
+    _searchBar.prompt = @"搜索框测试";
+    _searchBar.showsCancelButton = YES;
+    _searchBar.delegate = self;
+    //搜索输入闪烁符的颜色
+    //    _searchBar.tintColor = [UIColor redColor];
+    //背景色
+    //    _searchBar.barTintColor = COLOR_Background;
+    
+    self.tableView.tableHeaderView = self.searchBar;
     
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
     _tableView.mj_header = [HHRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -85,7 +109,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dataArray.count;
+    //是否搜索状态
+    if (_isSearch){
+        return _searchArray.count;
+    }else {
+        return _dataArray.count;
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -96,7 +126,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    cell.textLabel.text =  _isSearch ? self.searchArray[indexPath.row] : self.dataArray[indexPath.row];
 
     return cell;
 }
@@ -221,5 +251,41 @@
         [self presentViewController:alertController animated:YES completion:nil];
     }
 }
+
+#pragma mark - UISearchBarDelegate
+//取消按钮的点击事件
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    //取消搜索状态
+    _isSearch = NO;
+    //关闭键盘
+    [searchBar resignFirstResponder];
+    [self.tableView reloadData];
+}
+
+//当搜索框内的文本改变时激发该方法
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    [self filterBySubstring:searchText];
+}
+//点击search按钮
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    [self filterBySubstring:searchBar.text];
+    //关闭键盘
+    [searchBar resignFirstResponder];
+}
+
+//过滤
+- (void)filterBySubstring:(NSString *)substr{
+    //设置搜索状态
+    _isSearch = YES;
+    //定义搜索谓词
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", substr];
+    //使用谓词过滤NSArray
+    _searchArray = [_dataArray filteredArrayUsingPredicate:pred];
+    //让表格重新加载数据
+    [self.tableView reloadData];
+}
+
 
 @end
