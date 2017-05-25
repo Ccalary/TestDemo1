@@ -15,3 +15,8 @@
 * UIToolBar 简单使用
 * UIImageView 实现gif动画
 * UIRefreshControl 系统刷新(只有下拉刷新)
+* Quartz 2D 图片的简单绘制
+
+##2017.5.25
+* UITableView：多选编辑处理
+* CountingLabel三方：数字滚动，CADisplayLink的简单使用
