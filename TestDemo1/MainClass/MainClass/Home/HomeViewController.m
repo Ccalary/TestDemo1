@@ -76,8 +76,6 @@
     [nextMonthBtn addTarget:self action:@selector(nextMonthBtnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:nextMonthBtn];
     
-    
-    
 //    RLMResults *result = [IndustrayData allObjects];
 //    
 //    [realm transactionWithBlock:^{

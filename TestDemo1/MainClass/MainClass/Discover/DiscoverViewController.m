@@ -8,10 +8,13 @@
 
 #import "DiscoverViewController.h"
 #import "Draw2DView.h"
+#import "UICountingLabel.h"
+#import "HHCountingLabel.h"
 
 @interface DiscoverViewController ()
 @property (nonatomic, strong) UILabel *countLabel;
 @property (nonatomic, strong) UIImageView *gifImageView;
+@property (nonatomic, strong) HHCountingLabel *countingLabel;
 @end
 
 @implementation DiscoverViewController
@@ -26,6 +29,8 @@
     [self initGifImageView];
     
     [self init2DView];
+    
+    [self initCountingLabel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,10 +87,13 @@
 
 - (void)barItemAction{
     [_gifImageView startAnimating];
+    
+    [_countingLabel countFrom:0 toValue:100 withDuration:10];
 }
 
 - (void)backItemAction{
     [_gifImageView stopAnimating];
+    
 }
 
 #pragma mark - GifImageView(UIImageView 动画)
@@ -105,6 +113,21 @@
     _gifImageView.image = [UIImage animatedImageNamed:@"dropdown_anim__000" duration:10];
     //    _gifImageView.animationImages = imageArray;
     [self.view addSubview:_gifImageView];
+}
+
+- (void)initCountingLabel{
+    
+//    _countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 150, 100, 20)];
+//    _countingLabel.format = @"%d";
+//    _countLabel.text = @"0";
+//    [_countingLabel countFrom:0 to:10000 withDuration:10];
+//    [self.view addSubview:_countingLabel];
+    
+    
+    _countingLabel = [[HHCountingLabel alloc] initWithFrame:CGRectMake(0, 150, 100, 20)];
+    _countLabel.text = @"0";
+    [_countingLabel countFrom:0 toValue:100 withDuration:10];
+    [self.view addSubview:_countingLabel];
 }
 
 #pragma mark - Quartz 2D 绘图

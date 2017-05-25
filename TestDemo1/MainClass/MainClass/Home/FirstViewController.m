@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "Post.h"
 #import "IndustrayData.h"
+
 @import Realm;
 
 @interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>

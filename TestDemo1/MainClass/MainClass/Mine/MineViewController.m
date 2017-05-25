@@ -54,9 +54,13 @@
 
 - (void)drawView{
     
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(rightItemAction:)];
+    self.navigationItem.rightBarButtonItem = item;
+    
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.allowsMultipleSelectionDuringEditing = YES;
     _tableView.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:_tableView];
     
@@ -133,8 +137,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (tableView.isEditing){
+        return;
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
             [self showHUD];
@@ -150,6 +158,18 @@
             break;
         default:
             break;
+    }
+}
+
+#pragma mark 右编辑
+- (void)rightItemAction:(UIBarButtonItem *)item
+{
+    if (!self.tableView.isEditing){
+        item.title = @"完成";
+        [self.tableView setEditing:YES animated:YES];
+    }else {
+        item.title = @"编辑";
+       [self.tableView setEditing:NO animated:YES];
     }
 }
 
