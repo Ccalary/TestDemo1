@@ -25,6 +25,7 @@
 @end
 
 @interface HomeViewController ()
+
 @end
 
 @implementation HomeViewController
@@ -36,6 +37,7 @@
     
     
     [self initView];
+    
 }
 
 - (void)initView{

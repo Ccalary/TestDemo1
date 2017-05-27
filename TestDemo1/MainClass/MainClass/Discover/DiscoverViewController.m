@@ -11,12 +11,15 @@
 #import "UICountingLabel.h"
 #import "HHCountingLabel.h"
 #import "HHPopButton.h"
+#import <pop/POP.h>
 
 @interface DiscoverViewController ()
 @property (nonatomic, strong) UILabel *countLabel;
 @property (nonatomic, strong) UIImageView *gifImageView;
 @property (nonatomic, strong) HHCountingLabel *countingLabel;
 @property (nonatomic, assign) CGFloat offsetX;
+@property(nonatomic)CALayer *myCriLayer;
+@property (nonatomic) BOOL animated;
 @end
 
 @implementation DiscoverViewController
@@ -25,6 +28,10 @@
     [super viewDidLoad];
     
     [self initUIStepperView];
+    
+    [self initCountDownView];
+    
+    [self initShake];
     
     [self initToolBar];
     
@@ -75,6 +82,88 @@
     DLog(@"%.0f",step.value);
     _countLabel.text = [NSString stringWithFormat:@"%.0f",step.value];
 }
+
+#pragma mark - 倒计时
+- (void)initCountDownView{
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, ScreenWidth, 30)];
+    label.textColor = [UIColor redColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+    
+    POPAnimatableProperty *prop = [POPAnimatableProperty propertyWithName:@"countdown" initializer:^(POPMutableAnimatableProperty *prop) {
+        //修改后的值
+        prop.writeBlock = ^(id obj, const CGFloat values[]) {
+//            label.text = [NSString stringWithFormat:@"%02d:%02d:%02d",(int)values[0]/60,(int)values[0]%60,(int)(values[0]*100)%100];
+            UILabel *lb = (UILabel *)obj;
+            lb.text = [NSString stringWithFormat:@"跳过%d", (int)values[0]];
+            lb.font = [UIFont systemFontOfSize:5*(int)values[0]];
+        };
+        
+
+        prop.readBlock = ^(id obj, CGFloat value[]){
+            DLog(@"readBlock%f",value[0]);
+        };
+        
+        prop.threshold = 1.0f;
+    }];
+    
+    POPBasicAnimation *anBasic = [POPBasicAnimation linearAnimation];   //秒表当然必须是线性的时间函数
+    anBasic.property = prop;    //自定义属性
+    anBasic.fromValue = @(5);   //开始
+    anBasic.toValue = @(0);  //结束
+    anBasic.duration = 5;    //持续时间
+    anBasic.repeatForever = YES;
+//    anBasic.repeatCount = 10; //重复次数
+    anBasic.beginTime = CACurrentMediaTime() + 1.0f;    //延迟1秒开始
+    [label pop_addAnimation:anBasic forKey:@"countdown"];
+}
+
+#pragma mark - Shake动画
+- (void)initShake{
+    //8:初始化一个CALayer层
+    if (self.myCriLayer==nil) {
+        self.myCriLayer=[CALayer layer];
+        [self.myCriLayer pop_removeAllAnimations];
+        self.myCriLayer.opacity = 1.0;
+        self.myCriLayer.transform = CATransform3DIdentity;
+        [self.myCriLayer setMasksToBounds:YES];
+        [self.myCriLayer setBackgroundColor:[UIColor colorWithRed:0.16 green:0.72 blue:1 alpha:1].CGColor];
+        [self.myCriLayer setCornerRadius:15.0f];
+        [self.myCriLayer setBounds:CGRectMake(0.0f, 0.0f, 30.0f, 30.0f)];
+        self.myCriLayer.position = CGPointMake(self.view.center.x, 380.0);
+        [self.view.layer addSublayer:self.myCriLayer];
+    }
+    
+    //增加一个动画 类似心跳的效果
+    [self performAnimation];
+}
+
+-(void)performAnimation
+{
+    [self.myCriLayer pop_removeAllAnimations];
+    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    
+    if (self.animated) {
+        anim.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
+    }else{
+        anim.toValue = [NSValue valueWithCGPoint:CGPointMake(2.0, 2.0)];
+    }
+    
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];  //不同的类型 心跳会不一样
+    
+    self.animated = !self.animated; //使每次都有区别
+    
+    anim.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+        if (finished) {
+            
+            [self performAnimation];  //当动画结束后又递归调用，让它产生一种心跳的效果
+        }
+    };
+    
+    [self.myCriLayer pop_addAnimation:anim forKey:@"Animation"];
+}
+
 
 #pragma mark - UIToolBar
 - (void)initToolBar{
@@ -140,7 +229,7 @@
 - (void)initMoveView{
     CADisplayLink *timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayAction)];
     timer.frameInterval = 2.0;
-    [timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)displayAction{
@@ -167,15 +256,16 @@
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"button_254x44"] forState:UIControlStateNormal];
     button.colicActionBlock = ^(){
-        [LCProgressHUD showInfoMsg:@"点击了按钮（回调结果）"];
+        [LCProgressHUD showMessage:@"点击了按钮（回调结果）"];
     };
+    //可以正常使用
 //    [button addTarget:self action:@selector(buttonaction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
 }
 
 - (void)buttonaction{
-     [LCProgressHUD showInfoMsg:@"点击了按钮（正常）"];
+     [LCProgressHUD showMessage:@"点击了按钮（正常）"];
 }
 
 @end

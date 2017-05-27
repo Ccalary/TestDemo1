@@ -33,6 +33,7 @@
     sprAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(0.7, 0.7)];
     sprAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
     sprAnimation.springBounciness = 10;//弹簧弹力
+    sprAnimation.repeatCount = 5;
     //动画结束之后的回调方法
     __weak typeof (self) weakSelf = self;
     sprAnimation.completionBlock = ^(POPAnimation *anim, BOOL isFinished){
