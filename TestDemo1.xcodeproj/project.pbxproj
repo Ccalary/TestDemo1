@@ -13,6 +13,7 @@
 		0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1671EAEE9D70034CC47 /* HHRefreshNormalFooter.m */; };
 		0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428AC1ED951D4002B52F3 /* HHPopButton.m */; };
 		0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428B01ED95F1F002B52F3 /* MoveButton.m */; };
+		0D2428CA1ED9814D002B52F3 /* NSDictionary+DLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428C91ED9814D002B52F3 /* NSDictionary+DLog.m */; };
 		0D2A5F3F1EC55B7E00F41D4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2A5F3B1EC55B7E00F41D4D /* LaunchScreen.storyboard */; };
 		0D2A5F401EC55B7E00F41D4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2A5F3D1EC55B7E00F41D4D /* Main.storyboard */; };
 		0D4F944C1E8AB98900070950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D4F944B1E8AB98900070950 /* Assets.xcassets */; };
@@ -73,6 +74,8 @@
 		0D2428AC1ED951D4002B52F3 /* HHPopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHPopButton.m; sourceTree = "<group>"; };
 		0D2428AF1ED95F1F002B52F3 /* MoveButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveButton.h; sourceTree = "<group>"; };
 		0D2428B01ED95F1F002B52F3 /* MoveButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveButton.m; sourceTree = "<group>"; };
+		0D2428C81ED9814D002B52F3 /* NSDictionary+DLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DLog.h"; sourceTree = "<group>"; };
+		0D2428C91ED9814D002B52F3 /* NSDictionary+DLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DLog.m"; sourceTree = "<group>"; };
 		0D2A5F3C1EC55B7E00F41D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D2A5F3E1EC55B7E00F41D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		0D4F944B1E8AB98900070950 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -209,6 +212,15 @@
 			path = MoveButton;
 			sourceTree = "<group>";
 		};
+		0D2428C71ED98103002B52F3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0D2428C81ED9814D002B52F3 /* NSDictionary+DLog.h */,
+				0D2428C91ED9814D002B52F3 /* NSDictionary+DLog.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		0D2A5F3A1EC55B7E00F41D4D /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +342,7 @@
 		0D5B07371EA8AE2F00FB1AC2 /* MyClass */ = {
 			isa = PBXGroup;
 			children = (
+				0D2428C71ED98103002B52F3 /* Extension */,
 				0D2428AA1ED951C2002B52F3 /* HHPopAnimation */,
 				0D5B07381EA8AE5C00FB1AC2 /* ExceptionDeal */,
 			);
@@ -681,6 +694,7 @@
 				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
 				0D77DF9F1ED7F9F1000F3C1A /* RuningTimeViewController.m in Sources */,
 				0D0061E11E842320007BDBAE /* Post.m in Sources */,
+				0D2428CA1ED9814D002B52F3 /* NSDictionary+DLog.m in Sources */,
 				0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,

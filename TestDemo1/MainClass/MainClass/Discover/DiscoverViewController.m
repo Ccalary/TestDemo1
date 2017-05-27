@@ -131,7 +131,7 @@
         [self.myCriLayer setBackgroundColor:[UIColor colorWithRed:0.16 green:0.72 blue:1 alpha:1].CGColor];
         [self.myCriLayer setCornerRadius:15.0f];
         [self.myCriLayer setBounds:CGRectMake(0.0f, 0.0f, 30.0f, 30.0f)];
-        self.myCriLayer.position = CGPointMake(self.view.center.x, 380.0);
+        self.myCriLayer.position = CGPointMake(50, 50);
         [self.view.layer addSublayer:self.myCriLayer];
     }
     
@@ -184,10 +184,15 @@
     [_gifImageView startAnimating];
     
     [_countingLabel countFrom:0 toValue:100 withDuration:10];
+    
+    [self performAnimation];
 }
 
 - (void)backItemAction{
     [_gifImageView stopAnimating];
+    
+    //移除心跳动画
+    [self.myCriLayer pop_removeAllAnimations];
     
 }
 

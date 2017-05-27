@@ -8,7 +8,7 @@
 
 #import <Realm/Realm.h>
 
-@interface Post : RLMObject
+@interface Post : NSObject
 
 @property NSString *title;
 
