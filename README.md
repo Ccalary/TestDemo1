@@ -18,10 +18,12 @@
 * UIRefreshControl 系统刷新(只有下拉刷新)
 * Quartz 2D 图片的简单绘制
 
-##2017.5.25
+## 2017.5.25
 * UITableView：多选编辑处理
 * CountingLabel三方：数字滚动，CADisplayLink的简单使用
 
-##2017.527
+## 2017.5.27
 * POP的使用几种使用，心跳动画，自定义动画等
 * HHPopButton 基于Pop的button封装，点击后有动画效果。
+* NSDictionary添加分类，解决打印不是中文的问题
+* 重写自定义model类中的description方法，实现具体信息的打印
