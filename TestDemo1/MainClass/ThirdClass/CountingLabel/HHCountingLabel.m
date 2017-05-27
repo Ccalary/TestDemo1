@@ -21,6 +21,8 @@
     self.startValue = startVale;
     self.endValue = endValue;
     self.duration = duration;
+    [self.timer invalidate];
+    self.timer = nil;
     
     _timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateValue)];
     _timer.frameInterval = 10;//刷新频率，60Hz是60次／s, 设置为2 就是2帧走一次方法，即30次／s;
@@ -42,6 +44,19 @@
     }
     
     DLog(@"%f",self.startValue);
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview{
+    //判断是新进入界面还是返回，如果是返回的话关闭timer,要不然会走完时间才执行dealloc
+    if (!newSuperview) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    DLog(@"---moveToSuperview---");
+}
+
+- (void)dealloc{
+    DLog(@"---dealloc---");
 }
 
 @end

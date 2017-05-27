@@ -11,6 +11,7 @@
 #import "FirstViewController.h"
 #import "IndustryList.h"
 #import "IndustrayData.h"
+#import "HHPopButton.h"
 @import Realm;
 
 
@@ -23,11 +24,7 @@
 
 @end
 
-
-
-
 @interface HomeViewController ()
-
 @end
 
 @implementation HomeViewController
@@ -45,7 +42,6 @@
     UIView *holdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
     holdView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:holdView];
-    
     
 //    //创建数据库
 //    Dog *dog = [[Dog alloc] init];
@@ -70,10 +66,16 @@
 //    nameLabel.text = dog.name;
 //    [self.view addSubview:nameLabel];
     
-    UIButton *nextMonthBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 100, 100, 50)];
+    HHPopButton *nextMonthBtn = [[HHPopButton alloc] initWithFrame:CGRectMake(50, 150, 100, 50)];
     [nextMonthBtn setTitle:@"按钮" forState:UIControlStateNormal];
-    [nextMonthBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [nextMonthBtn addTarget:self action:@selector(nextMonthBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [nextMonthBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    nextMonthBtn.colicActionBlock = ^(){
+        FirstViewController *vc = [[FirstViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    nextMonthBtn.backgroundColor = [UIColor blueColor];
+    
     [self.view addSubview:nextMonthBtn];
     
 //    RLMResults *result = [IndustrayData allObjects];
@@ -141,9 +143,12 @@
     
 }
 
-- (void)nextMonthBtnAction{
-    FirstViewController *vc = [[FirstViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)nextMonthBtnAction:(UIButton *)button{
+    
+
+    
+//    FirstViewController *vc = [[FirstViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

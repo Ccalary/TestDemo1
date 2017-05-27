@@ -10,11 +10,13 @@
 #import "Draw2DView.h"
 #import "UICountingLabel.h"
 #import "HHCountingLabel.h"
+#import "HHPopButton.h"
 
 @interface DiscoverViewController ()
 @property (nonatomic, strong) UILabel *countLabel;
 @property (nonatomic, strong) UIImageView *gifImageView;
 @property (nonatomic, strong) HHCountingLabel *countingLabel;
+@property (nonatomic, assign) CGFloat offsetX;
 @end
 
 @implementation DiscoverViewController
@@ -31,6 +33,10 @@
     [self init2DView];
     
     [self initCountingLabel];
+    
+    [self initMoveView];
+    
+    [self initPopButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,6 +121,7 @@
     [self.view addSubview:_gifImageView];
 }
 
+#pragma mark - 滚动数字
 - (void)initCountingLabel{
     
 //    _countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 150, 100, 20)];
@@ -123,18 +130,52 @@
 //    [_countingLabel countFrom:0 to:10000 withDuration:10];
 //    [self.view addSubview:_countingLabel];
     
-    
     _countingLabel = [[HHCountingLabel alloc] initWithFrame:CGRectMake(0, 150, 100, 20)];
     _countLabel.text = @"0";
     [_countingLabel countFrom:0 toValue:100 withDuration:10];
     [self.view addSubview:_countingLabel];
 }
 
+#pragma mark - 跑马灯
+- (void)initMoveView{
+    CADisplayLink *timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayAction)];
+    timer.frameInterval = 2.0;
+    [timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
+- (void)displayAction{
+    
+    if (self.offsetX < -100){
+        self.offsetX = ScreenWidth;
+    }
+    self.offsetX -= 1.0;
+    _countingLabel.frame = CGRectMake(self.offsetX, 150, 100, 20);
+}
+
 #pragma mark - Quartz 2D 绘图
 - (void)init2DView{
-    Draw2DView *drawView = [[Draw2DView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 100)];
+    Draw2DView *drawView = [[Draw2DView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, 50)];
     drawView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:drawView];
+}
+
+- (void)initPopButton{
+    
+    HHPopButton *button = [[HHPopButton alloc] initWithFrame:CGRectMake((ScreenWidth - 254*UIRate)/2, 260, 254*UIRate, 44*UIRate)];
+    
+    [button setTitle:@"按钮" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"button_254x44"] forState:UIControlStateNormal];
+    button.colicActionBlock = ^(){
+        [LCProgressHUD showInfoMsg:@"点击了按钮（回调结果）"];
+    };
+//    [button addTarget:self action:@selector(buttonaction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    
+}
+
+- (void)buttonaction{
+     [LCProgressHUD showInfoMsg:@"点击了按钮（正常）"];
 }
 
 @end

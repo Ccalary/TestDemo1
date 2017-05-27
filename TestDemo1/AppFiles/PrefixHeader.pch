@@ -9,6 +9,8 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "BaseViewController.h"
+
 #import "GlobalDefine.h"//全局宏定义
 #import "LCProgressHUD.h"//HUD
 #import "HHRefreshNormalHeader.h"//自定义的加载头部

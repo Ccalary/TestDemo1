@@ -9,6 +9,8 @@
 #import "FirstViewController.h"
 #import "Post.h"
 #import "IndustrayData.h"
+#import "HHCountingLabel.h"
+#import "UICountingLabel.h"
 
 @import Realm;
 
@@ -51,12 +53,27 @@
     
 }
 
+- (void)dealloc{
+    DLog(@"*****dealloc***")
+}
+
 - (void)drawView{
+    
+    HHCountingLabel *label = [[HHCountingLabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    label.text = @"0";
+    [label countFrom:0 toValue:100 withDuration:10];
+    
+    UICountingLabel *countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(100, 0, 100, 20)];
+    countingLabel.text = @"0";
+    [countingLabel countFrom:0 to:100 withDuration:10];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
+    
+    [self.tableView addSubview:label];
+    [self.tableView addSubview:countingLabel];
     
     //系统自带下拉刷新
     _refresh = [[UIRefreshControl alloc] init];

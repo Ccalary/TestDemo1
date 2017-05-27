@@ -223,9 +223,6 @@
 }
 
 - (CGFloat)currentValue {
-    
-    
-    DLog(@"progress=%f---totalTime=%f",self.progress,self.totalTime);
 
     if (self.progress >= self.totalTime) {
         return self.destinationValue;
