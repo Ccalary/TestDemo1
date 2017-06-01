@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0D0061E11E842320007BDBAE /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0061E01E842320007BDBAE /* Post.m */; };
+		0D07FAC61EDE95E000BFE19D /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D07FAC51EDE95E000BFE19D /* GCDViewController.m */; };
+		0D07FAC91EDEA30C00BFE19D /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D07FAC81EDEA30C00BFE19D /* EventViewController.m */; };
+		0D07FACE1EDEC2F200BFE19D /* CircleProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D07FACD1EDEC2F200BFE19D /* CircleProgressVC.m */; };
+		0D07FAD11EDEC34900BFE19D /* BlueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D07FAD01EDEC34900BFE19D /* BlueView.m */; };
 		0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */; };
 		0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1641EAEE1F30034CC47 /* HHRefreshNormalHeader.m */; };
 		0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1671EAEE9D70034CC47 /* HHRefreshNormalFooter.m */; };
@@ -64,6 +68,14 @@
 /* Begin PBXFileReference section */
 		0D0061DF1E842320007BDBAE /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		0D0061E01E842320007BDBAE /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		0D07FAC41EDE95E000BFE19D /* GCDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		0D07FAC51EDE95E000BFE19D /* GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		0D07FAC71EDEA30C00BFE19D /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		0D07FAC81EDEA30C00BFE19D /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		0D07FACC1EDEC2F200BFE19D /* CircleProgressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressVC.h; sourceTree = "<group>"; };
+		0D07FACD1EDEC2F200BFE19D /* CircleProgressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressVC.m; sourceTree = "<group>"; };
+		0D07FACF1EDEC34900BFE19D /* BlueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueView.h; sourceTree = "<group>"; };
+		0D07FAD01EDEC34900BFE19D /* BlueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueView.m; sourceTree = "<group>"; };
 		0D08192F1EB0F22F00F4E034 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		0D1FF1631EAEE1F30034CC47 /* HHRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHRefreshNormalHeader.h; sourceTree = "<group>"; };
@@ -171,6 +183,17 @@
 				0DE270DE1E88012300F6571A /* IndustrayData.m */,
 			);
 			path = RealmTest;
+			sourceTree = "<group>";
+		};
+		0D07FACB1EDEC2DD00BFE19D /* CircleProgress */ = {
+			isa = PBXGroup;
+			children = (
+				0D07FACC1EDEC2F200BFE19D /* CircleProgressVC.h */,
+				0D07FACD1EDEC2F200BFE19D /* CircleProgressVC.m */,
+				0D07FACF1EDEC34900BFE19D /* BlueView.h */,
+				0D07FAD01EDEC34900BFE19D /* BlueView.m */,
+			);
+			path = CircleProgress;
 			sourceTree = "<group>";
 		};
 		0D08192E1EB0F19E00F4E034 /* Discover */ = {
@@ -382,6 +405,11 @@
 				0D77DFA41ED7FABC000F3C1A /* MakeExpViewController.m */,
 				0DD0738C1ED930ED0090F5CB /* GradientViewController.h */,
 				0DD0738D1ED930ED0090F5CB /* GradientViewController.m */,
+				0D07FAC41EDE95E000BFE19D /* GCDViewController.h */,
+				0D07FAC51EDE95E000BFE19D /* GCDViewController.m */,
+				0D07FAC71EDEA30C00BFE19D /* EventViewController.h */,
+				0D07FAC81EDEA30C00BFE19D /* EventViewController.m */,
+				0D07FACB1EDEC2DD00BFE19D /* CircleProgress */,
 			);
 			path = FuncDisplay;
 			sourceTree = "<group>";
@@ -685,7 +713,10 @@
 				0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */,
 				0DE270DF1E88012300F6571A /* IndustrayData.m in Sources */,
 				0D4F94631E8ABA5B00070950 /* BaseTabBarController.m in Sources */,
+				0D07FAD11EDEC34900BFE19D /* BlueView.m in Sources */,
+				0D07FAC61EDE95E000BFE19D /* GCDViewController.m in Sources */,
 				0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */,
+				0D07FACE1EDEC2F200BFE19D /* CircleProgressVC.m in Sources */,
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
@@ -701,6 +732,7 @@
 				0DB44FE31EA3C2CD00ABC0E6 /* MineViewController.m in Sources */,
 				0D77DF991ED7F91E000F3C1A /* ShowHUDViewController.m in Sources */,
 				0DE270DC1E87FFA100F6571A /* IndustryList.m in Sources */,
+				0D07FAC91EDEA30C00BFE19D /* EventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,8 +19,11 @@
     
     self.navigationBar.translucent = NO; //设置了之后自动下沉64
     self.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg"] forBarMetrics:UIBarMetricsDefault];
     
+    //处理6p上面显示不全的bug
+    UIImage *bgImage = [[UIImage imageNamed:@"bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch];
+    [self.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning {

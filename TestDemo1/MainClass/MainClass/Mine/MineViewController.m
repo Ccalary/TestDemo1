@@ -36,6 +36,8 @@
     [self addCell:@"异常捕获" class:@"ExceptionViewController"];
     [self addCell:@"抛出异常" class:@"MakeExpViewController"];
     [self addCell:@"渐变色" class:@"GradientViewController"];
+    [self addCell:@"GCD使用" class:@"GCDViewController"];
+    [self addCell:@"拖动，摇晃，截屏" class:@"EventViewController"];
     
     [self drawView];
 }
