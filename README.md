@@ -27,3 +27,7 @@
 * HHPopButton 基于Pop的button封装，点击后有动画效果。
 * NSDictionary添加分类，解决打印不是中文的问题
 * 重写自定义model类中的description方法，实现具体信息的打印
+
+## 2017.6.1
+* GCD的简单使用
+* 拖动，摇一摇，截屏实现
