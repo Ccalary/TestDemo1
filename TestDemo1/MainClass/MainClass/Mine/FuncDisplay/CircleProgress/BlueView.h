@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BlueView : UIView
-
+- (void)animationWithStrokeEnd:(CGFloat)strokeEnd;
 @end

@@ -15,6 +15,7 @@
 		0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */; };
 		0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1641EAEE1F30034CC47 /* HHRefreshNormalHeader.m */; };
 		0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1671EAEE9D70034CC47 /* HHRefreshNormalFooter.m */; };
+		0D1FF4811EDFF3DB0040B58E /* CycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF4801EDFF3DB0040B58E /* CycleView.m */; };
 		0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428AC1ED951D4002B52F3 /* HHPopButton.m */; };
 		0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428B01ED95F1F002B52F3 /* MoveButton.m */; };
 		0D2428CA1ED9814D002B52F3 /* NSDictionary+DLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428C91ED9814D002B52F3 /* NSDictionary+DLog.m */; };
@@ -82,6 +83,8 @@
 		0D1FF1641EAEE1F30034CC47 /* HHRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHRefreshNormalHeader.m; sourceTree = "<group>"; };
 		0D1FF1661EAEE9D70034CC47 /* HHRefreshNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHRefreshNormalFooter.h; sourceTree = "<group>"; };
 		0D1FF1671EAEE9D70034CC47 /* HHRefreshNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHRefreshNormalFooter.m; sourceTree = "<group>"; };
+		0D1FF47F1EDFF3DB0040B58E /* CycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleView.h; sourceTree = "<group>"; };
+		0D1FF4801EDFF3DB0040B58E /* CycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleView.m; sourceTree = "<group>"; };
 		0D2428AB1ED951D4002B52F3 /* HHPopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPopButton.h; sourceTree = "<group>"; };
 		0D2428AC1ED951D4002B52F3 /* HHPopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHPopButton.m; sourceTree = "<group>"; };
 		0D2428AF1ED95F1F002B52F3 /* MoveButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveButton.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				0D07FACD1EDEC2F200BFE19D /* CircleProgressVC.m */,
 				0D07FACF1EDEC34900BFE19D /* BlueView.h */,
 				0D07FAD01EDEC34900BFE19D /* BlueView.m */,
+				0D1FF47F1EDFF3DB0040B58E /* CycleView.h */,
+				0D1FF4801EDFF3DB0040B58E /* CycleView.m */,
 			);
 			path = CircleProgress;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 				0D07FACE1EDEC2F200BFE19D /* CircleProgressVC.m in Sources */,
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
+				0D1FF4811EDFF3DB0040B58E /* CycleView.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
 				0D4F94621E8ABA5B00070950 /* BaseNavigationController.m in Sources */,

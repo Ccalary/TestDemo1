@@ -38,6 +38,7 @@
     [self addCell:@"渐变色" class:@"GradientViewController"];
     [self addCell:@"GCD使用" class:@"GCDViewController"];
     [self addCell:@"拖动，摇晃，截屏" class:@"EventViewController"];
+    [self addCell:@"进度条" class:@"CircleProgressVC"];
     
     [self drawView];
 }
