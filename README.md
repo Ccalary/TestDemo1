@@ -7,6 +7,7 @@
 * [MJRefresh](https://github.com/CoderMJLee/MJRefresh)的简单封装
 * [MBProgressHUD](https://github.com/jdg/MBProgressHUD)的简单封装,更改了显示的颜色
 * [POP](https://github.com/facebook/pop) facebook开源的动画框架
+* [MJExtension](https://github.com/CoderMJLee/MJExtension)model转化使用
 
 ## 全局宏定义
 * 屏幕宽高，适配比列, Debug信息,颜色RGB和十六进制（0xffffff）,字体大小,
@@ -32,3 +33,7 @@
 * GCD的简单使用
 * 拖动，摇一摇，截屏实现
 * 圆形进度条
+
+## 2017.6.8
+* Realm数据库的使用，从网络获取省市区三级地址用MJExtension进行Model类映射，对数据进行了数据库存储，查询等操作。
+  更多使用详见[文档](https://realm.io/docs/objc/latest/)
