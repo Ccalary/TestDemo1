@@ -7,6 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Realm;
+
+@interface Dog : RLMObject
+@property NSString *name;
+@property NSString *sex;
+@property NSInteger age;
+@property int num;
+@end
 
 @interface HomeViewController : UIViewController
 

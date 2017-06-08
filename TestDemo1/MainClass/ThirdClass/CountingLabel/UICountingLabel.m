@@ -199,7 +199,7 @@
         if([self.format rangeOfString:@"%(.*)d" options:NSRegularExpressionSearch].location != NSNotFound || [self.format rangeOfString:@"%(.*)i"].location != NSNotFound )
         {
             self.text = [NSString stringWithFormat:self.format,(int)value];
-            DLog(@"现在的数字%@",self.text);
+//            DLog(@"现在的数字%@",self.text);
         }
         else
         {
@@ -233,8 +233,17 @@
     
     CGFloat endValue = self.startingValue + (updateVal * (self.destinationValue - self.startingValue));
     
-    DLog(@"updateVal=%f---endValue=%f",updateVal,endValue);
     return endValue;
 }
+
+- (void)willMoveToSuperview:(UIView *)newSuperview{
+    //判断是新进入界面还是返回，如果是返回的话关闭timer,要不然会走完时间才执行dealloc
+    if (!newSuperview) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    DLog(@"---moveToSuperview---");
+}
+
 
 @end

@@ -31,6 +31,7 @@
     self.dataArray = @[].mutableCopy;
     self.classNameArray = @[].mutableCopy;
     
+    [self addCell:@"全选、删除操作" class:@"SelectAndDeleteVC"];
     [self addCell:@"showHUD" class:@"ShowHUDViewController"];
     [self addCell:@"runningTime" class:@"RuningTimeViewController"];
     [self addCell:@"异常捕获" class:@"ExceptionViewController"];
@@ -39,6 +40,8 @@
     [self addCell:@"GCD使用" class:@"GCDViewController"];
     [self addCell:@"拖动，摇晃，截屏" class:@"EventViewController"];
     [self addCell:@"进度条" class:@"CircleProgressVC"];
+    [self addCell:@"蓝牙" class:@"BluetoothVC"];
+    [self addCell:@"realm数据库" class:@"RealmTestVC"];
     
     [self drawView];
 }
@@ -97,6 +100,7 @@
      // 马上进入刷新状态
     [_tableView.mj_header beginRefreshing];
 }
+
 
 - (void)loadNewData{
     NSLog(@"走了下拉刷新");

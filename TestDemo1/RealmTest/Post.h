@@ -11,8 +11,8 @@
 @interface Post : NSObject
 
 @property NSString *title;
-
-@property NSString *content;
+@property NSString *oo;
+@property NSString *contents;
 
 
 @end

@@ -43,7 +43,7 @@
         self.timer = nil;
     }
     
-    DLog(@"%f",self.startValue);
+//    DLog(@"%f",self.startValue);
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview{

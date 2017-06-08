@@ -15,5 +15,6 @@
 #import "LCProgressHUD.h"//HUD
 #import "HHRefreshNormalHeader.h"//自定义的加载头部
 #import "HHRefreshNormalFooter.h"//自定义的加载底部
+#import <MJExtension/MJExtension.h>
  
 #endif /* PrefixHeader_pch */

@@ -17,7 +17,7 @@
             [self class],
             self,
              @{@"title":_title,
-               @"content":_content}
+               @"content":_contents}
           ];
 }
 @end

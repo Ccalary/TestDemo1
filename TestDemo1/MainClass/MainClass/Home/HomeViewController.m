@@ -12,13 +12,6 @@
 #import "IndustryList.h"
 #import "IndustrayData.h"
 #import "HHPopButton.h"
-@import Realm;
-
-
-@interface Dog : RLMObject
-@property NSString *name;
-@property NSInteger age;
-@end
 
 @implementation Dog
 
@@ -48,24 +41,37 @@
     //创建数据库
     Dog *dog = [[Dog alloc] init];
     dog.name = @"Peter";
-    dog.age = 1;
+//    dog.age = 1;
     
     Post *post = [[Post alloc] init];
     post.title = @"开心1";
-    post.content = @"今天是个好日子1";
+    post.contents = @"今天是个好日子1";
     
     DLog(@"post%@",post);
     
     RLMRealm *realm = [RLMRealm defaultRealm];
+    
     [realm transactionWithBlock:^{
         [realm addObject:dog];
     }];
     
     DLog(@"dog%@",dog);
- 
     UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 200, 200, 30)];
-    nameLabel.text = dog.name;
+    
     [self.view addSubview:nameLabel];
+    
+    RLMResults *r = [Dog allObjects];
+    DLog(@"%@", r);
+    Dog *dogP = [r firstObject];
+    nameLabel.text = dogP.name;
+    
+    [realm transactionWithBlock:^{
+        [realm deleteObjects:r];
+    }];
+    
+    DLog(@"%@", r);
+    
+   
     
     HHPopButton *nextMonthBtn = [[HHPopButton alloc] initWithFrame:CGRectMake(50, 150, 100, 50)];
     [nextMonthBtn setTitle:@"按钮" forState:UIControlStateNormal];
@@ -93,51 +99,6 @@
 
 }
 
-- (void)requestData{
-    
-    NSURL *url = [NSURL URLWithString:@"http://121.40.94.85:8788/cbapiprj/webService/tradeMark/listCategoriesTree"];
-    
-//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url];
-    //设置请求方式
-    [mutableRequest setHTTPMethod:@"POST"];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:mutableRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-       
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:NULL];
-        NSLog(@"NSURLsessison_________ %@",dict);
-        
-        NSArray *array = [dict objectForKey:@"data"];
-        
-        NSLog(@"array:%@",array);
-        
-        for (NSDictionary *dic in array){
-            IndustrayData *list = [[IndustrayData alloc] init];
-            list.name = [dic objectForKey:@"name"];
-            list.id = [dic objectForKey:@"id"];
-            
-            for (NSDictionary *chilDic in [dic objectForKey:@"children"]){
-                IndustrayData *chilList = [[IndustrayData alloc] init];
-                chilList.name = [chilDic objectForKey:@"category_name"];
-                chilList.id = [chilDic objectForKey:@"id"];
-                [list.children addObject:chilList];
-            }
-            
-            RLMRealm *realm = [RLMRealm defaultRealm];
-            [realm transactionWithBlock:^{
-                [realm addObject:list];
-            }];
-            
-            NSLog(@"%@==", list);
-        }
-    }];
-    
-    //4.执行任务
-    [dataTask resume];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -146,10 +107,8 @@
 
 - (void)nextMonthBtnAction:(UIButton *)button{
     
-
-    
-//    FirstViewController *vc = [[FirstViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    FirstViewController *vc = [[FirstViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

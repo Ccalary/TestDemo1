@@ -8,6 +8,8 @@ pod 'Realm'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'MJRefresh'
 pod 'pop', '~> 1.0'
+pod 'AFNetworking', '~> 3.0'
+pod 'MJExtension'
 
 end
 

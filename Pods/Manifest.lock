@@ -1,5 +1,21 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - pop (1.0.9)
   - Realm (2.4.3):
@@ -7,17 +23,21 @@ PODS:
   - Realm/Headers (2.4.3)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.0)
   - MBProgressHUD (~> 1.0.0)
+  - MJExtension
   - MJRefresh
   - pop (~> 1.0)
   - Realm
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
 
-PODFILE CHECKSUM: b21e912153eb11f8a2febec3a7a32b697fbe6957
+PODFILE CHECKSUM: 8a6da4c68ecbe3d39c5315b07e73fb544318b4cf
 
 COCOAPODS: 1.2.0

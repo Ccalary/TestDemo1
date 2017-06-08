@@ -51,8 +51,6 @@
                          (__bridge id)[UIColor redColor].CGColor];
     [self.colorLayer addSublayer:rightLayer];
     
-    
-    
     CAShapeLayer *layer = [self generateMaskLayer];
     layer.lineWidth = 30; // 渐变遮罩线宽较大，防止蓝色遮罩有边露出来
     self.colorLayer.mask = layer;

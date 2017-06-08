@@ -39,9 +39,9 @@
 #define COLOR_Background             HEXCOLOR(0xd2d2d2)
 
 
-//Debug信息
+//Debug信息,用printf解决真机调试打印不出来的问题
 #ifdef DEBUG
-# define DLog(fmt, ...) NSLog((@"%s" " [行号:%d] " fmt),__FUNCTION__, __LINE__, ##__VA_ARGS__);
+# define DLog(format, ...) printf("[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
 #else
 # define DLog(...);
 #endif
