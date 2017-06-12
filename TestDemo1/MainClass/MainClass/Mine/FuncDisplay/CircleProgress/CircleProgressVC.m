@@ -10,16 +10,22 @@
 #import "CycleView.h"
 #import "BlueView.h"
 
+#define TOTAL_TIME 300.0
 @interface CircleProgressVC ()
 @property (nonatomic, strong) UISlider *slider;
 @property (nonatomic, strong) CycleView *cycleView;
 @property (nonatomic, strong) BlueView *blueView;
+@property (nonatomic, strong) CADisplayLink *timer;
+@property (nonatomic, assign) int seconds;
+@property (nonatomic, assign) CGFloat progress;
 @end
 
 @implementation CircleProgressVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _seconds = TOTAL_TIME;
     
     _cycleView = [[CycleView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
     _cycleView.backgroundColor = [UIColor whiteColor];
@@ -33,11 +39,24 @@
     _blueView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:_blueView];
     
+    _timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(startCount)];
+    [_timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
  
+}
+
+- (void)startCount{
+    if (_seconds > 0){
+        _seconds--;
+        _cycleView.progress = _seconds/TOTAL_TIME;
+         [_blueView animationWithStrokeEnd:_seconds/TOTAL_TIME];
+    }else {
+        [_timer invalidate];
+    }
 }
 
 - (void)sliderAction:(UISlider *)slider{

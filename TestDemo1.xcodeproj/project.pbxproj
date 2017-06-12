@@ -22,15 +22,23 @@
 		0D4B28D81EE7C4D100BB9CC9 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28C11EE7C4D100BB9CC9 /* EventViewController.m */; };
 		0D4B28D91EE7C4D100BB9CC9 /* ExceptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28C31EE7C4D100BB9CC9 /* ExceptionViewController.m */; };
 		0D4B28DA1EE7C4D100BB9CC9 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28C51EE7C4D100BB9CC9 /* GCDViewController.m */; };
-		0D4B28DB1EE7C4D100BB9CC9 /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28C71EE7C4D100BB9CC9 /* GradientViewController.m */; };
 		0D4B28DC1EE7C4D100BB9CC9 /* MakeExpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28C91EE7C4D100BB9CC9 /* MakeExpViewController.m */; };
 		0D4B28DE1EE7C4D100BB9CC9 /* RuningTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28CD1EE7C4D100BB9CC9 /* RuningTimeViewController.m */; };
 		0D4B28DF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28CF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m */; };
 		0D4B28E01EE7C4D100BB9CC9 /* ShowHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28D11EE7C4D100BB9CC9 /* ShowHUDViewController.m */; };
 		0D4B28E11EE7C4D100BB9CC9 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28D31EE7C4D100BB9CC9 /* MineViewController.m */; };
-		0D4B28E61EE7CDBF00BB9CC9 /* ProvinceNormalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28E51EE7CDBF00BB9CC9 /* ProvinceNormalModel.m */; };
 		0D4B28EA1EE7D31A00BB9CC9 /* RealmTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28E91EE7D31A00BB9CC9 /* RealmTestVC.m */; };
 		0D4B28F41EE7F51200BB9CC9 /* DemoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28F31EE7F51200BB9CC9 /* DemoHelper.m */; };
+		0D4B28F71EE94C2700BB9CC9 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28F61EE94C2700BB9CC9 /* UIView+Extension.m */; };
+		0D4B28FB1EE94C8F00BB9CC9 /* LoadingViewForOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28FA1EE94C8F00BB9CC9 /* LoadingViewForOC.m */; };
+		0D4B28FE1EE94CCC00BB9CC9 /* LoadingAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28FD1EE94CCC00BB9CC9 /* LoadingAnimationVC.m */; };
+		0D4B29021EE9536400BB9CC9 /* BezierPathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B29011EE9536400BB9CC9 /* BezierPathVC.m */; };
+		0D4B29051EE953CC00BB9CC9 /* BezierPathViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B29041EE953CC00BB9CC9 /* BezierPathViewBase.m */; };
+		0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B29071EE9594200BB9CC9 /* BezierPathViewSquare.m */; };
+		0D4B290B1EEA44C000BB9CC9 /* BezierPathViewRound.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B290A1EEA44C000BB9CC9 /* BezierPathViewRound.m */; };
+		0D4B290E1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B290D1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m */; };
+		0D4B29121EEA6DC200BB9CC9 /* GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B29111EEA6DC200BB9CC9 /* GradientViewController.m */; };
+		0D4B29151EEA717700BB9CC9 /* LayerAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B29141EEA717700BB9CC9 /* LayerAnimationVC.m */; };
 		0D4F944C1E8AB98900070950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D4F944B1E8AB98900070950 /* Assets.xcassets */; };
 		0D4F94501E8AB9B500070950 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4F944F1E8AB9B500070950 /* AppDelegate.m */; };
 		0D4F945B1E8ABA2A00070950 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D4F94571E8ABA2A00070950 /* Info.plist */; };
@@ -105,8 +113,6 @@
 		0D4B28C31EE7C4D100BB9CC9 /* ExceptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionViewController.m; sourceTree = "<group>"; };
 		0D4B28C41EE7C4D100BB9CC9 /* GCDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
 		0D4B28C51EE7C4D100BB9CC9 /* GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
-		0D4B28C61EE7C4D100BB9CC9 /* GradientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientViewController.h; sourceTree = "<group>"; };
-		0D4B28C71EE7C4D100BB9CC9 /* GradientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientViewController.m; sourceTree = "<group>"; };
 		0D4B28C81EE7C4D100BB9CC9 /* MakeExpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeExpViewController.h; sourceTree = "<group>"; };
 		0D4B28C91EE7C4D100BB9CC9 /* MakeExpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeExpViewController.m; sourceTree = "<group>"; };
 		0D4B28CC1EE7C4D100BB9CC9 /* RuningTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuningTimeViewController.h; sourceTree = "<group>"; };
@@ -117,12 +123,30 @@
 		0D4B28D11EE7C4D100BB9CC9 /* ShowHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowHUDViewController.m; sourceTree = "<group>"; };
 		0D4B28D21EE7C4D100BB9CC9 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		0D4B28D31EE7C4D100BB9CC9 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		0D4B28E41EE7CDBF00BB9CC9 /* ProvinceNormalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceNormalModel.h; sourceTree = "<group>"; };
-		0D4B28E51EE7CDBF00BB9CC9 /* ProvinceNormalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceNormalModel.m; sourceTree = "<group>"; };
 		0D4B28E81EE7D31A00BB9CC9 /* RealmTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmTestVC.h; sourceTree = "<group>"; };
 		0D4B28E91EE7D31A00BB9CC9 /* RealmTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmTestVC.m; sourceTree = "<group>"; };
 		0D4B28F21EE7F51200BB9CC9 /* DemoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoHelper.h; sourceTree = "<group>"; };
 		0D4B28F31EE7F51200BB9CC9 /* DemoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoHelper.m; sourceTree = "<group>"; };
+		0D4B28F51EE94C2700BB9CC9 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		0D4B28F61EE94C2700BB9CC9 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		0D4B28F91EE94C8F00BB9CC9 /* LoadingViewForOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewForOC.h; sourceTree = "<group>"; };
+		0D4B28FA1EE94C8F00BB9CC9 /* LoadingViewForOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewForOC.m; sourceTree = "<group>"; };
+		0D4B28FC1EE94CCC00BB9CC9 /* LoadingAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingAnimationVC.h; sourceTree = "<group>"; };
+		0D4B28FD1EE94CCC00BB9CC9 /* LoadingAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingAnimationVC.m; sourceTree = "<group>"; };
+		0D4B29001EE9536400BB9CC9 /* BezierPathVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathVC.h; sourceTree = "<group>"; };
+		0D4B29011EE9536400BB9CC9 /* BezierPathVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathVC.m; sourceTree = "<group>"; };
+		0D4B29031EE953CC00BB9CC9 /* BezierPathViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathViewBase.h; sourceTree = "<group>"; };
+		0D4B29041EE953CC00BB9CC9 /* BezierPathViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathViewBase.m; sourceTree = "<group>"; };
+		0D4B29061EE9594200BB9CC9 /* BezierPathViewSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathViewSquare.h; sourceTree = "<group>"; };
+		0D4B29071EE9594200BB9CC9 /* BezierPathViewSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathViewSquare.m; sourceTree = "<group>"; };
+		0D4B29091EEA44C000BB9CC9 /* BezierPathViewRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathViewRound.h; sourceTree = "<group>"; };
+		0D4B290A1EEA44C000BB9CC9 /* BezierPathViewRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathViewRound.m; sourceTree = "<group>"; };
+		0D4B290C1EEA4BA500BB9CC9 /* BezierPathQuadCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathQuadCurve.h; sourceTree = "<group>"; };
+		0D4B290D1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathQuadCurve.m; sourceTree = "<group>"; };
+		0D4B29101EEA6DC200BB9CC9 /* GradientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientViewController.h; sourceTree = "<group>"; };
+		0D4B29111EEA6DC200BB9CC9 /* GradientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientViewController.m; sourceTree = "<group>"; };
+		0D4B29131EEA717700BB9CC9 /* LayerAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerAnimationVC.h; sourceTree = "<group>"; };
+		0D4B29141EEA717700BB9CC9 /* LayerAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerAnimationVC.m; sourceTree = "<group>"; };
 		0D4F944B1E8AB98900070950 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D4F944E1E8AB9B500070950 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0D4F944F1E8AB9B500070950 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -261,6 +285,8 @@
 		0D2428C71ED98103002B52F3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0D4B28F51EE94C2700BB9CC9 /* UIView+Extension.h */,
+				0D4B28F61EE94C2700BB9CC9 /* UIView+Extension.m */,
 				0DA4F3F71EE6925B00ED17B2 /* NSArray+Dlog.h */,
 				0DA4F3F81EE6925B00ED17B2 /* NSArray+Dlog.m */,
 			);
@@ -292,7 +318,6 @@
 		0D4B28B51EE7C4D100BB9CC9 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				0D4B28E21EE7C5B600BB9CC9 /* Model */,
 				0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */,
 				0D4B28D21EE7C4D100BB9CC9 /* MineViewController.h */,
 				0D4B28D31EE7C4D100BB9CC9 /* MineViewController.m */,
@@ -303,6 +328,9 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				0D4B290F1EEA6DA700BB9CC9 /* Layer */,
+				0D4B28FF1EE9534E00BB9CC9 /* BezierPath */,
+				0D4B28F81EE94C7B00BB9CC9 /* LoadingAnimation */,
 				0D4B28E71EE7D30500BB9CC9 /* RealmTest */,
 				0D4B28B91EE7C4D100BB9CC9 /* CircleProgress */,
 				0D4B28B71EE7C4D100BB9CC9 /* BluetoochVC.h */,
@@ -313,8 +341,6 @@
 				0D4B28C31EE7C4D100BB9CC9 /* ExceptionViewController.m */,
 				0D4B28C41EE7C4D100BB9CC9 /* GCDViewController.h */,
 				0D4B28C51EE7C4D100BB9CC9 /* GCDViewController.m */,
-				0D4B28C61EE7C4D100BB9CC9 /* GradientViewController.h */,
-				0D4B28C71EE7C4D100BB9CC9 /* GradientViewController.m */,
 				0D4B28C81EE7C4D100BB9CC9 /* MakeExpViewController.h */,
 				0D4B28C91EE7C4D100BB9CC9 /* MakeExpViewController.m */,
 				0D4B28CC1EE7C4D100BB9CC9 /* RuningTimeViewController.h */,
@@ -340,23 +366,6 @@
 			path = CircleProgress;
 			sourceTree = "<group>";
 		};
-		0D4B28E21EE7C5B600BB9CC9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0D4B28E31EE7C5C900BB9CC9 /* AreaModel */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0D4B28E31EE7C5C900BB9CC9 /* AreaModel */ = {
-			isa = PBXGroup;
-			children = (
-				0D4B28E41EE7CDBF00BB9CC9 /* ProvinceNormalModel.h */,
-				0D4B28E51EE7CDBF00BB9CC9 /* ProvinceNormalModel.m */,
-			);
-			path = AreaModel;
-			sourceTree = "<group>";
-		};
 		0D4B28E71EE7D30500BB9CC9 /* RealmTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +382,45 @@
 				0D4B28F31EE7F51200BB9CC9 /* DemoHelper.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		0D4B28F81EE94C7B00BB9CC9 /* LoadingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0D4B28F91EE94C8F00BB9CC9 /* LoadingViewForOC.h */,
+				0D4B28FA1EE94C8F00BB9CC9 /* LoadingViewForOC.m */,
+				0D4B28FC1EE94CCC00BB9CC9 /* LoadingAnimationVC.h */,
+				0D4B28FD1EE94CCC00BB9CC9 /* LoadingAnimationVC.m */,
+			);
+			path = LoadingAnimation;
+			sourceTree = "<group>";
+		};
+		0D4B28FF1EE9534E00BB9CC9 /* BezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				0D4B29001EE9536400BB9CC9 /* BezierPathVC.h */,
+				0D4B29011EE9536400BB9CC9 /* BezierPathVC.m */,
+				0D4B29031EE953CC00BB9CC9 /* BezierPathViewBase.h */,
+				0D4B29041EE953CC00BB9CC9 /* BezierPathViewBase.m */,
+				0D4B29061EE9594200BB9CC9 /* BezierPathViewSquare.h */,
+				0D4B29071EE9594200BB9CC9 /* BezierPathViewSquare.m */,
+				0D4B29091EEA44C000BB9CC9 /* BezierPathViewRound.h */,
+				0D4B290A1EEA44C000BB9CC9 /* BezierPathViewRound.m */,
+				0D4B290C1EEA4BA500BB9CC9 /* BezierPathQuadCurve.h */,
+				0D4B290D1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m */,
+			);
+			path = BezierPath;
+			sourceTree = "<group>";
+		};
+		0D4B290F1EEA6DA700BB9CC9 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				0D4B29101EEA6DC200BB9CC9 /* GradientViewController.h */,
+				0D4B29111EEA6DC200BB9CC9 /* GradientViewController.m */,
+				0D4B29131EEA717700BB9CC9 /* LayerAnimationVC.h */,
+				0D4B29141EEA717700BB9CC9 /* LayerAnimationVC.m */,
+			);
+			path = Layer;
 			sourceTree = "<group>";
 		};
 		0D4F944A1E8AB96C00070950 /* Resource */ = {
@@ -837,36 +885,44 @@
 				0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */,
 				0D4B28E11EE7C4D100BB9CC9 /* MineViewController.m in Sources */,
 				0D4B28D61EE7C4D100BB9CC9 /* CircleProgressVC.m in Sources */,
+				0D4B29051EE953CC00BB9CC9 /* BezierPathViewBase.m in Sources */,
 				0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */,
 				0D4B28DA1EE7C4D100BB9CC9 /* GCDViewController.m in Sources */,
 				0D4B28D81EE7C4D100BB9CC9 /* EventViewController.m in Sources */,
+				0D4B28FB1EE94C8F00BB9CC9 /* LoadingViewForOC.m in Sources */,
 				0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */,
 				0DE270DF1E88012300F6571A /* IndustrayData.m in Sources */,
 				0DA4F4001EE699A600ED17B2 /* ProvinceModel.m in Sources */,
+				0D4B290B1EEA44C000BB9CC9 /* BezierPathViewRound.m in Sources */,
 				0DA4F3E41EE676A400ED17B2 /* Connect.m in Sources */,
 				0D4B28F41EE7F51200BB9CC9 /* DemoHelper.m in Sources */,
 				0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */,
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
+				0D4B29121EEA6DC200BB9CC9 /* GradientViewController.m in Sources */,
 				0DA4F4061EE69A0B00ED17B2 /* CountyModel.m in Sources */,
 				0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
-				0D4B28DB1EE7C4D100BB9CC9 /* GradientViewController.m in Sources */,
 				0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
+				0D4B28F71EE94C2700BB9CC9 /* UIView+Extension.m in Sources */,
+				0D4B29151EEA717700BB9CC9 /* LayerAnimationVC.m in Sources */,
 				0DA4F4031EE699E900ED17B2 /* CityModel.m in Sources */,
 				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
 				0DA4F3ED1EE677F500ED17B2 /* BaseNavigationController.m in Sources */,
 				0D4B28DC1EE7C4D100BB9CC9 /* MakeExpViewController.m in Sources */,
 				0D0061E11E842320007BDBAE /* Post.m in Sources */,
-				0D4B28E61EE7CDBF00BB9CC9 /* ProvinceNormalModel.m in Sources */,
+				0D4B29021EE9536400BB9CC9 /* BezierPathVC.m in Sources */,
 				0DA4F3EF1EE677F500ED17B2 /* BaseViewController.m in Sources */,
 				0D4B28D71EE7C4D100BB9CC9 /* CycleView.m in Sources */,
 				0D4B28DE1EE7C4D100BB9CC9 /* RuningTimeViewController.m in Sources */,
+				0D4B28FE1EE94CCC00BB9CC9 /* LoadingAnimationVC.m in Sources */,
 				0DA4F3EE1EE677F500ED17B2 /* BaseTabBarController.m in Sources */,
 				0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */,
+				0D4B290E1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m in Sources */,
 				0D4B28EA1EE7D31A00BB9CC9 /* RealmTestVC.m in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
+				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				0D4B28E01EE7C4D100BB9CC9 /* ShowHUDViewController.m in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,
 				0DE270DC1E87FFA100F6571A /* IndustryList.m in Sources */,

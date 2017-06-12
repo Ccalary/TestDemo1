@@ -8,7 +8,6 @@
 
 #import "RealmTestVC.h"
 #import "ProvinceModel.h"
-#import "ProvinceNormalModel.h"
 #import "HHPopButton.h"
 #import "DemoHelper.h"
 @import Realm;
@@ -90,6 +89,7 @@
     HHPopButton *resetButton = [[HHPopButton alloc] initWithFrame:CGRectMake(ScreenWidth - 45*UIRate, 2.5*UIRate, 40*UIRate, 40*UIRate)];
     [resetButton setTitle:@"复位" forState:UIControlStateNormal];
     [resetButton setBackgroundColor:[UIColor redColor]];
+    
     [resetButton addTarget:self action:@selector(resetBtnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:resetButton];
     
@@ -178,7 +178,7 @@
     int nowTimeStamp = (int)[[NSDate date] timeIntervalSince1970];
     
     //更新频率／s
-    if ((nowTimeStamp - oldTimeStamp) < 60){
+    if ((nowTimeStamp - oldTimeStamp) < 7*24*60*60){
         [self loadCacheData];
         return;
     }

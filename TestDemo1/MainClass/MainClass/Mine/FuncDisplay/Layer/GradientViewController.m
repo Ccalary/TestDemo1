@@ -69,8 +69,6 @@
     CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(textColorChange)];
     link.frameInterval = 2.0;
     [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-    
-    
 }
 
 // 随机颜色方法

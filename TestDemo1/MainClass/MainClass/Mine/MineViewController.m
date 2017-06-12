@@ -36,12 +36,15 @@
     [self addCell:@"runningTime" class:@"RuningTimeViewController"];
     [self addCell:@"异常捕获" class:@"ExceptionViewController"];
     [self addCell:@"抛出异常" class:@"MakeExpViewController"];
-    [self addCell:@"渐变色" class:@"GradientViewController"];
     [self addCell:@"GCD使用" class:@"GCDViewController"];
     [self addCell:@"拖动，摇晃，截屏" class:@"EventViewController"];
-    [self addCell:@"进度条" class:@"CircleProgressVC"];
     [self addCell:@"蓝牙" class:@"BluetoothVC"];
     [self addCell:@"realm数据库" class:@"RealmTestVC"];
+    [self addCell:@"贝赛尔曲线" class:@"BezierPathVC"];
+    [self addCell:@"渐变色" class:@"GradientViewController"];
+    [self addCell:@"进度条" class:@"CircleProgressVC"];
+    [self addCell:@"Animation" class:@"LoadingAnimationVC"];
+    [self addCell:@"Layer、Animation" class:@"LayerAnimationVC"];
     
     [self drawView];
 }
@@ -57,7 +60,7 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(rightItemAction:)];
     self.navigationItem.rightBarButtonItem = item;
     
-    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.allowsMultipleSelectionDuringEditing = YES;
