@@ -10,9 +10,10 @@
 #import "BaseTabBarController.h"
 #import <Realm/Realm.h>
 #import "HomeViewController.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) AFNetworkReachabilityManager *netManager;
 @end
 
 @implementation AppDelegate
@@ -25,6 +26,8 @@
     [self.window makeKeyAndVisible];
     
     self.window.rootViewController = [[BaseTabBarController alloc] init];
+    
+    [self listeningTheNetChange];
     
     RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
     // 设置新的架构版本。这个版本号必须高于之前所用的版本号（如果您之前从未设置过架构版本，那么这个版本号设置为 0）
@@ -87,6 +90,32 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - 监听网络变化
+- (void)listeningTheNetChange{
+    
+    _netManager = [AFNetworkReachabilityManager sharedManager];
+    [_netManager startMonitoring];
+    [_netManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+            DLog(@"未知网络");
+            break;
+            case AFNetworkReachabilityStatusNotReachable:
+            DLog(@"无网络");
+            break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            DLog(@"网络数据连接");
+            break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+            DLog(@"wifi连接");
+            break;
+            default:
+            break;
+        }
+    }];
 }
 
 @end

@@ -45,6 +45,8 @@
     [self addCell:@"进度条" class:@"CircleProgressVC"];
     [self addCell:@"Animation" class:@"LoadingAnimationVC"];
     [self addCell:@"Layer、Animation" class:@"LayerAnimationVC"];
+    [self addCell:@"CAEmitterLayer" class:@"CAEmitterLayerVC"];
+    
     
     [self drawView];
 }

@@ -11,13 +11,15 @@
 
 #define kBottomHeight 20
 @interface LayerAnimationVC ()
-@property (nonatomic, strong)CAShapeLayer *greenTrack;
+@property (nonatomic, strong) CAShapeLayer *greenTrack;
+
 @end
 
 @implementation LayerAnimationVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //渐变的天空
     [self initBackgroundSky];
     //波动的河流

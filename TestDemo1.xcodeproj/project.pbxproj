@@ -15,6 +15,8 @@
 		0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428B01ED95F1F002B52F3 /* MoveButton.m */; };
 		0D2A5F3F1EC55B7E00F41D4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2A5F3B1EC55B7E00F41D4D /* LaunchScreen.storyboard */; };
 		0D2A5F401EC55B7E00F41D4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2A5F3D1EC55B7E00F41D4D /* Main.storyboard */; };
+		0D33BB001EEF8B3500AD69EB /* CAEmitterLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D33BAFF1EEF8B3500AD69EB /* CAEmitterLayerVC.m */; };
+		0D33BB041EEF8F2700AD69EB /* HHEmitterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D33BB031EEF8F2700AD69EB /* HHEmitterButton.m */; };
 		0D4B28D41EE7C4D100BB9CC9 /* BluetoochVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28B81EE7C4D100BB9CC9 /* BluetoochVC.m */; };
 		0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28BB1EE7C4D100BB9CC9 /* BlueView.m */; };
 		0D4B28D61EE7C4D100BB9CC9 /* CircleProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28BD1EE7C4D100BB9CC9 /* CircleProgressVC.m */; };
@@ -99,6 +101,10 @@
 		0D2428B01ED95F1F002B52F3 /* MoveButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveButton.m; sourceTree = "<group>"; };
 		0D2A5F3C1EC55B7E00F41D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D2A5F3E1EC55B7E00F41D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		0D33BAFE1EEF8B3500AD69EB /* CAEmitterLayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayerVC.h; sourceTree = "<group>"; };
+		0D33BAFF1EEF8B3500AD69EB /* CAEmitterLayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAEmitterLayerVC.m; sourceTree = "<group>"; };
+		0D33BB021EEF8F2700AD69EB /* HHEmitterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmitterButton.h; sourceTree = "<group>"; };
+		0D33BB031EEF8F2700AD69EB /* HHEmitterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmitterButton.m; sourceTree = "<group>"; };
 		0D4B28B71EE7C4D100BB9CC9 /* BluetoochVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoochVC.h; sourceTree = "<group>"; };
 		0D4B28B81EE7C4D100BB9CC9 /* BluetoochVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoochVC.m; sourceTree = "<group>"; };
 		0D4B28BA1EE7C4D100BB9CC9 /* BlueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueView.h; sourceTree = "<group>"; };
@@ -302,6 +308,15 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		0D33BB011EEF8EF500AD69EB /* HHEmitterButton */ = {
+			isa = PBXGroup;
+			children = (
+				0D33BB021EEF8F2700AD69EB /* HHEmitterButton.h */,
+				0D33BB031EEF8F2700AD69EB /* HHEmitterButton.m */,
+			);
+			path = HHEmitterButton;
+			sourceTree = "<group>";
+		};
 		0D4193C81E8416D600075590 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +434,8 @@
 				0D4B29111EEA6DC200BB9CC9 /* GradientViewController.m */,
 				0D4B29131EEA717700BB9CC9 /* LayerAnimationVC.h */,
 				0D4B29141EEA717700BB9CC9 /* LayerAnimationVC.m */,
+				0D33BAFE1EEF8B3500AD69EB /* CAEmitterLayerVC.h */,
+				0D33BAFF1EEF8B3500AD69EB /* CAEmitterLayerVC.m */,
 			);
 			path = Layer;
 			sourceTree = "<group>";
@@ -510,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				0D2428C71ED98103002B52F3 /* Extension */,
+				0D33BB011EEF8EF500AD69EB /* HHEmitterButton */,
 				0D2428AA1ED951C2002B52F3 /* HHPopAnimation */,
 				0D5B07381EA8AE5C00FB1AC2 /* ExceptionDeal */,
 			);
@@ -877,6 +895,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D33BB001EEF8B3500AD69EB /* CAEmitterLayerVC.m in Sources */,
 				0D4F945C1E8ABA2A00070950 /* main.m in Sources */,
 				0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */,
 				0D4B28D91EE7C4D100BB9CC9 /* ExceptionViewController.m in Sources */,
@@ -910,6 +929,7 @@
 				0DA4F4031EE699E900ED17B2 /* CityModel.m in Sources */,
 				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
 				0DA4F3ED1EE677F500ED17B2 /* BaseNavigationController.m in Sources */,
+				0D33BB041EEF8F2700AD69EB /* HHEmitterButton.m in Sources */,
 				0D4B28DC1EE7C4D100BB9CC9 /* MakeExpViewController.m in Sources */,
 				0D0061E11E842320007BDBAE /* Post.m in Sources */,
 				0D4B29021EE9536400BB9CC9 /* BezierPathVC.m in Sources */,
