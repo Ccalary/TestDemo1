@@ -48,6 +48,7 @@
 		0D5B07351EA84B8200FB1AC2 /* LCProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B07321EA84B8200FB1AC2 /* LCProgressHUD.bundle */; };
 		0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B07341EA84B8200FB1AC2 /* LCProgressHUD.m */; };
 		0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B073D1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m */; };
+		0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6C0DEA1F03495F0005745A /* NSObject+Common.m */; };
 		0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */; };
 		0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */; };
 		0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D840ADB1EBFFF28005E078A /* Draw2DView.m */; };
@@ -165,6 +166,8 @@
 		0D5B07341EA84B8200FB1AC2 /* LCProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProgressHUD.m; sourceTree = "<group>"; };
 		0D5B073C1EA8AECC00FB1AC2 /* NSMutableArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Extension.h"; sourceTree = "<group>"; };
 		0D5B073D1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Extension.m"; sourceTree = "<group>"; };
+		0D6C0DE91F03495F0005745A /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
+		0D6C0DEA1F03495F0005745A /* NSObject+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
 		0D77DF431ED69FBE000F3C1A /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		0D77DF461ED6AD9E000F3C1A /* HHCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCountingLabel.h; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 		0D2428C71ED98103002B52F3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0D6C0DE91F03495F0005745A /* NSObject+Common.h */,
+				0D6C0DEA1F03495F0005745A /* NSObject+Common.m */,
 				0D4B28F51EE94C2700BB9CC9 /* UIView+Extension.h */,
 				0D4B28F61EE94C2700BB9CC9 /* UIView+Extension.m */,
 				0DA4F3F71EE6925B00ED17B2 /* NSArray+Dlog.h */,
@@ -921,6 +926,7 @@
 				0DA4F4061EE69A0B00ED17B2 /* CountyModel.m in Sources */,
 				0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
+				0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */,
 				0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,

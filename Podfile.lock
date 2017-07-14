@@ -18,9 +18,14 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - pop (1.0.9)
+  - ReactiveCocoa (5.0.2):
+    - ReactiveSwift (~> 1.1)
+  - ReactiveSwift (1.1.1):
+    - Result (~> 3.2)
   - Realm (2.4.3):
     - Realm/Headers (= 2.4.3)
   - Realm/Headers (2.4.3)
+  - Result (3.2.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -28,6 +33,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - pop (~> 1.0)
+  - ReactiveCocoa (~> 5.0.0)
   - Realm
 
 SPEC CHECKSUMS:
@@ -36,8 +42,11 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  ReactiveCocoa: 17bc0968fd6c69c72dba8b272bc3c4700a0d3ea3
+  ReactiveSwift: 2489549e3231a6ff68ec99f3d320bb264f10ba0a
   Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
 
-PODFILE CHECKSUM: 8a6da4c68ecbe3d39c5315b07e73fb544318b4cf
+PODFILE CHECKSUM: 7efe74530280fcbb2f12b3e07341d965c0a25941
 
 COCOAPODS: 1.2.0
