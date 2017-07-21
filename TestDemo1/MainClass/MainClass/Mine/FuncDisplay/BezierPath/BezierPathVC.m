@@ -21,6 +21,11 @@
 
 @implementation BezierPathVC
 
+
+- (void)loadView{
+    [super loadView];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,8 +35,10 @@
     _quadCurveView = [BezierPathQuadCurve addViewTo:self.view];
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 
 @end

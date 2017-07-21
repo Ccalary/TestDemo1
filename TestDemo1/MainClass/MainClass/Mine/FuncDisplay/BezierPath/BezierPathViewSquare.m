@@ -16,6 +16,7 @@
     return baseView;
 }
 
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]){
@@ -23,6 +24,7 @@
     }
     return self;
 }
+
 
 - (void)drawRect:(CGRect)rect {
     UIColor *color = [UIColor redColor];
