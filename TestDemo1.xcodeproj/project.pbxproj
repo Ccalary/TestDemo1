@@ -68,6 +68,7 @@
 		0DE270DC1E87FFA100F6571A /* IndustryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE270DB1E87FFA100F6571A /* IndustryList.m */; };
 		0DE270DF1E88012300F6571A /* IndustrayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE270DE1E88012300F6571A /* IndustrayData.m */; };
 		2252B96B185E6808FC1BB764 /* Pods_TestDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */; };
+		FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC5B4741F27391500747CAB /* CountdownLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +211,8 @@
 		14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
+		FEC5B4731F27391500747CAB /* CountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownLabel.h; sourceTree = "<group>"; };
+		FEC5B4741F27391500747CAB /* CountdownLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +534,7 @@
 		0D5B07371EA8AE2F00FB1AC2 /* MyClass */ = {
 			isa = PBXGroup;
 			children = (
+				FEC5B4721F2738CB00747CAB /* HHCountTimeLabel */,
 				0D2428C71ED98103002B52F3 /* Extension */,
 				0D33BB011EEF8EF500AD69EB /* HHEmitterButton */,
 				0D2428AA1ED951C2002B52F3 /* HHPopAnimation */,
@@ -711,6 +715,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FEC5B4721F2738CB00747CAB /* HHCountTimeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				FEC5B4731F27391500747CAB /* CountdownLabel.h */,
+				FEC5B4741F27391500747CAB /* CountdownLabel.m */,
+			);
+			path = HHCountTimeLabel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -781,7 +794,7 @@
 				TargetAttributes = {
 					0DAD4CF41E7960F4008018BB = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = JB79VQ5W7K;
+						DevelopmentTeam = 2M227336GQ;
 						ProvisioningStyle = Automatic;
 					};
 					0DAD4D0D1E7960F5008018BB = {
@@ -928,6 +941,7 @@
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */,
 				0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */,
+				FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
 				0D4B28F71EE94C2700BB9CC9 /* UIView+Extension.m in Sources */,
@@ -1102,7 +1116,7 @@
 			baseConfigurationReference = C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JB79VQ5W7K;
+				DEVELOPMENT_TEAM = 2M227336GQ;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TestDemo1/AppFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TestDemo1/AppFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1117,7 +1131,7 @@
 			baseConfigurationReference = 14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JB79VQ5W7K;
+				DEVELOPMENT_TEAM = 2M227336GQ;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TestDemo1/AppFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TestDemo1/AppFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

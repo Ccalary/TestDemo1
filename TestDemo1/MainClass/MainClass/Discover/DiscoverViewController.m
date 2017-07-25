@@ -12,13 +12,14 @@
 #import "HHCountingLabel.h"
 #import "HHPopButton.h"
 #import <pop/POP.h>
+#import "CountdownLabel.h"
 
 @interface DiscoverViewController ()
 @property (nonatomic, strong) UILabel *countLabel;
 @property (nonatomic, strong) UIImageView *gifImageView;
 @property (nonatomic, strong) HHCountingLabel *countingLabel;
-@property (nonatomic, assign) CGFloat offsetX;
-@property(nonatomic)CALayer *myCriLayer;
+@property (nonatomic, strong) CountdownLabel *countdownLabel;
+@property (nonatomic)CALayer *myCriLayer;
 @property (nonatomic) BOOL animated;
 @end
 
@@ -40,6 +41,8 @@
     [self init2DView];
     
     [self initCountingLabel];
+    
+    [self initCountdownLabel];
     
     [self initMoveView];
     
@@ -117,6 +120,18 @@
 //    anBasic.repeatCount = 10; //重复次数
     anBasic.beginTime = CACurrentMediaTime() + 1.0f;    //延迟1秒开始
     [label pop_addAnimation:anBasic forKey:@"countdown"];
+}
+
+//倒计时动画
+- (void)initCountdownLabel{
+    _countdownLabel = [[CountdownLabel alloc] initWithFrame:CGRectMake(0, 350, ScreenWidth, 30)];
+    _countdownLabel.textAlignment = NSTextAlignmentCenter;
+    _countdownLabel.textColor = [UIColor blackColor];
+    _countdownLabel.font = FONT_SYSTEM_BOLD(25);
+    [self.view addSubview:_countdownLabel];
+    
+    //开始倒计时
+    [_countdownLabel startCount];
 }
 
 #pragma mark - Shake动画
@@ -238,12 +253,12 @@
 }
 
 - (void)displayAction{
-    
-    if (self.offsetX < -100){
-        self.offsetX = ScreenWidth;
-    }
-    self.offsetX -= 1.0;
-    _countingLabel.frame = CGRectMake(self.offsetX, 150, 100, 20);
+//    
+//    if (self.offsetX < -100){
+//        self.offsetX = ScreenWidth;
+//    }
+//    self.offsetX -= 1.0;
+//    _countingLabel.frame = CGRectMake(self.offsetX, 150, 100, 20);
 }
 
 #pragma mark - Quartz 2D 绘图
