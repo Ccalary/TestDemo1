@@ -38,6 +38,7 @@
     hud.label.font = [UIFont boldSystemFontOfSize:TEXT_SIZE];
     [hud setRemoveFromSuperViewOnHide:YES];
     [hud setMinSize:CGSizeMake(BGVIEW_WIDTH, BGVIEW_WIDTH)];
+    
     [[UIApplication sharedApplication].keyWindow addSubview:hud];
 
     NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"LCProgressHUD" ofType:@"bundle"];
@@ -121,9 +122,7 @@
     [hud setMode:MBProgressHUDModeText];
     [hud setRemoveFromSuperViewOnHide:YES];
     [[UIApplication sharedApplication].keyWindow addSubview:hud];
-//    [hud hide:YES afterDelay:2.0f];
-
-    [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(hide) userInfo:nil repeats:NO];
+    [hud hideAnimated:YES afterDelay:2.0f];
 }
 
 + (void)showInfoMsg:(NSString *)text {
@@ -151,5 +150,7 @@
     [[LCProgressHUD sharedHUD] setShowNow:NO];
     [[LCProgressHUD sharedHUD] hideAnimated:YES];
 }
+
+
 
 @end

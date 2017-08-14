@@ -10,14 +10,4 @@
 
 @implementation Post
 
-//输出
-- (NSString *)description{
-    
-    return  [NSString stringWithFormat:@"<%@: %p, %@>",
-            [self class],
-            self,
-             @{@"title":_title,
-               @"content":_contents}
-          ];
-}
 @end

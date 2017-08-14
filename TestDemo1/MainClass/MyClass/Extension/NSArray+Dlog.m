@@ -34,7 +34,6 @@
 @end
 
 @implementation NSDictionary (DLog)
-//一个三方框架看到的写法
 // log NSSet with UTF8
 // if not ,log will be \Uxxx
 - (NSString *)descriptionWithLocale:(id)locale{

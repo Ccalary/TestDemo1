@@ -33,6 +33,7 @@
     _squareView = [BezierPathViewSquare addViewTo:self.view];
     _roundView = [BezierPathViewRound addViewTo:self.view];
     _quadCurveView = [BezierPathQuadCurve addViewTo:self.view];
+
 }
 
 

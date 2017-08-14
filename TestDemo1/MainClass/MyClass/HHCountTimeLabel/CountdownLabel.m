@@ -14,7 +14,6 @@
 @end
 
 @implementation CountdownLabel
-
 //开始倒计时
 - (void)startCount{
     [self initTimer];

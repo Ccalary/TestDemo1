@@ -68,7 +68,10 @@
 		0DE270DC1E87FFA100F6571A /* IndustryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE270DB1E87FFA100F6571A /* IndustryList.m */; };
 		0DE270DF1E88012300F6571A /* IndustrayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE270DE1E88012300F6571A /* IndustrayData.m */; };
 		2252B96B185E6808FC1BB764 /* Pods_TestDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */; };
+		FE33E1AD1F29B281003BC178 /* LineMoveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33E1AC1F29B281003BC178 /* LineMoveVC.m */; };
+		FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */; };
 		FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC5B4741F27391500747CAB /* CountdownLabel.m */; };
+		FEC5B4771F2861C600747CAB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC5B4761F2861C600747CAB /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,8 +214,13 @@
 		14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
+		FE33E1AB1F29B281003BC178 /* LineMoveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineMoveVC.h; sourceTree = "<group>"; };
+		FE33E1AC1F29B281003BC178 /* LineMoveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineMoveVC.m; sourceTree = "<group>"; };
+		FE5FD53B1F344A21003D3C3D /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
+		FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
 		FEC5B4731F27391500747CAB /* CountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownLabel.h; sourceTree = "<group>"; };
 		FEC5B4741F27391500747CAB /* CountdownLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownLabel.m; sourceTree = "<group>"; };
+		FEC5B4761F2861C600747CAB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC5B4771F2861C600747CAB /* AudioToolbox.framework in Frameworks */,
 				2252B96B185E6808FC1BB764 /* Pods_TestDemo1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +312,8 @@
 				0D4B28F61EE94C2700BB9CC9 /* UIView+Extension.m */,
 				0DA4F3F71EE6925B00ED17B2 /* NSArray+Dlog.h */,
 				0DA4F3F81EE6925B00ED17B2 /* NSArray+Dlog.m */,
+				FE5FD53B1F344A21003D3C3D /* NSObject+Description.h */,
+				FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -479,7 +490,6 @@
 		0D4F946C1E8ABB1300070950 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0D4F946E1E8ABB9400070950 /* Category */,
 				0D4F946F1E8ABBBB00070950 /* GlobalDefines */,
 			);
 			path = Utils;
@@ -494,13 +504,6 @@
 				0D5B07311EA84B8200FB1AC2 /* LCProgressHUD */,
 			);
 			path = ThirdClass;
-			sourceTree = "<group>";
-		};
-		0D4F946E1E8ABB9400070950 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		0D4F946F1E8ABBBB00070950 /* GlobalDefines */ = {
@@ -694,6 +697,8 @@
 				0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */,
 				0DB44FE71EA3C2F800ABC0E6 /* HomeViewController.h */,
 				0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */,
+				FE33E1AB1F29B281003BC178 /* LineMoveVC.h */,
+				FE33E1AC1F29B281003BC178 /* LineMoveVC.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -701,6 +706,7 @@
 		46FA32F811BCD5AF2A1BBA76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FEC5B4761F2861C600747CAB /* AudioToolbox.framework */,
 				6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */,
 			);
 			name = Frameworks;
@@ -921,6 +927,7 @@
 				0D4B28DF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m in Sources */,
 				0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */,
 				0D4B28E11EE7C4D100BB9CC9 /* MineViewController.m in Sources */,
+				FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */,
 				0D4B28D61EE7C4D100BB9CC9 /* CircleProgressVC.m in Sources */,
 				0D4B29051EE953CC00BB9CC9 /* BezierPathViewBase.m in Sources */,
 				0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */,
@@ -937,6 +944,7 @@
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
 				0D4B29121EEA6DC200BB9CC9 /* GradientViewController.m in Sources */,
 				0DA4F4061EE69A0B00ED17B2 /* CountyModel.m in Sources */,
+				FE33E1AD1F29B281003BC178 /* LineMoveVC.m in Sources */,
 				0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */,

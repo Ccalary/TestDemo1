@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //手机截屏通知监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(screenShot) name:UIApplicationUserDidTakeScreenshotNotification object:nil];
 
     [self initView];
@@ -125,6 +126,7 @@
     
 }
 
+//获取屏幕图片
 - (UIImage *)imageWithScreenshot
 {
     CGSize imageSize = CGSizeZero;

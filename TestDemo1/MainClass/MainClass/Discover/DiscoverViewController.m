@@ -13,6 +13,9 @@
 #import "HHPopButton.h"
 #import <pop/POP.h>
 #import "CountdownLabel.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import "NSObject+Common.h"
+
 
 @interface DiscoverViewController ()
 @property (nonatomic, strong) UILabel *countLabel;
@@ -272,11 +275,12 @@
     
     HHPopButton *button = [[HHPopButton alloc] initWithFrame:CGRectMake((ScreenWidth - 254*UIRate)/2, 260, 254*UIRate, 44*UIRate)];
     
-    [button setTitle:@"按钮" forState:UIControlStateNormal];
+    [button setTitle:@"播放声音" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"button_254x44"] forState:UIControlStateNormal];
     button.colicActionBlock = ^(){
-        [LCProgressHUD showMessage:@"点击了按钮（回调结果）"];
+//        [LCProgressHUD showMessage:@"点击了按钮（回调结果）"];
+        AudioServicesPlaySystemSound(1000);
     };
     //可以正常使用
 //    [button addTarget:self action:@selector(buttonaction) forControlEvents:UIControlEventTouchUpInside];
