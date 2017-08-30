@@ -10,6 +10,7 @@ pod 'MJRefresh'
 pod 'pop', '~> 1.0'
 pod 'AFNetworking', '~> 3.0'
 pod 'MJExtension'
+pod 'Masonry'
 
 end
 

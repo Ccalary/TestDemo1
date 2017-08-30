@@ -4,15 +4,15 @@
 //
 //  Created by caohouhong on 17/6/13.
 //  Copyright © 2017年 caohouhong. All rights reserved.
-//
+//  点击按钮周围会有一圈粒子散去，模仿点赞的效果
 
 #import "HHEmitterButton.h"
 @interface HHEmitterButton()
-//@property(strong,nonatomic) CAEmitterLayer *explosionLayer;
+@property(strong,nonatomic) CAEmitterLayer *explosionLayer;
 @end
 
 @implementation HHEmitterButton
-/*
+
 -(void)setSelected:(BOOL)selected
 {
     [super setSelected:selected];
@@ -108,5 +108,4 @@
     self.explosionLayer.birthRate = 0;
     NSLog(@"stopAnimation被执行啦，birthRate = %f",self.explosionLayer.birthRate);
 }
- */
 @end

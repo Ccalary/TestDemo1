@@ -43,6 +43,7 @@
     [MBProgressHUD hideHUDForView:[self currentView] animated:YES];
 }
 
+//获得当前所在的VC
 - (UIView *)currentView{
     UIViewController *controller = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     

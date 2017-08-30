@@ -68,8 +68,9 @@
 		0DE270DC1E87FFA100F6571A /* IndustryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE270DB1E87FFA100F6571A /* IndustryList.m */; };
 		0DE270DF1E88012300F6571A /* IndustrayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE270DE1E88012300F6571A /* IndustrayData.m */; };
 		2252B96B185E6808FC1BB764 /* Pods_TestDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */; };
-		FE33E1AD1F29B281003BC178 /* LineMoveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33E1AC1F29B281003BC178 /* LineMoveVC.m */; };
 		FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */; };
+		FE8AA5341F5699D200BE4842 /* DisTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8AA5331F5699D200BE4842 /* DisTestViewController.m */; };
+		FE8AA53C1F56B38900BE4842 /* RunLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8AA53B1F56B38900BE4842 /* RunLabelView.m */; };
 		FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC5B4741F27391500747CAB /* CountdownLabel.m */; };
 		FEC5B4771F2861C600747CAB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC5B4761F2861C600747CAB /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
@@ -214,10 +215,12 @@
 		14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
-		FE33E1AB1F29B281003BC178 /* LineMoveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineMoveVC.h; sourceTree = "<group>"; };
-		FE33E1AC1F29B281003BC178 /* LineMoveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineMoveVC.m; sourceTree = "<group>"; };
 		FE5FD53B1F344A21003D3C3D /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
 		FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
+		FE8AA5321F5699D200BE4842 /* DisTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisTestViewController.h; sourceTree = "<group>"; };
+		FE8AA5331F5699D200BE4842 /* DisTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisTestViewController.m; sourceTree = "<group>"; };
+		FE8AA53A1F56B38900BE4842 /* RunLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLabelView.h; sourceTree = "<group>"; };
+		FE8AA53B1F56B38900BE4842 /* RunLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLabelView.m; sourceTree = "<group>"; };
 		FEC5B4731F27391500747CAB /* CountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownLabel.h; sourceTree = "<group>"; };
 		FEC5B4741F27391500747CAB /* CountdownLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownLabel.m; sourceTree = "<group>"; };
 		FEC5B4761F2861C600747CAB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -270,6 +273,8 @@
 				0D840AD81EBFFEE7005E078A /* View */,
 				0D08192F1EB0F22F00F4E034 /* DiscoverViewController.h */,
 				0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */,
+				FE8AA5321F5699D200BE4842 /* DisTestViewController.h */,
+				FE8AA5331F5699D200BE4842 /* DisTestViewController.m */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -537,6 +542,7 @@
 		0D5B07371EA8AE2F00FB1AC2 /* MyClass */ = {
 			isa = PBXGroup;
 			children = (
+				FE8AA5391F56B37400BE4842 /* HHRunLabelView */,
 				FEC5B4721F2738CB00747CAB /* HHCountTimeLabel */,
 				0D2428C71ED98103002B52F3 /* Extension */,
 				0D33BB011EEF8EF500AD69EB /* HHEmitterButton */,
@@ -697,8 +703,6 @@
 				0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */,
 				0DB44FE71EA3C2F800ABC0E6 /* HomeViewController.h */,
 				0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */,
-				FE33E1AB1F29B281003BC178 /* LineMoveVC.h */,
-				FE33E1AC1F29B281003BC178 /* LineMoveVC.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -719,6 +723,15 @@
 				14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE8AA5391F56B37400BE4842 /* HHRunLabelView */ = {
+			isa = PBXGroup;
+			children = (
+				FE8AA53A1F56B38900BE4842 /* RunLabelView.h */,
+				FE8AA53B1F56B38900BE4842 /* RunLabelView.m */,
+			);
+			path = HHRunLabelView;
 			sourceTree = "<group>";
 		};
 		FEC5B4721F2738CB00747CAB /* HHCountTimeLabel */ = {
@@ -879,7 +892,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		0ADC39040CBC9969F19700C3 /* [CP] Copy Pods Resources */ = {
@@ -922,11 +935,13 @@
 				0D33BB001EEF8B3500AD69EB /* CAEmitterLayerVC.m in Sources */,
 				0D4F945C1E8ABA2A00070950 /* main.m in Sources */,
 				0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */,
+				FE8AA5341F5699D200BE4842 /* DisTestViewController.m in Sources */,
 				0D4B28D91EE7C4D100BB9CC9 /* ExceptionViewController.m in Sources */,
 				0D4F94501E8AB9B500070950 /* AppDelegate.m in Sources */,
 				0D4B28DF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m in Sources */,
 				0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */,
 				0D4B28E11EE7C4D100BB9CC9 /* MineViewController.m in Sources */,
+				FE8AA53C1F56B38900BE4842 /* RunLabelView.m in Sources */,
 				FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */,
 				0D4B28D61EE7C4D100BB9CC9 /* CircleProgressVC.m in Sources */,
 				0D4B29051EE953CC00BB9CC9 /* BezierPathViewBase.m in Sources */,
@@ -944,7 +959,6 @@
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
 				0D4B29121EEA6DC200BB9CC9 /* GradientViewController.m in Sources */,
 				0DA4F4061EE69A0B00ED17B2 /* CountyModel.m in Sources */,
-				FE33E1AD1F29B281003BC178 /* LineMoveVC.m in Sources */,
 				0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */,

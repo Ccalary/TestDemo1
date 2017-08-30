@@ -15,7 +15,7 @@
 #import "CountdownLabel.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "NSObject+Common.h"
-
+#import "DisTestViewController.h"
 
 @interface DiscoverViewController ()
 @property (nonatomic, strong) UILabel *countLabel;
@@ -24,6 +24,7 @@
 @property (nonatomic, strong) CountdownLabel *countdownLabel;
 @property (nonatomic)CALayer *myCriLayer;
 @property (nonatomic) BOOL animated;
+@property (nonatomic, assign) CGFloat offsetX;
 @end
 
 @implementation DiscoverViewController
@@ -50,6 +51,8 @@
     [self initMoveView];
     
     [self initPopButton];
+    
+    [self partRunLabel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -278,9 +281,13 @@
     [button setTitle:@"播放声音" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"button_254x44"] forState:UIControlStateNormal];
+    __weak typeof (self) weakSelf = self;
     button.colicActionBlock = ^(){
-//        [LCProgressHUD showMessage:@"点击了按钮（回调结果）"];
+        [LCProgressHUD showMessage:@"点击了按钮（回调结果）"];
         AudioServicesPlaySystemSound(1000);
+        
+        [weakSelf.navigationController pushViewController:[[DisTestViewController alloc] init] animated:YES];
+        
     };
     //可以正常使用
 //    [button addTarget:self action:@selector(buttonaction) forControlEvents:UIControlEventTouchUpInside];
@@ -290,6 +297,39 @@
 
 - (void)buttonaction{
      [LCProgressHUD showMessage:@"点击了按钮（正常）"];
+}
+
+#pragma mark - 局部跑马灯
+- (void)partRunLabel{
+    UIView *holdView = [[UIView alloc] initWithFrame:CGRectMake(10, 310, 100, 50)];
+    holdView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:holdView];
+    
+    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 90, 40)];
+    textLabel.textColor = [UIColor redColor];
+    textLabel.backgroundColor = [UIColor greenColor];
+    textLabel.text = @"这是一个跑马灯效果啊1234567890";
+    textLabel.tag = 10000;
+    
+    [holdView addSubview:textLabel];
+    [textLabel sizeToFit];
+    holdView.clipsToBounds = YES;
+     _offsetX = textLabel.frame.origin.x;
+    CADisplayLink *timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLabelAction)];
+    timer.frameInterval = 2.0;
+    [timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+- (void)displayLabelAction{
+    UILabel *label =(UILabel *)[self.view viewWithTag:10000];
+   
+    CGRect rect = label.frame;
+    _offsetX -= 0.5;
+    rect.origin.x = _offsetX;
+    label.frame = rect;
+    if (_offsetX < -90){
+        _offsetX = 100;
+    }
 }
 
 @end

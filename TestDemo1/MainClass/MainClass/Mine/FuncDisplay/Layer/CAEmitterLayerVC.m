@@ -12,7 +12,7 @@
 @interface CAEmitterLayerVC ()
 @property (nonatomic, strong) HHEmitterButton *button;
 @property (nonatomic, strong) UIView *fireView;
-//@property (nonatomic, strong) CAEmitterLayer *emitterLayer;
+@property (nonatomic, strong) CAEmitterLayer *emitterLayer;
 
 @end
 
@@ -22,7 +22,7 @@
     [super viewDidLoad];
 
     [self initView];
-//    [self fireEmitterLayer];
+    [self fireEmitterLayer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,18 +31,17 @@
 }
 
 - (void)initView{
-    _button = [[HHEmitterButton alloc] initWithFrame:CGRectMake(50, 10, 13, 13)];
+    _button = [[HHEmitterButton alloc] initWithFrame:CGRectMake(50, 10, 100, 50)];
     [_button setImage:[UIImage imageNamed:@"icon_xin_n"] forState:UIControlStateNormal];
     [_button setImage:[UIImage imageNamed:@"icon_xin_s"] forState:UIControlStateSelected];
     [_button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
     
-    _fireView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, ScreenWidth, ScreenWidth - 100)];
+    _fireView = [[UIView alloc] initWithFrame:CGRectMake(0, 80, ScreenWidth, ScreenWidth - 100)];
     _fireView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_fireView];
 }
 
-/*
 //粒子发射器
 - (void)fireEmitterLayer{
     
@@ -129,5 +128,4 @@
     self.emitterLayer.birthRate = 0;
    
 }
- */
 @end

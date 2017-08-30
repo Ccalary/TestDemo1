@@ -4,7 +4,7 @@
 //
 //  Created by caohouhong on 17/5/27.
 //  Copyright © 2017年 caohouhong. All rights reserved.
-//
+//  利用pop动画创建的点击按钮就会有动效
 
 #import "HHPopButton.h"
 #import <pop/POP.h>

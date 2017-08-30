@@ -6,6 +6,8 @@
 //  Copyright © 2017年 caohouhong. All rights reserved.
 //
 
+//利用runtime对array的异常进行捕获，例如越界什么的，但是不建议这样使用，因为有了问题很难排查
+
 #import "NSMutableArray+Extension.h"
 #import "objc/runtime.h"
 

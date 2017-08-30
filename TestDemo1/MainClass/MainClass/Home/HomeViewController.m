@@ -12,7 +12,6 @@
 #import "IndustryList.h"
 #import "IndustrayData.h"
 #import "HHPopButton.h"
-#import "LineMoveVC.h"
 
 @implementation Dog
 
@@ -78,7 +77,7 @@
     [nextMonthBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     nextMonthBtn.colicActionBlock = ^(){
-       [self.navigationController pushViewController:[[LineMoveVC alloc] init] animated:YES];
+       [self.navigationController pushViewController:[[FirstViewController alloc] init] animated:YES];
     };
     nextMonthBtn.backgroundColor = [UIColor blueColor];
     
@@ -110,7 +109,7 @@
 //    FirstViewController *vc = [[FirstViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
     
-    [self.navigationController pushViewController:[[LineMoveVC alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[FirstViewController alloc] init] animated:YES];
 }
 
 @end
