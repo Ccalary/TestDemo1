@@ -25,7 +25,6 @@
         self.count = 3;
     }
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
-    [_timer fire];
 }
 
 - (void)countDown{

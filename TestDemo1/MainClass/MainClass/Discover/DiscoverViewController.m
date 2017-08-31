@@ -21,7 +21,6 @@
 @property (nonatomic, strong) UILabel *countLabel;
 @property (nonatomic, strong) UIImageView *gifImageView;
 @property (nonatomic, strong) HHCountingLabel *countingLabel;
-@property (nonatomic, strong) CountdownLabel *countdownLabel;
 @property (nonatomic)CALayer *myCriLayer;
 @property (nonatomic) BOOL animated;
 @property (nonatomic, assign) CGFloat offsetX;
@@ -130,14 +129,14 @@
 
 //倒计时动画
 - (void)initCountdownLabel{
-    _countdownLabel = [[CountdownLabel alloc] initWithFrame:CGRectMake(0, 350, ScreenWidth, 30)];
-    _countdownLabel.textAlignment = NSTextAlignmentCenter;
-    _countdownLabel.textColor = [UIColor blackColor];
-    _countdownLabel.font = FONT_SYSTEM_BOLD(25);
-    [self.view addSubview:_countdownLabel];
+    CountdownLabel *countdownLabel = [[CountdownLabel alloc] initWithFrame:CGRectMake(0, 350, ScreenWidth, 30)];
+    countdownLabel.textAlignment = NSTextAlignmentCenter;
+    countdownLabel.textColor = [UIColor blackColor];
+    countdownLabel.font = FONT_SYSTEM_BOLD(25);
+    [self.view addSubview:countdownLabel];
     
     //开始倒计时
-    [_countdownLabel startCount];
+    [countdownLabel startCount];
 }
 
 #pragma mark - Shake动画
