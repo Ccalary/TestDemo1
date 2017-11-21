@@ -4,7 +4,6 @@ use_frameworks!
 
 target ‘TestDemo1’ do
 
-pod 'Realm'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'MJRefresh'
 pod 'pop', '~> 1.0'

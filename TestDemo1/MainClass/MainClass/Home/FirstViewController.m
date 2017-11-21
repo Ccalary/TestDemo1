@@ -7,12 +7,8 @@
 //
 
 #import "FirstViewController.h"
-#import "Post.h"
-#import "IndustrayData.h"
 #import "HHCountingLabel.h"
 #import "UICountingLabel.h"
-
-@import Realm;
 
 @interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -36,14 +32,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    RLMResults *results = [IndustrayData allObjects];
-   
-    DLog(@"result%@",results);
-
-    for (IndustrayData *data in results){
-        [self.dataArray addObject:data.name?:@""];
-    }
-    [LCProgressHUD showMessage:@"成功"];
     
     [self drawView];
 }

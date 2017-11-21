@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "BaseTabBarController.h"
-#import <Realm/Realm.h>
 #import "HomeViewController.h"
 #import <AFNetworking/AFNetworking.h>
 
@@ -28,39 +27,6 @@
     self.window.rootViewController = [[BaseTabBarController alloc] init];
     
     [self listeningTheNetChange];
-    
-    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
-    // 设置新的架构版本。这个版本号必须高于之前所用的版本号（如果您之前从未设置过架构版本，那么这个版本号设置为 0）
-    DLog(@"realm存储路径：%@",config);
-    config.schemaVersion = 4;
-    
-    // 设置闭包，这个闭包将会在打开低于上面所设置版本号的 Realm 数据库的时候被自动调用
-    config.migrationBlock = ^(RLMMigration *migration, uint64_t oldSchemaVersion) {
-        // 目前我们还未进行数据迁移，因此 oldSchemaVersion == 0
-        if (oldSchemaVersion < 4) {
-            // 什么都不要做！Realm 会自行检测新增和需要移除的属性，然后自动更新硬盘上的数据库架构
-            
-            // enumerateObjects:block: 方法遍历了存储在 Realm 文件中的每一个“Dog”对象
-            
-            /*更改实例
-            [migration enumerateObjects:Dog.className
-                                  block:^(RLMObject *oldObject, RLMObject *newObject) {
-                                      
-                                      // 将名字进行合并，存放在 fullName 域中
-                                      newObject[@"name"] = [NSString stringWithFormat:@"%@",
-                                                                oldObject[@"names"]];
-                                  }];
-             */
-            
-        }
-    };
-    
-    // 告诉 Realm 为默认的 Realm 数据库使用这个新的配置对象
-    [RLMRealmConfiguration setDefaultConfiguration:config];
-    
-    // 现在我们已经告诉了 Realm 如何处理架构的变化，打开文件之后将会自动执行迁移
-    [RLMRealm defaultRealm];
-    
     
     return YES;
 }

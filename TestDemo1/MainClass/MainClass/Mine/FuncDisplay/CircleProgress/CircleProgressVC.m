@@ -9,8 +9,9 @@
 #import "CircleProgressVC.h"
 #import "CycleView.h"
 #import "BlueView.h"
+#import "RoundCoverView.h"
 
-#define TOTAL_TIME 300.0
+#define TOTAL_TIME 3000.0
 @interface CircleProgressVC ()
 @property (nonatomic, strong) UISlider *slider;
 @property (nonatomic, strong) CycleView *cycleView;
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) CADisplayLink *timer;
 @property (nonatomic, assign) int seconds;
 @property (nonatomic, assign) CGFloat progress;
+@property (nonatomic, strong) RoundCoverView *coverLayer;
 @end
 
 @implementation CircleProgressVC
@@ -27,7 +29,7 @@
     
     _seconds = TOTAL_TIME;
     
-    _cycleView = [[CycleView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
+    _cycleView = [[CycleView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth/2.0, 200)];
     _cycleView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_cycleView];
     
@@ -38,6 +40,11 @@
     _blueView = [[BlueView alloc] initWithFrame:CGRectMake(0, 300, ScreenWidth, 300)];
     _blueView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:_blueView];
+    
+    _coverLayer = [[RoundCoverView alloc] initWithFrame:CGRectMake(ScreenWidth/2.0, 0, ScreenWidth/2.0, 200)];
+  
+    [self.view addSubview:_coverLayer];
+    
     
     _timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(startCount)];
     [_timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
@@ -54,6 +61,8 @@
         _seconds--;
         _cycleView.progress = _seconds/TOTAL_TIME;
          [_blueView animationWithStrokeEnd:_seconds/TOTAL_TIME];
+ 
+        [_coverLayer animationWithStokenEnd:_seconds/TOTAL_TIME];
     }else {
         [_timer invalidate];
     }

@@ -82,6 +82,7 @@
 
 - (void)animationWithStrokeEnd:(CGFloat)strokeEnd {
     
+    
     POPSpringAnimation *strokeAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeEnd];
     strokeAnimation.toValue = @(strokeEnd);
     strokeAnimation.springBounciness = 12.f;

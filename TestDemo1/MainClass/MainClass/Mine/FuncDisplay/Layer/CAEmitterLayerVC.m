@@ -128,8 +128,4 @@
     self.emitterLayer.birthRate = 0;
    
 }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 @end

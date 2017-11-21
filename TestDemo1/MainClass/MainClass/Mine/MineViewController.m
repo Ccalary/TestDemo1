@@ -39,14 +39,12 @@
     [self addCell:@"GCD使用" class:@"GCDViewController"];
     [self addCell:@"拖动，摇晃，截屏" class:@"EventViewController"];
     [self addCell:@"蓝牙" class:@"BluetoothVC"];
-    [self addCell:@"realm数据库" class:@"RealmTestVC"];
     [self addCell:@"贝赛尔曲线" class:@"BezierPathVC"];
     [self addCell:@"渐变色" class:@"GradientViewController"];
     [self addCell:@"进度条" class:@"CircleProgressVC"];
     [self addCell:@"Animation" class:@"LoadingAnimationVC"];
     [self addCell:@"Layer、Animation" class:@"LayerAnimationVC"];
     [self addCell:@"CAEmitterLayer" class:@"CAEmitterLayerVC"];
-    
     
     [self drawView];
 }
