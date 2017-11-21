@@ -61,6 +61,10 @@
 		0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */; };
 		0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */; };
 		2252B96B185E6808FC1BB764 /* Pods_TestDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */; };
+		FE5446711FC3C3D7005B96BE /* HHAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE54466D1FC3C3D6005B96BE /* HHAlertController.m */; };
+		FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE54466E1FC3C3D6005B96BE /* HHPopSelectView.m */; };
+		FE5446731FC3C3D7005B96BE /* SendCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5446701FC3C3D7005B96BE /* SendCodeButton.m */; };
+		FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5446781FC3C58B005B96BE /* WidgetViewController.m */; };
 		FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */; };
 		FE89B8FA1F7B975E00576C53 /* RoundCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89B8F91F7B975E00576C53 /* RoundCoverView.m */; };
 		FE8AA5341F5699D200BE4842 /* DisTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8AA5331F5699D200BE4842 /* DisTestViewController.m */; };
@@ -195,6 +199,14 @@
 		14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
+		FE54466B1FC3C3D6005B96BE /* SendCodeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendCodeButton.h; sourceTree = "<group>"; };
+		FE54466C1FC3C3D6005B96BE /* HHPopSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPopSelectView.h; sourceTree = "<group>"; };
+		FE54466D1FC3C3D6005B96BE /* HHAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHAlertController.m; sourceTree = "<group>"; };
+		FE54466E1FC3C3D6005B96BE /* HHPopSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHPopSelectView.m; sourceTree = "<group>"; };
+		FE54466F1FC3C3D6005B96BE /* HHAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAlertController.h; sourceTree = "<group>"; };
+		FE5446701FC3C3D7005B96BE /* SendCodeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendCodeButton.m; sourceTree = "<group>"; };
+		FE5446771FC3C58B005B96BE /* WidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetViewController.h; sourceTree = "<group>"; };
+		FE5446781FC3C58B005B96BE /* WidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WidgetViewController.m; sourceTree = "<group>"; };
 		FE5FD53B1F344A21003D3C3D /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
 		FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
 		FE89B8F81F7B975E00576C53 /* RoundCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundCoverView.h; sourceTree = "<group>"; };
@@ -335,6 +347,7 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				FE5446761FC3C577005B96BE /* HHWidget */,
 				0D4B290F1EEA6DA700BB9CC9 /* Layer */,
 				0D4B28FF1EE9534E00BB9CC9 /* BezierPath */,
 				0D4B28F81EE94C7B00BB9CC9 /* LoadingAnimation */,
@@ -502,6 +515,9 @@
 		0D5B07371EA8AE2F00FB1AC2 /* MyClass */ = {
 			isa = PBXGroup;
 			children = (
+				FE5446751FC3C400005B96BE /* SendCodeButton */,
+				FE5446741FC3C3EC005B96BE /* HHPopSelectView */,
+				FE54466A1FC3C38C005B96BE /* HHAlertController */,
 				FE8AA5391F56B37400BE4842 /* HHRunLabelView */,
 				FEC5B4721F2738CB00747CAB /* HHCountTimeLabel */,
 				0D2428C71ED98103002B52F3 /* Extension */,
@@ -669,6 +685,42 @@
 				14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE54466A1FC3C38C005B96BE /* HHAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				FE54466F1FC3C3D6005B96BE /* HHAlertController.h */,
+				FE54466D1FC3C3D6005B96BE /* HHAlertController.m */,
+			);
+			path = HHAlertController;
+			sourceTree = "<group>";
+		};
+		FE5446741FC3C3EC005B96BE /* HHPopSelectView */ = {
+			isa = PBXGroup;
+			children = (
+				FE54466C1FC3C3D6005B96BE /* HHPopSelectView.h */,
+				FE54466E1FC3C3D6005B96BE /* HHPopSelectView.m */,
+			);
+			path = HHPopSelectView;
+			sourceTree = "<group>";
+		};
+		FE5446751FC3C400005B96BE /* SendCodeButton */ = {
+			isa = PBXGroup;
+			children = (
+				FE54466B1FC3C3D6005B96BE /* SendCodeButton.h */,
+				FE5446701FC3C3D7005B96BE /* SendCodeButton.m */,
+			);
+			path = SendCodeButton;
+			sourceTree = "<group>";
+		};
+		FE5446761FC3C577005B96BE /* HHWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FE5446771FC3C58B005B96BE /* WidgetViewController.h */,
+				FE5446781FC3C58B005B96BE /* WidgetViewController.m */,
+			);
+			path = HHWidget;
 			sourceTree = "<group>";
 		};
 		FE8AA5391F56B37400BE4842 /* HHRunLabelView */ = {
@@ -908,8 +960,10 @@
 				0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */,
 				0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */,
 				FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */,
+				FE5446711FC3C3D7005B96BE /* HHAlertController.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
+				FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */,
 				0D4B28F71EE94C2700BB9CC9 /* UIView+Extension.m in Sources */,
 				0D4B29151EEA717700BB9CC9 /* LayerAnimationVC.m in Sources */,
 				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
@@ -918,6 +972,7 @@
 				0D4B28DC1EE7C4D100BB9CC9 /* MakeExpViewController.m in Sources */,
 				0D4B29021EE9536400BB9CC9 /* BezierPathVC.m in Sources */,
 				0DA4F3EF1EE677F500ED17B2 /* BaseViewController.m in Sources */,
+				FE5446731FC3C3D7005B96BE /* SendCodeButton.m in Sources */,
 				0D4B28D71EE7C4D100BB9CC9 /* CycleView.m in Sources */,
 				0D4B28DE1EE7C4D100BB9CC9 /* RuningTimeViewController.m in Sources */,
 				0D4B28FE1EE94CCC00BB9CC9 /* LoadingAnimationVC.m in Sources */,
@@ -926,6 +981,7 @@
 				0D4B290E1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
+				FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */,
 				0D4B28E01EE7C4D100BB9CC9 /* ShowHUDViewController.m in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,
 				0D4B28D41EE7C4D100BB9CC9 /* BluetoochVC.m in Sources */,

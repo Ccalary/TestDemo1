@@ -31,8 +31,8 @@
     self.dataArray = @[].mutableCopy;
     self.classNameArray = @[].mutableCopy;
     
+    [self addCell:@"小控件" class:@"WidgetViewController"];
     [self addCell:@"全选、删除操作" class:@"SelectAndDeleteVC"];
-    [self addCell:@"showHUD" class:@"ShowHUDViewController"];
     [self addCell:@"runningTime" class:@"RuningTimeViewController"];
     [self addCell:@"异常捕获" class:@"ExceptionViewController"];
     [self addCell:@"抛出异常" class:@"MakeExpViewController"];
@@ -42,6 +42,7 @@
     [self addCell:@"贝赛尔曲线" class:@"BezierPathVC"];
     [self addCell:@"渐变色" class:@"GradientViewController"];
     [self addCell:@"进度条" class:@"CircleProgressVC"];
+    [self addCell:@"showHUD" class:@"ShowHUDViewController"];
     [self addCell:@"Animation" class:@"LoadingAnimationVC"];
     [self addCell:@"Layer、Animation" class:@"LayerAnimationVC"];
     [self addCell:@"CAEmitterLayer" class:@"CAEmitterLayerVC"];
