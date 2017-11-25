@@ -60,6 +60,8 @@
 		0DAD4D1E1E7960F5008018BB /* TestDemo1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D1D1E7960F5008018BB /* TestDemo1UITests.m */; };
 		0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */; };
 		0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */; };
+		0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */; };
+		0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */; };
 		2252B96B185E6808FC1BB764 /* Pods_TestDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */; };
 		FE5446711FC3C3D7005B96BE /* HHAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE54466D1FC3C3D6005B96BE /* HHAlertController.m */; };
 		FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE54466E1FC3C3D6005B96BE /* HHPopSelectView.m */; };
@@ -196,6 +198,10 @@
 		0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		0DB44FE71EA3C2F800ABC0E6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		0DBBE4BB1FC474DD00645A85 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		0DBBE4BE1FC4763900645A85 /* ImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -347,6 +353,7 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				0DBBE4BA1FC474B800645A85 /* GoodTableView */,
 				FE5446761FC3C577005B96BE /* HHWidget */,
 				0D4B290F1EEA6DA700BB9CC9 /* Layer */,
 				0D4B28FF1EE9534E00BB9CC9 /* BezierPath */,
@@ -669,6 +676,17 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		0DBBE4BA1FC474B800645A85 /* GoodTableView */ = {
+			isa = PBXGroup;
+			children = (
+				0DBBE4BB1FC474DD00645A85 /* ImageViewController.h */,
+				0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */,
+				0DBBE4BE1FC4763900645A85 /* ImageTableViewCell.h */,
+				0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */,
+			);
+			path = GoodTableView;
+			sourceTree = "<group>";
+		};
 		46FA32F811BCD5AF2A1BBA76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -956,6 +974,7 @@
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
 				0D4B29121EEA6DC200BB9CC9 /* GradientViewController.m in Sources */,
 				0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */,
+				0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */,
 				0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */,
@@ -981,6 +1000,7 @@
 				0D4B290E1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
+				0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */,
 				FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */,
 				0D4B28E01EE7C4D100BB9CC9 /* ShowHUDViewController.m in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,
