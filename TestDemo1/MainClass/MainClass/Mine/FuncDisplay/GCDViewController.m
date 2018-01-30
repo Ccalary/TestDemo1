@@ -44,7 +44,7 @@
         for (int c=0; c<COLUMN_COUNT; c++) {
             UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(c*ROW_WIDTH+(c*CELL_SPACING), r*ROW_HEIGHT+(r*CELL_SPACING                           ), ROW_WIDTH, ROW_HEIGHT)];
             imageView.contentMode=UIViewContentModeScaleAspectFit;
-            //            imageView.backgroundColor=[UIColor redColor];
+            imageView.backgroundColor=[UIColor redColor];
             [self.view addSubview:imageView];
             [_imageViews addObject:imageView];
             

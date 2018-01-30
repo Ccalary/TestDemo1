@@ -39,21 +39,8 @@
     nextMonthBtn.backgroundColor = [UIColor blueColor];
     
     [self.view addSubview:nextMonthBtn];
-    
 }
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
-
 - (void)nextMonthBtnAction:(UIButton *)button{
-    
-//    FirstViewController *vc = [[FirstViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
     [self.navigationController pushViewController:[[FirstViewController alloc] init] animated:YES];
 }
 

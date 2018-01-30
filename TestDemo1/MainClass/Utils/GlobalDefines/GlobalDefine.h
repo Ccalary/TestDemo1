@@ -19,7 +19,7 @@
 //TabBar高度  iPhoneX 高度为83
 #define TabBarHeight                    ((StatusBarHeight > 20.0f) ? 83.0f : 49.0f)
 //nav顶部高度
-#define TopFullHeight                   StatusBarHeight + NavigationBarHeight
+#define TopFullHeight                   (StatusBarHeight + NavigationBarHeight)
 //屏幕适配
 #define UIRate                          ScreenWidth/375.0
 

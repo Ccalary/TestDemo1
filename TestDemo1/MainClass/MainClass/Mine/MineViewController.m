@@ -46,6 +46,8 @@
     [self addCell:@"Animation" class:@"LoadingAnimationVC"];
     [self addCell:@"Layer、Animation" class:@"LayerAnimationVC"];
     [self addCell:@"CAEmitterLayer" class:@"CAEmitterLayerVC"];
+    [self addCell:@"界面流畅" class:@"FluencyViewController"];
+    [self addCell:@"数据持久化" class:@"DataViewController"];
     
     [self drawView];
 }
@@ -57,17 +59,20 @@
 }
 
 - (void)drawView{
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(rightItemAction:)];
     self.navigationItem.rightBarButtonItem = item;
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.allowsMultipleSelectionDuringEditing = YES;
-    _tableView.tableFooterView = [[UIView alloc] init];
+//    _tableView.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:_tableView];
     
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 180, ScreenWidth, 80)];
     //提示文字
@@ -91,9 +96,9 @@
     }];
 
     _tableView.mj_footer = [HHRefreshNormalFooter footerWithRefreshingBlock:^{
-        
+
         NSLog(@"走了上拉加载");
-        
+
        int x = arc4random() % 10;
         if (x > 6){
             [_tableView.mj_footer endRefreshingWithNoMoreData];

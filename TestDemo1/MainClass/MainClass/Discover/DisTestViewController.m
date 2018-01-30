@@ -8,7 +8,7 @@
 
 #import "DisTestViewController.h"
 #import "RunLabelView.h"
-
+#import "HHPopButton.h"
 @interface DisTestViewController ()
 
 @end
@@ -24,8 +24,8 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
+
 
 - (void)dealloc{
     DLog(@"DisTestViewController 释放了");
@@ -37,6 +37,17 @@
     runLabel.textColor = [UIColor redColor];
     runLabel.text = @"这是一个可以移动的label，你看看就知道了";
     [self.view addSubview:runLabel];
+    
+    HHPopButton *nextMonthBtn = [[HHPopButton alloc] initWithFrame:CGRectMake(50, 150, 100, 50)];
+    [nextMonthBtn setTitle:@"按钮" forState:UIControlStateNormal];
+    [nextMonthBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    nextMonthBtn.colicActionBlock = ^(){
+        [self.navigationController popViewControllerAnimated:YES];
+    };
+    nextMonthBtn.backgroundColor = [UIColor blueColor];
+    
+    [self.view addSubview:nextMonthBtn];
 }
 
 @end

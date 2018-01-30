@@ -71,6 +71,10 @@
 		FE8AA53C1F56B38900BE4842 /* RunLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8AA53B1F56B38900BE4842 /* RunLabelView.m */; };
 		FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC5B4741F27391500747CAB /* CountdownLabel.m */; };
 		FEC5B4771F2861C600747CAB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC5B4761F2861C600747CAB /* AudioToolbox.framework */; };
+		FED04B1A2020087D000F415F /* FluencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED04B192020087D000F415F /* FluencyViewController.m */; };
+		FED04B1D20203488000F415F /* FluencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FED04B1C20203488000F415F /* FluencyTableViewCell.m */; };
+		FED04B2120204C5A000F415F /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED04B2020204C5A000F415F /* DataViewController.m */; };
+		FED04B2420205646000F415F /* StudentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FED04B2320205646000F415F /* StudentsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +222,14 @@
 		FEC5B4731F27391500747CAB /* CountdownLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownLabel.h; sourceTree = "<group>"; };
 		FEC5B4741F27391500747CAB /* CountdownLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownLabel.m; sourceTree = "<group>"; };
 		FEC5B4761F2861C600747CAB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FED04B182020087D000F415F /* FluencyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FluencyViewController.h; sourceTree = "<group>"; };
+		FED04B192020087D000F415F /* FluencyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluencyViewController.m; sourceTree = "<group>"; };
+		FED04B1B20203488000F415F /* FluencyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FluencyTableViewCell.h; sourceTree = "<group>"; };
+		FED04B1C20203488000F415F /* FluencyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluencyTableViewCell.m; sourceTree = "<group>"; };
+		FED04B1F20204C5A000F415F /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		FED04B2020204C5A000F415F /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		FED04B2220205646000F415F /* StudentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentsModel.h; sourceTree = "<group>"; };
+		FED04B2320205646000F415F /* StudentsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +359,8 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				FED04B1E20204C35000F415F /* Data */,
+				FED04B172020086D000F415F /* FluencyTest */,
 				FE5446761FC3C577005B96BE /* HHWidget */,
 				0D4B290F1EEA6DA700BB9CC9 /* Layer */,
 				0D4B28FF1EE9534E00BB9CC9 /* BezierPath */,
@@ -741,6 +755,28 @@
 			path = HHCountTimeLabel;
 			sourceTree = "<group>";
 		};
+		FED04B172020086D000F415F /* FluencyTest */ = {
+			isa = PBXGroup;
+			children = (
+				FED04B1B20203488000F415F /* FluencyTableViewCell.h */,
+				FED04B1C20203488000F415F /* FluencyTableViewCell.m */,
+				FED04B182020087D000F415F /* FluencyViewController.h */,
+				FED04B192020087D000F415F /* FluencyViewController.m */,
+			);
+			path = FluencyTest;
+			sourceTree = "<group>";
+		};
+		FED04B1E20204C35000F415F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FED04B2220205646000F415F /* StudentsModel.h */,
+				FED04B2320205646000F415F /* StudentsModel.m */,
+				FED04B1F20204C5A000F415F /* DataViewController.h */,
+				FED04B2020204C5A000F415F /* DataViewController.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -946,6 +982,7 @@
 				0D4B29051EE953CC00BB9CC9 /* BezierPathViewBase.m in Sources */,
 				0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */,
 				0D4B28DA1EE7C4D100BB9CC9 /* GCDViewController.m in Sources */,
+				FED04B2120204C5A000F415F /* DataViewController.m in Sources */,
 				0D4B28D81EE7C4D100BB9CC9 /* EventViewController.m in Sources */,
 				0D4B28FB1EE94C8F00BB9CC9 /* LoadingViewForOC.m in Sources */,
 				0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */,
@@ -953,6 +990,7 @@
 				0DA4F3E41EE676A400ED17B2 /* Connect.m in Sources */,
 				0D4B28F41EE7F51200BB9CC9 /* DemoHelper.m in Sources */,
 				0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */,
+				FED04B2420205646000F415F /* StudentsModel.m in Sources */,
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
 				0D4B29121EEA6DC200BB9CC9 /* GradientViewController.m in Sources */,
 				0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */,
@@ -969,6 +1007,7 @@
 				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
 				0DA4F3ED1EE677F500ED17B2 /* BaseNavigationController.m in Sources */,
 				0D33BB041EEF8F2700AD69EB /* HHEmitterButton.m in Sources */,
+				FED04B1A2020087D000F415F /* FluencyViewController.m in Sources */,
 				0D4B28DC1EE7C4D100BB9CC9 /* MakeExpViewController.m in Sources */,
 				0D4B29021EE9536400BB9CC9 /* BezierPathVC.m in Sources */,
 				0DA4F3EF1EE677F500ED17B2 /* BaseViewController.m in Sources */,
@@ -979,6 +1018,7 @@
 				0DA4F3EE1EE677F500ED17B2 /* BaseTabBarController.m in Sources */,
 				0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */,
 				0D4B290E1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m in Sources */,
+				FED04B1D20203488000F415F /* FluencyTableViewCell.m in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */,

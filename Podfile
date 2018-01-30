@@ -5,7 +5,7 @@ use_frameworks!
 target ‘TestDemo1’ do
 
 pod 'MBProgressHUD', '~> 1.0.0'
-pod 'MJRefresh'
+pod 'MJRefresh', '~> 3.1.15'
 pod 'pop', '~> 1.0'
 pod 'AFNetworking', '~> 3.0'
 pod 'MJExtension'
