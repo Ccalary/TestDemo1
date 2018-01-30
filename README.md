@@ -50,6 +50,10 @@
 ## 2017.7.25
 * 类似直播的321倒计时
 
-
+## 2017.11.21
+* 局部跑马灯HHRunLabelView
+* 倒计时按钮（发送验证码）
+* 封装UIAlertController-HHAlertController
+* 弹出菜单（加三角的）HHPopSelectView
 
 

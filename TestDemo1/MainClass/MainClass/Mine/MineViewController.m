@@ -33,6 +33,7 @@
     
     [self addCell:@"小控件" class:@"WidgetViewController"];
     [self addCell:@"全选、删除操作" class:@"SelectAndDeleteVC"];
+    [self addCell:@"tableView优化" class:@"ImageViewController"];
     [self addCell:@"runningTime" class:@"RuningTimeViewController"];
     [self addCell:@"异常捕获" class:@"ExceptionViewController"];
     [self addCell:@"抛出异常" class:@"MakeExpViewController"];
