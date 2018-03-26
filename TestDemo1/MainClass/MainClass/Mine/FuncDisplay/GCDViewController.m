@@ -117,7 +117,6 @@
     dispatch_queue_t globalQueue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     //创建多个线程用于填充图片
     for (int i=0; i<count; ++i) {
-       
         //异步执行队列任务
         dispatch_async(globalQueue, ^{
              [self loadImage:[NSNumber numberWithInt:i]];

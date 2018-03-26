@@ -365,12 +365,12 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
+
 				FED04B1E20204C35000F415F /* Data */,
 				FED04B172020086D000F415F /* FluencyTest */,
-=======
+
 				0DBBE4BA1FC474B800645A85 /* GoodTableView */,
->>>>>>> origin/master
+
 				FE5446761FC3C577005B96BE /* HHWidget */,
 				0D4B290F1EEA6DA700BB9CC9 /* Layer */,
 				0D4B28FF1EE9534E00BB9CC9 /* BezierPath */,

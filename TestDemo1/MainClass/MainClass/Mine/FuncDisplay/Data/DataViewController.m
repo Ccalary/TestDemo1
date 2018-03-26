@@ -20,6 +20,26 @@
     [self initPathView];
     [self plistMethod];
     [self keyedArchiverMethod];
+    
+
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    CALayer *layer = [CALayer layer];
+    layer.backgroundColor = [UIColor greenColor].CGColor;
+    layer.frame = CGRectMake(0, 400, 100, 100);
+    [self.view.layer addSublayer:layer];
+    
+    UIView *cView = [[UIView alloc] initWithFrame:CGRectMake(0, 510, 100, 100)];
+    cView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:cView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        cView.frame = CGRectOffset(cView.frame, 200, 0);
+        layer.frame = CGRectOffset(layer.frame, 100, 0);
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,8 +118,8 @@
     NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
     NSString *fileName = [docPath stringByAppendingPathComponent:@"123.plist"];
     //2、存储
-//    NSArray *array = @[@"a",@"b",@"c"];
-//    [array writeToFile:fileName atomically:YES];
+    NSArray *array = @[@"a",@"b",@"c"];
+    [array writeToFile:fileName atomically:YES];
     
 //    NSString *str = @"plist";
 //    [str writeToFile:fileName atomically:YES encoding:NSUTF8StringEncoding error:nil];
@@ -114,11 +134,11 @@
 //    //归档
     NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
     NSString *fileName = [docPath stringByAppendingPathComponent:@"student.data"];
-//    StudentsModel *student = [[StudentsModel alloc] init];
-//    student.avatar = [UIImage imageNamed:@"icon_xin_s"];
-//    student.name = @"MC";
-//    student.age = 26;
-//    [NSKeyedArchiver archiveRootObject:student toFile:fileName];
+    StudentsModel *student = [[StudentsModel alloc] init];
+    student.avatar = [UIImage imageNamed:@"icon_xin_s"];
+    student.name = @"MC";
+    student.age = 26;
+    [NSKeyedArchiver archiveRootObject:student toFile:fileName];
     
     //解档
     StudentsModel *sModel = [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
