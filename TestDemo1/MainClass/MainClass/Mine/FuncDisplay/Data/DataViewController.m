@@ -20,10 +20,6 @@
     [self initPathView];
     [self plistMethod];
     [self keyedArchiverMethod];
-    
-
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -37,6 +33,7 @@
     cView.backgroundColor = [UIColor redColor];
     [self.view addSubview:cView];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //根据原frame更改位置
         cView.frame = CGRectOffset(cView.frame, 200, 0);
         layer.frame = CGRectOffset(layer.frame, 100, 0);
     });

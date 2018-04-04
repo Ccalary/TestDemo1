@@ -8,6 +8,7 @@
 
 #import "MineViewController.h"
 #import "HomeViewController.h"
+#import "IconfontViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -49,6 +50,7 @@
     [self addCell:@"CAEmitterLayer" class:@"CAEmitterLayerVC"];
     [self addCell:@"界面流畅" class:@"FluencyViewController"];
     [self addCell:@"数据持久化" class:@"DataViewController"];
+    [self addCell:@"IconFont" class:@"IconfontViewController"];
     
     [self drawView];
 }

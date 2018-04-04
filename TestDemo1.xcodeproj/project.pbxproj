@@ -77,6 +77,10 @@
 		FED04B1D20203488000F415F /* FluencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FED04B1C20203488000F415F /* FluencyTableViewCell.m */; };
 		FED04B2120204C5A000F415F /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED04B2020204C5A000F415F /* DataViewController.m */; };
 		FED04B2420205646000F415F /* StudentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FED04B2320205646000F415F /* StudentsModel.m */; };
+		FEEFEBED2074A87900B1E803 /* UIImage+IconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEFEBEC2074A87900B1E803 /* UIImage+IconFont.m */; };
+		FEEFEBF12074A8E700B1E803 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEFEBEF2074A8E700B1E803 /* iconfont.ttf */; };
+		FEEFEBF22074A8E700B1E803 /* demo_unicode.html in Resources */ = {isa = PBXBuildFile; fileRef = FEEFEBF02074A8E700B1E803 /* demo_unicode.html */; };
+		FEEFEBF62074AFCA00B1E803 /* IconfontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEFEBF52074AFCA00B1E803 /* IconfontViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +240,12 @@
 		FED04B2020204C5A000F415F /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
 		FED04B2220205646000F415F /* StudentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentsModel.h; sourceTree = "<group>"; };
 		FED04B2320205646000F415F /* StudentsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentsModel.m; sourceTree = "<group>"; };
+		FEEFEBEB2074A87900B1E803 /* UIImage+IconFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+IconFont.h"; sourceTree = "<group>"; };
+		FEEFEBEC2074A87900B1E803 /* UIImage+IconFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IconFont.m"; sourceTree = "<group>"; };
+		FEEFEBEF2074A8E700B1E803 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		FEEFEBF02074A8E700B1E803 /* demo_unicode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_unicode.html; sourceTree = "<group>"; };
+		FEEFEBF42074AFCA00B1E803 /* IconfontViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IconfontViewController.h; sourceTree = "<group>"; };
+		FEEFEBF52074AFCA00B1E803 /* IconfontViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconfontViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,12 +375,10 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
-
+				FEEFEBF32074AF9200B1E803 /* IconFont */,
 				FED04B1E20204C35000F415F /* Data */,
 				FED04B172020086D000F415F /* FluencyTest */,
-
 				0DBBE4BA1FC474B800645A85 /* GoodTableView */,
-
 				FE5446761FC3C577005B96BE /* HHWidget */,
 				0D4B290F1EEA6DA700BB9CC9 /* Layer */,
 				0D4B28FF1EE9534E00BB9CC9 /* BezierPath */,
@@ -464,6 +472,7 @@
 		0D4F944A1E8AB96C00070950 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FEEFEBEE2074A8D000B1E803 /* IconFont */,
 				0D4F944B1E8AB98900070950 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -584,6 +593,7 @@
 		0DA4F3E01EE675F400ED17B2 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				FEEFEBEA2074A82100B1E803 /* Extension */,
 				0D4B28EE1EE7F32B00BB9CC9 /* Helper */,
 				0DA4F3E11EE6768800ED17B2 /* Net */,
 			);
@@ -798,6 +808,33 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		FEEFEBEA2074A82100B1E803 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FEEFEBEB2074A87900B1E803 /* UIImage+IconFont.h */,
+				FEEFEBEC2074A87900B1E803 /* UIImage+IconFont.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FEEFEBEE2074A8D000B1E803 /* IconFont */ = {
+			isa = PBXGroup;
+			children = (
+				FEEFEBF02074A8E700B1E803 /* demo_unicode.html */,
+				FEEFEBEF2074A8E700B1E803 /* iconfont.ttf */,
+			);
+			path = IconFont;
+			sourceTree = "<group>";
+		};
+		FEEFEBF32074AF9200B1E803 /* IconFont */ = {
+			isa = PBXGroup;
+			children = (
+				FEEFEBF42074AFCA00B1E803 /* IconfontViewController.h */,
+				FEEFEBF52074AFCA00B1E803 /* IconfontViewController.m */,
+			);
+			path = IconFont;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -912,6 +949,8 @@
 			files = (
 				0D5B07351EA84B8200FB1AC2 /* LCProgressHUD.bundle in Resources */,
 				0D2A5F401EC55B7E00F41D4D /* Main.storyboard in Resources */,
+				FEEFEBF12074A8E700B1E803 /* iconfont.ttf in Resources */,
+				FEEFEBF22074A8E700B1E803 /* demo_unicode.html in Resources */,
 				0D2A5F3F1EC55B7E00F41D4D /* LaunchScreen.storyboard in Resources */,
 				0D4F945B1E8ABA2A00070950 /* Info.plist in Resources */,
 				0D4F944C1E8AB98900070950 /* Assets.xcassets in Resources */,
@@ -992,6 +1031,7 @@
 				0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */,
 				FE8AA5341F5699D200BE4842 /* DisTestViewController.m in Sources */,
 				0D4B28D91EE7C4D100BB9CC9 /* ExceptionViewController.m in Sources */,
+				FEEFEBF62074AFCA00B1E803 /* IconfontViewController.m in Sources */,
 				0D4F94501E8AB9B500070950 /* AppDelegate.m in Sources */,
 				0D4B28DF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m in Sources */,
 				FE89B8FA1F7B975E00576C53 /* RoundCoverView.m in Sources */,
@@ -1044,6 +1084,7 @@
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */,
+				FEEFEBED2074A87900B1E803 /* UIImage+IconFont.m in Sources */,
 				FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */,
 				0D4B28E01EE7C4D100BB9CC9 /* ShowHUDViewController.m in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,
