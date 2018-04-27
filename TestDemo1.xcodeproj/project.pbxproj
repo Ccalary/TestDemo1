@@ -62,6 +62,8 @@
 		0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */; };
 		0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */; };
 		0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */; };
+		0DF39CF220931F6E007518B7 /* UIView+MCTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF39CF020931F6D007518B7 /* UIView+MCTransition.m */; };
+		0DF39CF62093228F007518B7 /* TransitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF39CF52093228F007518B7 /* TransitonViewController.m */; };
 		2252B96B185E6808FC1BB764 /* Pods_TestDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */; };
 		FE5446711FC3C3D7005B96BE /* HHAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE54466D1FC3C3D6005B96BE /* HHAlertController.m */; };
 		FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE54466E1FC3C3D6005B96BE /* HHPopSelectView.m */; };
@@ -210,6 +212,10 @@
 		0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		0DBBE4BE1FC4763900645A85 /* ImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
 		0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
+		0DF39CF020931F6D007518B7 /* UIView+MCTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MCTransition.m"; sourceTree = "<group>"; };
+		0DF39CF120931F6E007518B7 /* UIView+MCTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MCTransition.h"; sourceTree = "<group>"; };
+		0DF39CF42093228F007518B7 /* TransitonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitonViewController.h; sourceTree = "<group>"; };
+		0DF39CF52093228F007518B7 /* TransitonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitonViewController.m; sourceTree = "<group>"; };
 		14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +381,7 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				0DF39CF320932275007518B7 /* Transition */,
 				FEEFEBF32074AF9200B1E803 /* IconFont */,
 				FED04B1E20204C35000F415F /* Data */,
 				FED04B172020086D000F415F /* FluencyTest */,
@@ -714,6 +721,15 @@
 			path = GoodTableView;
 			sourceTree = "<group>";
 		};
+		0DF39CF320932275007518B7 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				0DF39CF42093228F007518B7 /* TransitonViewController.h */,
+				0DF39CF52093228F007518B7 /* TransitonViewController.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		46FA32F811BCD5AF2A1BBA76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +827,8 @@
 		FEEFEBEA2074A82100B1E803 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0DF39CF120931F6E007518B7 /* UIView+MCTransition.h */,
+				0DF39CF020931F6D007518B7 /* UIView+MCTransition.m */,
 				FEEFEBEB2074A87900B1E803 /* UIImage+IconFont.h */,
 				FEEFEBEC2074A87900B1E803 /* UIImage+IconFont.m */,
 			);
@@ -1041,6 +1059,7 @@
 				FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */,
 				0D4B28D61EE7C4D100BB9CC9 /* CircleProgressVC.m in Sources */,
 				0D4B29051EE953CC00BB9CC9 /* BezierPathViewBase.m in Sources */,
+				0DF39CF220931F6E007518B7 /* UIView+MCTransition.m in Sources */,
 				0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */,
 				0D4B28DA1EE7C4D100BB9CC9 /* GCDViewController.m in Sources */,
 				FED04B2120204C5A000F415F /* DataViewController.m in Sources */,
@@ -1058,6 +1077,7 @@
 				0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */,
+				0DF39CF62093228F007518B7 /* TransitonViewController.m in Sources */,
 				0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */,
 				FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */,
 				FE5446711FC3C3D7005B96BE /* HHAlertController.m in Sources */,

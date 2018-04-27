@@ -47,10 +47,11 @@
     [self addCell:@"showHUD" class:@"ShowHUDViewController"];
     [self addCell:@"Animation" class:@"LoadingAnimationVC"];
     [self addCell:@"Layer、Animation" class:@"LayerAnimationVC"];
-    [self addCell:@"CAEmitterLayer" class:@"CAEmitterLayerVC"];
+    [self addCell:@"粒子动画" class:@"CAEmitterLayerVC"];
     [self addCell:@"界面流畅" class:@"FluencyViewController"];
     [self addCell:@"数据持久化" class:@"DataViewController"];
     [self addCell:@"IconFont" class:@"IconfontViewController"];
+    [self addCell:@"转场动画" class:@"TransitonViewController"];
     
     [self drawView];
 }
