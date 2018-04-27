@@ -62,3 +62,6 @@
 
 ## 2018.4.4
 * Iconfont的使用
+
+## 2018.4.27
+* 增加对转场动画的封装，实现UIView+MCTransition
