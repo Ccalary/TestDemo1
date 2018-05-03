@@ -24,7 +24,7 @@
     
 }
 
-#pragma mark - 异常捕获
+#pragma mark - 异常捕获 只能捕获部分能检测到的异常，很多异常是捕获不到的
 - (void)catchTheCrash{
     
     @try {

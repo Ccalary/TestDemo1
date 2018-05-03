@@ -79,16 +79,16 @@
     // 动画的速度变化
     switch (timingFunc) {
         case MCTransitonAnimTimingFuncLinear:
-            trans.timingFunction =  [CAMediaTimingFunction functionWithName:@"linear"];
+            trans.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
             break;
         case MCTransitonAnimTimingFuncEaseIn:
-            trans.timingFunction =  [CAMediaTimingFunction functionWithName:@"easeIn"];
+            trans.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
             break;
         case MCTransitonAnimTimingFuncEaseOut:
-            trans.timingFunction =  [CAMediaTimingFunction functionWithName:@"easeOut"];
+            trans.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
             break;
         case MCTransitonAnimTimingFuncEaseInEaseOut:
-            trans.timingFunction =  [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
+            trans.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
             break;
         default:
             break;

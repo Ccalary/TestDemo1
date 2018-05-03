@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "FirstViewController.h"
 #import "HHPopButton.h"
-
+#import "UIView+MCTransition.h"
 @interface HomeViewController ()
 
 @end
@@ -34,14 +34,15 @@
     [nextMonthBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     nextMonthBtn.colicActionBlock = ^(){
-       [self.navigationController pushViewController:[[FirstViewController alloc] init] animated:YES];
+        [self nextMonthBtnAction];
     };
     nextMonthBtn.backgroundColor = [UIColor blueColor];
     
     [self.view addSubview:nextMonthBtn];
 }
-- (void)nextMonthBtnAction:(UIButton *)button{
-    [self.navigationController pushViewController:[[FirstViewController alloc] init] animated:YES];
+- (void)nextMonthBtnAction{
+    FirstViewController *viewVC = [[FirstViewController alloc] init];
+    [self.navigationController pushViewController:viewVC animated:YES];
 }
 
 @end

@@ -13,18 +13,19 @@
  动画效果
  */
 typedef enum {
-    MCTransitonAnimTypeFade,        //渐变，效果不明显
+    MCTransitonAnimTypeFade,        //渐变，(不支持过渡方向)
     MCTransitonAnimTypeMoveIn,      //新的移入
     MCTransitonAnimTypeReveal,      //旧的移出
     MCTransitonAnimTypePush,         //推入,新的推入旧的推出
+    //非公开动画效果，字符串访问
     MCTransitonAnimTypePageCurl,    // 向上翻一页
     MCTransitonAnimTypePageUnCurl,  // 向下翻一页
-    MCTransitonAnimTypeRippleEffect,// 波纹
+    MCTransitonAnimTypeRippleEffect,// 波纹(不支持过渡方向)
     MCTransitonAnimTypeSuckEffect,  // 像一块布被抽走
     MCTransitonAnimTypeCube,        // 立方体
     MCTransitonAnimTypeOglFlip,     // 平面反转
-    MCTransitonAnimTypeCameraIrisHollowOpen, //摄像机开
-    MCTransitonAnimTypeCameraIrisHollowClose //摄像机关
+    MCTransitonAnimTypeCameraIrisHollowOpen, //摄像机开(不支持过渡方向)
+    MCTransitonAnimTypeCameraIrisHollowClose //摄像机关(不支持过渡方向)
  
 } MCTransitonAnimType;
 
