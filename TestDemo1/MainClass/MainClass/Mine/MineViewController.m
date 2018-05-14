@@ -52,6 +52,7 @@
     [self addCell:@"数据持久化" class:@"DataViewController"];
     [self addCell:@"IconFont" class:@"IconfontViewController"];
     [self addCell:@"转场动画" class:@"TransitonViewController"];
+    [self addCell:@"WebImage" class:@"WebImageTableVC"];
     
     [self drawView];
 }

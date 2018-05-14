@@ -25,8 +25,17 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD (~> 1.0.0)
   - MJExtension
-  - MJRefresh (~> 3.1.15)
+  - MJRefresh (~> 3.1.15.1)
   - pop (~> 1.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - pop
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -36,6 +45,6 @@ SPEC CHECKSUMS:
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: 59e1c4540e9cb071b04157d7ee2bd89f83da9314
+PODFILE CHECKSUM: 728369a01753b57a3a4aa7e2972568cab2e730a6
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

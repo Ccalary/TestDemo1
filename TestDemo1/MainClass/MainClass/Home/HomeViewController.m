@@ -24,6 +24,7 @@
     [self initView];
 }
 
+
 - (void)initView{
     UIView *holdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
     holdView.backgroundColor = [UIColor grayColor];

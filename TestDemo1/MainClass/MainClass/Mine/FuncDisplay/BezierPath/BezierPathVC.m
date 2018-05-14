@@ -204,6 +204,7 @@
     self.wipeImageView.image = newImage;
 }
 
+// 选择特定的框
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     UITouch *touch = touches.anyObject;
     self.startPoint = [touch locationInView:self.view];

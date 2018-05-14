@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9C55B772DB41F7F91490B041E745ECFB'
-               BlueprintName = 'pop'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'pop.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E77BC6D57AD8752BEA59BBC26F93C381"
+               BlueprintName = "pop"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "pop.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
