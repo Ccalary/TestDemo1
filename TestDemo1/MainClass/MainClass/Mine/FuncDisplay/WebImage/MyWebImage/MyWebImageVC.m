@@ -10,6 +10,7 @@
 #import "MyCustomTableViewCell.h"
 #import "FPSTools.h"
 
+
 @interface MyWebImageVC ()
 @property (nonatomic, strong) NSMutableArray<NSString *> *objects;
 @property (nonatomic, strong) FPSTools *fps;
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) NSBlockOperation *lastOperation;
 @property (nonatomic, strong) NSCache *operationCache; // 存储在下载的线程，避免同一个资源多次下载
 @property (nonatomic, strong) NSMutableDictionary *imageMemaryCache; // 图片资源内存存储
+
 @end
 
 @implementation MyWebImageVC
@@ -52,6 +54,7 @@
     for (int i=0; i<9; i++) {
         [self.objects addObject:[NSString stringWithFormat:@"http://images.cnblogs.com/cnblogs_com/kenshincui/613474/o_%i.jpg",i]];
     }
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -92,7 +95,7 @@
     NSURL *url = [NSURL URLWithString:imageStr];
     
     UIImage *cacheImage = self.imageMemaryCache[imageStr];
-    
+//    UIImage *cacheImage = [self.memoryCache objectForKey:imageStr];
     if (cacheImage){
         cell.customImageView.image = cacheImage;
     }else {
@@ -143,6 +146,18 @@
 
 - (void)start {
     [self.tableView reloadData];
+    [self creatFile];
+}
+
+- (void)creatFile {
+    NSString *libCachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *fileName = [libCachePath stringByAppendingPathComponent:@"imageCache"];
+    NSLog(@"cache:%@",fileName);
+    
+    BOOL isSuccess = [[NSFileManager defaultManager] createDirectoryAtPath:fileName withIntermediateDirectories:YES attributes:nil error:NULL];
+    if (isSuccess){
+        NSLog(@"文件夹创建成功");
+    }
 }
 @end
 

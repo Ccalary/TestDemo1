@@ -14,7 +14,7 @@
 #define LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
 #define UNLOCK(lock) dispatch_semaphore_signal(lock);
 
-// 计算图片大小
+// 计算图片大小-内联函数
 FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 #if SD_MAC
     return image.size.height * image.size.width;
@@ -54,6 +54,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         // At this case, we can sync weak cache back and do not need to load from disk cache
         self.weakCache = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsStrongMemory valueOptions:NSPointerFunctionsWeakMemory capacity:0];
         self.weakCacheLock = dispatch_semaphore_create(1);
+        // 监听内存情况，如果收到内存警告则清空
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(didReceiveMemoryWarning:)
                                                      name:UIApplicationDidReceiveMemoryWarningNotification
@@ -230,10 +231,13 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     //原始的Key：http://pic1.kevke.com/13538784933/product/20160717111045.jpg@250h_1l
     //转化后的Key：2fad1e83a0dcf2cff61f01a80b6f2d55.jpg@250h_1l
     // MD5 加密
+    // 官方封装好的加密方法
+    // 把str字符串转换成了32位的16进制数列（这个过程不可逆转） 存储到了r这个空间中
     unsigned char r[CC_MD5_DIGEST_LENGTH];
     CC_MD5(str, (CC_LONG)strlen(str), r);
     NSURL *keyURL = [NSURL URLWithString:key];
     NSString *ext = keyURL ? keyURL.pathExtension : key.pathExtension;
+    // 最终生成的文件名就是 "md5码"+".文件类型"
     NSString *filename = [NSString stringWithFormat:@"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%@",
                           r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9], r[10],
                           r[11], r[12], r[13], r[14], r[15], ext.length == 0 ? @"" : [NSString stringWithFormat:@".%@", ext]];
@@ -251,7 +255,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
 - (void)storeImage:(nullable UIImage *)image
             forKey:(nullable NSString *)key
         completion:(nullable SDWebImageNoParamsBlock)completionBlock {
-    [self storeImage:image imageData:nil forKey:key toDisk:YES completion:completionBlock];
+    [self storeImage:image imageData:nil forKey:key toDisk:NO completion:completionBlock];
 }
 
 - (void)storeImage:(nullable UIImage *)image

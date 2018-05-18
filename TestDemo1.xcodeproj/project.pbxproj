@@ -47,6 +47,7 @@
 		0D33BB041EEF8F2700AD69EB /* HHEmitterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D33BB031EEF8F2700AD69EB /* HHEmitterButton.m */; };
 		0D3439FB20A19F11003FEB84 /* SDWebImageTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3439F920A19F11003FEB84 /* SDWebImageTableVC.m */; };
 		0D37982A20A578B30039352F /* WebImagePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D37982920A578B30039352F /* WebImagePlist.plist */; };
+		0D37982D20A97A850039352F /* MCMemeryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D37982C20A97A850039352F /* MCMemeryCache.m */; };
 		0D4B28D41EE7C4D100BB9CC9 /* BluetoochVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28B81EE7C4D100BB9CC9 /* BluetoochVC.m */; };
 		0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28BB1EE7C4D100BB9CC9 /* BlueView.m */; };
 		0D4B28D61EE7C4D100BB9CC9 /* CircleProgressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28BD1EE7C4D100BB9CC9 /* CircleProgressVC.m */; };
@@ -83,6 +84,7 @@
 		0D61E68220A4313200665577 /* FPSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E68120A4313200665577 /* FPSTools.m */; };
 		0D61E68620A43AF600665577 /* CNPPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E68520A43AF600665577 /* CNPPopupController.m */; };
 		0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6C0DEA1F03495F0005745A /* NSObject+Common.m */; };
+		0D72365920AA870800C88CDB /* UIColor+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72365820AA870800C88CDB /* UIColor+App.m */; };
 		0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */; };
 		0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */; };
 		0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D840ADB1EBFFF28005E078A /* Draw2DView.m */; };
@@ -217,6 +219,8 @@
 		0D3439F820A19F11003FEB84 /* SDWebImageTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDWebImageTableVC.h; sourceTree = "<group>"; };
 		0D3439F920A19F11003FEB84 /* SDWebImageTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDWebImageTableVC.m; sourceTree = "<group>"; };
 		0D37982920A578B30039352F /* WebImagePlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = WebImagePlist.plist; sourceTree = "<group>"; };
+		0D37982B20A97A850039352F /* MCMemeryCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMemeryCache.h; sourceTree = "<group>"; };
+		0D37982C20A97A850039352F /* MCMemeryCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCMemeryCache.m; sourceTree = "<group>"; };
 		0D4B28B71EE7C4D100BB9CC9 /* BluetoochVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoochVC.h; sourceTree = "<group>"; };
 		0D4B28B81EE7C4D100BB9CC9 /* BluetoochVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoochVC.m; sourceTree = "<group>"; };
 		0D4B28BA1EE7C4D100BB9CC9 /* BlueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueView.h; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 		0D61E68520A43AF600665577 /* CNPPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPPopupController.m; sourceTree = "<group>"; };
 		0D6C0DE91F03495F0005745A /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
 		0D6C0DEA1F03495F0005745A /* NSObject+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
+		0D72365720AA870700C88CDB /* UIColor+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+App.h"; sourceTree = "<group>"; };
+		0D72365820AA870800C88CDB /* UIColor+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+App.m"; sourceTree = "<group>"; };
 		0D77DF431ED69FBE000F3C1A /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		0D77DF461ED6AD9E000F3C1A /* HHCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCountingLabel.h; sourceTree = "<group>"; };
@@ -547,6 +553,8 @@
 		0D2428C71ED98103002B52F3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0D72365720AA870700C88CDB /* UIColor+App.h */,
+				0D72365820AA870800C88CDB /* UIColor+App.m */,
 				0D6C0DE91F03495F0005745A /* NSObject+Common.h */,
 				0D6C0DEA1F03495F0005745A /* NSObject+Common.m */,
 				0D4B28F51EE94C2700BB9CC9 /* UIView+Extension.h */,
@@ -830,6 +838,8 @@
 			children = (
 				0D61E67520A4178B00665577 /* MyWebImageVC.h */,
 				0D61E67620A4178B00665577 /* MyWebImageVC.m */,
+				0D37982B20A97A850039352F /* MCMemeryCache.h */,
+				0D37982C20A97A850039352F /* MCMemeryCache.m */,
 			);
 			path = MyWebImage;
 			sourceTree = "<group>";
@@ -1345,6 +1355,7 @@
 				FE89B8FA1F7B975E00576C53 /* RoundCoverView.m in Sources */,
 				0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */,
 				0D61E68220A4313200665577 /* FPSTools.m in Sources */,
+				0D37982D20A97A850039352F /* MCMemeryCache.m in Sources */,
 				0D4B28E11EE7C4D100BB9CC9 /* MineViewController.m in Sources */,
 				FE8AA53C1F56B38900BE4842 /* RunLabelView.m in Sources */,
 				FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */,
@@ -1419,6 +1430,7 @@
 				0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */,
 				0D4B290E1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m in Sources */,
 				FED04B1D20203488000F415F /* FluencyTableViewCell.m in Sources */,
+				0D72365920AA870800C88CDB /* UIColor+App.m in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */,

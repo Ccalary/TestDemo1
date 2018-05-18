@@ -20,23 +20,20 @@
     [self initPathView];
     [self plistMethod];
     [self keyedArchiverMethod];
+    
+//    [self getHomePath];
+//    [self getDocumentsPath];
+//    [self createFolder];
+//    [self createFile];
+//    [self writeFile];
+//    [self addFile];
+//    [self writeImage];
+//    [self getFileData:@""];
+//    [self getFileSizeWithPath:@""];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    CALayer *layer = [CALayer layer];
-    layer.backgroundColor = [UIColor greenColor].CGColor;
-    layer.frame = CGRectMake(0, 400, 100, 100);
-    [self.view.layer addSublayer:layer];
-    
-    UIView *cView = [[UIView alloc] initWithFrame:CGRectMake(0, 510, 100, 100)];
-    cView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:cView];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //根据原frame更改位置
-        cView.frame = CGRectOffset(cView.frame, 200, 0);
-        layer.frame = CGRectOffset(layer.frame, 100, 0);
-    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -151,4 +148,221 @@
     [self.view addSubview:label];
     return label;
 }
+
+// 获取沙盒路径
+- (NSString *)getHomePath {
+    NSString *homePath = NSHomeDirectory();
+    NSLog(@"path:%@",homePath);
+    return homePath;
+}
+
+// 获取Documents路径
+- (NSString *)getDocumentsPath {
+    // 检索指定路径，
+    //参数1-搜索的路径名称
+    //参数2-限定了在沙盒内部
+    NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath = docPaths.firstObject;
+    return documentPath;
+}
+
+// 获取Library路径
+- (NSString *)getLibraryPath {
+    NSArray *libPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *libraryPath = libPaths.firstObject;
+    return libraryPath;
+}
+
+// 获取Cache路径
+- (NSString *)getCachePath {
+    NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = cachePaths.firstObject;
+    return cachePath;
+}
+
+// 获取Tmp路径
+- (NSString *)getTmpPath {
+    NSString *tmpPath = NSTemporaryDirectory();
+    return tmpPath;
+}
+
+// 路径函数处理
+- (void)parsePath {
+    NSString *path = @"/Library/Developer/CoreSimulator/Devices/test.png";
+    // 获得路径的各个组成部分
+    NSArray *array = [path pathComponents];
+    // 提取路径最后一个组成部分
+    NSString *lastName = [path lastPathComponent];
+    // 删除路径最后一个组成部分
+    NSString *delPath = [path stringByDeletingLastPathComponent];
+    // 添加文件
+    NSString *addStr = [delPath stringByAppendingPathComponent:@"area.plist"];
+    NSLog(@"%@%@%@%@",array,lastName,delPath,addStr);
+}
+
+// NSData 数据转换
+- (void)dataChange:(NSData *)data {
+    // NSString类型
+    // NSData -> NSString
+    NSString *aString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    // NSString -> NSData
+    NSData *aData = [aString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // UIImage类型
+    // NSData -> UIImage
+    UIImage *image = [UIImage imageWithData:data];
+    
+    //UIImage -> NSData
+    NSData *imageData1 = UIImagePNGRepresentation(image);
+    NSData *imageData2 = UIImageJPEGRepresentation(image, 1);
+    
+    NSLog(@"%@%@%@",aData,imageData1,imageData2);
+}
+
+// 创建文件夹
+- (void)createFolder {
+    NSString *docPath = [self getDocumentsPath];
+    NSString *folderName = [docPath stringByAppendingPathComponent:@"note"];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    // 创建文件夹
+    // path 文件路径
+    // withIntermediateDirectories: YES 如果文件夹存在可以覆盖 NO 不可覆盖
+    BOOL isSuccess = [manager createDirectoryAtPath:folderName withIntermediateDirectories:YES attributes:nil error:nil];
+    if (isSuccess){
+        NSLog(@"文件夹创建成功");
+    }else {
+        NSLog(@"文件夹创建失败");
+    }
+}
+
+// 创建文件
+- (void)createFile {
+    NSString *docPath = [self getDocumentsPath];
+    NSString *testPath = [docPath stringByAppendingPathComponent:@"note"];
+    NSString *filePath = [testPath stringByAppendingPathComponent:@"note.txt"];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    // 创建文件
+    // contents: NSData 类型
+    BOOL isSuccess = [manager createFileAtPath:filePath contents:nil attributes:nil];
+    if (isSuccess){
+        NSLog(@"文件创建成功!");
+    }else {
+        NSLog(@"文件创建失败!");
+    }
+}
+
+// 写入文件
+- (void)writeFile {
+    NSString *docPath = [self getDocumentsPath];
+    NSString *testPath = [docPath stringByAppendingPathComponent:@"note"];
+    NSString *filePath = [testPath stringByAppendingPathComponent:@"note.txt"];
+    NSString *content = @"我的笔记";
+    BOOL isSuccess = [content writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    if (isSuccess){
+        NSLog(@"写入文件成功!");
+    }else {
+        NSLog(@"写入文件失败!");
+    }
+}
+
+// 追加内容
+- (void)addFile {
+    NSString *docPath = [self getDocumentsPath];
+    NSString *testPath = [docPath stringByAppendingPathComponent:@"note"];
+    NSString *filePath = [testPath stringByAppendingPathComponent:@"note.txt"];
+    // 打开文件、准备更新
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+    // 将节点跳转到文件的末尾
+    [fileHandle seekToEndOfFile];
+    NSString *string = @"这是要添加的内容";
+    NSData *stringData = [string dataUsingEncoding:NSUTF8StringEncoding];
+    // 写入内容
+    [fileHandle writeData:stringData];
+    // 最后要关闭文件
+    [fileHandle closeFile];
+}
+
+// 删除文件
+- (void)deleteFile {
+    NSString *docPath = [self getDocumentsPath];
+    NSString *testPath = [docPath stringByAppendingPathComponent:@"note"];
+    NSString *filePath = [testPath stringByAppendingPathComponent:@"note.txt"];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    // 检测文件是否存在
+    BOOL isExit = [self fileExist:filePath];
+    if (isExit){
+        // 删除文件
+        BOOL isSuccess = [manager removeItemAtPath:filePath error:nil];
+        if (isSuccess) {
+            NSLog(@"文件删除成功！");
+        }else {
+            NSLog(@"文件删除失败！");
+        }
+    }
+}
+
+// 检测文件是否存在
+- (BOOL)fileExist:(NSString *)filePath {
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]){
+        return YES;
+    }else {
+        return NO;
+    }
+}
+
+// 写入图片
+- (void)writeImage {
+    UIImage *image = [UIImage imageNamed:@"coin"];
+    NSData *data = UIImagePNGRepresentation(image);
+    NSString *docPath = [self getDocumentsPath];
+    NSString *testPath = [docPath stringByAppendingPathComponent:@"imageCache"];
+    NSString *fileName = [testPath stringByAppendingPathComponent:@"image1"];
+    if (![self fileExist:testPath]){
+        [[NSFileManager defaultManager] createDirectoryAtPath:testPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    if (![self fileExist:fileName]) {
+        [[NSFileManager defaultManager] createFileAtPath:fileName contents:nil attributes:nil];
+    }
+    BOOL isSuccess = [data writeToFile:fileName atomically:YES];
+    if (isSuccess){
+        NSLog(@"写入图片成功！");
+    }else {
+        NSLog(@"写入图片失败！");
+    }
+    
+}
+
+//获取文件
+- (NSData *)getFileData:(NSString *)filePath {
+    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:filePath];
+    NSData *fileData = [handle readDataToEndOfFile];
+    [handle closeFile];
+    return fileData;
+}
+
+
+//获取文件大小
+- (long long)getFileSizeWithPath:(NSString *)path {
+    unsigned long long fileLength = 0;
+    NSNumber *fileSize;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:path error:nil];
+    if ((fileSize = [fileAttributes objectForKey:NSFileSize])) {
+        fileLength = [fileSize unsignedLongLongValue]; //单位是 B
+    }
+    return fileLength / 1000; //换算为K
+}
+
+//获取文件创建时间
+- (NSString *)getFileCreatDateWithPath:(NSString *)path
+{
+    NSString *date = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:path error:nil];
+    date = [fileAttributes objectForKey:NSFileCreationDate];
+    return date;
+}
+
 @end
