@@ -40,7 +40,6 @@
     for (int i=0; i<9; i++) {
         [self.objects addObject:[NSString stringWithFormat:@"http://images.cnblogs.com/cnblogs_com/kenshincui/613474/o_%i.jpg",i]];
     }
-    
     // 禁止使用图片解压
     [[SDImageCache sharedImageCache].config setShouldDecompressImages:NO];
 }

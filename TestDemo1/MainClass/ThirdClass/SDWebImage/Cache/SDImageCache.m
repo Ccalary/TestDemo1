@@ -389,6 +389,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     return exists;
 }
 
+// 对NSCache的读取做简单的封装
 - (nullable UIImage *)imageFromMemoryCacheForKey:(nullable NSString *)key {
     return [self.memCache objectForKey:key];
 }
@@ -479,6 +480,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
     return [self queryCacheOperationForKey:key options:0 done:doneBlock];
 }
 
+// 查找图片
 - (nullable NSOperation *)queryCacheOperationForKey:(nullable NSString *)key options:(SDImageCacheOptions)options done:(nullable SDCacheQueryCompletedBlock)doneBlock {
     if (!key) {
         if (doneBlock) {
@@ -487,7 +489,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         return nil;
     }
     
-    // First check the in-memory cache...
+    // 首先，根据key去内存中查找image
     UIImage *image = [self imageFromMemoryCacheForKey:key];
     BOOL shouldQueryMemoryOnly = (image && !(options & SDImageCacheQueryDataWhenInMemory));
     if (shouldQueryMemoryOnly) {
@@ -503,19 +505,23 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
             // do not call the completion if cancelled
             return;
         }
-        
         @autoreleasepool {
+            // 从disk中根据key读取存入的ImageData
             NSData *diskData = [self diskImageDataBySearchingAllPathsForKey:key];
             UIImage *diskImage;
             SDImageCacheType cacheType = SDImageCacheTypeDisk;
             if (image) {
                 // the image is from in-memory cache
+                // 如果内存中存在image，则直接拿到图片
                 diskImage = image;
                 cacheType = SDImageCacheTypeMemory;
             } else if (diskData) {
                 // decode image data only if in-memory cache missed
+                // 讲ImageData 解码得到 UIImage
                 diskImage = [self diskImageForKey:key data:diskData options:options];
+                // 如果是从disk中读取了image，并且要求写入内存，则写入内存
                 if (diskImage && self.config.shouldCacheImagesInMemory) {
+                    //cost 对象占用的字节数。
                     NSUInteger cost = SDCacheCostForImage(diskImage);
                     [self.memCache setObject:diskImage forKey:key cost:cost];
                 }

@@ -35,7 +35,6 @@
     [self addCell:@"小控件" class:@"WidgetViewController"];
     [self addCell:@"全选、删除操作" class:@"SelectAndDeleteVC"];
     [self addCell:@"tableView优化" class:@"ImageViewController"];
-    [self addCell:@"runningTime" class:@"RuningTimeViewController"];
     [self addCell:@"异常捕获" class:@"ExceptionViewController"];
     [self addCell:@"抛出异常" class:@"MakeExpViewController"];
     [self addCell:@"GCD使用" class:@"GCDViewController"];
@@ -44,7 +43,6 @@
     [self addCell:@"绘图、贝赛尔曲线" class:@"BezierPathVC"];
     [self addCell:@"渐变色" class:@"GradientViewController"];
     [self addCell:@"进度条" class:@"CircleProgressVC"];
-    [self addCell:@"showHUD" class:@"ShowHUDViewController"];
     [self addCell:@"Animation" class:@"LoadingAnimationVC"];
     [self addCell:@"Layer、Animation" class:@"LayerAnimationVC"];
     [self addCell:@"粒子动画" class:@"CAEmitterLayerVC"];
@@ -53,6 +51,7 @@
     [self addCell:@"IconFont" class:@"IconfontViewController"];
     [self addCell:@"转场动画" class:@"TransitonViewController"];
     [self addCell:@"WebImage" class:@"WebImageTableVC"];
+    [self addCell:@"Block用法" class:@"BlockViewController"];
     
     [self drawView];
 }

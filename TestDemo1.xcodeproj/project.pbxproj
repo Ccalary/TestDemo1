@@ -56,9 +56,7 @@
 		0D4B28D91EE7C4D100BB9CC9 /* ExceptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28C31EE7C4D100BB9CC9 /* ExceptionViewController.m */; };
 		0D4B28DA1EE7C4D100BB9CC9 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28C51EE7C4D100BB9CC9 /* GCDViewController.m */; };
 		0D4B28DC1EE7C4D100BB9CC9 /* MakeExpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28C91EE7C4D100BB9CC9 /* MakeExpViewController.m */; };
-		0D4B28DE1EE7C4D100BB9CC9 /* RuningTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28CD1EE7C4D100BB9CC9 /* RuningTimeViewController.m */; };
 		0D4B28DF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28CF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m */; };
-		0D4B28E01EE7C4D100BB9CC9 /* ShowHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28D11EE7C4D100BB9CC9 /* ShowHUDViewController.m */; };
 		0D4B28E11EE7C4D100BB9CC9 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28D31EE7C4D100BB9CC9 /* MineViewController.m */; };
 		0D4B28F41EE7F51200BB9CC9 /* DemoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28F31EE7F51200BB9CC9 /* DemoHelper.m */; };
 		0D4B28F71EE94C2700BB9CC9 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28F61EE94C2700BB9CC9 /* UIView+Extension.m */; };
@@ -87,6 +85,8 @@
 		0D72365920AA870800C88CDB /* UIColor+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72365820AA870800C88CDB /* UIColor+App.m */; };
 		0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */; };
 		0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */; };
+		0D817F7420B29E1600D77751 /* MCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D817F7320B29E1600D77751 /* MCCache.m */; };
+		0D817F7C20B4015400D77751 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D817F7B20B4015400D77751 /* BlockViewController.m */; };
 		0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D840ADB1EBFFF28005E078A /* Draw2DView.m */; };
 		0DA4F3E41EE676A400ED17B2 /* Connect.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3E31EE676A400ED17B2 /* Connect.m */; };
 		0DA4F3ED1EE677F500ED17B2 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3E81EE677F500ED17B2 /* BaseNavigationController.m */; };
@@ -237,12 +237,8 @@
 		0D4B28C51EE7C4D100BB9CC9 /* GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		0D4B28C81EE7C4D100BB9CC9 /* MakeExpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeExpViewController.h; sourceTree = "<group>"; };
 		0D4B28C91EE7C4D100BB9CC9 /* MakeExpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeExpViewController.m; sourceTree = "<group>"; };
-		0D4B28CC1EE7C4D100BB9CC9 /* RuningTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuningTimeViewController.h; sourceTree = "<group>"; };
-		0D4B28CD1EE7C4D100BB9CC9 /* RuningTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuningTimeViewController.m; sourceTree = "<group>"; };
 		0D4B28CE1EE7C4D100BB9CC9 /* SelectAndDeleteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAndDeleteVC.h; sourceTree = "<group>"; };
 		0D4B28CF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAndDeleteVC.m; sourceTree = "<group>"; };
-		0D4B28D01EE7C4D100BB9CC9 /* ShowHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowHUDViewController.h; sourceTree = "<group>"; };
-		0D4B28D11EE7C4D100BB9CC9 /* ShowHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowHUDViewController.m; sourceTree = "<group>"; };
 		0D4B28D21EE7C4D100BB9CC9 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		0D4B28D31EE7C4D100BB9CC9 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		0D4B28F21EE7F51200BB9CC9 /* DemoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoHelper.h; sourceTree = "<group>"; };
@@ -297,6 +293,10 @@
 		0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		0D77DF461ED6AD9E000F3C1A /* HHCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCountingLabel.h; sourceTree = "<group>"; };
 		0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHCountingLabel.m; sourceTree = "<group>"; };
+		0D817F7220B29E1600D77751 /* MCCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCCache.h; sourceTree = "<group>"; };
+		0D817F7320B29E1600D77751 /* MCCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCCache.m; sourceTree = "<group>"; };
+		0D817F7A20B4015400D77751 /* BlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
+		0D817F7B20B4015400D77751 /* BlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockViewController.m; sourceTree = "<group>"; };
 		0D840ADA1EBFFF28005E078A /* Draw2DView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw2DView.h; sourceTree = "<group>"; };
 		0D840ADB1EBFFF28005E078A /* Draw2DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw2DView.m; sourceTree = "<group>"; };
 		0DA4F3E21EE676A400ED17B2 /* Connect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connect.h; sourceTree = "<group>"; };
@@ -620,9 +620,11 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				0D817F7920B400C600D77751 /* Block */,
 				0D61E67320A4175B00665577 /* WebImage */,
 				0DF39CF320932275007518B7 /* Transition */,
 				FEEFEBF32074AF9200B1E803 /* IconFont */,
+				0D817F7620B3FD8900D77751 /* GCD */,
 				FED04B1E20204C35000F415F /* Data */,
 				FED04B172020086D000F415F /* FluencyTest */,
 				0DBBE4BA1FC474B800645A85 /* GoodTableView */,
@@ -631,22 +633,8 @@
 				0D4B28FF1EE9534E00BB9CC9 /* BezierPath */,
 				0D4B28F81EE94C7B00BB9CC9 /* LoadingAnimation */,
 				0D4B28B91EE7C4D100BB9CC9 /* CircleProgress */,
-				0D4B28B71EE7C4D100BB9CC9 /* BluetoochVC.h */,
-				0D4B28B81EE7C4D100BB9CC9 /* BluetoochVC.m */,
-				0D4B28C01EE7C4D100BB9CC9 /* EventViewController.h */,
-				0D4B28C11EE7C4D100BB9CC9 /* EventViewController.m */,
-				0D4B28C21EE7C4D100BB9CC9 /* ExceptionViewController.h */,
-				0D4B28C31EE7C4D100BB9CC9 /* ExceptionViewController.m */,
-				0D4B28C41EE7C4D100BB9CC9 /* GCDViewController.h */,
-				0D4B28C51EE7C4D100BB9CC9 /* GCDViewController.m */,
-				0D4B28C81EE7C4D100BB9CC9 /* MakeExpViewController.h */,
-				0D4B28C91EE7C4D100BB9CC9 /* MakeExpViewController.m */,
-				0D4B28CC1EE7C4D100BB9CC9 /* RuningTimeViewController.h */,
-				0D4B28CD1EE7C4D100BB9CC9 /* RuningTimeViewController.m */,
-				0D4B28CE1EE7C4D100BB9CC9 /* SelectAndDeleteVC.h */,
-				0D4B28CF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m */,
-				0D4B28D01EE7C4D100BB9CC9 /* ShowHUDViewController.h */,
-				0D4B28D11EE7C4D100BB9CC9 /* ShowHUDViewController.m */,
+				0D817F7720B3FEC300D77751 /* Exception */,
+				0D817F7820B3FFC900D77751 /* Others */,
 			);
 			path = FuncDisplay;
 			sourceTree = "<group>";
@@ -840,6 +828,8 @@
 				0D61E67620A4178B00665577 /* MyWebImageVC.m */,
 				0D37982B20A97A850039352F /* MCMemeryCache.h */,
 				0D37982C20A97A850039352F /* MCMemeryCache.m */,
+				0D817F7220B29E1600D77751 /* MCCache.h */,
+				0D817F7320B29E1600D77751 /* MCCache.m */,
 			);
 			path = MyWebImage;
 			sourceTree = "<group>";
@@ -880,6 +870,48 @@
 				0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */,
 			);
 			path = CountingLabel;
+			sourceTree = "<group>";
+		};
+		0D817F7620B3FD8900D77751 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				0D4B28C41EE7C4D100BB9CC9 /* GCDViewController.h */,
+				0D4B28C51EE7C4D100BB9CC9 /* GCDViewController.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		0D817F7720B3FEC300D77751 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				0D4B28C81EE7C4D100BB9CC9 /* MakeExpViewController.h */,
+				0D4B28C91EE7C4D100BB9CC9 /* MakeExpViewController.m */,
+				0D4B28C21EE7C4D100BB9CC9 /* ExceptionViewController.h */,
+				0D4B28C31EE7C4D100BB9CC9 /* ExceptionViewController.m */,
+			);
+			path = Exception;
+			sourceTree = "<group>";
+		};
+		0D817F7820B3FFC900D77751 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				0D4B28B71EE7C4D100BB9CC9 /* BluetoochVC.h */,
+				0D4B28B81EE7C4D100BB9CC9 /* BluetoochVC.m */,
+				0D4B28C01EE7C4D100BB9CC9 /* EventViewController.h */,
+				0D4B28C11EE7C4D100BB9CC9 /* EventViewController.m */,
+				0D4B28CE1EE7C4D100BB9CC9 /* SelectAndDeleteVC.h */,
+				0D4B28CF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		0D817F7920B400C600D77751 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				0D817F7A20B4015400D77751 /* BlockViewController.h */,
+				0D817F7B20B4015400D77751 /* BlockViewController.m */,
+			);
+			path = Block;
 			sourceTree = "<group>";
 		};
 		0D840AD81EBFFEE7005E078A /* View */ = {
@@ -1216,7 +1248,7 @@
 				TargetAttributes = {
 					0DAD4CF41E7960F4008018BB = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 2M227336GQ;
+						DevelopmentTeam = JB79VQ5W7K;
 						ProvisioningStyle = Automatic;
 					};
 					0DAD4D0D1E7960F5008018BB = {
@@ -1405,6 +1437,7 @@
 				0D0588FD20A13B1300223199 /* SDWebImageFrame.m in Sources */,
 				0D05890B20A13B1300223199 /* SDWebImageTransition.m in Sources */,
 				0D4B29151EEA717700BB9CC9 /* LayerAnimationVC.m in Sources */,
+				0D817F7C20B4015400D77751 /* BlockViewController.m in Sources */,
 				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
 				0D0588F920A13B1300223199 /* UIImage+WebP.m in Sources */,
 				0D05890020A13B1300223199 /* SDWebImageDownloader.m in Sources */,
@@ -1421,8 +1454,8 @@
 				0DA4F3EF1EE677F500ED17B2 /* BaseViewController.m in Sources */,
 				FE5446731FC3C3D7005B96BE /* SendCodeButton.m in Sources */,
 				0D05890A20A13B1300223199 /* SDWebImageDownloaderOperation.m in Sources */,
+				0D817F7420B29E1600D77751 /* MCCache.m in Sources */,
 				0D4B28D71EE7C4D100BB9CC9 /* CycleView.m in Sources */,
-				0D4B28DE1EE7C4D100BB9CC9 /* RuningTimeViewController.m in Sources */,
 				0D4B28FE1EE94CCC00BB9CC9 /* LoadingAnimationVC.m in Sources */,
 				0DA4F3EE1EE677F500ED17B2 /* BaseTabBarController.m in Sources */,
 				0D0588FE20A13B1300223199 /* UIImage+ForceDecode.m in Sources */,
@@ -1438,7 +1471,6 @@
 				0D05890F20A13B1300223199 /* SDWebImageGIFCoder.m in Sources */,
 				FEEFEBED2074A87900B1E803 /* UIImage+IconFont.m in Sources */,
 				FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */,
-				0D4B28E01EE7C4D100BB9CC9 /* ShowHUDViewController.m in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,
 				0D4B28D41EE7C4D100BB9CC9 /* BluetoochVC.m in Sources */,
 			);
@@ -1590,12 +1622,12 @@
 			baseConfigurationReference = C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2M227336GQ;
+				DEVELOPMENT_TEAM = JB79VQ5W7K;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TestDemo1/AppFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TestDemo1/AppFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baichunkeji.TestDemo1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rs.TestDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1605,12 +1637,12 @@
 			baseConfigurationReference = 14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2M227336GQ;
+				DEVELOPMENT_TEAM = JB79VQ5W7K;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TestDemo1/AppFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TestDemo1/AppFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baichunkeji.TestDemo1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rs.TestDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

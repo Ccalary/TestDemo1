@@ -122,6 +122,5 @@
              [self loadImage:[NSNumber numberWithInt:i]];
         });
     }
-    
 }
 @end

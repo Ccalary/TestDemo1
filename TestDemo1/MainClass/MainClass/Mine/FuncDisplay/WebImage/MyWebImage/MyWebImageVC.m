@@ -9,7 +9,7 @@
 #import "MyWebImageVC.h"
 #import "MyCustomTableViewCell.h"
 #import "FPSTools.h"
-
+#import "MCCache.h"
 
 @interface MyWebImageVC ()
 @property (nonatomic, strong) NSMutableArray<NSString *> *objects;
@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSBlockOperation *lastOperation;
 @property (nonatomic, strong) NSCache *operationCache; // 存储在下载的线程，避免同一个资源多次下载
 @property (nonatomic, strong) NSMutableDictionary *imageMemaryCache; // 图片资源内存存储
+@property (nonatomic, strong) MCCache *diskCache;
 
 @end
 
@@ -32,6 +33,8 @@
     _fps.block = ^(NSString *fpsStr) {
         weakSelf.navigationItem.title = fpsStr;
     };
+    
+    _diskCache = [[MCCache alloc] init];
     
     self.queue = [[NSOperationQueue alloc] init];
     // 最大线程数
@@ -98,43 +101,54 @@
 //    UIImage *cacheImage = [self.memoryCache objectForKey:imageStr];
     if (cacheImage){
         cell.customImageView.image = cacheImage;
+        NSLog(@"内存读取");
     }else {
-        // 如果队列中不存在当前图片资源，则开启线程去下载
-        NSString *str = [self.operationCache objectForKey:imageStr];
-        __weak typeof (self) weakSelf = self;
-        if (!str){
-            // 图片下载处理
-            NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
-                __strong typeof (weakSelf) sself = weakSelf;
-                NSLog(@"开启子线程下载第%ld行",indexPath.row);
-                NSData *data = [NSData dataWithContentsOfURL:url];
-                if (!data){
-                    [sself.operationCache removeObjectForKey:imageStr];
-                    NSLog(@"图片下载失败");
-                    return;
-                }
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    // cell 真正的indexPath
-                    NSIndexPath *currentIndexPath = [tableView indexPathForCell:cell];
-                    NSInteger currentRow = currentIndexPath.row;
-                    NSInteger originalRow = indexPath.row; // 当时的行
-                    if (currentRow != originalRow){
-                        //                    NSLog(@"你这个图片和当前要设置的cell图片不一致,你设置的是第%ld个cell,但现在要设置是%ld个cell", (long)originalRow, currentRow);
-                        return ;
+        UIImage *diskImage = [self.diskCache diskImageForKey:imageStr];
+        if (diskImage){
+            cell.customImageView.image = diskImage;
+            self.imageMemaryCache[imageStr] = diskImage;
+            NSLog(@"硬盘读取");
+        }else {
+            // 如果队列中不存在当前图片资源，则开启线程去下载
+            NSString *str = [self.operationCache objectForKey:imageStr];
+            __weak typeof (self) weakSelf = self;
+            if (!str){
+                // 图片下载处理
+                NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+                    __strong typeof (weakSelf) sself = weakSelf;
+                    NSLog(@"开启子线程下载第%ld行",indexPath.row);
+                    NSData *data = [NSData dataWithContentsOfURL:url];
+                    
+                    if (!data){
+                        [sself.operationCache removeObjectForKey:imageStr];
+                        NSLog(@"图片下载失败");
+                        return;
                     }
-                    UIImage *image = [UIImage imageWithData:data];
-                    cell.customImageView.image = image;
-                    sself.imageMemaryCache[imageStr] = image;
+                    
+                    [self.diskCache storeToDiskWithImageData:data andKey:imageStr];
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        // cell 真正的indexPath
+                        NSIndexPath *currentIndexPath = [tableView indexPathForCell:cell];
+                        NSInteger currentRow = currentIndexPath.row;
+                        NSInteger originalRow = indexPath.row; // 当时的行
+                        if (currentRow != originalRow){
+                            //                    NSLog(@"你这个图片和当前要设置的cell图片不一致,你设置的是第%ld个cell,但现在要设置是%ld个cell", (long)originalRow, currentRow);
+                            return ;
+                        }
+                        UIImage *image = [UIImage imageWithData:data];
+                        cell.customImageView.image = image;
+                        sself.imageMemaryCache[imageStr] = image;
+                    }];
+                    [sself.operationCache removeObjectForKey:imageStr];
                 }];
-                [sself.operationCache removeObjectForKey:imageStr];
-            }];
-            // 设置依赖关系-后进先出
-            [self.lastOperation addDependency:blockOperation];
-            self.lastOperation = blockOperation;
-            // 将线程加入缓存
-            [self.operationCache setObject:@"1" forKey:imageStr];
-            // 线程添加到队列
-            [self.queue addOperation:blockOperation];
+                // 设置依赖关系-后进先出
+                [self.lastOperation addDependency:blockOperation];
+                self.lastOperation = blockOperation;
+                // 将线程加入缓存
+                [self.operationCache setObject:@"1" forKey:imageStr];
+                // 线程添加到队列
+                [self.queue addOperation:blockOperation];
+            }
         }
     }
     return cell;
@@ -146,18 +160,6 @@
 
 - (void)start {
     [self.tableView reloadData];
-    [self creatFile];
-}
-
-- (void)creatFile {
-    NSString *libCachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *fileName = [libCachePath stringByAppendingPathComponent:@"imageCache"];
-    NSLog(@"cache:%@",fileName);
-    
-    BOOL isSuccess = [[NSFileManager defaultManager] createDirectoryAtPath:fileName withIntermediateDirectories:YES attributes:nil error:NULL];
-    if (isSuccess){
-        NSLog(@"文件夹创建成功");
-    }
 }
 @end
 

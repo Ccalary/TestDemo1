@@ -16,6 +16,24 @@
 default_platform(:ios)
 
 platform :ios do
+
+  desc "打包出来"	
+  lane :doIpa do 
+    scheme_name = "TestDemo1" 
+    output_directory = "/Users/caohouhong/Desktop/IPA_Info"
+    #导出名称 
+    output_name = "#{scheme_name}_#{Time.now.strftime('%Y%m%d%H%M%S')}.ipa"
+    gym(
+      export_method: "ad-hoc", #这里填写导出方式 ad-hoc、enterprise、app-store
+      export_xcargs: "-allowProvisioningUpdates", 
+      scheme: scheme_name,# target的名字
+      clean: true, # 在构建前先clean
+      output_directory: output_directory,
+      output_name: output_name,
+  ) 
+  end
+ 
+
   desc "上传蒲公英测试"	
   lane :beta do 
     scheme_name = "TestDemo1" 
