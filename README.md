@@ -3,7 +3,7 @@
 >各种框架的收集与简单封装使用，还有一些基本的工具类的收集
 
 ## 包含框架
-* [Realm](https://github.com/realm/realm-cocoa)数据库的简单使用
+* [Realm](https://github.com/realm/realm-cocoa)数据库的简单使用(已移除)
 * [MJRefresh](https://github.com/CoderMJLee/MJRefresh)的简单封装
 * [MBProgressHUD](https://github.com/jdg/MBProgressHUD)的简单封装,更改了显示的颜色
 * [POP](https://github.com/facebook/pop) facebook开源的动画框架
@@ -68,3 +68,8 @@
 
 ## 2018.5.3
 * Quart2D绘图，水印，圆形截取，加边框，截屏，刮涂层，自定义截取范围
+
+## 2018.5.19
+* fastlane 自动打包
+* SDWebImage 源码解读，自己实现简单的缓存
+* blokc 基础
