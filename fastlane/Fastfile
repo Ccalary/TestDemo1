@@ -28,7 +28,7 @@ platform :ios do
       export_xcargs: "-allowProvisioningUpdates", 
       scheme: scheme_name,# target的名字
       clean: true, # 在构建前先clean
-      output_directory: output_directory,
+      output_directory: output_directory + "/pgy",
       output_name: output_name,
   ) 
   end

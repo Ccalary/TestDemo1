@@ -43,6 +43,9 @@
 		0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428B01ED95F1F002B52F3 /* MoveButton.m */; };
 		0D2A5F3F1EC55B7E00F41D4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2A5F3B1EC55B7E00F41D4D /* LaunchScreen.storyboard */; };
 		0D2A5F401EC55B7E00F41D4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2A5F3D1EC55B7E00F41D4D /* Main.storyboard */; };
+		0D2DAFA320BFCE0900988EF1 /* MCRuleCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DAF9F20BFCE0800988EF1 /* MCRuleCollectionReusableView.m */; };
+		0D2DAFA420BFCE0900988EF1 /* MCRuleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DAFA120BFCE0900988EF1 /* MCRuleCollectionViewCell.m */; };
+		0D2DAFA520BFCE0900988EF1 /* MCRuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DAFA220BFCE0900988EF1 /* MCRuleView.m */; };
 		0D33BB001EEF8B3500AD69EB /* CAEmitterLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D33BAFF1EEF8B3500AD69EB /* CAEmitterLayerVC.m */; };
 		0D33BB041EEF8F2700AD69EB /* HHEmitterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D33BB031EEF8F2700AD69EB /* HHEmitterButton.m */; };
 		0D3439FB20A19F11003FEB84 /* SDWebImageTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3439F920A19F11003FEB84 /* SDWebImageTableVC.m */; };
@@ -212,6 +215,12 @@
 		0D2428B01ED95F1F002B52F3 /* MoveButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveButton.m; sourceTree = "<group>"; };
 		0D2A5F3C1EC55B7E00F41D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D2A5F3E1EC55B7E00F41D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		0D2DAF9D20BFCE0800988EF1 /* MCRuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRuleView.h; sourceTree = "<group>"; };
+		0D2DAF9E20BFCE0800988EF1 /* MCRuleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRuleCollectionViewCell.h; sourceTree = "<group>"; };
+		0D2DAF9F20BFCE0800988EF1 /* MCRuleCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRuleCollectionReusableView.m; sourceTree = "<group>"; };
+		0D2DAFA020BFCE0900988EF1 /* MCRuleCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRuleCollectionReusableView.h; sourceTree = "<group>"; };
+		0D2DAFA120BFCE0900988EF1 /* MCRuleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRuleCollectionViewCell.m; sourceTree = "<group>"; };
+		0D2DAFA220BFCE0900988EF1 /* MCRuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRuleView.m; sourceTree = "<group>"; };
 		0D33BAFE1EEF8B3500AD69EB /* CAEmitterLayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayerVC.h; sourceTree = "<group>"; };
 		0D33BAFF1EEF8B3500AD69EB /* CAEmitterLayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAEmitterLayerVC.m; sourceTree = "<group>"; };
 		0D33BB021EEF8F2700AD69EB /* HHEmitterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHEmitterButton.h; sourceTree = "<group>"; };
@@ -576,6 +585,19 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		0D2DAF9C20BFCDF600988EF1 /* MCRuler */ = {
+			isa = PBXGroup;
+			children = (
+				0D2DAFA020BFCE0900988EF1 /* MCRuleCollectionReusableView.h */,
+				0D2DAF9F20BFCE0800988EF1 /* MCRuleCollectionReusableView.m */,
+				0D2DAF9E20BFCE0800988EF1 /* MCRuleCollectionViewCell.h */,
+				0D2DAFA120BFCE0900988EF1 /* MCRuleCollectionViewCell.m */,
+				0D2DAF9D20BFCE0800988EF1 /* MCRuleView.h */,
+				0D2DAFA220BFCE0900988EF1 /* MCRuleView.m */,
+			);
+			path = MCRuler;
+			sourceTree = "<group>";
+		};
 		0D33BB011EEF8EF500AD69EB /* HHEmitterButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +808,7 @@
 		0D5B07371EA8AE2F00FB1AC2 /* MyClass */ = {
 			isa = PBXGroup;
 			children = (
+				0D2DAF9C20BFCDF600988EF1 /* MCRuler */,
 				FE5446751FC3C400005B96BE /* SendCodeButton */,
 				FE5446741FC3C3EC005B96BE /* HHPopSelectView */,
 				FE54466A1FC3C38C005B96BE /* HHAlertController */,
@@ -1392,12 +1415,15 @@
 				FE8AA53C1F56B38900BE4842 /* RunLabelView.m in Sources */,
 				FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */,
 				0D05891220A13B1300223199 /* UIView+WebCache.m in Sources */,
+				0D2DAFA320BFCE0900988EF1 /* MCRuleCollectionReusableView.m in Sources */,
 				0D4B28D61EE7C4D100BB9CC9 /* CircleProgressVC.m in Sources */,
 				0D0588FF20A13B1300223199 /* SDWebImageCodersManager.m in Sources */,
 				0D4B29051EE953CC00BB9CC9 /* BezierPathViewBase.m in Sources */,
+				0D2DAFA520BFCE0900988EF1 /* MCRuleView.m in Sources */,
 				0DF39CF220931F6E007518B7 /* UIView+MCTransition.m in Sources */,
 				0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */,
 				0D05890920A13B1300223199 /* SDImageCache.m in Sources */,
+				0D2DAFA420BFCE0900988EF1 /* MCRuleCollectionViewCell.m in Sources */,
 				0D4B28DA1EE7C4D100BB9CC9 /* GCDViewController.m in Sources */,
 				FED04B2120204C5A000F415F /* DataViewController.m in Sources */,
 				0D05890D20A13B1300223199 /* UIImageView+WebCache.m in Sources */,

@@ -40,6 +40,11 @@
     }
     //一定要写在最后，要不然无效
     [super pushViewController:viewController animated:animated];
+    
+    //解决iPhone X push页面时 tabBar上移的问题
+    CGRect frame = self.tabBarController.tabBar.frame;
+    frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height;
+    self.tabBarController.tabBar.frame = frame;
 }
 
 - (void)backAction{
