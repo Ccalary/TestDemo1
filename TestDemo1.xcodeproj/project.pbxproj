@@ -99,6 +99,8 @@
 		0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3F81EE6925B00ED17B2 /* NSArray+Dlog.m */; };
 		0DAD4D131E7960F5008018BB /* TestDemo1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D121E7960F5008018BB /* TestDemo1Tests.m */; };
 		0DAD4D1E1E7960F5008018BB /* TestDemo1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D1D1E7960F5008018BB /* TestDemo1UITests.m */; };
+		0DADA50A21D1DB86005BB347 /* LoadingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA50821D1DB85005BB347 /* LoadingAnimation.m */; };
+		0DADA50C21D1DB90005BB347 /* loading_a.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DADA50B21D1DB90005BB347 /* loading_a.json */; };
 		0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */; };
 		0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */; };
 		0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */; };
@@ -327,6 +329,9 @@
 		0DAD4D191E7960F5008018BB /* TestDemo1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestDemo1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAD4D1D1E7960F5008018BB /* TestDemo1UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemo1UITests.m; sourceTree = "<group>"; };
 		0DAD4D1F1E7960F5008018BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DADA50821D1DB85005BB347 /* LoadingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingAnimation.m; sourceTree = "<group>"; };
+		0DADA50921D1DB86005BB347 /* LoadingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingAnimation.h; sourceTree = "<group>"; };
+		0DADA50B21D1DB90005BB347 /* loading_a.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_a.json; sourceTree = "<group>"; };
 		0DB44FE51EA3C2F800ABC0E6 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		0DB44FE71EA3C2F800ABC0E6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -808,6 +813,7 @@
 		0D5B07371EA8AE2F00FB1AC2 /* MyClass */ = {
 			isa = PBXGroup;
 			children = (
+				0DADA50721D1DB7A005BB347 /* LoadingView */,
 				0D2DAF9C20BFCDF600988EF1 /* MCRuler */,
 				FE5446751FC3C400005B96BE /* SendCodeButton */,
 				FE5446741FC3C3EC005B96BE /* HHPopSelectView */,
@@ -1046,6 +1052,16 @@
 				0DAD4D1F1E7960F5008018BB /* Info.plist */,
 			);
 			path = TestDemo1UITests;
+			sourceTree = "<group>";
+		};
+		0DADA50721D1DB7A005BB347 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				0DADA50B21D1DB90005BB347 /* loading_a.json */,
+				0DADA50921D1DB86005BB347 /* LoadingAnimation.h */,
+				0DADA50821D1DB85005BB347 /* LoadingAnimation.m */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		0DB44FE41EA3C2DF00ABC0E6 /* Home */ = {
@@ -1320,6 +1336,7 @@
 				FEEFEBF22074A8E700B1E803 /* demo_unicode.html in Resources */,
 				0D2A5F3F1EC55B7E00F41D4D /* LaunchScreen.storyboard in Resources */,
 				0D4F945B1E8ABA2A00070950 /* Info.plist in Resources */,
+				0DADA50C21D1DB90005BB347 /* loading_a.json in Resources */,
 				0D4F944C1E8AB98900070950 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1371,6 +1388,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1380,6 +1398,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1497,6 +1516,7 @@
 				0D05890F20A13B1300223199 /* SDWebImageGIFCoder.m in Sources */,
 				FEEFEBED2074A87900B1E803 /* UIImage+IconFont.m in Sources */,
 				FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */,
+				0DADA50A21D1DB86005BB347 /* LoadingAnimation.m in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,
 				0D4B28D41EE7C4D100BB9CC9 /* BluetoochVC.m in Sources */,
 			);

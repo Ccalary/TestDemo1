@@ -42,6 +42,7 @@
     self.rectImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     
     [self initGraphicsView];
+    
 }
 
 - (void)initGraphicsView {

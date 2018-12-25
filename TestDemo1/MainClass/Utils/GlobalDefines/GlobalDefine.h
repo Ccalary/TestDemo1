@@ -39,12 +39,13 @@
 #define FONT_SYSTEM(x)               [UIFont systemFontOfSize:x]
 #define FONT_SYSTEM_BOLD(a)          [UIFont boldSystemFontOfSize:a]
 
-#define COLOR_BLACK                  HEXCOLOR(0x000000)
-#define COLOR_WHITE                  HEXCOLOR(0xffffff)
-#define COLOR_LIGHT_GRAY             HEXCOLOR(0x999999)
-#define COLOR_DARK_GRAY              HEXCOLOR(0x666666)
-#define COLOR_Background             HEXCOLOR(0xd2d2d2)
+//#define COLOR_BLACK                  HEXCOLOR(0x000000)
+//#define COLOR_WHITE                  HEXCOLOR(0xffffff)
+//#define COLOR_LIGHT_GRAY             HEXCOLOR(0x999999)
+//#define COLOR_DARK_GRAY              HEXCOLOR(0x666666)
+//#define COLOR_Background             HEXCOLOR(0xd2d2d2)
 
+//[[UIDevice currentDevice].model hasPrefix:@"iPad"] 判断是iPhone还是iPad
 
 //Debug信息,用printf解决真机调试打印不出来的问题
 #ifdef DEBUG

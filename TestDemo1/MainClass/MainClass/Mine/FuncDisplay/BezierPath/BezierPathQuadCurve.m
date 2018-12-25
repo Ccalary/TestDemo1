@@ -36,13 +36,12 @@
     //终点， 控制点
     [path addQuadCurveToPoint:CGPointMake(100, 30) controlPoint:CGPointMake(20, 0)];
     [path stroke];
-    
+
     //三次贝赛尔曲线
     UIBezierPath *threePath = [UIBezierPath bezierPath];
     [threePath moveToPoint:CGPointMake(10, 60)];
     [threePath addCurveToPoint:CGPointMake(150, 60) controlPoint1:CGPointMake(20, 40) controlPoint2:CGPointMake(100, 80)];
     [threePath stroke];
-    
 }
 
 @end

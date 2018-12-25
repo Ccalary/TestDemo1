@@ -82,7 +82,7 @@
     _countLabel.layer.borderWidth = 1;
     _countLabel.font = FONT_SYSTEM(15*UIRate);
     _countLabel.textAlignment = NSTextAlignmentCenter;
-    _countLabel.textColor = COLOR_LIGHT_GRAY;
+    _countLabel.textColor = [UIColor grayColor];
     [self.view addSubview:_countLabel];
 }
 
@@ -192,8 +192,8 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"开始" style:UIBarButtonItemStylePlain target:self action:@selector(barItemAction)];
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"结束" style:UIBarButtonItemStylePlain target:self action:@selector(backItemAction)];
-    toolBar.barTintColor = COLOR_Background;
-    toolBar.tintColor = COLOR_BLACK;
+    toolBar.barTintColor = [UIColor blueColor];
+    toolBar.tintColor = [UIColor blackColor];
     
     toolBar.items = @[barButtonItem, space, backButtonItem];
     

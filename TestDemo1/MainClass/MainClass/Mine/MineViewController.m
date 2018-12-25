@@ -95,7 +95,6 @@
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
     _tableView.mj_header = [HHRefreshNormalHeader headerWithRefreshingBlock:^{
         NSLog(@"走了下拉刷新");
-        
         [_tableView.mj_header endRefreshing];
     }];
 

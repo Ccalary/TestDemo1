@@ -1,5 +1,5 @@
 //
-//  Created by 刘超 on 15/4/14.
+//  Created by lc on 15/4/14.
 //  Copyright (c) 2015年 Leo. All rights reserved.
 //
 //  Mail:   mailto:devtip@163.com
@@ -7,9 +7,9 @@
 //  如有问题或建议请给我发 Email, 或在该项目的 GitHub 主页提 Issue, 谢谢 :)
 //
 //  活动指示器
-//  V 1.0.7
+//  V 1.0.6
 
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "MBProgressHUD.h"
 
 typedef NS_ENUM(NSInteger, LCProgressHUDStatus) {
 
@@ -36,27 +36,36 @@ typedef NS_ENUM(NSInteger, LCProgressHUDStatus) {
 /** 返回一个 HUD 的单例 */
 + (instancetype)sharedHUD;
 
-/** 在 window 上添加一个 HUD */
+/** 在 当前View 上添加一个 HUD */
 + (void)showStatus:(LCProgressHUDStatus)status text:(NSString *)text;
 
 
 
 #pragma mark - 建议使用的方法
 
-/** 在 window 上添加一个只显示文字的 HUD */
+/** 在 keyWindow 上添加一个只显示文字的 HUD */
 + (void)showMessage:(NSString *)text;
 
-/** 在 window 上添加一个提示`信息`的 HUD */
+/** 在 当前View 上添加一个提示`信息`的 HUD */
 + (void)showInfoMsg:(NSString *)text;
 
-/** 在 window 上添加一个提示`失败`的 HUD */
+/** 在 当前View 上添加一个提示`失败`的 HUD */
 + (void)showFailure:(NSString *)text;
 
-/** 在 window 上添加一个提示`成功`的 HUD */
+/** 在 keyWindow 上添加一个提示`失败`的 HUD */
++ (void)showKeyWindowFailure:(NSString *)text;
+
+/** 在 当前View 上添加一个提示`成功`的 HUD */
 + (void)showSuccess:(NSString *)text;
 
-/** 在 window 上添加一个提示`等待`的 HUD, 需要手动关闭 */
+/** 在 keyWindow 上添加一个提示`成功`的 HUD */
++ (void)showKeyWindowSuccess:(NSString *)text;
+
+/** 在 当前View 上添加一个提示`等待`的 HUD, 需要手动关闭 */
 + (void)showLoading:(NSString *)text;
+
+/** 在 keyWindow 上添加一个提示`等待`的 HUD, 需要手动关闭 */
++ (void)showKeyWindowLoading:(NSString *)text;
 
 /** 手动隐藏 HUD */
 + (void)hide;

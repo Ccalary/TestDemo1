@@ -11,6 +11,7 @@
 #import "SendCodeButton.h"
 #import "HHAlertController.h"
 #import "MCRuleView.h"
+#import "LoadingAnimation.h"
 
 @interface WidgetViewController ()<SendCodeButtonDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) UITextField *textField;
@@ -54,6 +55,7 @@
     _textField = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0 - 50, 60, 100, 20)];
     _textField.keyboardType = UIKeyboardTypeNumberPad;
     _textField.delegate = self;
+    _textField.text = 0;
     [_textField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:_textField];
 }
@@ -89,6 +91,12 @@
 }
 
 - (void)sendCodeButtonClick{
+    
+    [[LoadingAnimation sharedInstance] show];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[LoadingAnimation sharedInstance] dismiss];
+    });
+    
     HHAlertController *alert = [HHAlertController alertWithTitle:@"客服电话"
                                                          message:@"0510-10086"
                                                  sureButtonTitle:@"呼叫"
