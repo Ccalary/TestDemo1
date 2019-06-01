@@ -12,5 +12,6 @@ pod 'MJExtension'
 pod 'Masonry'
 pod 'lottie-ios'
 pod 'IQKeyboardManager'
+pod 'KVOController'
 end
 

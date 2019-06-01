@@ -52,6 +52,7 @@
     [self addCell:@"转场动画" class:@"TransitonViewController"];
     [self addCell:@"WebImage" class:@"WebImageTableVC"];
     [self addCell:@"Block用法" class:@"BlockViewController"];
+    [self addCell:@"系统定位" class:@"LocationViewController"];
     
     [self drawView];
 }
