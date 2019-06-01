@@ -101,6 +101,7 @@
 		0DAD4D1E1E7960F5008018BB /* TestDemo1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D1D1E7960F5008018BB /* TestDemo1UITests.m */; };
 		0DADA50A21D1DB86005BB347 /* LoadingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA50821D1DB85005BB347 /* LoadingAnimation.m */; };
 		0DADA50C21D1DB90005BB347 /* loading_a.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DADA50B21D1DB90005BB347 /* loading_a.json */; };
+		0DADA52521D34FDE005BB347 /* InputPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA52421D34FDE005BB347 /* InputPopView.m */; };
 		0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */; };
 		0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */; };
 		0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */; };
@@ -332,6 +333,8 @@
 		0DADA50821D1DB85005BB347 /* LoadingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingAnimation.m; sourceTree = "<group>"; };
 		0DADA50921D1DB86005BB347 /* LoadingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingAnimation.h; sourceTree = "<group>"; };
 		0DADA50B21D1DB90005BB347 /* loading_a.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_a.json; sourceTree = "<group>"; };
+		0DADA52321D34FDE005BB347 /* InputPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputPopView.h; sourceTree = "<group>"; };
+		0DADA52421D34FDE005BB347 /* InputPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputPopView.m; sourceTree = "<group>"; };
 		0DB44FE51EA3C2F800ABC0E6 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		0DB44FE71EA3C2F800ABC0E6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -1064,9 +1067,19 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
+		0DADA52221D34FC5005BB347 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DADA52321D34FDE005BB347 /* InputPopView.h */,
+				0DADA52421D34FDE005BB347 /* InputPopView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0DB44FE41EA3C2DF00ABC0E6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0DADA52221D34FC5005BB347 /* View */,
 				0DB44FE51EA3C2F800ABC0E6 /* FirstViewController.h */,
 				0DB44FE61EA3C2F800ABC0E6 /* FirstViewController.m */,
 				0DB44FE71EA3C2F800ABC0E6 /* HomeViewController.h */,
@@ -1384,6 +1397,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -1394,6 +1408,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -1421,6 +1436,7 @@
 				0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */,
 				FE8AA5341F5699D200BE4842 /* DisTestViewController.m in Sources */,
 				0D4B28D91EE7C4D100BB9CC9 /* ExceptionViewController.m in Sources */,
+				0DADA52521D34FDE005BB347 /* InputPopView.m in Sources */,
 				FEEFEBF62074AFCA00B1E803 /* IconfontViewController.m in Sources */,
 				0D61E67720A4178B00665577 /* MyWebImageVC.m in Sources */,
 				0D3439FB20A19F11003FEB84 /* SDWebImageTableVC.m in Sources */,

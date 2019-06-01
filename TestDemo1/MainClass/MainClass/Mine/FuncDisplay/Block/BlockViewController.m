@@ -36,15 +36,16 @@ typedef void(^doubleWithNumBlock)(int a);
     someBlock();
     NSLog(@"sum:%d",add);
     
-    [self doubleWithNum:2 completion:^(int a) {
-      NSLog(@"a=%d",a);
+    [self doubleWithNum:2 completion:^(int b) {
+      NSLog(@"a=%d",b);
     }];
      
     [self doubleWithNum:3 completion:nil];
+    
 }
 
 
-- (void)doubleWithNum:(int)a completion:(void(^)(int a))finish{
+- (void)doubleWithNum:(int)a completion:(void(^)(int b))finish{
     if (finish){
       finish(a*2);
     }

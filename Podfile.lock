@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - IQKeyboardManager (6.2.0)
   - lottie-ios (2.5.2)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
@@ -23,6 +24,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - IQKeyboardManager
   - lottie-ios
   - Masonry
   - MBProgressHUD (~> 1.0.0)
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - IQKeyboardManager
     - lottie-ios
     - Masonry
     - MBProgressHUD
@@ -42,6 +45,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -49,6 +53,6 @@ SPEC CHECKSUMS:
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: ca1bca46a9aed2b8a944ad2d765106785b1e984f
+PODFILE CHECKSUM: 1916418b4f4afe3773b231a16dcfab739b232f0b
 
 COCOAPODS: 1.5.3

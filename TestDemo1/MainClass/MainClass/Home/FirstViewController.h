@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+static NSString *hhh = @"hhhh";
 
 @interface FirstViewController : UIViewController
 
