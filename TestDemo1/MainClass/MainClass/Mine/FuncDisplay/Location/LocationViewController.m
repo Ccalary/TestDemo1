@@ -45,7 +45,7 @@
     }];
     UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSURL *setingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-        [[UIApplication sharedApplication]openURL:setingsURL];
+        [[UIApplication sharedApplication] openURL:setingsURL];
     }];
     [alert addAction:cancel];
     [alert addAction:queren];

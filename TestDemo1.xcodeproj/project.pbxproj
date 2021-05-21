@@ -49,6 +49,12 @@
 		0D33BB001EEF8B3500AD69EB /* CAEmitterLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D33BAFF1EEF8B3500AD69EB /* CAEmitterLayerVC.m */; };
 		0D33BB041EEF8F2700AD69EB /* HHEmitterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D33BB031EEF8F2700AD69EB /* HHEmitterButton.m */; };
 		0D3439FB20A19F11003FEB84 /* SDWebImageTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3439F920A19F11003FEB84 /* SDWebImageTableVC.m */; };
+		0D35FBD226296E7A00F6B862 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0D35FBD126296E7A00F6B862 /* README.md */; };
+		0D35FBE92629725C00F6B862 /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D35FBE82629725C00F6B862 /* TouchViewController.m */; };
+		0D35FBF3262973E100F6B862 /* TouchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D35FBF2262973E100F6B862 /* TouchCollectionViewCell.m */; };
+		0D35FBFE2629746100F6B862 /* UIButton+MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D35FBFA2629746100F6B862 /* UIButton+MCButton.m */; };
+		0D35FBFF2629746100F6B862 /* UILabel+MCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D35FBFD2629746100F6B862 /* UILabel+MCLabel.m */; };
+		0D35FC05262974BE00F6B862 /* UIColor+MCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D35FC04262974BE00F6B862 /* UIColor+MCColor.m */; };
 		0D37982A20A578B30039352F /* WebImagePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D37982920A578B30039352F /* WebImagePlist.plist */; };
 		0D37982D20A97A850039352F /* MCMemeryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D37982C20A97A850039352F /* MCMemeryCache.m */; };
 		0D4B28D41EE7C4D100BB9CC9 /* BluetoochVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4B28B81EE7C4D100BB9CC9 /* BluetoochVC.m */; };
@@ -75,6 +81,7 @@
 		0D4F944C1E8AB98900070950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D4F944B1E8AB98900070950 /* Assets.xcassets */; };
 		0D4F94501E8AB9B500070950 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4F944F1E8AB9B500070950 /* AppDelegate.m */; };
 		0D4F945C1E8ABA2A00070950 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4F94581E8ABA2A00070950 /* main.m */; };
+		0D5A5FB42655F2130067FB66 /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A5FB32655F2130067FB66 /* TakePhotoViewController.m */; };
 		0D5B07351EA84B8200FB1AC2 /* LCProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B07321EA84B8200FB1AC2 /* LCProgressHUD.bundle */; };
 		0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B07341EA84B8200FB1AC2 /* LCProgressHUD.m */; };
 		0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B073D1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m */; };
@@ -83,10 +90,12 @@
 		0D61E67E20A419D500665577 /* MyCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E67D20A419D500665577 /* MyCustomTableViewCell.m */; };
 		0D61E68220A4313200665577 /* FPSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E68120A4313200665577 /* FPSTools.m */; };
 		0D61E68620A43AF600665577 /* CNPPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E68520A43AF600665577 /* CNPPopupController.m */; };
-		0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6C0DEA1F03495F0005745A /* NSObject+Common.m */; };
-		0D72365920AA870800C88CDB /* UIColor+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72365820AA870800C88CDB /* UIColor+App.m */; };
 		0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */; };
 		0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */; };
+		0D7E7F8526465CE700DB06CB /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7F8426465CE600DB06CB /* CHTCollectionViewWaterfallLayout.m */; };
+		0D7E7F8F26465EFF00DB06CB /* CHTCollectionViewWaterfallFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7F8A26465EFE00DB06CB /* CHTCollectionViewWaterfallFooter.m */; };
+		0D7E7F9026465EFF00DB06CB /* CHTCollectionViewWaterfallHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7F8B26465EFE00DB06CB /* CHTCollectionViewWaterfallHeader.m */; };
+		0D7E7F9126465EFF00DB06CB /* CHTCollectionViewWaterfallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7F8C26465EFE00DB06CB /* CHTCollectionViewWaterfallCell.m */; };
 		0D817F7420B29E1600D77751 /* MCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D817F7320B29E1600D77751 /* MCCache.m */; };
 		0D817F7C20B4015400D77751 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D817F7B20B4015400D77751 /* BlockViewController.m */; };
 		0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D840ADB1EBFFF28005E078A /* Draw2DView.m */; };
@@ -105,6 +114,10 @@
 		0DB44FEA1EA3C2F800ABC0E6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB44FE81EA3C2F800ABC0E6 /* HomeViewController.m */; };
 		0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */; };
 		0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */; };
+		0DC3D69F24B84F7300E4353A /* ImageTransformVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC3D69E24B84F7300E4353A /* ImageTransformVC.m */; };
+		0DDA2887262D5B9200B049EA /* FMDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA2886262D5B9200B049EA /* FMDBViewController.m */; };
+		0DDA28AE262E81C500B049EA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA28AD262E81C500B049EA /* DetailViewController.m */; };
+		0DDA28C3262EAA1200B049EA /* WaterFallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA28C2262EAA1200B049EA /* WaterFallViewController.m */; };
 		0DEFBB5122A275BB00D5E646 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFBB5022A275BB00D5E646 /* LocationViewController.m */; };
 		0DF39CF220931F6E007518B7 /* UIView+MCTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF39CF020931F6D007518B7 /* UIView+MCTransition.m */; };
 		0DF39CF62093228F007518B7 /* TransitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF39CF52093228F007518B7 /* TransitonViewController.m */; };
@@ -230,6 +243,17 @@
 		0D33BB031EEF8F2700AD69EB /* HHEmitterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHEmitterButton.m; sourceTree = "<group>"; };
 		0D3439F820A19F11003FEB84 /* SDWebImageTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDWebImageTableVC.h; sourceTree = "<group>"; };
 		0D3439F920A19F11003FEB84 /* SDWebImageTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDWebImageTableVC.m; sourceTree = "<group>"; };
+		0D35FBD126296E7A00F6B862 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0D35FBE72629725C00F6B862 /* TouchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchViewController.h; sourceTree = "<group>"; };
+		0D35FBE82629725C00F6B862 /* TouchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchViewController.m; sourceTree = "<group>"; };
+		0D35FBF1262973E100F6B862 /* TouchCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchCollectionViewCell.h; sourceTree = "<group>"; };
+		0D35FBF2262973E100F6B862 /* TouchCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchCollectionViewCell.m; sourceTree = "<group>"; };
+		0D35FBFA2629746100F6B862 /* UIButton+MCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MCButton.m"; sourceTree = "<group>"; };
+		0D35FBFB2629746100F6B862 /* UIButton+MCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MCButton.h"; sourceTree = "<group>"; };
+		0D35FBFC2629746100F6B862 /* UILabel+MCLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MCLabel.h"; sourceTree = "<group>"; };
+		0D35FBFD2629746100F6B862 /* UILabel+MCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MCLabel.m"; sourceTree = "<group>"; };
+		0D35FC03262974BE00F6B862 /* UIColor+MCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MCColor.h"; sourceTree = "<group>"; };
+		0D35FC04262974BE00F6B862 /* UIColor+MCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MCColor.m"; sourceTree = "<group>"; };
 		0D37982920A578B30039352F /* WebImagePlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = WebImagePlist.plist; sourceTree = "<group>"; };
 		0D37982B20A97A850039352F /* MCMemeryCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCMemeryCache.h; sourceTree = "<group>"; };
 		0D37982C20A97A850039352F /* MCMemeryCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCMemeryCache.m; sourceTree = "<group>"; };
@@ -282,6 +306,8 @@
 		0D4F94581E8ABA2A00070950 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D4F94701E8ABBF900070950 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
 		0D4F94711E8ABD4C00070950 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0D5A5FB22655F2130067FB66 /* TakePhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
+		0D5A5FB32655F2130067FB66 /* TakePhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
 		0D5B07321EA84B8200FB1AC2 /* LCProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LCProgressHUD.bundle; sourceTree = "<group>"; };
 		0D5B07331EA84B8200FB1AC2 /* LCProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCProgressHUD.h; sourceTree = "<group>"; };
 		0D5B07341EA84B8200FB1AC2 /* LCProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProgressHUD.m; sourceTree = "<group>"; };
@@ -297,14 +323,18 @@
 		0D61E68120A4313200665577 /* FPSTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPSTools.m; sourceTree = "<group>"; };
 		0D61E68420A43AF600665577 /* CNPPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPPopupController.h; sourceTree = "<group>"; };
 		0D61E68520A43AF600665577 /* CNPPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPPopupController.m; sourceTree = "<group>"; };
-		0D6C0DE91F03495F0005745A /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
-		0D6C0DEA1F03495F0005745A /* NSObject+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
-		0D72365720AA870700C88CDB /* UIColor+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+App.h"; sourceTree = "<group>"; };
-		0D72365820AA870800C88CDB /* UIColor+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+App.m"; sourceTree = "<group>"; };
 		0D77DF431ED69FBE000F3C1A /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		0D77DF461ED6AD9E000F3C1A /* HHCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCountingLabel.h; sourceTree = "<group>"; };
 		0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHCountingLabel.m; sourceTree = "<group>"; };
+		0D7E7F8326465CE600DB06CB /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
+		0D7E7F8426465CE600DB06CB /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+		0D7E7F8926465EFE00DB06CB /* CHTCollectionViewWaterfallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallHeader.h; sourceTree = "<group>"; };
+		0D7E7F8A26465EFE00DB06CB /* CHTCollectionViewWaterfallFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallFooter.m; sourceTree = "<group>"; };
+		0D7E7F8B26465EFE00DB06CB /* CHTCollectionViewWaterfallHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallHeader.m; sourceTree = "<group>"; };
+		0D7E7F8C26465EFE00DB06CB /* CHTCollectionViewWaterfallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallCell.m; sourceTree = "<group>"; };
+		0D7E7F8D26465EFE00DB06CB /* CHTCollectionViewWaterfallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallCell.h; sourceTree = "<group>"; };
+		0D7E7F8E26465EFF00DB06CB /* CHTCollectionViewWaterfallFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallFooter.h; sourceTree = "<group>"; };
 		0D817F7220B29E1600D77751 /* MCCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCCache.h; sourceTree = "<group>"; };
 		0D817F7320B29E1600D77751 /* MCCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCCache.m; sourceTree = "<group>"; };
 		0D817F7A20B4015400D77751 /* BlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
@@ -343,6 +373,14 @@
 		0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		0DBBE4BE1FC4763900645A85 /* ImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
 		0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
+		0DC3D69D24B84F7300E4353A /* ImageTransformVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTransformVC.h; sourceTree = "<group>"; };
+		0DC3D69E24B84F7300E4353A /* ImageTransformVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTransformVC.m; sourceTree = "<group>"; };
+		0DDA2885262D5B9200B049EA /* FMDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBViewController.h; sourceTree = "<group>"; };
+		0DDA2886262D5B9200B049EA /* FMDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBViewController.m; sourceTree = "<group>"; };
+		0DDA28AC262E81C500B049EA /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		0DDA28AD262E81C500B049EA /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0DDA28C1262EAA1200B049EA /* WaterFallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterFallViewController.h; sourceTree = "<group>"; };
+		0DDA28C2262EAA1200B049EA /* WaterFallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterFallViewController.m; sourceTree = "<group>"; };
 		0DEFBB4F22A275BB00D5E646 /* LocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		0DEFBB5022A275BB00D5E646 /* LocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		0DEFBB6022A27AAC00D5E646 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -577,10 +615,6 @@
 		0D2428C71ED98103002B52F3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0D72365720AA870700C88CDB /* UIColor+App.h */,
-				0D72365820AA870800C88CDB /* UIColor+App.m */,
-				0D6C0DE91F03495F0005745A /* NSObject+Common.h */,
-				0D6C0DEA1F03495F0005745A /* NSObject+Common.m */,
 				0D4B28F51EE94C2700BB9CC9 /* UIView+Extension.h */,
 				0D4B28F61EE94C2700BB9CC9 /* UIView+Extension.m */,
 				0DA4F3F71EE6925B00ED17B2 /* NSArray+Dlog.h */,
@@ -631,6 +665,27 @@
 			path = SDWebImageUse;
 			sourceTree = "<group>";
 		};
+		0D35FBE62629724B00F6B862 /* Touch */ = {
+			isa = PBXGroup;
+			children = (
+				0D35FBF0262973D100F6B862 /* View */,
+				0D35FBE72629725C00F6B862 /* TouchViewController.h */,
+				0D35FBE82629725C00F6B862 /* TouchViewController.m */,
+				0DDA28AC262E81C500B049EA /* DetailViewController.h */,
+				0DDA28AD262E81C500B049EA /* DetailViewController.m */,
+			);
+			path = Touch;
+			sourceTree = "<group>";
+		};
+		0D35FBF0262973D100F6B862 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D35FBF1262973E100F6B862 /* TouchCollectionViewCell.h */,
+				0D35FBF2262973E100F6B862 /* TouchCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0D4193C81E8416D600075590 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +712,11 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				0D5A5FB12655F1E40067FB66 /* TakePhoto */,
+				0DDA28C0262EAA0600B049EA /* WaterFall */,
+				0DDA2884262D5B8200B049EA /* FMDB */,
+				0D35FBE62629724B00F6B862 /* Touch */,
+				0DC3D69C24B84F5600E4353A /* ImageTransform */,
 				0DEFBB4E22A275B100D5E646 /* Location */,
 				0D817F7920B400C600D77751 /* Block */,
 				0D61E67320A4175B00665577 /* WebImage */,
@@ -767,6 +827,7 @@
 				0D4F94571E8ABA2A00070950 /* Info.plist */,
 				0D4F94581E8ABA2A00070950 /* main.m */,
 				0D4F94711E8ABD4C00070950 /* PrefixHeader.pch */,
+				0D35FBD126296E7A00F6B862 /* README.md */,
 			);
 			path = AppFiles;
 			sourceTree = "<group>";
@@ -809,6 +870,15 @@
 				0D4B28B51EE7C4D100BB9CC9 /* Mine */,
 			);
 			path = MainClass;
+			sourceTree = "<group>";
+		};
+		0D5A5FB12655F1E40067FB66 /* TakePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				0D5A5FB22655F2130067FB66 /* TakePhotoViewController.h */,
+				0D5A5FB32655F2130067FB66 /* TakePhotoViewController.m */,
+			);
+			path = TakePhoto;
 			sourceTree = "<group>";
 		};
 		0D5B07311EA84B8200FB1AC2 /* LCProgressHUD */ = {
@@ -1107,6 +1177,41 @@
 			path = GoodTableView;
 			sourceTree = "<group>";
 		};
+		0DC3D69C24B84F5600E4353A /* ImageTransform */ = {
+			isa = PBXGroup;
+			children = (
+				0DC3D69D24B84F7300E4353A /* ImageTransformVC.h */,
+				0DC3D69E24B84F7300E4353A /* ImageTransformVC.m */,
+			);
+			path = ImageTransform;
+			sourceTree = "<group>";
+		};
+		0DDA2884262D5B8200B049EA /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA2885262D5B9200B049EA /* FMDBViewController.h */,
+				0DDA2886262D5B9200B049EA /* FMDBViewController.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		0DDA28C0262EAA0600B049EA /* WaterFall */ = {
+			isa = PBXGroup;
+			children = (
+				0D7E7F8D26465EFE00DB06CB /* CHTCollectionViewWaterfallCell.h */,
+				0D7E7F8C26465EFE00DB06CB /* CHTCollectionViewWaterfallCell.m */,
+				0D7E7F8E26465EFF00DB06CB /* CHTCollectionViewWaterfallFooter.h */,
+				0D7E7F8A26465EFE00DB06CB /* CHTCollectionViewWaterfallFooter.m */,
+				0D7E7F8926465EFE00DB06CB /* CHTCollectionViewWaterfallHeader.h */,
+				0D7E7F8B26465EFE00DB06CB /* CHTCollectionViewWaterfallHeader.m */,
+				0D7E7F8326465CE600DB06CB /* CHTCollectionViewWaterfallLayout.h */,
+				0D7E7F8426465CE600DB06CB /* CHTCollectionViewWaterfallLayout.m */,
+				0DDA28C1262EAA1200B049EA /* WaterFallViewController.h */,
+				0DDA28C2262EAA1200B049EA /* WaterFallViewController.m */,
+			);
+			path = WaterFall;
+			sourceTree = "<group>";
+		};
 		0DEFBB4E22A275B100D5E646 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -1227,6 +1332,12 @@
 		FEEFEBEA2074A82100B1E803 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0D35FC03262974BE00F6B862 /* UIColor+MCColor.h */,
+				0D35FC04262974BE00F6B862 /* UIColor+MCColor.m */,
+				0D35FBFB2629746100F6B862 /* UIButton+MCButton.h */,
+				0D35FBFA2629746100F6B862 /* UIButton+MCButton.m */,
+				0D35FBFC2629746100F6B862 /* UILabel+MCLabel.h */,
+				0D35FBFD2629746100F6B862 /* UILabel+MCLabel.m */,
 				0DF39CF120931F6E007518B7 /* UIView+MCTransition.h */,
 				0DF39CF020931F6D007518B7 /* UIView+MCTransition.m */,
 				FEEFEBEB2074A87900B1E803 /* UIImage+IconFont.h */,
@@ -1322,7 +1433,7 @@
 				TargetAttributes = {
 					0DAD4CF41E7960F4008018BB = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = TY5KC79H76;
+						DevelopmentTeam = VND4A3UQDL;
 						ProvisioningStyle = Automatic;
 					};
 					0DAD4D0D1E7960F5008018BB = {
@@ -1344,6 +1455,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1365,6 +1477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5B07351EA84B8200FB1AC2 /* LCProgressHUD.bundle in Resources */,
+				0D35FBD226296E7A00F6B862 /* README.md in Resources */,
 				0D2A5F401EC55B7E00F41D4D /* Main.storyboard in Resources */,
 				0D37982A20A578B30039352F /* WebImagePlist.plist in Resources */,
 				FEEFEBF12074A8E700B1E803 /* iconfont.ttf in Resources */,
@@ -1416,8 +1529,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TestDemo1/Pods-TestDemo1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AGGeometryKit/AGGeometryKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -1430,6 +1546,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AGGeometryKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -1441,7 +1560,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestDemo1/Pods-TestDemo1-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1452,22 +1571,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D0588FC20A13B1300223199 /* UIImageView+HighlightedWebCache.m in Sources */,
+				0D35FBF3262973E100F6B862 /* TouchCollectionViewCell.m in Sources */,
+				0D7E7F9126465EFF00DB06CB /* CHTCollectionViewWaterfallCell.m in Sources */,
+				0D7E7F9026465EFF00DB06CB /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				0D33BB001EEF8B3500AD69EB /* CAEmitterLayerVC.m in Sources */,
 				0D4F945C1E8ABA2A00070950 /* main.m in Sources */,
 				0D05890520A13B1300223199 /* SDWebImagePrefetcher.m in Sources */,
 				0D05890320A13B1300223199 /* SDWebImageCoderHelper.m in Sources */,
 				0DB44FE91EA3C2F800ABC0E6 /* FirstViewController.m in Sources */,
 				FE8AA5341F5699D200BE4842 /* DisTestViewController.m in Sources */,
+				0D5A5FB42655F2130067FB66 /* TakePhotoViewController.m in Sources */,
 				0D4B28D91EE7C4D100BB9CC9 /* ExceptionViewController.m in Sources */,
+				0D35FBFF2629746100F6B862 /* UILabel+MCLabel.m in Sources */,
 				0DADA52521D34FDE005BB347 /* InputPopView.m in Sources */,
 				FEEFEBF62074AFCA00B1E803 /* IconfontViewController.m in Sources */,
 				0D61E67720A4178B00665577 /* MyWebImageVC.m in Sources */,
 				0D3439FB20A19F11003FEB84 /* SDWebImageTableVC.m in Sources */,
 				0D4F94501E8AB9B500070950 /* AppDelegate.m in Sources */,
 				0D4B28DF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m in Sources */,
+				0D35FBFE2629746100F6B862 /* UIButton+MCButton.m in Sources */,
 				FE89B8FA1F7B975E00576C53 /* RoundCoverView.m in Sources */,
 				0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */,
 				0D61E68220A4313200665577 /* FPSTools.m in Sources */,
+				0D7E7F8F26465EFF00DB06CB /* CHTCollectionViewWaterfallFooter.m in Sources */,
 				0D37982D20A97A850039352F /* MCMemeryCache.m in Sources */,
 				0D4B28E11EE7C4D100BB9CC9 /* MineViewController.m in Sources */,
 				FE8AA53C1F56B38900BE4842 /* RunLabelView.m in Sources */,
@@ -1477,6 +1603,7 @@
 				0D4B28D61EE7C4D100BB9CC9 /* CircleProgressVC.m in Sources */,
 				0D0588FF20A13B1300223199 /* SDWebImageCodersManager.m in Sources */,
 				0D4B29051EE953CC00BB9CC9 /* BezierPathViewBase.m in Sources */,
+				0D35FC05262974BE00F6B862 /* UIColor+MCColor.m in Sources */,
 				0D2DAFA520BFCE0900988EF1 /* MCRuleView.m in Sources */,
 				0DF39CF220931F6E007518B7 /* UIView+MCTransition.m in Sources */,
 				0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */,
@@ -1484,6 +1611,7 @@
 				0D2DAFA420BFCE0900988EF1 /* MCRuleCollectionViewCell.m in Sources */,
 				0D4B28DA1EE7C4D100BB9CC9 /* GCDViewController.m in Sources */,
 				FED04B2120204C5A000F415F /* DataViewController.m in Sources */,
+				0DDA28C3262EAA1200B049EA /* WaterFallViewController.m in Sources */,
 				0D05890D20A13B1300223199 /* UIImageView+WebCache.m in Sources */,
 				0D4B28D81EE7C4D100BB9CC9 /* EventViewController.m in Sources */,
 				0D05890220A13B1300223199 /* UIImage+MultiFormat.m in Sources */,
@@ -1494,20 +1622,23 @@
 				0D4B28F41EE7F51200BB9CC9 /* DemoHelper.m in Sources */,
 				0D61E68620A43AF600665577 /* CNPPopupController.m in Sources */,
 				0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */,
+				0DDA28AE262E81C500B049EA /* DetailViewController.m in Sources */,
 				0D05890120A13B1300223199 /* UIImage+GIF.m in Sources */,
 				FED04B2420205646000F415F /* StudentsModel.m in Sources */,
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
+				0D35FBE92629725C00F6B862 /* TouchViewController.m in Sources */,
 				0D05890420A13B1300223199 /* SDWebImageCompat.m in Sources */,
 				0D4B29121EEA6DC200BB9CC9 /* GradientViewController.m in Sources */,
 				0D4B28D51EE7C4D100BB9CC9 /* BlueView.m in Sources */,
 				0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */,
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
-				0D6C0DEB1F03495F0005745A /* NSObject+Common.m in Sources */,
 				0D05891420A13B1300223199 /* UIButton+WebCache.m in Sources */,
+				0DC3D69F24B84F7300E4353A /* ImageTransformVC.m in Sources */,
 				0D05890720A13B1300223199 /* NSButton+WebCache.m in Sources */,
 				0DF39CF62093228F007518B7 /* TransitonViewController.m in Sources */,
 				0DEFBB5122A275BB00D5E646 /* LocationViewController.m in Sources */,
 				0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */,
+				0DDA2887262D5B9200B049EA /* FMDBViewController.m in Sources */,
 				0D05891520A13B1300223199 /* SDWebImageWebPCoder.m in Sources */,
 				FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */,
 				FE5446711FC3C3D7005B96BE /* HHAlertController.m in Sources */,
@@ -1522,6 +1653,7 @@
 				0D0588FD20A13B1300223199 /* SDWebImageFrame.m in Sources */,
 				0D05890B20A13B1300223199 /* SDWebImageTransition.m in Sources */,
 				0D4B29151EEA717700BB9CC9 /* LayerAnimationVC.m in Sources */,
+				0D7E7F8526465CE700DB06CB /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				0D817F7C20B4015400D77751 /* BlockViewController.m in Sources */,
 				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
 				0D0588F920A13B1300223199 /* UIImage+WebP.m in Sources */,
@@ -1548,7 +1680,6 @@
 				0D2428B11ED95F1F002B52F3 /* MoveButton.m in Sources */,
 				0D4B290E1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m in Sources */,
 				FED04B1D20203488000F415F /* FluencyTableViewCell.m in Sources */,
-				0D72365920AA870800C88CDB /* UIColor+App.m in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */,
@@ -1708,10 +1839,10 @@
 			baseConfigurationReference = C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TY5KC79H76;
+				DEVELOPMENT_TEAM = VND4A3UQDL;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TestDemo1/AppFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TestDemo1/AppFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rs.TestDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1723,10 +1854,10 @@
 			baseConfigurationReference = 14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TY5KC79H76;
+				DEVELOPMENT_TEAM = VND4A3UQDL;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TestDemo1/AppFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TestDemo1/AppFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rs.TestDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";

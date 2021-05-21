@@ -20,6 +20,8 @@
 #define TabBarHeight                    ((StatusBarHeight > 20.0f) ? 83.0f : 49.0f)
 //nav顶部高度
 #define TopFullHeight                   (StatusBarHeight + NavigationBarHeight)
+//底部安全区域
+#define TabBarSafeBottomMargin          ((StatusBarHeight > 20.0f) ? 34.0f : 0.0f)
 //屏幕适配
 #define UIRate                          ScreenWidth/375.0
 

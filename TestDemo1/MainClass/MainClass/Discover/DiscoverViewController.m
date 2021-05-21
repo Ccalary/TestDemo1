@@ -14,7 +14,6 @@
 #import <pop/POP.h>
 #import "CountdownLabel.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "NSObject+Common.h"
 #import "DisTestViewController.h"
 
 @interface DiscoverViewController ()

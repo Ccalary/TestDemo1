@@ -14,6 +14,15 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AGGeometryKit (1.2.9):
+    - AGGeometryKit/CALayerProperties (= 1.2.9)
+    - AGGeometryKit/UIViewProperties (= 1.2.9)
+  - AGGeometryKit/CALayerProperties (1.2.9)
+  - AGGeometryKit/UIViewProperties (1.2.9)
+  - FDFullscreenPopGesture (1.1)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - IQKeyboardManager (6.2.0)
   - KVOController (1.2.0)
   - lottie-ios (2.5.2)
@@ -25,6 +34,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - AGGeometryKit
+  - FDFullscreenPopGesture (= 1.1)
+  - FMDB
   - IQKeyboardManager
   - KVOController
   - lottie-ios
@@ -35,8 +47,11 @@ DEPENDENCIES:
   - pop (~> 1.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - AGGeometryKit
+    - FDFullscreenPopGesture
+    - FMDB
     - IQKeyboardManager
     - KVOController
     - lottie-ios
@@ -48,6 +63,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AGGeometryKit: 5e820bd2a8290e3b1e3a1517a49c65ae42c239c9
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
@@ -57,6 +75,6 @@ SPEC CHECKSUMS:
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: 89fbdc2bceb859f0a79b8887676653eaae7f31dc
+PODFILE CHECKSUM: 9df77e10717c0c60a3a2aca26a14bed525704074
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.0

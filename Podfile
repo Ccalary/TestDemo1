@@ -13,5 +13,8 @@ pod 'Masonry'
 pod 'lottie-ios'
 pod 'IQKeyboardManager'
 pod 'KVOController'
+pod 'AGGeometryKit'
+pod 'FMDB'
+pod 'FDFullscreenPopGesture', '1.1'
 end
 

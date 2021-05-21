@@ -53,7 +53,11 @@
     [self addCell:@"WebImage" class:@"WebImageTableVC"];
     [self addCell:@"Block用法" class:@"BlockViewController"];
     [self addCell:@"系统定位" class:@"LocationViewController"];
-    
+    [self addCell:@"图像变换" class:@"ImageTransformVC"];
+    [self addCell:@"3DTouch" class:@"TouchViewController"];
+    [self addCell:@"FMDB" class:@"FMDBViewController"];
+    [self addCell:@"瀑布流" class:@"WaterFallViewController"];
+    [self addCell:@"自定义拍照界面" class:@"TakePhotoViewController"];
     [self drawView];
 }
 
@@ -79,39 +83,39 @@
         make.edges.equalTo(self.view);
     }];
     
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 180, ScreenWidth, 80)];
-    //提示文字
-    _searchBar.placeholder = @"搜索";
-    //搜索框上方标题
-    _searchBar.prompt = @"搜索框测试";
-    _searchBar.showsCancelButton = YES;
-    _searchBar.delegate = self;
-    //搜索输入闪烁符的颜色
-    //    _searchBar.tintColor = [UIColor redColor];
-    //背景色
-    //    _searchBar.barTintColor = COLOR_Background;
-    
-    self.tableView.tableHeaderView = self.searchBar;
-    
-    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
-    _tableView.mj_header = [HHRefreshNormalHeader headerWithRefreshingBlock:^{
-        NSLog(@"走了下拉刷新");
-        [_tableView.mj_header endRefreshing];
-    }];
-
-    _tableView.mj_footer = [HHRefreshNormalFooter footerWithRefreshingBlock:^{
-
-        NSLog(@"走了上拉加载");
-
-       int x = arc4random() % 10;
-        if (x > 6){
-            [_tableView.mj_footer endRefreshingWithNoMoreData];
-        }else {
-             [_tableView.mj_footer endRefreshing];
-        }
-    }];
-     // 马上进入刷新状态
-    [_tableView.mj_header beginRefreshing];
+//    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 180, ScreenWidth, 80)];
+//    //提示文字
+//    _searchBar.placeholder = @"搜索";
+//    //搜索框上方标题
+//    _searchBar.prompt = @"搜索框测试";
+//    _searchBar.showsCancelButton = YES;
+//    _searchBar.delegate = self;
+//    //搜索输入闪烁符的颜色
+//    //    _searchBar.tintColor = [UIColor redColor];
+//    //背景色
+//    //    _searchBar.barTintColor = COLOR_Background;
+//    
+//    self.tableView.tableHeaderView = self.searchBar;
+//    
+//    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+//    _tableView.mj_header = [HHRefreshNormalHeader headerWithRefreshingBlock:^{
+//        NSLog(@"走了下拉刷新");
+//        [_tableView.mj_header endRefreshing];
+//    }];
+//
+//    _tableView.mj_footer = [HHRefreshNormalFooter footerWithRefreshingBlock:^{
+//
+//        NSLog(@"走了上拉加载");
+//
+//       int x = arc4random() % 10;
+//        if (x > 6){
+//            [_tableView.mj_footer endRefreshingWithNoMoreData];
+//        }else {
+//             [_tableView.mj_footer endRefreshing];
+//        }
+//    }];
+//     // 马上进入刷新状态
+//    [_tableView.mj_header beginRefreshing];
 }
 
 

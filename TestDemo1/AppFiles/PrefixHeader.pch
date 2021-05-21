@@ -17,5 +17,8 @@
 #import "HHRefreshNormalFooter.h"//自定义的加载底部
 #import <MJExtension/MJExtension.h> //字典转model
 #import <Masonry/Masonry.h> //自动布局
- 
+#import "UILabel+MCLabel.h"
+#import "UIButton+MCButton.h"
+#import "UIColor+MCColor.h"
+
 #endif /* PrefixHeader_pch */

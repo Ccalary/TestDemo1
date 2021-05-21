@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "C7CA66A0-3589-44B5-A627-A258B1E1F53C"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
+            uuid = "551C7AAA-3B9C-4E21-B7FC-7E808F0E96DE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            scope = "0"
+            scope = "1"
             stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestDemo1/MainClass/ThirdClass/CNPPopupController/CNPPopupController.m"
-            timestampString = "567499459.042442"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "-keyboardWillHide:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

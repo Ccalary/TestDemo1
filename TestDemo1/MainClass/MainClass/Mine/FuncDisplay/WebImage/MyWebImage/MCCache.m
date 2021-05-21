@@ -19,7 +19,7 @@
 - (instancetype)init {
     if (self = [super init]){
         _fileManager = [NSFileManager defaultManager];
-        [self creatFoler];
+        [self createFoler];
     }
     return self;
 }
@@ -31,7 +31,7 @@
     return path;
 }
 
-- (void)creatFoler {
+- (void)createFoler {
     NSString *path = [self getCachePath];
     self.diskCachePath = [path stringByAppendingPathComponent:@"MCImageCache"];
     BOOL isSuccess = [self.fileManager createDirectoryAtPath:self.diskCachePath withIntermediateDirectories:NO attributes:nil error:nil];

@@ -12,6 +12,7 @@
 #import "MineViewController.h"
 #import "DiscoverViewController.h"
 #import "UIImage+IconFont.h"
+#import "TouchViewController.h"
 
 @interface BaseTabBarController ()
 

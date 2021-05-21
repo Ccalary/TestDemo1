@@ -14,20 +14,20 @@
 - (NSString *)description{
 
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    unsigned int count;
-    objc_property_t *properties = class_copyPropertyList([self class], &count);
-    for (int i = 0; i < count; i++){//遍历拿到每一个属性
-        objc_property_t property = properties[i];
-        const char *char_p = property_getName(property);
-        //获得属性名
-        NSString *name = [NSString stringWithUTF8String:char_p];
-        id propertyValue = [self valueForKey:name]?:@"nil";//默认值为nil
-        
-        [dictionary setValue:propertyValue forKey:name];
-        
-    }
-    //释放
-    free(properties);
+//    unsigned int count;
+//    objc_property_t *properties = class_copyPropertyList([self class], &count);
+//    for (int i = 0; i < count; i++){//遍历拿到每一个属性
+//        objc_property_t property = properties[i];
+//        const char *char_p = property_getName(property);
+//        //获得属性名
+//        NSString *name = [NSString stringWithUTF8String:char_p];
+//        id propertyValue = [self valueForKey:name]?:@"nil";//默认值为nil
+//        
+//        [dictionary setValue:propertyValue forKey:name];
+//        
+//    }
+//    //释放
+//    free(properties);
     //返回
     return [NSString stringWithFormat:@"<%@: %p> -- %@",[self class],self,dictionary];
 }

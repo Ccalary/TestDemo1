@@ -84,4 +84,13 @@
     }];
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options API_AVAILABLE(ios(9.0)){
+    NSString *strUrl=url.absoluteString;
+     NSLog(@"%@",strUrl);
+    
+    NSLog(@"options:%@",options);
+    
+     return YES;
+}
+
 @end

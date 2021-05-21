@@ -11,6 +11,8 @@
 #import "BezierPathViewSquare.h"
 #import "BezierPathViewRound.h"
 #import "BezierPathQuadCurve.h"
+#import <AGGeometryKit/AGGeometryKit.h>
+#import "AppDelegate.h"
 
 @interface BezierPathVC ()
 @property (nonatomic, strong) BezierPathViewBase *baseView;
@@ -43,6 +45,24 @@
     
     [self initGraphicsView];
     
+    [self initAGKView];
+    
+}
+
+- (void)initAGKView {
+   UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(150, 450, 1, 1)]; // create a view
+    view.image = [UIImage imageNamed:@"img_190"];
+   [self.view addSubview:view];
+   [view.layer ensureAnchorPointIsSetToZero]; // set the anchor point to [0, 0] (this method keeps the same position)
+
+   AGKQuad quad = view.layer.quadrilateral;
+   quad.br.x += 80; // shift bottom right x-value with 20 pixels
+   quad.br.y += 80; // shift bottom right y-value with 50 pixels
+   quad.tr.x += 100;
+   quad.tr.y -= 30;
+   quad.bl.y += 50;
+    
+   view.layer.quadrilateral = quad; // the quad is converted to CATransform3D and applied
 }
 
 - (void)initGraphicsView {
@@ -258,6 +278,7 @@
     [path addClip];
     // 4、渲染
     [self.view.layer renderInContext:ctx];
+//    [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:NO];
     // 第一次裁剪后得到的图片是一张在整个View上的图片，要想得到单独的图片还需进行二次裁剪
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -270,6 +291,52 @@
     [newImage drawAtPoint:CGPointMake(-frame.origin.x, -frame.origin.y)];
     UIImage *fImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
+    
+//    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0.0);
+//    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
+//    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+
+    
     self.customerImageView.image = fImage;
+//   self.customerImageView.image = [self screenshotImage];
+}
+
+- (UIImage *)screenshotImage
+{
+    CGSize imageSize = CGSizeZero;
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (UIInterfaceOrientationIsPortrait(orientation))
+        imageSize = [UIScreen mainScreen].bounds.size;
+    else
+        imageSize = CGSizeMake([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width);
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    for (UIWindow *window in [[UIApplication sharedApplication] windows])
+    {
+        CGContextSaveGState(context);
+        CGContextTranslateCTM(context, window.center.x, window.center.y);
+        CGContextConcatCTM(context, window.transform);
+        CGContextTranslateCTM(context, -window.bounds.size.width * window.layer.anchorPoint.x, -window.bounds.size.height * window.layer.anchorPoint.y);
+        if (orientation == UIInterfaceOrientationLandscapeLeft)
+        {
+            CGContextRotateCTM(context, M_PI_2);
+            CGContextTranslateCTM(context, 0, -imageSize.width);
+        }
+        else if (orientation == UIInterfaceOrientationLandscapeRight)
+        {
+            CGContextRotateCTM(context, -M_PI_2);
+            CGContextTranslateCTM(context, -imageSize.height, 0);
+        } else if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+            CGContextRotateCTM(context, M_PI);
+            CGContextTranslateCTM(context, -imageSize.width, -imageSize.height);
+        }
+        [window.layer renderInContext:context];
+        CGContextRestoreGState(context);
+    }
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 @end
