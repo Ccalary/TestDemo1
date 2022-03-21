@@ -17,13 +17,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationBar.translucent = NO; //设置了之后自动下沉64
-    self.navigationBar.tintColor = [UIColor whiteColor];
+//    self.navigationBar.translucent = NO; //设置了之后自动下沉64
+//    self.navigationBar.tintColor = [UIColor whiteColor];
+//    self.navigationBar.barTintColor = [UIColor mainColor];
+    
 //    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg"] forBarMetrics:UIBarMetricsDefault];
     
     //处理6p上面显示不全的bug
-    UIImage *bgImage = [[UIImage imageNamed:@"bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch];
-    [self.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
+//    UIImage *bgImage = [[UIImage imageNamed:@"bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch];
+//    [self.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
+    
+    self.navigationBar.translucent = NO; //设置了之后自动下沉navbar的高度
+        self.navigationBar.barTintColor = [UIColor mainColor];
+        self.navigationBar.tintColor = [UIColor whiteColor]; // 左右颜色
+        // 中间title颜色
+        [self.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18*UIRate],
+                                                     NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        //去除导航栏下方的横线
+        [self.navigationBar setBackgroundImage:[[UIImage alloc]init]
+                                                      forBarMetrics:UIBarMetricsDefault];
+        [self.navigationBar setShadowImage:[[UIImage alloc]init]];
+
+        if (@available(iOS 15.0, *)) { // iOS15之后导航栏变白色问题修复
+            UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+            [appearance configureWithOpaqueBackground];
+            appearance.backgroundColor = [UIColor mainColor];
+            appearance.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:18*UIRate],
+                                               NSForegroundColorAttributeName:[UIColor whiteColor]};
+            self.navigationBar.standardAppearance = appearance;
+            self.navigationBar.scrollEdgeAppearance = appearance;
+        } else {
+
+        }
 }
 
 - (void)didReceiveMemoryWarning {

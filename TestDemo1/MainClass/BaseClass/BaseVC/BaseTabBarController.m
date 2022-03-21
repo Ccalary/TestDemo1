@@ -13,6 +13,7 @@
 #import "DiscoverViewController.h"
 #import "UIImage+IconFont.h"
 #import "TouchViewController.h"
+#import "TestDemo1-Swift.h"
 
 @interface BaseTabBarController ()
 
@@ -35,10 +36,9 @@
 
 //添加子控制器
 - (void)addChildViewControllers{
-    
+    [self addChildrenViewController:[[SwiftFirstVC alloc] init] andTitle:@"Swift" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
     HomeViewController *homeVC = [[HomeViewController alloc] init];
     homeVC.tabBarItem.badgeValue = @"1";
-    
     [self addChildrenViewController:homeVC andTitle:@"首页" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
     [self addChildrenViewController:[[DiscoverViewController alloc] init] andTitle:@"发现" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
     [self addChildrenViewController:[[MineViewController alloc] init] andTitle:@"我" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];

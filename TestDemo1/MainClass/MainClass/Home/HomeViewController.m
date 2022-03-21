@@ -7,15 +7,11 @@
 //
 
 #import "HomeViewController.h"
-#import "FirstViewController.h"
 #import "HHPopButton.h"
-#import "UIView+MCTransition.h"
-#import <AGGeometryKit/AGGeometryKit.h>
-
+#import "PathViewController.h"
+#import "PathAnimationView.h"
+#import "TestDemo1-Swift.h"
 @interface HomeViewController ()
-@property (nonatomic, strong) UIImageView *agImageView;
-@property (nonatomic, strong) UIView *agHoldView;
-@property (nonatomic, strong) UIView *snapView;
 @end
 
 @implementation HomeViewController
@@ -24,223 +20,163 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self initView];
+    PathAnimationView *animationView = [[PathAnimationView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 300)];
+    [self.view addSubview:animationView];
+    
+//    {
+//        CGPoint firstPoint = CGPointMake(50, 50);
+//        CGPoint secontPoint = CGPointMake(100, 50);
+//        CGPoint thirdPoint = CGPointMake(100, 150);
+//        CGPoint fourPoint = CGPointMake(150, 150);
+//        NSArray *pointArray = @[[NSValue valueWithCGPoint:firstPoint],[NSValue valueWithCGPoint:secontPoint],[NSValue valueWithCGPoint:thirdPoint],[NSValue valueWithCGPoint:fourPoint]];
+//
+//        PathAnimation *pathView = [[PathAnimation alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth/2.0, 200) pointArray:pointArray pathCornerRadius:5 isNeedMove:YES];
+////        pathView.backgroundColor = [UIColor redColor];
+//        [self.view addSubview:pathView];
+//    }
+//    {
+//        CGPoint firstPoint = CGPointMake(150, 50);
+//        CGPoint secontPoint = CGPointMake(100, 50);
+//        CGPoint thirdPoint = CGPointMake(100, 150);
+//        CGPoint fourPoint = CGPointMake(50, 150);
+//        NSArray *pointArray = @[[NSValue valueWithCGPoint:firstPoint],[NSValue valueWithCGPoint:secontPoint],[NSValue valueWithCGPoint:thirdPoint],[NSValue valueWithCGPoint:fourPoint]];
+//
+//        PathAnimation *pathView = [[PathAnimation alloc] initWithFrame:CGRectMake(ScreenWidth/2.0, 0, ScreenWidth/2.0, 200) pointArray:pointArray pathCornerRadius:5 isNeedMove:YES];
+////        pathView.backgroundColor = [UIColor yellowColor];
+//        [self.view addSubview:pathView];
+//    }
+
 }
 
-
 - (void)initView{
-    UIView *holdView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
-    holdView.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:holdView];
-    
     HHPopButton *nextMonthBtn = [[HHPopButton alloc] initWithFrame:CGRectMake(50, 150, 100, 50)];
     [nextMonthBtn setTitle:@"按钮" forState:UIControlStateNormal];
+    nextMonthBtn.center = self.view.center;
     [nextMonthBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
     nextMonthBtn.colicActionBlock = ^(){
         [self nextMonthBtnAction];
     };
     nextMonthBtn.backgroundColor = [UIColor blueColor];
     
     [self.view addSubview:nextMonthBtn];
-    
-    HHPopButton *screenBtn = [[HHPopButton alloc] initWithFrame:CGRectMake(180, 150, 100, 50)];
-    [screenBtn setTitle:@"截图" forState:UIControlStateNormal];
-    [screenBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    screenBtn.colicActionBlock = ^(){
-        [self screenAction];
-    };
-    screenBtn.backgroundColor = [UIColor redColor];
-    
-    [self.view addSubview:screenBtn];
-    
-//    for (int i = 0; i < 3; i++){
-//        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 300+i*40, 250, 25)];
-//        imageView.layer.borderWidth = 1;
-//        imageView.layer.borderColor = [UIColor blackColor].CGColor;
-//        [self.view addSubview:imageView];
-//        UIImage *image = [UIImage imageNamed:@"line_25x250"];
-//        imageView.image = [self image:image rotatedByDegrees:45*i];
-//    }
-    
-    [self initAGKView];
 }
 
-- (void)initAGKView {
-   
-    _agHoldView = [[UIView alloc] initWithFrame:CGRectMake(150, 450, 100, 100)];
-    _agHoldView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_agHoldView];
-    
-   UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)]; // create a view
-    view.image = [UIImage imageNamed:@"img_190"];
-   [self.agHoldView addSubview:view];
-   [view.layer ensureAnchorPointIsSetToZero]; // set the anchor point to [0, 0] (this method keeps the same position)
+- (void)nextMonthBtnAction {
 
-    self.agImageView = view;
-   AGKQuad quad = view.layer.quadrilateral;
-   quad.br.x += 80; // shift bottom right x-value with 20 pixels
-   quad.br.y += 80; // shift bottom right y-value with 50 pixels
-   quad.tr.x += 100;
-   quad.tr.y -= 30;
-   quad.bl.y += 50;
-    
-   view.layer.quadrilateral = quad; // the quad is converted to CATransform3D and applied
 }
 
-- (void)nextMonthBtnAction{
-//    FirstViewController *viewVC = [[FirstViewController alloc] init];
-//    [self.navigationController pushViewController:viewVC animated:YES];
-    
-//    UIGraphicsBeginImageContextWithOptions(self.snapView.frame.size, NO, [[UIScreen mainScreen] scale]);
-//         [self.snapView.layer renderInContext:UIGraphicsGetCurrentContext()]; // 此方法，除却iOS8以外其他系统都OK
-////    [self.snapView drawViewHierarchyInRect:self.snapView.bounds afterScreenUpdates:YES];
-//    UIImage *snapshot = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//
-//    NSLog(@"snapShot:%@", snapshot);
-//
-//    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(120, 0, 100, 100)];
-//    bgImageView.backgroundColor = [UIColor redColor];
-//    bgImageView.image = snapshot;
-//    [self.view addSubview:bgImageView];
-    
-    
-//    [self withCoolImage:^(UIImage *image) {
-        UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(120, 0, 100, 100)];
-        bgImageView.backgroundColor = [UIColor redColor];
-    bgImageView.image = [self imageFromView:self.agHoldView];
-        [self.view addSubview:bgImageView];
-//    }];
-}
-
-- (void)withCoolImage:(void (^)(UIImage *))block {
-    UIView *composite = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img_190"]]; //This is a valid image - can be viewed when debugger stops here
-    [composite addSubview:imgView];
-
-    UIView *snapshotView = [composite snapshotViewAfterScreenUpdates:YES];
-
-    // give it a chance to update the screen…
-    dispatch_async(dispatch_get_main_queue(), ^
-    {
-        // … and now it'll be a valid snapshot in here
-        if(block)
-        {
-            block([self imageFromView:composite]);
+- (void)initAnimationWithPointArray:(NSArray *)pointArray {
+    CGFloat cornerRadius = 5;
+    UIBezierPath *linePath = [UIBezierPath bezierPath];
+    for (int i = 0; i < pointArray.count; i++) {
+        CGPoint point = CGPointFromString(pointArray[i]);
+        if (i == 0) { // 开始点
+            [linePath moveToPoint:point];
+        }else if (i == pointArray.count - 1) { // 终止点
+            [linePath addLineToPoint:point];
+        }else {
+            CGPoint lastPoint = CGPointFromString(pointArray[i-1]);
+            CGPoint nextPoint = CGPointFromString(pointArray[i+1]);
+            CGPoint centerPoint = CGPointZero;
+            CGPoint pointA = point;
+            CGFloat startAngle = 0;
+            if (point.x == lastPoint.x) { // 垂直线
+                if (point.y > lastPoint.y) { // 向下
+                    centerPoint.y = point.y - cornerRadius;
+                }else { // 向上
+                    centerPoint.y = point.y + cornerRadius;
+                }
+                pointA = CGPointMake(point.x, centerPoint.y);
+            }else if (point.y == lastPoint.y) { // 水平线
+                if (point.x > lastPoint.x) { // 向右
+                    centerPoint.x = point.x - cornerRadius;
+                }else {
+                    centerPoint.x = point.x + cornerRadius;
+                }
+                pointA = CGPointMake(centerPoint.x, point.y);
+            }
+            if (point.x == nextPoint.x) { // 垂直
+                if (point.y > nextPoint.y) {
+                    centerPoint.y = point.y - cornerRadius;
+                    startAngle = M_PI_2; // 两边方向起始角度是一致的，方向不同而已
+                }else {
+                    centerPoint.y = point.y + cornerRadius;
+                    startAngle = -M_PI_2;
+                }
+            }else if (point.y == nextPoint.y) {
+                if (point.x > nextPoint.x) {
+                    centerPoint.x = point.x - cornerRadius;
+                    startAngle = 0;
+                }else {
+                    centerPoint.x = point.x + cornerRadius;
+                    startAngle = M_PI;
+                }
+            }
+            /**向量叉积 P×Q=（x1y2-x2y1)
+             叉积时一个非常重要的性质是可以通过它的符号判断两向量相互之间的顺逆时针关系：
+             若P×Q > 0 , 则P在Q的顺时针方向；
+             若P×Q < 0 , 则P在Q的逆时针方向；
+             若P×Q = 0 , P与Q共线，可能是同向也可能是反向；
+             iOS中坐标下为y正，右为x正，顺逆相反
+             */
+            CGPoint lastToPoint = CGPointMake(point.x - lastPoint.x, point.y - lastPoint.y);
+            CGPoint nextToPoint = CGPointMake(nextPoint.x - point.x, nextPoint.y - point.y);
+            // 叉积
+            CGFloat result = lastToPoint.x*nextToPoint.y - nextToPoint.x*lastToPoint.y;
+            // 判断旋转方向
+            BOOL clockwise = (result < 0) ? NO : YES;
+            CGFloat endAngle = clockwise ? (startAngle + M_PI_2) : (startAngle - M_PI_2);
+            // 圆角
+            [linePath addLineToPoint:pointA];
+            [linePath addArcWithCenter:centerPoint radius:cornerRadius startAngle:startAngle endAngle:endAngle clockwise:clockwise];
         }
-    });
-}
-
-//针对有用过OpenGL渲染过的视图截图
-- (UIImage *)imageFromView:(UIView *)view
-{
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0.0);
-    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
-    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-
-    return img;
-}
-
-- (void)screenAction {
-    UIView *snapView = [self.agHoldView snapshotViewAfterScreenUpdates:YES];
-    snapView.frame = CGRectMake(0, 0, 100, 100);
-    [self.view addSubview:snapView];
-    self.snapView = snapView;
-}
-
-- (UIImage *)image:(UIImage *)image rotation:(UIImageOrientation)orientation
-{
-    long double rotate = 0.0;
-    CGRect rect;
-    float translateX = 0;
-    float translateY = 0;
-    float scaleX = 1.0;
-    float scaleY = 1.0;
-    
-    switch (orientation) {
-        case UIImageOrientationLeft:
-            rotate = M_PI_2;
-            rect = CGRectMake(0, 0, image.size.height, image.size.width);
-            translateX = 0;
-            translateY = -rect.size.width;
-            scaleY = rect.size.width/rect.size.height;
-            scaleX = rect.size.height/rect.size.width;
-            break;
-        case UIImageOrientationRight:
-            rotate = - M_PI_2;
-            rect = CGRectMake(0, 0, image.size.height, image.size.width);
-            translateX = -rect.size.height;
-            translateY = 0;
-            scaleY = rect.size.width/rect.size.height;
-            scaleX = rect.size.height/rect.size.width;
-            break;
-        case UIImageOrientationDown:
-            rotate = M_PI;
-            rect = CGRectMake(0, 0, image.size.width, image.size.height);
-            translateX = -rect.size.width;
-            translateY = -rect.size.height;
-            break;
-        default:
-            rotate = 0.0;
-            rect = CGRectMake(0, 0, image.size.width, image.size.height);
-            translateX = 0;
-            translateY = 0;
-            break;
     }
     
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    //做CTM变换
-    CGContextTranslateCTM(context, 0.0, rect.size.height);
-    CGContextScaleCTM(context, 1.0, -1.0);
-    CGContextRotateCTM(context, rotate);
-    CGContextTranslateCTM(context, translateX, translateY);
+    // 路线
+    CAShapeLayer *lineLayer = [CAShapeLayer layer];
+    lineLayer.path = linePath.CGPath;
+    lineLayer.lineWidth = 2;
+    lineLayer.lineCap = kCALineCapRound;
+    lineLayer.lineJoin = kCALineJoinRound;
+    lineLayer.fillColor = [UIColor clearColor].CGColor;
+    lineLayer.strokeColor = [UIColor fontColorLightMain].CGColor;
+    [self.view.layer addSublayer:lineLayer];
     
-    CGContextScaleCTM(context, scaleX, scaleY);
-    //绘制图片
-    CGContextDrawImage(context, CGRectMake(0, 0, rect.size.width, rect.size.height), image.CGImage);
+    // 小圆点
+    UIView *roundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 12, 12)];
+    roundView.backgroundColor = [UIColor clearColor];
+    roundView.center = CGPointZero;
+    [self.view addSubview:roundView];
     
-    UIImage *newPic = UIGraphicsGetImageFromCurrentImageContext();
+    // 画外圆
+    UIBezierPath *roundPath = [UIBezierPath bezierPath];
+    [roundPath addArcWithCenter:CGPointMake(roundView.frame.size.width/2.0, roundView.frame.size.height/2.0) radius:CGRectGetWidth(roundView.frame)/2.0 startAngle:0 endAngle:M_PI*2 clockwise:YES];
+    CAShapeLayer *roundLayer = [CAShapeLayer layer];
+    roundLayer.fillColor = [UIColor clearColor].CGColor;
+    roundLayer.strokeColor = [UIColor colorWithHex:0x4682F4 alpha:0.3].CGColor;
+    roundLayer.lineWidth = 2;
+    roundLayer.path = [roundPath CGPath];
+    [roundView.layer addSublayer:roundLayer];
     
-    return newPic;
+    // 画内圆
+    UIBezierPath *smallRoundPath = [UIBezierPath bezierPath];
+    [smallRoundPath addArcWithCenter:CGPointMake(roundView.frame.size.width/2.0, roundView.frame.size.height/2.0) radius:4 startAngle:0 endAngle:M_PI*2 clockwise:YES];
+    CAShapeLayer *smallRoundLayer = [CAShapeLayer layer];
+    smallRoundLayer.fillColor = [UIColor whiteColor].CGColor;
+    smallRoundLayer.strokeColor = [UIColor colorWithHex:0x4682F4].CGColor;
+    smallRoundLayer.lineWidth = 2;
+    smallRoundLayer.path = [smallRoundPath CGPath];
+    [roundView.layer addSublayer:smallRoundLayer];
+    
+    //圆圈位移动画
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    //移动路径
+    animation.path = lineLayer.path;
+    animation.duration = 5;
+    animation.autoreverses = NO;
+    animation.repeatCount = CGFLOAT_MAX;
+    animation.removedOnCompletion = NO;
+    animation.calculationMode = kCAAnimationPaced;
+    [roundView.layer addAnimation:animation forKey:@"position"];
 }
-
-/** 将图片旋转弧度radians */
-- (UIImage *)image:(UIImage *)image rotatedByRadians:(CGFloat)radians
-{
-    // calculate the size of the rotated view's containing box for our drawing space
-    UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0,0,image.size.width, image.size.height)];
-    CGAffineTransform t = CGAffineTransformMakeRotation(radians);
-    rotatedViewBox.transform = t;
-    CGSize rotatedSize = rotatedViewBox.frame.size;
-    
-    // Create the bitmap context
-    UIGraphicsBeginImageContext(rotatedSize);
-    CGContextRef bitmap = UIGraphicsGetCurrentContext();
-    
-    // Move the origin to the middle of the image so we will rotate and scale around the center.
-    CGContextTranslateCTM(bitmap, rotatedSize.width/2, rotatedSize.height/2);
-    
-    //   // Rotate the image context
-    CGContextRotateCTM(bitmap, radians);
-    
-    // Now, draw the rotated/scaled image into the context
-    CGContextScaleCTM(bitmap, 1.0, -1.0);
-    CGContextDrawImage(bitmap, CGRectMake(-image.size.width / 2, -image.size.height / 2, image.size.width, image.size.height), [image CGImage]);
-    
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
-
-/** 将图片旋转角度degrees */
-- (UIImage *)image:(UIImage *)image rotatedByDegrees:(CGFloat)degrees
-{
-    return [self image:image rotatedByRadians:(M_PI * (degrees) / 180.0)];
-}
-
 @end
