@@ -104,9 +104,11 @@
 		0D99564527E864680060F4FA /* PathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563827E864680060F4FA /* PathViewController.m */; };
 		0D99564627E864680060F4FA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563A27E864680060F4FA /* FirstViewController.m */; };
 		0D99564727E864680060F4FA /* SwiftFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563B27E864680060F4FA /* SwiftFirstVC.swift */; };
-		0D99564827E864680060F4FA /* PathAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563C27E864680060F4FA /* PathAnimation.swift */; };
+		0D99564827E864680060F4FA /* PathAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563C27E864680060F4FA /* PathAnimationView.swift */; };
 		0D99564927E864680060F4FA /* InputPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563F27E864680060F4FA /* InputPopView.m */; };
-		0D99564A27E864680060F4FA /* PathAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99564027E864680060F4FA /* PathAnimationView.m */; };
+		0D99564A27E864680060F4FA /* OCPathAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99564027E864680060F4FA /* OCPathAnimationView.m */; };
+		0D99565627E9A02D0060F4FA /* LoggerDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99565527E9A02D0060F4FA /* LoggerDataView.swift */; };
+		0D99565A27E9CD8A0060F4FA /* ToolsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99565927E9CD8A0060F4FA /* ToolsHelper.swift */; };
 		0DA4F3E41EE676A400ED17B2 /* Connect.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3E31EE676A400ED17B2 /* Connect.m */; };
 		0DA4F3ED1EE677F500ED17B2 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3E81EE677F500ED17B2 /* BaseNavigationController.m */; };
 		0DA4F3EE1EE677F500ED17B2 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3EA1EE677F500ED17B2 /* BaseTabBarController.m */; };
@@ -353,13 +355,15 @@
 		0D99563927E864680060F4FA /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		0D99563A27E864680060F4FA /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		0D99563B27E864680060F4FA /* SwiftFirstVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFirstVC.swift; sourceTree = "<group>"; };
-		0D99563C27E864680060F4FA /* PathAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathAnimation.swift; sourceTree = "<group>"; };
+		0D99563C27E864680060F4FA /* PathAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathAnimationView.swift; sourceTree = "<group>"; };
 		0D99563D27E864680060F4FA /* PathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathViewController.h; sourceTree = "<group>"; };
 		0D99563F27E864680060F4FA /* InputPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputPopView.m; sourceTree = "<group>"; };
-		0D99564027E864680060F4FA /* PathAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathAnimationView.m; sourceTree = "<group>"; };
+		0D99564027E864680060F4FA /* OCPathAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPathAnimationView.m; sourceTree = "<group>"; };
 		0D99564127E864680060F4FA /* InputPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputPopView.h; sourceTree = "<group>"; };
-		0D99564227E864680060F4FA /* PathAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathAnimationView.h; sourceTree = "<group>"; };
+		0D99564227E864680060F4FA /* OCPathAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPathAnimationView.h; sourceTree = "<group>"; };
 		0D99564327E864680060F4FA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0D99565527E9A02D0060F4FA /* LoggerDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerDataView.swift; sourceTree = "<group>"; };
+		0D99565927E9CD8A0060F4FA /* ToolsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsHelper.swift; sourceTree = "<group>"; };
 		0DA4F3E21EE676A400ED17B2 /* Connect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connect.h; sourceTree = "<group>"; };
 		0DA4F3E31EE676A400ED17B2 /* Connect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connect.m; sourceTree = "<group>"; };
 		0DA4F3E71EE677F500ED17B2 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -770,6 +774,7 @@
 			children = (
 				0D4B28F21EE7F51200BB9CC9 /* DemoHelper.h */,
 				0D4B28F31EE7F51200BB9CC9 /* DemoHelper.m */,
+				0D99565927E9CD8A0060F4FA /* ToolsHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1059,7 +1064,8 @@
 				0D99563D27E864680060F4FA /* PathViewController.h */,
 				0D99563827E864680060F4FA /* PathViewController.m */,
 				0D99563B27E864680060F4FA /* SwiftFirstVC.swift */,
-				0D99563C27E864680060F4FA /* PathAnimation.swift */,
+				0D99565527E9A02D0060F4FA /* LoggerDataView.swift */,
+				0D99563C27E864680060F4FA /* PathAnimationView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1067,10 +1073,10 @@
 		0D99563E27E864680060F4FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0D99563F27E864680060F4FA /* InputPopView.m */,
-				0D99564027E864680060F4FA /* PathAnimationView.m */,
 				0D99564127E864680060F4FA /* InputPopView.h */,
-				0D99564227E864680060F4FA /* PathAnimationView.h */,
+				0D99563F27E864680060F4FA /* InputPopView.m */,
+				0D99564227E864680060F4FA /* OCPathAnimationView.h */,
+				0D99564027E864680060F4FA /* OCPathAnimationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1562,6 +1568,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -1577,6 +1584,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -1618,7 +1626,7 @@
 				0D37982D20A97A850039352F /* MCMemeryCache.m in Sources */,
 				0D4B28E11EE7C4D100BB9CC9 /* MineViewController.m in Sources */,
 				FE8AA53C1F56B38900BE4842 /* RunLabelView.m in Sources */,
-				0D99564827E864680060F4FA /* PathAnimation.swift in Sources */,
+				0D99564827E864680060F4FA /* PathAnimationView.swift in Sources */,
 				FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */,
 				0D05891220A13B1300223199 /* UIView+WebCache.m in Sources */,
 				0D2DAFA320BFCE0900988EF1 /* MCRuleCollectionReusableView.m in Sources */,
@@ -1630,6 +1638,7 @@
 				0DF39CF220931F6E007518B7 /* UIView+MCTransition.m in Sources */,
 				0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */,
 				0D05890920A13B1300223199 /* SDImageCache.m in Sources */,
+				0D99565A27E9CD8A0060F4FA /* ToolsHelper.swift in Sources */,
 				0D2DAFA420BFCE0900988EF1 /* MCRuleCollectionViewCell.m in Sources */,
 				0D4B28DA1EE7C4D100BB9CC9 /* GCDViewController.m in Sources */,
 				FED04B2120204C5A000F415F /* DataViewController.m in Sources */,
@@ -1646,6 +1655,7 @@
 				0D61E68620A43AF600665577 /* CNPPopupController.m in Sources */,
 				0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */,
 				0DDA28AE262E81C500B049EA /* DetailViewController.m in Sources */,
+				0D99565627E9A02D0060F4FA /* LoggerDataView.swift in Sources */,
 				0D05890120A13B1300223199 /* UIImage+GIF.m in Sources */,
 				FED04B2420205646000F415F /* StudentsModel.m in Sources */,
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
@@ -1716,7 +1726,7 @@
 				0DADA50A21D1DB86005BB347 /* LoadingAnimation.m in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,
 				0D4B28D41EE7C4D100BB9CC9 /* BluetoochVC.m in Sources */,
-				0D99564A27E864680060F4FA /* PathAnimationView.m in Sources */,
+				0D99564A27E864680060F4FA /* OCPathAnimationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

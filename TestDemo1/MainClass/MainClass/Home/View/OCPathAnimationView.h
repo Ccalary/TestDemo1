@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PathAnimationView : UIView
+@interface OCPathAnimationView : UIView
 /*
   NSStringFromCGPoint(CGPointMake(50, 50)) 此种类型数组
  */

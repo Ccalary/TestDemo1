@@ -6,12 +6,12 @@
 //  Copyright © 2022 caohouhong. All rights reserved.
 //
 
-#import "PathAnimationView.h"
+#import "OCPathAnimationView.h"
 
-@interface PathAnimationView()
+@interface OCPathAnimationView()
 
 @end
-@implementation PathAnimationView
+@implementation OCPathAnimationView
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.pathCornerRadius = 5.0;

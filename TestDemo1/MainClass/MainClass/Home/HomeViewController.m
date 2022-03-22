@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "HHPopButton.h"
 #import "PathViewController.h"
-#import "PathAnimationView.h"
+#import "OCPathAnimationView.h"
 #import "TestDemo1-Swift.h"
 @interface HomeViewController ()
 @end
@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    PathAnimationView *animationView = [[PathAnimationView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 300)];
+    OCPathAnimationView *animationView = [[OCPathAnimationView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 300)];
     [self.view addSubview:animationView];
     
 //    {

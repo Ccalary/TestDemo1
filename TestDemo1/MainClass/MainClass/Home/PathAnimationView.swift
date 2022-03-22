@@ -9,24 +9,24 @@
 import Foundation
 import UIKit
 
-@objc public class PathAnimation: UIView {
-    /* 动画时长 */
-    public var animationDuration = 5.0 {
-        didSet {
-            self.positionAnimation.duration = animationDuration
-            self.roundLayer.add(self.positionAnimation, forKey: "position")
-        }
-    }
+@objc public class PathAnimationView: UIView {
     /* 路线的宽度 */
-    public var lineWidth = 2.0 {
+    public var lineWidth = 1.5 {
         didSet {
             self.lineLayer.lineWidth = lineWidth
         }
     }
     /* 路线的颜色 */
-    public var lineStokeColor = UIColor.init(hex: 0xD8E1F2) {
+    public var lineStokeColor = UIColor(hex: 0xD8E1F2) {
         didSet {
             self.lineLayer.strokeColor = lineStokeColor.cgColor
+        }
+    }
+    /* 动画时长 */
+    public var animationDuration = 3.0 {
+        didSet {
+            self.positionAnimation.duration = animationDuration
+            self.roundLayer.add(self.positionAnimation, forKey: "position")
         }
     }
     /* 路径的转角半径，默认是5.0 */
@@ -35,17 +35,29 @@ import UIKit
     private var pointArray = [CGPoint]()
     /* 有移动的原点 */
     private var isNeedMove = true
+    /* 是否延时执行动画 */
+    private var isDelayAnimation = false
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    @objc convenience init(frame: CGRect, pointArray: Array<CGPoint>, pathCornerRadius: Double = 5.0, isNeedMove:Bool = true) {
+    convenience init(frame: CGRect = .zero,
+                           pointArray: Array<CGPoint>,
+                           pathCornerRadius: Double = 5.0,
+                           isNeedMove: Bool = true,
+                           isDelayAnimation: Bool = false
+    ) {
         self.init(frame: frame)
         self.pathCornerRadius = pathCornerRadius
         self.pointArray = pointArray
         self.isNeedMove = isNeedMove
+        self.isDelayAnimation = isDelayAnimation
         self.initView()
+    }
+    
+    deinit {
+        self.roundLayer.removeAllAnimations()
     }
     
     required init?(coder: NSCoder) {
@@ -73,15 +85,19 @@ import UIKit
                 let centerPoint = CGPoint(x:pointB.x - (point.x - pointA.x), y:pointB.y - (point.y - pointA.y))
                 let startAngle = calculateLineAngle(startPoint: centerPoint, endPoint: pointA)
                 
-                //向量叉积 P×Q=（x1y2-x2y1), 判断旋转方向
+                // 向量叉积 P×Q=（x1y2-x2y1), 判断旋转方向
                 let lastToPoint = CGPoint(x: point.x - lastPoint.x, y: point.y - lastPoint.y)
                 let nextToPoint = CGPoint(x: nextPoint.x - point.x, y: nextPoint.y - point.y)
-                let result = lastToPoint.x*nextToPoint.y - nextToPoint.x*lastToPoint.y
+                let result = lastToPoint.x * nextToPoint.y - nextToPoint.x * lastToPoint.y
                 let clockwise = (result < 0) ? false : true
                 let endAngle = clockwise ? (startAngle + Double.pi/2.0) : (startAngle - Double.pi/2.0)
                 linePath.addLine(to: pointA)
                 // 圆角
-                linePath.addArc(withCenter: centerPoint, radius: self.pathCornerRadius, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
+                linePath.addArc(withCenter: centerPoint,
+                                radius: self.pathCornerRadius,
+                                startAngle: startAngle,
+                                endAngle: endAngle,
+                                clockwise: clockwise)
             }
         }
         
@@ -90,10 +106,14 @@ import UIKit
         if (isNeedMove) {
             self.layer.addSublayer(roundLayer)
             self.roundLayer.addSublayer(smallRoundLayer)
-            //移动路径
+            // 移动路径
             self.positionAnimation.path = lineLayer.path
-            self.positionAnimation.duration = 5.0
-            roundLayer.add(self.positionAnimation, forKey: "position")
+            if (isDelayAnimation) {
+                // 延时执行
+                self.groupAnimation.beginTime = CACurrentMediaTime() + self.animationDuration
+            }
+            self.groupAnimation.animations = [self.positionAnimation, self.opacityAnimation]
+            self.roundLayer.add(self.groupAnimation, forKey: "groupAnimation")
         }
     }
     
@@ -111,10 +131,14 @@ import UIKit
     /* 画外圆 */
     public lazy var roundLayer: CAShapeLayer = {
         let roundPath = UIBezierPath()
-        roundPath.addArc(withCenter: CGPoint.zero, radius: 6.0, startAngle: 0, endAngle: Double.pi*2, clockwise: true)
+        roundPath.addArc(withCenter: .zero,
+                         radius: 5.0,
+                         startAngle: 0,
+                         endAngle: Double.pi * 2,
+                         clockwise: true)
         let roundLayer = CAShapeLayer()
         roundLayer.fillColor = UIColor.clear.cgColor;
-        roundLayer.strokeColor = UIColor.init(hex: 0x4682F4, alpha: 0.3).cgColor
+        roundLayer.strokeColor = UIColor(hex: 0x4682F4, alpha: 0.3).cgColor
         roundLayer.lineWidth = 2
         roundLayer.path = roundPath.cgPath
         return roundLayer
@@ -122,10 +146,14 @@ import UIKit
     /* 画内圆 */
     public lazy var smallRoundLayer: CAShapeLayer = {
         let smallRoundPath = UIBezierPath()
-        smallRoundPath.addArc(withCenter: CGPoint.zero, radius: 4.0, startAngle: 0, endAngle: Double.pi*2, clockwise: true)
+        smallRoundPath.addArc(withCenter: .zero,
+                              radius: 3.0,
+                              startAngle: 0,
+                              endAngle: Double.pi * 2,
+                              clockwise: true)
         let smallRoundLayer = CAShapeLayer()
         smallRoundLayer.fillColor = UIColor.white.cgColor
-        smallRoundLayer.strokeColor = UIColor.init(hex: 0x4682F4).cgColor
+        smallRoundLayer.strokeColor = UIColor(hex: 0x4682F4).cgColor
         smallRoundLayer.lineWidth = 2
         smallRoundLayer.path = smallRoundPath.cgPath
         return smallRoundLayer
@@ -134,29 +162,46 @@ import UIKit
     private lazy var positionAnimation: CAKeyframeAnimation = {
         //圆圈位移动画
         let animation = CAKeyframeAnimation(keyPath: "position")
-        animation.duration = 5;
+        animation.duration = self.animationDuration;
         animation.autoreverses = false;
         animation.repeatCount = Float.infinity;
         animation.isRemovedOnCompletion = false;
         animation.calculationMode = .paced;
-        // 动画效果，渐入渐出
-        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         return animation
+    }()
+    
+    /* 透明度动画 */
+    private lazy var opacityAnimation: CAKeyframeAnimation = {
+        let animation = CAKeyframeAnimation(keyPath: "opacity")
+        animation.values = [0.1, 1, 1, 0.1]
+        animation.keyTimes = [NSNumber(value: 0.00), NSNumber(value: 0.05),NSNumber(value: 0.95), NSNumber(value: 1)]
+        return animation
+    }()
+    
+    private lazy var groupAnimation: CAAnimationGroup = {
+        let animationGroup = CAAnimationGroup()
+        animationGroup.duration = self.animationDuration
+        animationGroup.autoreverses = false;
+        animationGroup.repeatCount = Float.infinity;
+        animationGroup.isRemovedOnCompletion = false;
+        return animationGroup
     }()
 }
 
-extension PathAnimation {
+extension PathAnimationView {
     /* 根据两点计算终点附近的点，用于获取圆心 */
-    func calculateResultPoint(startPoint: CGPoint, endPoint: CGPoint, distance: CGFloat) -> CGPoint {
+    func calculateResultPoint(startPoint: CGPoint,
+                              endPoint: CGPoint,
+                              distance: CGFloat) -> CGPoint {
         let endToStartPoint = CGPoint(x: endPoint.x - startPoint.x, y: endPoint.y - startPoint.y);
         var resultPoint = endPoint;
         if (endToStartPoint.x > 0) {
             resultPoint = CGPoint(x: endPoint.x - distance,y: endPoint.y);
-        }else if (endToStartPoint.x < 0) {
+        } else if (endToStartPoint.x < 0) {
             resultPoint = CGPoint(x: endPoint.x + distance,y: endPoint.y);
-        }else if (endToStartPoint.y > 0) {
+        } else if (endToStartPoint.y > 0) {
             resultPoint = CGPoint(x: endPoint.x,y: endPoint.y - distance);
-        }else {
+        } else {
             resultPoint = CGPoint(x: endPoint.x,y: endPoint.y + distance);
         }
         return resultPoint;
@@ -184,7 +229,7 @@ extension PathAnimation {
          若P×Q = 0 , P与Q共线，可能是同向也可能是反向；
          iOS中坐标下为y正，右为x正，顺逆相反
          */
-        let abResult = firstPoint.x*helpPoint.y - helpPoint.x*firstPoint.y;
+        let abResult = firstPoint.x * helpPoint.y - helpPoint.x * firstPoint.y;
         if (abResult > 0){
             angle = 2*Double.pi - angle;
         }
