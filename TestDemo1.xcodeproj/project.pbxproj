@@ -37,6 +37,8 @@
 		0D05891420A13B1300223199 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0588F620A13B1300223199 /* UIButton+WebCache.m */; };
 		0D05891520A13B1300223199 /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0588F720A13B1300223199 /* SDWebImageWebPCoder.m */; };
 		0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */; };
+		0D1AA88927EAC3AB002D02A2 /* LoggerDataMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AA88827EAC3AB002D02A2 /* LoggerDataMediumView.swift */; };
+		0D1AA88B27EAE208002D02A2 /* LoggerDataSimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AA88A27EAE208002D02A2 /* LoggerDataSimpleView.swift */; };
 		0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1641EAEE1F30034CC47 /* HHRefreshNormalHeader.m */; };
 		0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FF1671EAEE9D70034CC47 /* HHRefreshNormalFooter.m */; };
 		0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2428AC1ED951D4002B52F3 /* HHPopButton.m */; };
@@ -228,6 +230,8 @@
 		0D0588F820A13B1300223199 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		0D08192F1EB0F22F00F4E034 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		0D0819301EB0F22F00F4E034 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		0D1AA88827EAC3AB002D02A2 /* LoggerDataMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerDataMediumView.swift; sourceTree = "<group>"; };
+		0D1AA88A27EAE208002D02A2 /* LoggerDataSimpleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerDataSimpleView.swift; sourceTree = "<group>"; };
 		0D1FF1631EAEE1F30034CC47 /* HHRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHRefreshNormalHeader.h; sourceTree = "<group>"; };
 		0D1FF1641EAEE1F30034CC47 /* HHRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHRefreshNormalHeader.m; sourceTree = "<group>"; };
 		0D1FF1661EAEE9D70034CC47 /* HHRefreshNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHRefreshNormalFooter.h; sourceTree = "<group>"; };
@@ -1065,6 +1069,8 @@
 				0D99563827E864680060F4FA /* PathViewController.m */,
 				0D99563B27E864680060F4FA /* SwiftFirstVC.swift */,
 				0D99565527E9A02D0060F4FA /* LoggerDataView.swift */,
+				0D1AA88827EAC3AB002D02A2 /* LoggerDataMediumView.swift */,
+				0D1AA88A27EAE208002D02A2 /* LoggerDataSimpleView.swift */,
 				0D99563C27E864680060F4FA /* PathAnimationView.swift */,
 			);
 			path = Home;
@@ -1675,6 +1681,7 @@
 				0D05891520A13B1300223199 /* SDWebImageWebPCoder.m in Sources */,
 				0D99564927E864680060F4FA /* InputPopView.m in Sources */,
 				FEC5B4751F27391500747CAB /* CountdownLabel.m in Sources */,
+				0D1AA88927EAC3AB002D02A2 /* LoggerDataMediumView.swift in Sources */,
 				FE5446711FC3C3D7005B96BE /* HHAlertController.m in Sources */,
 				0D0588FB20A13B1300223199 /* SDWebImageManager.m in Sources */,
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
@@ -1682,6 +1689,7 @@
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
 				FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */,
 				0D05891020A13B1300223199 /* SDImageCacheConfig.m in Sources */,
+				0D1AA88B27EAE208002D02A2 /* LoggerDataSimpleView.swift in Sources */,
 				0D05891120A13B1300223199 /* UIView+WebCacheOperation.m in Sources */,
 				0D4B28F71EE94C2700BB9CC9 /* UIView+Extension.m in Sources */,
 				0D0588FD20A13B1300223199 /* SDWebImageFrame.m in Sources */,

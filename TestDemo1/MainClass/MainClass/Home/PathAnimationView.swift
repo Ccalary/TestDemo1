@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc public class PathAnimationView: UIView {
+@objc public class PathAnimationView: CALayer {
     /* 路线的宽度 */
     public var lineWidth = 1.5 {
         didSet {
@@ -25,8 +25,8 @@ import UIKit
     /* 动画时长 */
     public var animationDuration = 3.0 {
         didSet {
-            self.positionAnimation.duration = animationDuration
-            self.roundLayer.add(self.positionAnimation, forKey: "position")
+            self.groupAnimation.duration = animationDuration
+            self.roundLayer.add(self.groupAnimation, forKey: "groupAnimation")
         }
     }
     /* 路径的转角半径，默认是5.0 */
@@ -38,22 +38,21 @@ import UIKit
     /* 是否延时执行动画 */
     private var isDelayAnimation = false
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
+    public override init() {
+        super.init()
     }
     
-    convenience init(frame: CGRect = .zero,
-                           pointArray: Array<CGPoint>,
-                           pathCornerRadius: Double = 5.0,
-                           isNeedMove: Bool = true,
-                           isDelayAnimation: Bool = false
+    convenience init(pointArray: Array<CGPoint>,
+                     pathCornerRadius: Double = 5.0,
+                     isNeedMove: Bool = true,
+                     isDelayAnimation: Bool = false
     ) {
-        self.init(frame: frame)
+        self.init()
         self.pathCornerRadius = pathCornerRadius
         self.pointArray = pointArray
         self.isNeedMove = isNeedMove
         self.isDelayAnimation = isDelayAnimation
-        self.initView()
+        self.initPathLayer()
     }
     
     deinit {
@@ -64,12 +63,16 @@ import UIKit
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initView() {
-        self.backgroundColor = UIColor.white
-        self.initAnimation(self.pointArray)
+    private func initPathLayer() {
+        let linePath = self.getLinePath(self.pointArray)
+        self.lineLayer.path = linePath.cgPath
+        self.addSublayer(lineLayer)
+        if (isNeedMove) {
+            self.addPathAnimation()
+        }
     }
     
-    func initAnimation(_ pointArray: Array<CGPoint>) {
+   private func getLinePath(_ pointArray: Array<CGPoint>) -> UIBezierPath {
         let linePath = UIBezierPath()
         for (i, point) in pointArray.enumerated() {
             if (i == 0) { // 开始点
@@ -83,13 +86,14 @@ import UIKit
                 let pointA = calculateResultPoint(startPoint: lastPoint, endPoint: point, distance: self.pathCornerRadius)
                 let pointB = calculateResultPoint(startPoint: nextPoint, endPoint: point, distance: self.pathCornerRadius)
                 let centerPoint = CGPoint(x:pointB.x - (point.x - pointA.x), y:pointB.y - (point.y - pointA.y))
-                let startAngle = calculateLineAngle(startPoint: centerPoint, endPoint: pointA)
                 
                 // 向量叉积 P×Q=（x1y2-x2y1), 判断旋转方向
                 let lastToPoint = CGPoint(x: point.x - lastPoint.x, y: point.y - lastPoint.y)
                 let nextToPoint = CGPoint(x: nextPoint.x - point.x, y: nextPoint.y - point.y)
                 let result = lastToPoint.x * nextToPoint.y - nextToPoint.x * lastToPoint.y
                 let clockwise = (result < 0) ? false : true
+                
+                let startAngle = calculateLineAngle(startPoint: centerPoint, endPoint: pointA)
                 let endAngle = clockwise ? (startAngle + Double.pi/2.0) : (startAngle - Double.pi/2.0)
                 linePath.addLine(to: pointA)
                 // 圆角
@@ -100,23 +104,36 @@ import UIKit
                                 clockwise: clockwise)
             }
         }
-        
-        self.lineLayer.path = linePath.cgPath
-        self.layer.addSublayer(lineLayer)
-        if (isNeedMove) {
-            self.layer.addSublayer(roundLayer)
-            self.roundLayer.addSublayer(smallRoundLayer)
-            // 移动路径
-            self.positionAnimation.path = lineLayer.path
-            if (isDelayAnimation) {
-                // 延时执行
-                self.groupAnimation.beginTime = CACurrentMediaTime() + self.animationDuration
+        return linePath
+    }
+    
+    /* 增加动画 */
+    public func addPathAnimation() {
+        self.removePathAnimation()
+        self.addSublayer(roundLayer)
+        self.roundLayer.addSublayer(smallRoundLayer)
+        // 移动路径
+        self.positionAnimation.path = lineLayer.path
+        self.groupAnimation.animations = [self.positionAnimation, self.opacityAnimation]
+        if (isDelayAnimation) {
+            self.roundLayer.isHidden = true
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.animationDuration) {
+                // 延时显示，不然会在（0，0）位置停留
+                self.roundLayer.isHidden = false
+                self.roundLayer.add(self.groupAnimation, forKey: "groupAnimation")
             }
-            self.groupAnimation.animations = [self.positionAnimation, self.opacityAnimation]
+        }else {
             self.roundLayer.add(self.groupAnimation, forKey: "groupAnimation")
         }
     }
     
+    /* 移除动画 */
+    public func removePathAnimation() {
+        self.roundLayer.removeAllAnimations()
+        self.roundLayer.removeFromSuperlayer()
+    }
+    
+    // MARK: UI
     /* 路径layer */
     private lazy var lineLayer: CAShapeLayer = {
         let lineLayer = CAShapeLayer()
@@ -162,7 +179,6 @@ import UIKit
     private lazy var positionAnimation: CAKeyframeAnimation = {
         //圆圈位移动画
         let animation = CAKeyframeAnimation(keyPath: "position")
-        animation.duration = self.animationDuration;
         animation.autoreverses = false;
         animation.repeatCount = Float.infinity;
         animation.isRemovedOnCompletion = false;
@@ -174,7 +190,7 @@ import UIKit
     private lazy var opacityAnimation: CAKeyframeAnimation = {
         let animation = CAKeyframeAnimation(keyPath: "opacity")
         animation.values = [0.1, 1, 1, 0.1]
-        animation.keyTimes = [NSNumber(value: 0.00), NSNumber(value: 0.05),NSNumber(value: 0.95), NSNumber(value: 1)]
+        animation.keyTimes = [NSNumber(value: 0.00), NSNumber(value: 0.1),NSNumber(value: 0.9), NSNumber(value: 1)]
         return animation
     }()
     

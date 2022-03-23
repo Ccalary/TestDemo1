@@ -20,6 +20,15 @@ class LoggerDataView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var miAnimationView = PathAnimationView()
+    var proAnimationView = PathAnimationView()
+    var batteryAnimationView = PathAnimationView()
+    var genAnimationView = PathAnimationView()
+    var upsAnimationView = PathAnimationView()
+    var gridAnimationView = PathAnimationView()
+    var smartAnimationView = PathAnimationView()
+    var consAnimationView = PathAnimationView()
+    
     func initView() {
         let centerImageView = UIImageView(image: UIImage(named: "icon_dcac_51x63"))
         self.addSubview(centerImageView)
@@ -103,53 +112,53 @@ class LoggerDataView: UIView {
         
         let miArray = [CGPoint(x: leftStartX, y: centerImageView.frame.midY),
                        CGPoint(x: leftEndX, y: centerImageView.frame.midY)]
-        let miAnimationView = PathAnimationView(pointArray: miArray, isNeedMove: false)
-        self.addSubview(miAnimationView)
+        miAnimationView = PathAnimationView(pointArray: miArray, isNeedMove: false)
+        self.layer.addSublayer(miAnimationView)
         
         let proArray = [CGPoint(x: leftStartX, y: proImageView.frame.midY),
                         CGPoint(x: leftSecondX, y: proImageView.frame.midY),
                         CGPoint(x: leftSecondX, y: centerImageView.frame.midY - lineMargin),
                         CGPoint(x: leftEndX, y: centerImageView.frame.midY - lineMargin)]
-        let proAnimationView = PathAnimationView(pointArray: proArray)
-        self.addSubview(proAnimationView)
+        proAnimationView = PathAnimationView(pointArray: proArray)
+        self.layer.addSublayer(proAnimationView)
         
         let batteryArray = [CGPoint(x: leftStartX, y: batteryImageView.frame.midY),
                             CGPoint(x: leftSecondX, y: batteryImageView.frame.midY),
                             CGPoint(x: leftSecondX, y: centerImageView.frame.midY + lineMargin),
                             CGPoint(x: leftEndX, y: centerImageView.frame.midY + lineMargin)]
-        let batteryAnimationView = PathAnimationView(pointArray: batteryArray)
-        self.addSubview(batteryAnimationView)
+        batteryAnimationView = PathAnimationView(pointArray: batteryArray)
+        self.layer.addSublayer(batteryAnimationView)
         
         let genArray = [CGPoint(x: centerImageView.frame.midX, y: genImageView.frame.maxY),
                         CGPoint(x: centerImageView.frame.midX, y: centerImageView.frame.minY - imageMargin)]
-        let genAnimationView = PathAnimationView(pointArray: genArray, isNeedMove: false)
+        genAnimationView = PathAnimationView(pointArray: genArray, isNeedMove: false)
         genAnimationView.lineStokeColor = UIColor(hex: 0xE0E0E0)
-        self.addSubview(genAnimationView)
+        self.layer.addSublayer(genAnimationView)
         
         let upsArray = [CGPoint(x: centerImageView.frame.midX, y: upsImageView.frame.minY),
                         CGPoint(x: centerImageView.frame.midX, y: centerImageView.frame.maxY + imageMargin)]
-        let upsAnimationView = PathAnimationView(pointArray: upsArray, isNeedMove: false)
+        upsAnimationView = PathAnimationView(pointArray: upsArray, isNeedMove: false)
         upsAnimationView.lineStokeColor = UIColor(hex: 0xE0E0E0)
-        self.addSubview(upsAnimationView)
+        self.layer.addSublayer(upsAnimationView)
         
         let gridArray = [CGPoint(x: rightStartX, y: centerImageView.frame.midY - lineMargin),
                         CGPoint(x: rightSecondX, y: centerImageView.frame.midY - lineMargin),
                         CGPoint(x: rightSecondX, y: gridImageView.frame.midY),
                         CGPoint(x: rightEndX, y: gridImageView.frame.midY)]
-        let gridAnimationView = PathAnimationView(pointArray: gridArray, isDelayAnimation: true)
-        self.addSubview(gridAnimationView)
+        gridAnimationView = PathAnimationView(pointArray: gridArray, isDelayAnimation: true)
+        self.layer.addSublayer(gridAnimationView)
         
         let smartArray = [CGPoint(x: rightStartX, y: smartImageView.frame.midY),
                         CGPoint(x: rightEndX, y: smartImageView.frame.midY)]
-        let smartAnimationView = PathAnimationView(pointArray: smartArray, isNeedMove: false)
-        self.addSubview(smartAnimationView)
+        smartAnimationView = PathAnimationView(pointArray: smartArray, isNeedMove: false)
+        self.layer.addSublayer(smartAnimationView)
         
         let consArray = [CGPoint(x: rightStartX, y: centerImageView.frame.midY + lineMargin),
                         CGPoint(x: rightSecondX, y: centerImageView.frame.midY + lineMargin),
                         CGPoint(x: rightSecondX, y: consImageView.frame.midY),
                         CGPoint(x: rightEndX, y: consImageView.frame.midY)]
-        let consAnimationView = PathAnimationView(pointArray: consArray, isDelayAnimation: true)
-        self.addSubview(consAnimationView)
+        consAnimationView = PathAnimationView(pointArray: consArray, isDelayAnimation: true)
+        self.layer.addSublayer(consAnimationView)
         
         self.addSubview(batteryLabel)
         batteryLabel.snp.makeConstraints { make in
@@ -199,6 +208,8 @@ class LoggerDataView: UIView {
             make.top.equalTo(consImageView.snp_bottom)
         }
     }
+
+    // MARK: UI
     private lazy var proInfoView: LoggerInfoView = {
         let infoView = LoggerInfoView("Production  ", "0.00kw")
         return infoView;
@@ -238,6 +249,15 @@ class LoggerDataView: UIView {
         label.text = "80%"
         return label
     }()
+    
+    // MARK: Action
+    func changeAction() {
+        self.batteryLabel.text = "50%"
+        self.proInfoView.content = "25.01kw"
+        self.miAnimationView.addPathAnimation()
+        self.proAnimationView.removePathAnimation()
+        self.proAnimationView.lineStokeColor = UIColor.lightGray
+    }
 }
 
 class LoggerInfoView: UIView {

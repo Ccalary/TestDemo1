@@ -4,3 +4,4 @@
 
 #import "UIColor+MCColor.h"
 #import "PrefixHeader.pch"
+#import "GlobalDefine.h"
