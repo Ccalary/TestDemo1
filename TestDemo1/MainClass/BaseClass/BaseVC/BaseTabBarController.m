@@ -36,7 +36,9 @@
 
 //添加子控制器
 - (void)addChildViewControllers{
-    [self addChildrenViewController:[[SwiftFirstVC alloc] init] andTitle:@"Swift" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
+//    [self addChildrenViewController:[[LoggerMainVC alloc] init] andTitle:@"Logger" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
+    [self addChildrenViewController:[[ChartsLineVC alloc] init] andTitle:@"Line" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
+    [self addChildrenViewController:[[ChartsTestVC alloc] init] andTitle:@"Bar" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
     HomeViewController *homeVC = [[HomeViewController alloc] init];
     homeVC.tabBarItem.badgeValue = @"1";
     [self addChildrenViewController:homeVC andTitle:@"首页" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];

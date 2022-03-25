@@ -225,8 +225,10 @@ extension PathAnimationView {
     
     /**
      * 计算角度 (和X轴正方向的夹角)
-     * @param pointA 线段终点
-     * @param pointB 线段起始点
+     *  - Parameters:
+     *   - pointA : 线段终点
+     *   - pointB : 线段起始点
+     *  - Returns: 角度
      */
     func calculateLineAngle(startPoint: CGPoint, endPoint: CGPoint) -> Double {
         //向量点积 a·b=|a||b|cosθ， θ = arccos(a·b)/(|a||b|)， a·b = x1 × x2 + y1 × y2

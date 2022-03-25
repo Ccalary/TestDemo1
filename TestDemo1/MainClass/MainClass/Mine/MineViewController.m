@@ -9,6 +9,7 @@
 #import "MineViewController.h"
 #import "HomeViewController.h"
 #import "IconfontViewController.h"
+#import "TestDemo1-Swift.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -32,6 +33,7 @@
     self.dataArray = @[].mutableCopy;
     self.classNameArray = @[].mutableCopy;
     
+    [self addCell:@"采集器动画" class:@"LoggerMainVC"];
     [self addCell:@"小控件" class:@"WidgetViewController"];
     [self addCell:@"全选、删除操作" class:@"SelectAndDeleteVC"];
     [self addCell:@"tableView优化" class:@"ImageViewController"];
@@ -161,11 +163,17 @@
     
     //运用runningTime 判断VC进行跳转
     NSString *className = self.classNameArray[indexPath.row];
-    Class class = NSClassFromString(className);
-    if (class){
-        UIViewController *vc = class.new;
+    if ([className isEqualToString:@"LoggerMainVC"]) { // swift
+        LoggerMainVC *vc = [[LoggerMainVC alloc] init];
         vc.navigationItem.title = self.dataArray[indexPath.row];
         [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        Class class = NSClassFromString(className);
+        if (class){
+            UIViewController *vc = class.new;
+            vc.navigationItem.title = self.dataArray[indexPath.row];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 

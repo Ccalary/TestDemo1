@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class SwiftFirstVC: UIViewController {
+@objc public class LoggerMainVC: UIViewController {
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -19,6 +19,7 @@ import Foundation
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
     
         let scrollView = UIScrollView()
         scrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 83)
