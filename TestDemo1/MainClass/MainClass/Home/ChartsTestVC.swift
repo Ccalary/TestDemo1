@@ -68,7 +68,7 @@ import Charts
             let entry = BarChartDataEntry(x: Double(i), y: Double(arc4random_uniform(500)))
             entries.append(entry)
         }
-        let set = CustomBarChartDataSet(entries: entries, label: "图例")
+        let set = BarChartDataSet(entries: entries, label: "图例")
         // 柱状颜色
         set.colors = [UIColor(0x7AB2FF)]
         // 是否显示label数据
@@ -160,7 +160,7 @@ import Charts
             let val = Double(arc4random_uniform(UInt32(mult)))
             return BarChartDataEntry(x: Double(i), y: val)
         }
-        var set1: CustomBarChartDataSet! = nil
+        var set1: BarChartDataSet! = nil
         
         // 有数据的话更新数据
 //        if let set = chartView.data?.first as? BarChartDataSet { // 有data
@@ -171,7 +171,7 @@ import Charts
 //
 //        } else {
         // 重新设置数据
-        set1 = CustomBarChartDataSet(entries: yVals, label: "Data Set")
+        set1 = BarChartDataSet(entries: yVals, label: "Data Set")
         // 柱状颜色
         set1.colors = [UIColor(0x7AB2FF)]
         // 是否显示label数据
@@ -213,16 +213,16 @@ import Charts
 //        let barWidth = 0.12
         let barWidth = (1 - groupSpace)/Double(barNum) - barSpace
 
-        var dataSets = [CustomBarChartDataSet]()
+        var dataSets = [BarChartDataSet]()
         for i in 0..<datas.count {
            var yValues = [BarChartDataEntry]()
-           var set = CustomBarChartDataSet()
+           var set = BarChartDataSet()
            let data = datas[i]
            for j in 0..<data.count {
                let value = data[j]
                dataSetMax = max(value, dataSetMax)
                yValues.append(BarChartDataEntry(x: Double(j), y: value))
-               set = CustomBarChartDataSet(entries: yValues, label: "第\(i)个图例")
+               set = BarChartDataSet(entries: yValues, label: "第\(i)个图例")
                set.setColor(UIColor(red: CGFloat(arc4random() % 256) / 255.0, green: CGFloat(arc4random() % 256) / 255.0, blue: CGFloat(arc4random() % 256) / 255.0, alpha: 1.0))
                set.drawValuesEnabled = false
            }
@@ -240,6 +240,10 @@ import Charts
         // x轴label居中
         chartView.xAxis.centerAxisLabelsEnabled = true
         data.groupBars(fromX: 0, groupSpace: groupSpace, barSpace: barSpace)
+        
+        // 最多显示多少个
+//        chartView.setVisibleXRangeMaximum()
+        
         self.chartView.data = data
     }
     
@@ -267,44 +271,4 @@ extension ChartsTestVC: ChartViewDelegate {
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         print("chartValueSelected")
     }
-}
-
-
-class CustomBarChartDataSet: BarChartDataSet {
-    override func entriesForXValue(_ xValue: Double) -> [ChartDataEntry] {
-        var entries = [ChartDataEntry]()
-        var low = startIndex
-        var high = endIndex - 1
-
-        while low <= high {
-            var mid = (high + low) / 2
-            var entry = self[mid]
-            // if we have a match
-            if xValue == entry.x {
-                while mid > 0 && self[mid - 1].x == xValue {
-                    mid -= 1
-                }
-                high = endIndex
-                // loop over all "equal" entries
-                while mid < high {
-                    entry = self[mid]
-                    if entry.x == xValue {
-                        entries.append(entry)
-                    } else {
-                        break
-                    }
-                    mid += 1
-                }
-                break
-            } else {
-                if xValue > entry.x {
-                    low = mid + 1
-                } else {
-                    high = mid - 1
-                }
-            }
-        }
-        return entries
-    }
-
 }

@@ -27,6 +27,7 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - HandyJSON (5.0.2)
   - IQKeyboardManager (6.5.9)
   - KVOController (1.2.0)
   - lottie-ios (2.5.3)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - Charts
   - FDFullscreenPopGesture (= 1.1)
   - FMDB
+  - HandyJSON (~> 5.0.2)
   - IQKeyboardManager
   - KVOController
   - lottie-ios (~> 2.5.3)
@@ -61,6 +63,7 @@ SPEC REPOS:
     - Charts
     - FDFullscreenPopGesture
     - FMDB
+    - HandyJSON
     - IQKeyboardManager
     - KVOController
     - lottie-ios
@@ -78,6 +81,7 @@ SPEC CHECKSUMS:
   Charts: cfa4e911e6dc289582c2fe011a0e87c03d96727f
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
@@ -89,6 +93,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: 5773a617a6bedb295d0bf1d981d7ec26de7e3c5b
+PODFILE CHECKSUM: 068477fa07c4f1789ae1ab7ab6a3c2bd370b9f4a
 
 COCOAPODS: 1.11.2

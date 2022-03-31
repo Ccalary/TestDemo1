@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ToolsHelper {
+class SwiftToolsHelper {
     /// 更改字体大小
     /// - Parameters:
     ///   - originalText: 全部文字

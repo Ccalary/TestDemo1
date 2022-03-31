@@ -265,7 +265,7 @@ class LoggerInfoView: UIView {
     var content = "0.00kw" {
         didSet {
             let changeText = content.split(separator: ".").last ?? ""
-            self.contentLabel.attributedText = ToolsHelper.changeTextSize(content, String(changeText), UIFont.systemFont(ofSize: 11))
+            self.contentLabel.attributedText = SwiftToolsHelper.changeTextSize(content, String(changeText), UIFont.systemFont(ofSize: 11))
         }
     }
     
@@ -294,7 +294,7 @@ class LoggerInfoView: UIView {
             make.left.right.equalToSuperview()
         }
         let changeText = content.split(separator: ".").last ?? ""
-        self.contentLabel.attributedText = ToolsHelper.changeTextSize(content, String(changeText), UIFont.systemFont(ofSize: 11))
+        self.contentLabel.attributedText = SwiftToolsHelper.changeTextSize(content, String(changeText), UIFont.systemFont(ofSize: 11))
     }
 
     private lazy var contentLabel: UILabel = {

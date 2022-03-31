@@ -8,6 +8,8 @@
 
 import Foundation
 import Charts
+import simd
+import HandyJSON
 
 @objc public class ChartsLineVC: UIViewController {
     
@@ -25,32 +27,10 @@ import Charts
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        let lineChartView = LineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
+        let lineChartView = CustomLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
         view.addSubview(lineChartView)
         self.chartView = lineChartView
-        
-        let button = UIButton()
-        button.backgroundColor = UIColor.blue
-        button.addTarget(self, action: #selector(normalButtonAction), for: .touchUpInside)
-        button.setTitle("Normal", for: .normal)
-        self.view.addSubview(button)
-        button.snp.makeConstraints { make in
-            make.width.equalTo(100)
-            make.height.equalTo(50)
-            make.top.equalTo(lineChartView.snp_bottom).offset(50)
-            make.right.equalTo(self.view.snp_centerX).offset(-20)
-        }
-        
-        let groupButton = UIButton()
-        groupButton.backgroundColor = UIColor.blue
-        groupButton.addTarget(self, action: #selector(groupButtonAction), for: .touchUpInside)
-        groupButton.setTitle("Group", for: .normal)
-        self.view.addSubview(groupButton)
-        groupButton.snp.makeConstraints { make in
-            make.width.height.centerY.equalTo(button)
-            make.left.equalTo(self.view.snp_centerX).offset(20)
-        }
-        
+                
         // 禁止双击手势
         lineChartView.doubleTapToZoomEnabled = false
         // 禁止y轴缩放
@@ -61,7 +41,8 @@ import Charts
         lineChartView.borderColor = UIColor(0xE5E5E8)
         // 图表边框宽度。默认1.0
         lineChartView.borderLineWidth = 0.5
-    
+        // 图表右侧偏移量
+        lineChartView.extraRightOffset = 15
         
         let xAxis = lineChartView.xAxis
         xAxis.labelPosition = .bottom
@@ -69,11 +50,11 @@ import Charts
         xAxis.drawAxisLineEnabled = false
         // 网格线颜色
         xAxis.gridColor = UIColor(0xE5E5E8)
+//        xAxis.drawGridLinesEnabled = false;
         // 文字颜色
         xAxis.labelTextColor = UIColor(0x92959C)
         // 文字大小
         xAxis.labelFont = UIFont.systemFont(ofSize: 11)
-        
         
         let leftAxis = lineChartView.leftAxis
         leftAxis.drawAxisLineEnabled = false
@@ -84,80 +65,81 @@ import Charts
         // 文字大小
         leftAxis.labelFont = UIFont.systemFont(ofSize: 11)
         leftAxis.axisMinimum = 0
-        leftAxis.axisMaximum = 500
+        leftAxis.labelCount = 7
+        // 强制数量
+        leftAxis.forceLabelsEnabled = true
+//        leftAxis.axisMaximum = 500000
         
         // 禁用掉右轴
-        lineChartView.rightAxis.enabled = false
+        let rightAxis = lineChartView.rightAxis
+        rightAxis.enabled = false
+        
+        // 设置自定义渲染方式
+        lineChartView.setupCustomRenderer()
+        
+        var jsonDataArray: [DayModel] = [DayModel]()
+        let path = Bundle.main.path(forResource: "day0321", ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        // 带throws的方法需要抛异常
+            do {
+                  /*
+                     * try 和 try! 的区别
+                     * try 发生异常会跳到catch代码中
+                     * try! 发生异常程序会直接crash
+                     */
+                let data = try Data(contentsOf: url)
+                if let jsonData:[Any] = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [Any] {
+                    if let result: [DayModel] = [DayModel].deserialize(from: jsonData) as? [DayModel] {
+                        result.forEach({(model) in
+                            jsonDataArray.append(model)
+                        })
+                    }
+                }
+            } catch let error as Error? {
+                print("读取本地数据出现错误!",error ?? "")
+            }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        
+        let date1 = formatter.date(from: "20220321")
+        let timeStamp = date1?.timeIntervalSince1970 ?? 0.0
         
         // MARK: DATA
         var entries = [ChartDataEntry]()
-        for i in 0...31 {
-            let entry = ChartDataEntry(x: Double(i), y: Double(arc4random_uniform(450)))
-            entries.append(entry)
+        var entries2 = [ChartDataEntry]()
+        var yMax = 0.0
+        for item in jsonDataArray {
+            if let dateTime = item.dateTime {
+                if let power = item.generationPower {
+                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(power))
+//                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(10000))
+                    entries.append(entry)
+                    yMax = max(Double(power), yMax)
+                    
+                    if let capacity = item.generationCapacity {
+                        let y = Double(capacity*40000.0) + Double(arc4random_uniform(100000))
+                        let entry2 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: y)
+                        entries2.append(entry2)
+                        yMax = max(y, yMax)
+                    }
+                }
+            }
         }
+//        for i in 0...30 {
+//            let entry = ChartDataEntry(x: Double(i), y: Double(arc4random_uniform(400)))
+//            entries.append(entry)
+//        }
 
-        let set = CustomLineChartDataSet(entries: entries, label: "图例")
-        // 渐变色
-        let gradientColors = [ChartColorTemplates.colorFromString("#0024BF6A").cgColor,
-                              ChartColorTemplates.colorFromString("#ff24BF6A").cgColor]
-        let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
-        // 填充色
-        set.fill = LinearGradientFill(gradient: gradient, angle: 90)
-        set.fillAlpha = 1
-        // 是否增加填充色
-        set.drawFilledEnabled = true
-        // 是否绘制圆点
-        set.drawCirclesEnabled = false
-        // 折线样式，平滑的曲线、折线
-        set.mode = .horizontalBezier
-        // 线段颜色
-        set.colors = [UIColor(0x00B050)]
-        // 高亮时横向辅助线。默认true
-        set.drawHorizontalHighlightIndicatorEnabled = false
-        // 高亮时颜色
-        set.highlightColor = UIColor(0x00B050)
-        // 高亮时宽度
-        set.highlightLineWidth = 1
-        // 高亮时虚线分割
-        set.highlightLineDashLengths = [5.0,5.0]
-        
-        
-        let data = LineChartData(dataSet: set)
-        // 是否显示数值
-        data.setDrawValues(false)
-        lineChartView.data = data
-
-        
-    }
-    
-    @objc func normalButtonAction() {
-        setDataCount(31, range: 500, lineNum: 1)
-    }
-    
-    @objc func groupButtonAction() {
-        setDataCount(31, range: 500)
-    }
-    
-    // TODO: Refine data creation
-    func setDataCount(_ count: Int, range: UInt32, lineNum: Int = 3) {
         let colors = self.vordiplom()[0...2]
         let alphaColors = self.vordiplom(0.0)[0...2]
+        let entriesArray = [entries, entries2]
         
-        let block: (Int) -> ChartDataEntry = { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range) + 3)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        let dataSets = (0..<lineNum).map { i -> LineChartDataSet in
-            let yVals = (0..<count).map(block)
-            let set = CustomLineChartDataSet(entries: yVals, label: "DataSet \(i)")
-            set.lineWidth = 2.5
-            set.circleRadius = 4
-            set.circleHoleRadius = 2
+        let sets = (0..<entriesArray.count).map { i -> LineChartDataSet in
+            let entry = entriesArray[i]
+            let set = LineChartDataSet(entries: entry, label: "图例")
             let color = colors[i % colors.count]
             let alphaColor = alphaColors[i % colors.count]
-            set.setColor(color)
-            set.setCircleColor(color)
-            
             // 渐变色
             let gradientColors = [alphaColor.cgColor,
                                   color.cgColor]
@@ -180,16 +162,35 @@ import Charts
             // 高亮时宽度
             set.highlightLineWidth = 1
             // 高亮时虚线分割
-            set.highlightLineDashLengths = [5.0,5.0]
-            
+            set.highlightLineDashLengths = [3.0,3.0]
             return set
         }
         
-        let data = LineChartData(dataSets: dataSets)
+        let data = LineChartData(dataSets: sets)
+        // 是否显示数值
         data.setDrawValues(false)
-        chartView.data = data
+        lineChartView.data = data
+        
+        // 设置最大最小值
+        xAxis.axisMinimum = 0
+        xAxis.axisMaximum = 24*60*60
+        // 15分钟为最小单位
+        xAxis.granularity = 15*60
+        // x轴数据格式
+        xAxis.valueFormatter =  TimeAxisValueFormatter()
+        
+        // MARK: Y轴分布问题处理
+        // 处理Y轴点位分布问题
+        let labelCount = leftAxis.labelCount
+        let range = abs(yMax - leftAxis.axisMinimum)
+        // 间隔
+        var interval = Double(range) / Double(labelCount - 1)
+        interval = interval.yRoundedToNextSignificant()
+        leftAxis.axisMaximum = interval*Double(labelCount - 1)
     }
-    
+}
+
+extension ChartsLineVC {
     // 计算一个月的天数
     private func days(forMonth month: Int, year: Int) -> Int {
         // month is 1-based
@@ -217,44 +218,4 @@ import Charts
             NSUIColor(red: 36/255.0, green: 191/255.0, blue: 106/255.0, alpha: alpha),
         ]
     }
-}
-
-// 处理点击不准确的问题
-class CustomLineChartDataSet: LineChartDataSet {
-    override func entriesForXValue(_ xValue: Double) -> [ChartDataEntry] {
-        var entries = [ChartDataEntry]()
-        var low = startIndex
-        var high = endIndex - 1
-
-        while low <= high {
-            var mid = (high + low) / 2
-            var entry = self[mid]
-            // if we have a match
-            if xValue == entry.x {
-                while mid > 0 && self[mid - 1].x == xValue {
-                    mid -= 1
-                }
-                high = endIndex
-                // loop over all "equal" entries
-                while mid < high {
-                    entry = self[mid]
-                    if entry.x == xValue {
-                        entries.append(entry)
-                    } else {
-                        break
-                    }
-                    mid += 1
-                }
-                break
-            } else {
-                if xValue > entry.x {
-                    low = mid + 1
-                } else {
-                    high = mid - 1
-                }
-            }
-        }
-        return entries
-    }
-
 }
