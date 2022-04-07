@@ -25,7 +25,16 @@
     [super viewDidLoad];
     UITabBar *tabbar = [UITabBar appearance];
     tabbar.tintColor = [UIColor blueColor];
-    
+    // iOS15适配
+    if (@available(iOS 13.0, *)) {
+        UITabBarAppearance *appearance = [[UITabBarAppearance alloc] init];
+        //背景色
+        appearance.backgroundColor = [UIColor whiteColor];
+        self.tabBar.standardAppearance = appearance;
+        if(@available(iOS 15.0,*)) {
+            self.tabBar.scrollEdgeAppearance = appearance;
+        }
+    }
     [self addChildViewControllers];
 }
 
@@ -36,9 +45,9 @@
 
 //添加子控制器
 - (void)addChildViewControllers{
-//    [self addChildrenViewController:[[LoggerMainVC alloc] init] andTitle:@"Logger" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
-    [self addChildrenViewController:[[ChartsLineVC alloc] init] andTitle:@"Line" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
-    [self addChildrenViewController:[[ChartsTestVC alloc] init] andTitle:@"Bar" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
+    [self addChildrenViewController:[[CGDemoVC alloc] init] andTitle:@"CG" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
+    [self addChildrenViewController:[[ChartsBarVC alloc] init] andTitle:@"Bar" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
+//    [self addChildrenViewController:[[ChartsLineVC alloc] init] andTitle:@"Line" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
     HomeViewController *homeVC = [[HomeViewController alloc] init];
     homeVC.tabBarItem.badgeValue = @"1";
     [self addChildrenViewController:homeVC andTitle:@"首页" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
@@ -49,15 +58,6 @@
 //    [self addChildrenViewController:[[MineViewController alloc] init] andTitle:@"我" andImageName:@"\U0000e6b8"];
     
 }
-//- (void)addChildrenViewController:(UIViewController *)childVC andTitle:(NSString *)title andImageName:(NSString *)imageName {
-//    childVC.tabBarItem.image = [UIImage imageWithIcon:imageName size:40*UIRate color:[UIColor grayColor]];
-//    childVC.tabBarItem.selectedImage =  [UIImage imageWithIcon:imageName size:27*UIRate color:[UIColor redColor]];
-//    childVC.title = title;
-//
-//    BaseNavigationController *baseNav = [[BaseNavigationController alloc] initWithRootViewController:childVC];
-//
-//    [self addChildViewController:baseNav];
-//}
 
 - (void)addChildrenViewController:(UIViewController *)childVC andTitle:(NSString *)title andImageName:(NSString *)imageName andSelectImage:(NSString *)selectedImage{
     childVC.tabBarItem.image = [UIImage imageNamed:imageName];

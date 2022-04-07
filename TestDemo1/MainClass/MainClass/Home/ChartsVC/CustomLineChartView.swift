@@ -20,30 +20,25 @@ open class CustomLineChartView: LineChartView {
 extension Double {
     /// 根据最小粒度算出拆分数据
     func customLineRoundedToNextSignificant(_ granularity: Double = 60.0) -> Double {
-        guard
-            !isInfinite,
-            !isNaN,
-            self != 0
-            else { return self }
+        guard !isInfinite, !isNaN, self != 0 else {
+            return self
+        }
         // 四舍五入
-        let j = lround(self/granularity)
-        return Double(granularity*Double(j))
+        let value = lround(self/granularity)
+        return Double(granularity*Double(value))
     }
     
     /// y轴数据处理
     func yRoundedToNextSignificant() -> Double {
-        guard
-            !isInfinite,
-            !isNaN,
-            self != 0
-            else { return self }
-
+        guard !isInfinite, !isNaN, self != 0 else {
+            return self
+        }
         // 给定一个数字，求它的数量级最接近的10^n的倍数。
-        let d = ceil(log10(self < 0 ? -self : self))
-        let pw = 1 - Int(d)
-        let magnitude = pow(10.0, Double(pw))
+        let value = ceil(log10(self < 0 ? -self : self))
+        let number = 1 - Int(value)
+        let magnitude = pow(10.0, Double(number))
         // 做了up向上取整操作
-        let shifted = (self * magnitude).rounded(.up)
+        let shifted = (self * magnitude).rounded(.awayFromZero)
         return shifted / magnitude
     }
 }

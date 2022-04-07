@@ -11,7 +11,11 @@ import HandyJSON
 
 class DayModel: HandyJSON {
     var dateTime: Int?
-    var generationPower: Int?
+    var generationPower: Double?
     var generationCapacity: Double?
+    var usePower: Double?
+    var wirePower: Double?
+    var batteryPower: Double?
+    var chargePower: Double?
     required init() {}
 }

@@ -43,6 +43,8 @@ import HandyJSON
         lineChartView.borderLineWidth = 0.5
         // 图表右侧偏移量
         lineChartView.extraRightOffset = 15
+        // 图例是否展示
+        lineChartView.legend.enabled = false
         
         let xAxis = lineChartView.xAxis
         xAxis.labelPosition = .bottom
@@ -78,7 +80,8 @@ import HandyJSON
         lineChartView.setupCustomRenderer()
         
         var jsonDataArray: [DayModel] = [DayModel]()
-        let path = Bundle.main.path(forResource: "day0321", ofType: "json")
+//        let path = Bundle.main.path(forResource: "day0321", ofType: "json")
+        let path = Bundle.main.path(forResource: "day0205", ofType: "json")
         let url = URL(fileURLWithPath: path!)
         // 带throws的方法需要抛异常
             do {
@@ -102,38 +105,49 @@ import HandyJSON
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
         
-        let date1 = formatter.date(from: "20220321")
+//        let date1 = formatter.date(from: "20220321")
+        let date1 = formatter.date(from: "20210205")
         let timeStamp = date1?.timeIntervalSince1970 ?? 0.0
         
         // MARK: DATA
         var entries = [ChartDataEntry]()
         var entries2 = [ChartDataEntry]()
+        var entries3 = [ChartDataEntry]()
         var yMax = 0.0
+        var yMin = 0.0
+        
+        // 0205数据没有按照时间排序，需要重新排序
+        jsonDataArray.sort{ $0.dateTime! < $1.dateTime! }
+        
         for item in jsonDataArray {
             if let dateTime = item.dateTime {
                 if let power = item.generationPower {
-                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(power))
+                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: power)
 //                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(10000))
                     entries.append(entry)
-                    yMax = max(Double(power), yMax)
                     
-                    if let capacity = item.generationCapacity {
-                        let y = Double(capacity*40000.0) + Double(arc4random_uniform(100000))
-                        let entry2 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: y)
+                    yMax = max(power, yMax)
+                    yMin = min(power, yMin)
+                    
+                    if let usePower = item.usePower {
+                        let entry2 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: usePower)
                         entries2.append(entry2)
-                        yMax = max(y, yMax)
+                        yMax = max(usePower, yMax)
+                        yMin = min(usePower, yMin)
+                    }
+                    
+                    if let batteryPower = item.batteryPower {
+                        let entry3 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: batteryPower)
+                        entries3.append(entry3)
+                        yMax = max(batteryPower, yMax)
+                        yMin = min(batteryPower, yMin)
                     }
                 }
             }
         }
-//        for i in 0...30 {
-//            let entry = ChartDataEntry(x: Double(i), y: Double(arc4random_uniform(400)))
-//            entries.append(entry)
-//        }
-
         let colors = self.vordiplom()[0...2]
         let alphaColors = self.vordiplom(0.0)[0...2]
-        let entriesArray = [entries, entries2]
+        let entriesArray = [entries, entries2, entries3]
         
         let sets = (0..<entriesArray.count).map { i -> LineChartDataSet in
             let entry = entriesArray[i]
@@ -179,14 +193,20 @@ import HandyJSON
         // x轴数据格式
         xAxis.valueFormatter =  TimeAxisValueFormatter()
         
+        // 设置数据后，设置最小的展示范围，防止无限放大
+        lineChartView.setVisibleXRangeMinimum(15*60*7)
+        
+        leftAxis.axisMinimum = yMin.yRoundedToNextSignificant()
+        // TODO: 有负值要处理最小值
         // MARK: Y轴分布问题处理
         // 处理Y轴点位分布问题
         let labelCount = leftAxis.labelCount
-        let range = abs(yMax - leftAxis.axisMinimum)
+//        let range = abs(yMax - leftAxis.axisMinimum)
+        let range = abs(yMax - yMin)
         // 间隔
         var interval = Double(range) / Double(labelCount - 1)
         interval = interval.yRoundedToNextSignificant()
-        leftAxis.axisMaximum = interval*Double(labelCount - 1)
+        leftAxis.axisMaximum = leftAxis.axisMinimum + interval*Double(labelCount - 1)
     }
 }
 

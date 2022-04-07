@@ -25,16 +25,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"首页";
     
-    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)
-    {
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您的手机支持3dtouch" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         
          /** 注册当前view */
         [self registerForPreviewingWithDelegate:self sourceView:self.view];
-    }
-    else
-    {
+    } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"很遗憾您的手机不支持3dtouch" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -42,6 +39,11 @@
     mainTable = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     mainTable.delegate = self;
     mainTable.dataSource = self;
+    if (@available(iOS 15.0, *)) {
+        mainTable.sectionHeaderTopPadding = 0;
+    } else {
+        // Fallback on earlier versions
+    }
     [self.view addSubview:mainTable];
     
 }
@@ -77,7 +79,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 15.0f;
+    return 0.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

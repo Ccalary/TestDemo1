@@ -11,6 +11,7 @@ import Charts
 
 open class CustomLineXAxisRenderer: XAxisRenderer {
   
+    // x轴拆分，根据最小粒度的倍数展示
     open override func computeAxisValues(min: Double, max: Double) {
         let yMin = min
         let yMax = max
@@ -18,11 +19,7 @@ open class CustomLineXAxisRenderer: XAxisRenderer {
         let labelCount = axis.labelCount
         let range = abs(yMax - yMin)
 
-        guard
-            labelCount != 0,
-            range > 0,
-            range.isFinite
-            else {
+        guard labelCount != 0, range > 0, range.isFinite else {
             axis.entries = []
             axis.centeredEntries = []
             return
@@ -60,8 +57,7 @@ open class CustomLineXAxisRenderer: XAxisRenderer {
         }
         if axis.centerAxisLabelsEnabled {
             let offset: Double = interval / 2.0
-            axis.centeredEntries = axis.entries[..<n]
-                .map { $0 + offset }
+            axis.centeredEntries = axis.entries[..<n].map { $0 + offset }
         }
         computeSize()
     }

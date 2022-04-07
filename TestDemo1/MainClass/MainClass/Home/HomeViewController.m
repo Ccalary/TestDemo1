@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view.
     
     self.lineChartView = [[LineChartView alloc] initWithFrame:CGRectMake(20, 100, ScreenWidth-40, 300)];
+    self.lineChartView.backgroundColor = [UIColor fontColorBlue];
     [self.view addSubview:self.lineChartView];
     //-------------------------------折线图的配置-----------------------------------------
     // 设置代理

@@ -13,19 +13,15 @@ import Charts
 class CustomLineChartRenderer: LineChartRenderer {
     var hightlightCircleRadius: CGFloat = 4.0
     
+    // 自定义绘制高亮线段
     open override func drawHighlighted(context: CGContext, indices: [Highlight]) {
-        guard
-            let dataProvider = dataProvider,
-            let lineData = dataProvider.lineData
-        else { return }
-        
+        guard let dataProvider = dataProvider, let lineData = dataProvider.lineData else {
+            return
+        }
         let chartXMax = dataProvider.chartXMax
-        
-        guard
-            let dataSets = lineData.dataSets as? [LineChartDataSet],
-            let hightlight = indices.first
-        else { return }
-        
+        guard let dataSets = lineData.dataSets as? [LineChartDataSet], let hightlight = indices.first else {
+            return
+        }
         var pointArray: [CGPoint] = []
         var setArray: [LineChartDataSet] = []
         // 最高点
@@ -42,9 +38,9 @@ class CustomLineChartRenderer: LineChartRenderer {
             }
             let transformer = dataProvider.getTransformer(forAxis: dataSet.axisDependency)
             // 转换得到实际的x，y坐标点
-            let pt = transformer.pixelForValues(x: x, y: y)
-            minY = min(pt.y, minY)
-            pointArray.append(pt)
+            let point = transformer.pixelForValues(x: x, y: y)
+            minY = min(point.y, minY)
+            pointArray.append(point)
             setArray.append(dataSet)
         }
         if (setArray.isEmpty) {
@@ -61,7 +57,7 @@ class CustomLineChartRenderer: LineChartRenderer {
     // 绘制高亮线段
     func drawCustomHighlightLine(context: CGContext, point: CGPoint) {
         context.saveGState()
-        context.setStrokeColor(UIColor.red.cgColor)
+        context.setStrokeColor(UIColor(hex: 0x4E95F8).cgColor)
         context.setLineWidth(1)
         context.setLineDash(phase: 0, lengths: [3.0,3.0])
 
@@ -87,8 +83,8 @@ class CustomLineChartRenderer: LineChartRenderer {
         context.restoreGState()
     }
     
-    func isInBoundsX(entry e: ChartDataEntry, dataSet: BarLineScatterCandleBubbleChartDataSetProtocol) -> Bool {
-        let entryIndex = dataSet.entryIndex(entry: e)
+    func isInBoundsX(entry: ChartDataEntry, dataSet: BarLineScatterCandleBubbleChartDataSetProtocol) -> Bool {
+        let entryIndex = dataSet.entryIndex(entry: entry)
         return Double(entryIndex) < Double(dataSet.entryCount) * animator.phaseX
     }
 }

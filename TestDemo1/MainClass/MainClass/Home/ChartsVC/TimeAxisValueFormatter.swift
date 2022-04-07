@@ -13,8 +13,8 @@ open class TimeAxisValueFormatter: NSObject, AxisValueFormatter {
         super.init()
     }
     
-    open func stringForValue(_ value: Double,
-                             axis: AxisBase?) -> String {
+    // 按照时间展示
+    open func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let index = Int(value.rounded())
         let result = self.formatDate(second: index)
         return result
