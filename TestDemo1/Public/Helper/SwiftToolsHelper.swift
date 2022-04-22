@@ -9,19 +9,7 @@
 import Foundation
 
 class SwiftToolsHelper {
-    /// 更改字体大小
-    /// - Parameters:
-    ///   - originalText: 全部文字
-    ///   - changeText: 要更改的文字
-    ///   - font: 字体
-   static func changeTextSize(_ originalText: String, _ changeText: String, _ font: UIFont) -> NSMutableAttributedString {
-        let attrStr = NSMutableAttributedString(string: originalText)
-        let changeStrRange: Range = originalText.range(of: changeText)!
-        let location = originalText.distance(from: originalText.startIndex, to: changeStrRange.lowerBound)
-        let range: NSRange = NSRange(location: location, length: changeText.count)
-        attrStr.addAttribute(NSAttributedString.Key.font, value: font, range: range)
-        return attrStr
-    }
+    
 }
 
 /* 颜色的十六进制 */
@@ -31,5 +19,20 @@ extension UIColor {
         let green = CGFloat((hex & 0xFF00) >> 8) / 255.0
         let blue = CGFloat(hex & 0xFF) / 255.0
         self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+    // 十六进制颜色
+    convenience init(_ hexString: String, alpha: CGFloat = 1.0) {
+        var cString = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if cString.hasPrefix("#") { cString.removeFirst() }
+        
+        if cString.count != 6 {
+          self.init("ff0000") // return red color for wrong hex input
+          return
+        }
+        var rgbValue: UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+        self.init(Int(rgbValue), alpha)
     }
 }

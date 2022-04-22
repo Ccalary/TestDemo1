@@ -17,7 +17,6 @@ pod 'AGGeometryKit'
 pod 'FMDB'
 pod 'FDFullscreenPopGesture', '1.1'
 pod 'SnapKit', '~> 4.2.0'
-pod 'Charts'
 pod 'HandyJSON', '~> 5.0.2'
 end
 

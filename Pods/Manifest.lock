@@ -19,10 +19,6 @@ PODS:
     - AGGeometryKit/UIViewProperties (= 1.2.9)
   - AGGeometryKit/CALayerProperties (1.2.9)
   - AGGeometryKit/UIViewProperties (1.2.9)
-  - Charts (4.0.2):
-    - Charts/Core (= 4.0.2)
-  - Charts/Core (4.0.2):
-    - SwiftAlgorithms (~> 1.0)
   - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -37,12 +33,10 @@ PODS:
   - MJRefresh (3.1.15.7)
   - pop (1.0.12)
   - SnapKit (4.2.0)
-  - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - AGGeometryKit
-  - Charts
   - FDFullscreenPopGesture (= 1.1)
   - FMDB
   - HandyJSON (~> 5.0.2)
@@ -60,7 +54,6 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - AGGeometryKit
-    - Charts
     - FDFullscreenPopGesture
     - FMDB
     - HandyJSON
@@ -73,12 +66,10 @@ SPEC REPOS:
     - MJRefresh
     - pop
     - SnapKit
-    - SwiftAlgorithms
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AGGeometryKit: 5e820bd2a8290e3b1e3a1517a49c65ae42c239c9
-  Charts: cfa4e911e6dc289582c2fe011a0e87c03d96727f
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
@@ -91,8 +82,7 @@ SPEC CHECKSUMS:
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: 068477fa07c4f1789ae1ab7ab6a3c2bd370b9f4a
+PODFILE CHECKSUM: f378eb20ba360711de0455141e12a3bdc0bd3268
 
 COCOAPODS: 1.11.2

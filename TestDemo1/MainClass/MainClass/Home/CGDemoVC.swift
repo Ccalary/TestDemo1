@@ -26,14 +26,10 @@ class CGDemoVC: UIViewController {
         self.navigationItem.title = "CoreGraphics"
         self.view.backgroundColor = UIColor.bgColorf2f2f2()
         
-        let cgView = CGView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
-        cgView.backgroundColor = UIColor.gray
-        self.view.addSubview(cgView)
-    }
+//        let cgView = CGView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
+//        cgView.backgroundColor = UIColor.gray
+//        self.view.addSubview(cgView)
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.setNeedsDisplay()
-        self.view.layoutIfNeeded()
     }
 }
 
@@ -71,8 +67,6 @@ class CGView: UIView {
 //        context.fillPath()
     
         context.clip(to: [drawRect, drawRect2])
-        
-        
         
 //        context.restoreGState()
         
