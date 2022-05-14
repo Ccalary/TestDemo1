@@ -12,7 +12,7 @@ import HandyJSON
 
 @objc public class ChartsLineVC: UIViewController {
     
-    private var chartView = LineChartView()
+    private var lineChartView = LineChartView()
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -29,7 +29,7 @@ import HandyJSON
         
         let lineChartView = CustomLineChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
         view.addSubview(lineChartView)
-        self.chartView = lineChartView
+        self.lineChartView = lineChartView
                 
         // 禁止双击手势
         lineChartView.doubleTapToZoomEnabled = false
@@ -71,6 +71,12 @@ import HandyJSON
         // 强制数量
         leftAxis.forceLabelsEnabled = true
 //        leftAxis.axisMaximum = 500000
+        
+//        leftAxis.labelPosition = .insideChart
+//        leftAxis.drawLabelsEnabled = false
+        
+        leftAxis.decimals = 5
+        leftAxis.valueFormatter = YDecimalsAxisValueFormatter(decimals: 2)
         
         // 禁用掉右轴
         let rightAxis = lineChartView.rightAxis
@@ -122,26 +128,26 @@ import HandyJSON
         for item in jsonDataArray {
             if let dateTime = item.dateTime {
                 if let power = item.generationPower {
-                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: power)
+                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(arc4random()%4))
 //                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(10000))
                     entries.append(entry)
                     
                     yMax = max(power, yMax)
                     yMin = min(power, yMin)
                     
-                    if let usePower = item.usePower {
-                        let entry2 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: usePower)
-                        entries2.append(entry2)
-                        yMax = max(usePower, yMax)
-                        yMin = min(usePower, yMin)
-                    }
-                    
-                    if let batteryPower = item.batteryPower {
-                        let entry3 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: batteryPower)
-                        entries3.append(entry3)
-                        yMax = max(batteryPower, yMax)
-                        yMin = min(batteryPower, yMin)
-                    }
+//                    if let usePower = item.usePower {
+//                        let entry2 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: usePower)
+//                        entries2.append(entry2)
+//                        yMax = max(usePower, yMax)
+//                        yMin = min(usePower, yMin)
+//                    }
+//
+//                    if let batteryPower = item.batteryPower, dateTime == 1612464296 {
+//                        let entry3 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: batteryPower)
+//                        entries3.append(entry3)
+//                        yMax = max(batteryPower, yMax)
+//                        yMin = min(batteryPower, yMin)
+//                    }
                 }
             }
         }
@@ -184,7 +190,7 @@ import HandyJSON
         // 是否显示数值
         data.setDrawValues(false)
         lineChartView.data = data
-        
+
         // 设置最大最小值
         xAxis.axisMinimum = 0
         xAxis.axisMaximum = 24*60*60
@@ -192,22 +198,53 @@ import HandyJSON
         xAxis.granularity = 15*60
         // x轴数据格式
         xAxis.valueFormatter =  TimeAxisValueFormatter()
-        
+
         // 设置数据后，设置最小的展示范围，防止无限放大
         lineChartView.setVisibleXRangeMinimum(15*60*7)
+
+//        leftAxis.axisMinimum = yMin.yRoundedToNextSignificant()
+    
         
-        leftAxis.axisMinimum = yMin.yRoundedToNextSignificant()
+        
         // TODO: 有负值要处理最小值
         // MARK: Y轴分布问题处理
         // 处理Y轴点位分布问题
-        let labelCount = leftAxis.labelCount
-//        let range = abs(yMax - leftAxis.axisMinimum)
-        let range = abs(yMax - yMin)
-        // 间隔
-        var interval = Double(range) / Double(labelCount - 1)
-        interval = interval.yRoundedToNextSignificant()
-        leftAxis.axisMaximum = leftAxis.axisMinimum + interval*Double(labelCount - 1)
+//        let labelCount = leftAxis.labelCount
+////        let range = abs(yMax - leftAxis.axisMinimum)
+//        let range = abs(yMax - yMin)
+//        // 间隔
+//        var interval = Double(range) / Double(labelCount - 1)
+//        interval = interval.yRoundedToNextSignificant()
+//        leftAxis.axisMaximum = leftAxis.axisMinimum + interval*Double(labelCount - 1)
+        
+//        setNoDataAvailable()
     }
+    
+//    // 无数据界面展示
+//    func setNoDataAvailable() {
+//        var entries:[ChartDataEntry] = [ChartDataEntry]()
+//        for i in 0...1 {
+//            let entry = ChartDataEntry(x: Double(i), y: 0.0)
+//            entries.append(entry)
+//        }
+//        let set = LineChartDataSet(entries: entries, label: "")
+//        set.drawFilledEnabled = true
+//        // 是否绘制圆点
+//        set.drawCirclesEnabled = false
+//        set.colors = [UIColor.clear]
+//        set.highlightColor = UIColor.clear
+//
+//        let data = LineChartData(dataSet: set)
+//        // 是否显示数值
+//        data.setDrawValues(false)
+//
+//        let leftAxis = lineChartView.leftAxis
+//        leftAxis.axisMinimum = 0
+//        leftAxis.axisMaximum = 3.9
+//        leftAxis.labelCount = 6
+//
+//        lineChartView.data = data
+//    }
 }
 
 extension ChartsLineVC {
