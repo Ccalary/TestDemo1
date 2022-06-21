@@ -247,6 +247,7 @@
 		0D621C0C282F5A6300241558 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C03282F5A6300241558 /* LayoutView.swift */; };
 		0D621C0D282F5A6300241558 /* LayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C04282F5A6300241558 /* LayoutData.swift */; };
 		0D621C1528332FB800241558 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C1428332FB800241558 /* Test.swift */; };
+		0D6C18A12861CBCC0018B356 /* ChartsTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6C18A02861CBCC0018B356 /* ChartsTestVC.swift */; };
 		0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */; };
 		0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */; };
 		0D7E7F8526465CE700DB06CB /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7F8426465CE600DB06CB /* CHTCollectionViewWaterfallLayout.m */; };
@@ -663,6 +664,7 @@
 		0D621C03282F5A6300241558 /* LayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
 		0D621C04282F5A6300241558 /* LayoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutData.swift; sourceTree = "<group>"; };
 		0D621C1428332FB800241558 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		0D6C18A02861CBCC0018B356 /* ChartsTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsTestVC.swift; sourceTree = "<group>"; };
 		0D77DF431ED69FBE000F3C1A /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		0D77DF461ED6AD9E000F3C1A /* HHCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCountingLabel.h; sourceTree = "<group>"; };
@@ -1779,6 +1781,7 @@
 				0DAF4D1427ED6ACB00A5FA24 /* CustomerMarkerVIew.h */,
 				0DAF4D1327ED6ACB00A5FA24 /* CustomerMarkerVIew.m */,
 				0D621C1428332FB800241558 /* Test.swift */,
+				0D6C18A02861CBCC0018B356 /* ChartsTestVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2583,6 +2586,7 @@
 				0D8BBC4027F14CB6002E8AA1 /* ToolsHelper.m in Sources */,
 				0D4B290E1EEA4BA500BB9CC9 /* BezierPathQuadCurve.m in Sources */,
 				0D1A833328127DD5002359EA /* RadarChartRenderer.swift in Sources */,
+				0D6C18A12861CBCC0018B356 /* ChartsTestVC.swift in Sources */,
 				0D1A836128127DD5002359EA /* ChartViewBase.swift in Sources */,
 				0D1A83B628127DD5002359EA /* BarChartDataProvider.swift in Sources */,
 				0D1A83B228127DD5002359EA /* ChartDataSetProtocol.swift in Sources */,
