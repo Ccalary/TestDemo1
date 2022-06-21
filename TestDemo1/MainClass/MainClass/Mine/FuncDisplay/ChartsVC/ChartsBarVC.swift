@@ -186,7 +186,7 @@ import UIKit
             // 柱状颜色
             set.colors = [color]
             // 是否显示label数据
-            set.drawValuesEnabled = false
+            set.drawValuesEnabled = true
             // 是否支持高亮
             set.highlightEnabled = true
             // 高亮颜色
@@ -282,7 +282,7 @@ import UIKit
             // 柱状颜色
             set.colors = [color]
             // 是否显示label数据
-            set.drawValuesEnabled = false
+            set.drawValuesEnabled = true
             // 是否支持高亮
             set.highlightEnabled = true
             // 高亮颜色
@@ -495,7 +495,7 @@ import UIKit
                yValues.append(BarChartDataEntry(x: Double(j), y: value))
                set = BarChartDataSet(entries: yValues, label: "第\(i)个图例")
                set.setColor(UIColor(red: CGFloat(arc4random() % 256) / 255.0, green: CGFloat(arc4random() % 256) / 255.0, blue: CGFloat(arc4random() % 256) / 255.0, alpha: 1.0))
-               set.drawValuesEnabled = false
+               set.drawValuesEnabled = true
            }
            dataSets.append(set)
         }

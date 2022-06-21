@@ -246,6 +246,7 @@
 		0D621C0B282F5A6300241558 /* LayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C02282F5A6300241558 /* LayoutVC.swift */; };
 		0D621C0C282F5A6300241558 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C03282F5A6300241558 /* LayoutView.swift */; };
 		0D621C0D282F5A6300241558 /* LayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C04282F5A6300241558 /* LayoutData.swift */; };
+		0D621C1528332FB800241558 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C1428332FB800241558 /* Test.swift */; };
 		0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */; };
 		0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */; };
 		0D7E7F8526465CE700DB06CB /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7F8426465CE600DB06CB /* CHTCollectionViewWaterfallLayout.m */; };
@@ -269,8 +270,6 @@
 		0D8BBC6727F58D10002E8AA1 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC6627F58D10002E8AA1 /* RecordModel.swift */; };
 		0D8BBC6927F6A7F8002E8AA1 /* CustomBarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC6827F6A7F8002E8AA1 /* CustomBarChartRenderer.swift */; };
 		0D8BBC6B27F6A8DF002E8AA1 /* CustomBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC6A27F6A8DF002E8AA1 /* CustomBarChartView.swift */; };
-		0D8BBC6F27FAA831002E8AA1 /* AutolayoutDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC6E27FAA831002E8AA1 /* AutolayoutDemo.swift */; };
-		0D8BBC7227FD307C002E8AA1 /* CGDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC7127FD307C002E8AA1 /* CGDemoVC.swift */; };
 		0D99563527E863980060F4FA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563427E863980060F4FA /* File.swift */; };
 		0D99564427E864680060F4FA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563727E864680060F4FA /* HomeViewController.m */; };
 		0D99564627E864680060F4FA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563A27E864680060F4FA /* FirstViewController.m */; };
@@ -279,7 +278,6 @@
 		0D99564927E864680060F4FA /* InputPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99563F27E864680060F4FA /* InputPopView.m */; };
 		0D99564A27E864680060F4FA /* OCPathAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D99564027E864680060F4FA /* OCPathAnimationView.m */; };
 		0D99565A27E9CD8A0060F4FA /* SwiftToolsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99565927E9CD8A0060F4FA /* SwiftToolsHelper.swift */; };
-		0D9EB2AA2805661D00ABE632 /* LoggerTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EB2A92805661D00ABE632 /* LoggerTestVC.swift */; };
 		0D9EB2AC2805698D00ABE632 /* FlowEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EB2AB2805698D00ABE632 /* FlowEntry.swift */; };
 		0D9EB2AE280570CB00ABE632 /* FlowMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EB2AD280570CB00ABE632 /* FlowMapView.swift */; };
 		0D9EB2B0280692D900ABE632 /* FlowLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EB2AF280692D900ABE632 /* FlowLegend.swift */; };
@@ -664,6 +662,7 @@
 		0D621C02282F5A6300241558 /* LayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutVC.swift; sourceTree = "<group>"; };
 		0D621C03282F5A6300241558 /* LayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
 		0D621C04282F5A6300241558 /* LayoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutData.swift; sourceTree = "<group>"; };
+		0D621C1428332FB800241558 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		0D77DF431ED69FBE000F3C1A /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		0D77DF461ED6AD9E000F3C1A /* HHCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCountingLabel.h; sourceTree = "<group>"; };
@@ -697,8 +696,6 @@
 		0D8BBC6627F58D10002E8AA1 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		0D8BBC6827F6A7F8002E8AA1 /* CustomBarChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarChartRenderer.swift; sourceTree = "<group>"; };
 		0D8BBC6A27F6A8DF002E8AA1 /* CustomBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarChartView.swift; sourceTree = "<group>"; };
-		0D8BBC6E27FAA831002E8AA1 /* AutolayoutDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutDemo.swift; sourceTree = "<group>"; };
-		0D8BBC7127FD307C002E8AA1 /* CGDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGDemoVC.swift; sourceTree = "<group>"; };
 		0D99563327E863980060F4FA /* TestDemo1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestDemo1-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D99563427E863980060F4FA /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0D99563727E864680060F4FA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -712,7 +709,6 @@
 		0D99564227E864680060F4FA /* OCPathAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPathAnimationView.h; sourceTree = "<group>"; };
 		0D99564327E864680060F4FA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0D99565927E9CD8A0060F4FA /* SwiftToolsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToolsHelper.swift; sourceTree = "<group>"; };
-		0D9EB2A92805661D00ABE632 /* LoggerTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTestVC.swift; sourceTree = "<group>"; };
 		0D9EB2AB2805698D00ABE632 /* FlowEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowEntry.swift; sourceTree = "<group>"; };
 		0D9EB2AD280570CB00ABE632 /* FlowMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowMapView.swift; sourceTree = "<group>"; };
 		0D9EB2AF280692D900ABE632 /* FlowLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLegend.swift; sourceTree = "<group>"; };
@@ -1658,13 +1654,13 @@
 		0D621BFB282F5A6300241558 /* LayoutVC */ = {
 			isa = PBXGroup;
 			children = (
+				0D621C02282F5A6300241558 /* LayoutVC.swift */,
 				0D621BFC282F5A6300241558 /* LayoutDataEntry.swift */,
 				0D621BFD282F5A6300241558 /* LayoutUtils.swift */,
 				0D621BFE282F5A6300241558 /* LayoutHighlight.swift */,
 				0D621BFF282F5A6300241558 /* LayoutDataSet.swift */,
 				0D621C00282F5A6300241558 /* LayoutViewPortHandler.swift */,
 				0D621C01282F5A6300241558 /* LayoutDataRenderer.swift */,
-				0D621C02282F5A6300241558 /* LayoutVC.swift */,
 				0D621C03282F5A6300241558 /* LayoutView.swift */,
 				0D621C04282F5A6300241558 /* LayoutData.swift */,
 			);
@@ -1782,9 +1778,7 @@
 				0D99563727E864680060F4FA /* HomeViewController.m */,
 				0DAF4D1427ED6ACB00A5FA24 /* CustomerMarkerVIew.h */,
 				0DAF4D1327ED6ACB00A5FA24 /* CustomerMarkerVIew.m */,
-				0D8BBC6E27FAA831002E8AA1 /* AutolayoutDemo.swift */,
-				0D8BBC7127FD307C002E8AA1 /* CGDemoVC.swift */,
-				0D9EB2A92805661D00ABE632 /* LoggerTestVC.swift */,
+				0D621C1428332FB800241558 /* Test.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2503,6 +2497,7 @@
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D1A837228127DD5002359EA /* Platform+Touch Handling.swift in Sources */,
 				0D61E67E20A419D500665577 /* MyCustomTableViewCell.m in Sources */,
+				0D621C1528332FB800241558 /* Test.swift in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
 				FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */,
 				0D05891020A13B1300223199 /* SDImageCacheConfig.m in Sources */,
@@ -2537,7 +2532,6 @@
 				0D05890E20A13B1300223199 /* NSImage+WebCache.m in Sources */,
 				0D1A839728127DD5002359EA /* RadarChartData.swift in Sources */,
 				0D33BB041EEF8F2700AD69EB /* HHEmitterButton.m in Sources */,
-				0D8BBC6F27FAA831002E8AA1 /* AutolayoutDemo.swift in Sources */,
 				0D1A817D2810F75B002359EA /* AutoLayoutVC.m in Sources */,
 				FED04B1A2020087D000F415F /* FluencyViewController.m in Sources */,
 				0D1A835228127DD5002359EA /* RadarHighlighter.swift in Sources */,
@@ -2552,7 +2546,6 @@
 				0D1A835928127DD5002359EA /* CombinedHighlighter.swift in Sources */,
 				0D1A835828127DD5002359EA /* ChartHighlighter.swift in Sources */,
 				0D4B29021EE9536400BB9CC9 /* BezierPathVC.m in Sources */,
-				0D9EB2AA2805661D00ABE632 /* LoggerTestVC.swift in Sources */,
 				0D1A839128127DD5002359EA /* RadarChartDataEntry.swift in Sources */,
 				0D0588FA20A13B1300223199 /* MKAnnotationView+WebCache.m in Sources */,
 				0DA4F3EF1EE677F500ED17B2 /* BaseViewController.m in Sources */,
@@ -2602,7 +2595,6 @@
 				0D1A83A028127DD5002359EA /* ChartDataSet.swift in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				0D99564427E864680060F4FA /* HomeViewController.m in Sources */,
-				0D8BBC7227FD307C002E8AA1 /* CGDemoVC.swift in Sources */,
 				0D1A83BD28127DD5002359EA /* BubbleChartDataProvider.swift in Sources */,
 				0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */,
 				0D1A833228127DD5002359EA /* DataApproximator+N.swift in Sources */,

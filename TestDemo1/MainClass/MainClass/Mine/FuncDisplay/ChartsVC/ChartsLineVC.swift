@@ -172,7 +172,7 @@ import HandyJSON
             // 是否绘制圆点
             set.drawCirclesEnabled = false
             // 折线样式，平滑的曲线、折线
-            set.mode = .horizontalBezier
+            set.mode = .linear
             // 线段颜色
             set.colors = [color]
             // 高亮时横向辅助线。默认true
