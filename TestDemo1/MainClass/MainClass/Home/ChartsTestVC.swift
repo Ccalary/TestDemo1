@@ -28,6 +28,7 @@ import HandyJSON
         self.view.backgroundColor = UIColor.white
         
         let lineChartView = CustomLineChartView(frame: CGRect(x: 0, y: 50, width: UIScreen.main.bounds.width, height: 400))
+        lineChartView.backgroundColor = UIColor(hex: 0xAD59E7, alpha: 0.1)
         view.addSubview(lineChartView)
         self.lineChartView = lineChartView
                 
@@ -47,7 +48,7 @@ import HandyJSON
         lineChartView.legend.enabled = false
         
         let xAxis = lineChartView.xAxis
-        xAxis.labelPosition = .bothSided
+        xAxis.labelPosition = .bottom
         // 不绘制x轴
         xAxis.drawAxisLineEnabled = false
         // 网格线颜色
@@ -82,8 +83,23 @@ import HandyJSON
         let rightAxis = lineChartView.rightAxis
         rightAxis.enabled = false
         
+        /// 天气图标数据
+        lineChartView.xImageAxis.iconPosition = .bottom
+        lineChartView.xImageAxis.iconSize = CGSize(width: 15, height: 15)
+        
         // 设置自定义渲染方式
         lineChartView.setupCustomRenderer()
+        
+        // [155, 10953, 21752, 32666, 43368, 54156, 64961, 75762]
+        let imageDataEntry1 = ChartDataEntry(x: 155, y: 0, data: "weather_cloudy")
+        let imageDataEntry2 = ChartDataEntry(x: 10953, y: 0, data: "weather_drizzling")
+        let imageDataEntry3 = ChartDataEntry(x: 21752, y: 0, data: "weather_foggy")
+        let imageDataEntry4 = ChartDataEntry(x: 32666, y: 0, data: "weather_heavy_rain")
+        let imageDataEntry5 = ChartDataEntry(x: 43368, y: 0, data: "weather_snowy")
+        let imageDataEntry6 = ChartDataEntry(x: 54156, y: 0, data: "weather_snowy")
+        let imageDataEntry7 = ChartDataEntry(x: 64961, y: 0, data: "weather_heavy_rain")
+        let imageDataEntry8 = ChartDataEntry(x: 75762, y: 0, data: "weather_cloudy")
+        lineChartView.xImageAxis.dataEntries = [imageDataEntry1, imageDataEntry2, imageDataEntry3, imageDataEntry4, imageDataEntry5, imageDataEntry6, imageDataEntry7, imageDataEntry8]
         
         var jsonDataArray: [DayModel] = [DayModel]()
 //        let path = Bundle.main.path(forResource: "day0321", ofType: "json")

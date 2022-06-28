@@ -261,8 +261,7 @@
 		0D8BBC4027F14CB6002E8AA1 /* ToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC3F27F14CB6002E8AA1 /* ToolsHelper.m */; };
 		0D8BBC4327F15BA1002E8AA1 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC4227F15BA1002E8AA1 /* DayModel.swift */; };
 		0D8BBC4A27F191E3002E8AA1 /* TimeAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC4927F191E3002E8AA1 /* TimeAxisValueFormatter.swift */; };
-		0D8BBC5127F2A6E9002E8AA1 /* CustomLineXAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC5027F2A6E9002E8AA1 /* CustomLineXAxisRenderer.swift */; };
-		0D8BBC5527F2D304002E8AA1 /* CustomLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC5427F2D304002E8AA1 /* CustomLineChartView.swift */; };
+		0D8BBC5127F2A6E9002E8AA1 /* CustomXAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC5027F2A6E9002E8AA1 /* CustomXAxisRenderer.swift */; };
 		0D8BBC5727F30901002E8AA1 /* CustomLineChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC5627F30901002E8AA1 /* CustomLineChartRenderer.swift */; };
 		0D8BBC5F27F55461002E8AA1 /* day0205.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8BBC5E27F55461002E8AA1 /* day0205.json */; };
 		0D8BBC6127F5894D002E8AA1 /* month03.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8BBC6027F5894D002E8AA1 /* month03.json */; };
@@ -290,6 +289,8 @@
 		0DA4F3EF1EE677F500ED17B2 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3EC1EE677F500ED17B2 /* BaseViewController.m */; };
 		0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3F21EE6782800ED17B2 /* BaseModel.m */; };
 		0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3F81EE6925B00ED17B2 /* NSArray+Dlog.m */; };
+		0DAC65F92862BAD400A1E29E /* CustomLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC65F82862BAD400A1E29E /* CustomLineChartView.swift */; };
+		0DAC65FB2862F75500A1E29E /* XImageAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC65FA2862F75500A1E29E /* XImageAxis.swift */; };
 		0DAD4D131E7960F5008018BB /* TestDemo1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D121E7960F5008018BB /* TestDemo1Tests.m */; };
 		0DAD4D1E1E7960F5008018BB /* TestDemo1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D1D1E7960F5008018BB /* TestDemo1UITests.m */; };
 		0DADA50A21D1DB86005BB347 /* LoadingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DADA50821D1DB85005BB347 /* LoadingAnimation.m */; };
@@ -688,8 +689,7 @@
 		0D8BBC3F27F14CB6002E8AA1 /* ToolsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsHelper.m; sourceTree = "<group>"; };
 		0D8BBC4227F15BA1002E8AA1 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		0D8BBC4927F191E3002E8AA1 /* TimeAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAxisValueFormatter.swift; sourceTree = "<group>"; };
-		0D8BBC5027F2A6E9002E8AA1 /* CustomLineXAxisRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineXAxisRenderer.swift; sourceTree = "<group>"; };
-		0D8BBC5427F2D304002E8AA1 /* CustomLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineChartView.swift; sourceTree = "<group>"; };
+		0D8BBC5027F2A6E9002E8AA1 /* CustomXAxisRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomXAxisRenderer.swift; sourceTree = "<group>"; };
 		0D8BBC5627F30901002E8AA1 /* CustomLineChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineChartRenderer.swift; sourceTree = "<group>"; };
 		0D8BBC5E27F55461002E8AA1 /* day0205.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = day0205.json; sourceTree = "<group>"; };
 		0D8BBC6027F5894D002E8AA1 /* month03.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = month03.json; sourceTree = "<group>"; };
@@ -728,6 +728,8 @@
 		0DA4F3F21EE6782800ED17B2 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		0DA4F3F71EE6925B00ED17B2 /* NSArray+Dlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Dlog.h"; sourceTree = "<group>"; };
 		0DA4F3F81EE6925B00ED17B2 /* NSArray+Dlog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Dlog.m"; sourceTree = "<group>"; };
+		0DAC65F82862BAD400A1E29E /* CustomLineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLineChartView.swift; sourceTree = "<group>"; };
+		0DAC65FA2862F75500A1E29E /* XImageAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XImageAxis.swift; sourceTree = "<group>"; };
 		0DAD4CF51E7960F4008018BB /* TestDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAD4D0E1E7960F5008018BB /* TestDemo1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestDemo1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAD4D121E7960F5008018BB /* TestDemo1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemo1Tests.m; sourceTree = "<group>"; };
@@ -1759,9 +1761,10 @@
 				0D1A83C22812809F002359EA /* ChartDemoVC.swift */,
 				0D5035EA27EC3BE60089B72E /* ChartsBarVC.swift */,
 				0D5035EC27EC92980089B72E /* ChartsLineVC.swift */,
-				0D8BBC5427F2D304002E8AA1 /* CustomLineChartView.swift */,
+				0DAC65FA2862F75500A1E29E /* XImageAxis.swift */,
+				0DAC65F82862BAD400A1E29E /* CustomLineChartView.swift */,
+				0D8BBC5027F2A6E9002E8AA1 /* CustomXAxisRenderer.swift */,
 				0D8BBC4927F191E3002E8AA1 /* TimeAxisValueFormatter.swift */,
-				0D8BBC5027F2A6E9002E8AA1 /* CustomLineXAxisRenderer.swift */,
 				0D8BBC5627F30901002E8AA1 /* CustomLineChartRenderer.swift */,
 				0D8BBC6A27F6A8DF002E8AA1 /* CustomBarChartView.swift */,
 				0D8BBC6827F6A7F8002E8AA1 /* CustomBarChartRenderer.swift */,
@@ -2416,6 +2419,7 @@
 				0D1A83A328127DD5002359EA /* PieChartData.swift in Sources */,
 				0D1A83BC28127DD5002359EA /* ScatterChartDataProvider.swift in Sources */,
 				0D05890920A13B1300223199 /* SDImageCache.m in Sources */,
+				0DAC65FB2862F75500A1E29E /* XImageAxis.swift in Sources */,
 				0D99565A27E9CD8A0060F4FA /* SwiftToolsHelper.swift in Sources */,
 				0D1A835028127DD5002359EA /* LineScatterCandleRadarRenderer.swift in Sources */,
 				0D2DAFA420BFCE0900988EF1 /* MCRuleCollectionViewCell.m in Sources */,
@@ -2514,7 +2518,7 @@
 				0D7E7F8526465CE700DB06CB /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				0D1A838128127DD5002359EA /* YAxis.swift in Sources */,
 				0D1A83B428127DD5002359EA /* ScatterChartDataSetProtocol.swift in Sources */,
-				0D8BBC5127F2A6E9002E8AA1 /* CustomLineXAxisRenderer.swift in Sources */,
+				0D8BBC5127F2A6E9002E8AA1 /* CustomXAxisRenderer.swift in Sources */,
 				0D1A833628127DD5002359EA /* BubbleChartRenderer.swift in Sources */,
 				0D817F7C20B4015400D77751 /* BlockViewController.m in Sources */,
 				0D0819311EB0F22F00F4E034 /* DiscoverViewController.m in Sources */,
@@ -2545,6 +2549,7 @@
 				0D4B28DC1EE7C4D100BB9CC9 /* MakeExpViewController.m in Sources */,
 				0D1A838028127DD5002359EA /* LegendEntry.swift in Sources */,
 				0D1A835428127DD5002359EA /* PieHighlighter.swift in Sources */,
+				0DAC65F92862BAD400A1E29E /* CustomLineChartView.swift in Sources */,
 				0D9EB2B0280692D900ABE632 /* FlowLegend.swift in Sources */,
 				0D1A835928127DD5002359EA /* CombinedHighlighter.swift in Sources */,
 				0D1A835828127DD5002359EA /* ChartHighlighter.swift in Sources */,
@@ -2595,7 +2600,6 @@
 				0D1A835528127DD5002359EA /* HorizontalBarHighlighter.swift in Sources */,
 				0D1A835D28127DD5002359EA /* BarLineChartViewBase.swift in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
-				0D8BBC5527F2D304002E8AA1 /* CustomLineChartView.swift in Sources */,
 				0D1A83A028127DD5002359EA /* ChartDataSet.swift in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				0D99564427E864680060F4FA /* HomeViewController.m in Sources */,

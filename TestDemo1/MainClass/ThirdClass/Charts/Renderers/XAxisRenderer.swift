@@ -193,8 +193,7 @@ open class XAxisRenderer: NSObject, AxisRenderer
             drawLabels(context: context, pos: viewPortHandler.contentBottom - yOffset - axis.labelRotatedHeight, anchor: CGPoint(x: 0.5, y: 0.0))
 
         case .bothSided:
-//            drawLabels(context: context, pos: viewPortHandler.contentTop - yOffset, anchor: CGPoint(x: 0.5, y: 1.0))
-            drawIcons(context: context, pos: viewPortHandler.contentTop - yOffset, anchor: CGPoint(x: 0.5, y: 1.0))
+            drawLabels(context: context, pos: viewPortHandler.contentTop - yOffset, anchor: CGPoint(x: 0.5, y: 1.0))
             drawLabels(context: context, pos: viewPortHandler.contentBottom + yOffset, anchor: CGPoint(x: 0.5, y: 0.0))
         }
     }
@@ -270,7 +269,6 @@ open class XAxisRenderer: NSObject, AxisRenderer
         }
         
         let entries = axis.entries
-        print("entries:\(entries)")
         for i in entries.indices
         {
             let px = isCenteringEnabled ? CGFloat(axis.centeredEntries[i]) : CGFloat(entries[i])
@@ -281,7 +279,6 @@ open class XAxisRenderer: NSObject, AxisRenderer
             
             let label = axis.valueFormatter?.stringForValue(axis.entries[i], axis: axis) ?? ""
             let labelns = label as NSString
-            print("i:\(i),axis.entries[i]:\(axis.entries[i])")
             if axis.isAvoidFirstLastClippingEnabled
             {
                 // avoid clipping of the last
@@ -301,8 +298,6 @@ open class XAxisRenderer: NSObject, AxisRenderer
                     position.x += width / 2.0
                 }
             }
-            
-            print("label:\(label), position.x:\(position.x)")
             drawLabel(context: context,
                       formattedLabel: label,
                       x: position.x,
@@ -314,82 +309,7 @@ open class XAxisRenderer: NSObject, AxisRenderer
         }
     }
     
-    /// 绘制icon
-    @objc open func drawIcons(context: CGContext, pos: CGFloat, anchor: CGPoint)
-    {
-        guard let transformer = self.transformer else { return }
-        
-        let paraStyle = ParagraphStyle.default.mutableCopy() as! MutableParagraphStyle
-        paraStyle.alignment = .center
-        
-        let labelAttrs: [NSAttributedString.Key : Any] = [.font: axis.labelFont,
-                                                         .foregroundColor: axis.labelTextColor,
-                                                         .paragraphStyle: paraStyle]
 
-        let labelRotationAngleRadians = axis.labelRotationAngle.DEG2RAD
-        let isCenteringEnabled = axis.isCenterAxisLabelsEnabled
-        let valueToPixelMatrix = transformer.valueToPixelMatrix
-
-        var position = CGPoint.zero
-        var labelMaxSize = CGSize.zero
-        
-        if axis.isWordWrapEnabled
-        {
-            labelMaxSize.width = axis.wordWrapWidthPercent * valueToPixelMatrix.a
-        }
-        
-//        let entries = axis.entries
-        
-        let entries = [155, 10953, 21752, 32666, 43368, 54156, 64961, 75762]
-        
-        for i in entries.indices
-        {
-            let px = isCenteringEnabled ? CGFloat(axis.centeredEntries[i]) : CGFloat(entries[i])
-            position = CGPoint(x: px, y: 0)
-                .applying(valueToPixelMatrix)
-
-            guard viewPortHandler.isInBoundsX(position.x) else { continue }
-            
-            let label = ""//axis.valueFormatter?.stringForValue(axis.entries[i], axis: axis) ?? ""
-            let labelns = label as NSString
-            
-            if axis.isAvoidFirstLastClippingEnabled
-            {
-                // avoid clipping of the last
-                if i == axis.entryCount - 1 && axis.entryCount > 1
-                {
-                    let width = labelns.boundingRect(with: labelMaxSize, options: .usesLineFragmentOrigin, attributes: labelAttrs, context: nil).size.width
-                    
-                    if width > viewPortHandler.offsetRight * 2.0,
-                        position.x + width > viewPortHandler.chartWidth
-                    {
-                        position.x -= width / 2.0
-                    }
-                }
-                else if i == 0
-                { // avoid clipping of the first
-                    let width = labelns.boundingRect(with: labelMaxSize, options: .usesLineFragmentOrigin, attributes: labelAttrs, context: nil).size.width
-                    position.x += width / 2.0
-                }
-            }
-            
-//            drawLabel(context: context,
-//                      formattedLabel: label,
-//                      x: position.x,
-//                      y: pos,
-//                      attributes: labelAttrs,
-//                      constrainedTo: labelMaxSize,
-//                      anchor: anchor,
-//                      angleRadians: labelRotationAngleRadians)
-            
-            /// 增加icon
-            let icon = UIImage(named: "coin")!
-            context.drawImage(icon,
-                              atCenter: CGPoint(x: position.x, y: pos - 10),
-                              size: icon.size)
-        }
-    }
-    
     @objc open func drawLabel(
         context: CGContext,
         formattedLabel: String,

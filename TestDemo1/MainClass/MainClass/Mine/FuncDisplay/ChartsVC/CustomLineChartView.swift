@@ -10,34 +10,79 @@ import Foundation
 
 /// 注意⚠️：leftAxisTransformer 此属性更改源码后获取
 open class CustomLineChartView: LineChartView {
+    
+    open var xImageAxis = XImageAxis()
+    
     func setupCustomRenderer() {
-        xAxisRenderer = CustomLineXAxisRenderer(viewPortHandler: viewPortHandler, axis: xAxis, transformer: leftAxisTransformer)
+        xAxisRenderer = CustomXAxisRenderer(viewPortHandler: viewPortHandler, axis: xAxis, transformer: leftAxisTransformer, xImageAxis: xImageAxis, xAxisType: .line)
         renderer = CustomLineChartRenderer(dataProvider: self, animator: chartAnimator, viewPortHandler: viewPortHandler)
     }
-}
-
-extension Double {
-    /// 根据最小粒度算出拆分数据
-    func customLineRoundedToNextSignificant(_ granularity: Double = 60.0) -> Double {
-        guard !isInfinite, !isNaN, self != 0 else {
-            return self
-        }
-        // 四舍五入
-        let value = lround(self/granularity)
-        return Double(granularity*Double(value))
-    }
     
-    /// y轴数据处理
-    func yRoundedToNextSignificant() -> Double {
-        guard !isInfinite, !isNaN, self != 0 else {
-            return self
+    // 计算底部有图标时底部大小
+    internal override func calculateOffsets()
+    {
+        if !_customViewPortEnabled
+        {
+            var offsetLeft = CGFloat(0.0)
+            var offsetRight = CGFloat(0.0)
+            var offsetTop = CGFloat(0.0)
+            var offsetBottom = CGFloat(0.0)
+            
+            calculateLegendOffsets(offsetLeft: &offsetLeft,
+                                   offsetTop: &offsetTop,
+                                   offsetRight: &offsetRight,
+                                   offsetBottom: &offsetBottom)
+            
+            // offsets for y-labels
+            if leftAxis.needsOffset
+            {
+                offsetLeft += leftAxis.requiredSize().width
+            }
+            
+            if rightAxis.needsOffset
+            {
+                offsetRight += rightAxis.requiredSize().width
+            }
+
+            if xAxis.isEnabled && xAxis.isDrawLabelsEnabled
+            {
+                let xlabelheight = xAxis.labelRotatedHeight + xAxis.yOffset
+                
+                // offsets for x-labels
+                if xAxis.labelPosition == .bottom
+                {
+                    offsetBottom += xlabelheight
+                    // 自定义render，计算高度
+                    if let render = xAxisRenderer as? CustomXAxisRenderer {
+                        if render.imageAxis.iconPosition == .bottom {
+                            offsetBottom += render.imageAxis.iconSize.height
+                        }
+                    }
+                }
+                else if xAxis.labelPosition == .top
+                {
+                    offsetTop += xlabelheight
+                }
+                else if xAxis.labelPosition == .bothSided
+                {
+                    offsetBottom += xlabelheight
+                    offsetTop += xlabelheight
+                }
+            }
+            
+            offsetTop += self.extraTopOffset
+            offsetRight += self.extraRightOffset
+            offsetBottom += self.extraBottomOffset
+            offsetLeft += self.extraLeftOffset
+
+            viewPortHandler.restrainViewPort(
+                offsetLeft: max(self.minOffset, offsetLeft),
+                offsetTop: max(self.minOffset, offsetTop),
+                offsetRight: max(self.minOffset, offsetRight),
+                offsetBottom: max(self.minOffset, offsetBottom))
         }
-        // 给定一个数字，求它的数量级最接近的10^n的倍数。
-        let value = ceil(log10(self < 0 ? -self : self))
-        let number = 1 - Int(value)
-        let magnitude = pow(10.0, Double(number))
-        // 做了up向上取整操作
-        let shifted = (self * magnitude).rounded(.awayFromZero)
-        return shifted / magnitude
+        
+        prepareOffsetMatrix()
+        prepareValuePxMatrix()
     }
 }

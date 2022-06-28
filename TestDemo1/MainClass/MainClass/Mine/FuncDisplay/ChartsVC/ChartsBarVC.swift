@@ -28,6 +28,7 @@ import UIKit
         
         let barChartView = CustomBarChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
         view.addSubview(barChartView)
+        barChartView.backgroundColor = UIColor(hex: 0xAD59E7, alpha: 0.1)
         self.barChartView = barChartView
         self.barChartView.doubleTapToZoomEnabled = false
         
@@ -93,6 +94,7 @@ import UIKit
         // label局中
         xAxis.centerAxisLabelsEnabled = true
         
+        
         // MARK: - leftYAxis
         let leftAxis = barChartView.leftAxis
         leftAxis.drawAxisLineEnabled = false
@@ -112,8 +114,11 @@ import UIKit
         rightAxis.labelTextColor = UIColor(0x92959C)
         rightAxis.labelFont = UIFont.systemFont(ofSize: 11)
         
+        barChartView.xImageAxis.iconPosition = .bottom
+        barChartView.xImageAxis.iconSize = CGSize(width: 15, height: 15)
         // 设置自定义渲染方式
         barChartView.setupCustomRenderer()
+        
         
         setNoDataAvailable()
     }
@@ -131,6 +136,19 @@ import UIKit
     }
     
     func monthData() {
+        
+        // [155, 10953, 21752, 32666, 43368, 54156, 64961, 75762]
+        let imageDataEntry1 = ChartDataEntry(x: 1, y: 0, data: "weather_cloudy")
+        let imageDataEntry2 = ChartDataEntry(x: 3, y: 0, data: "weather_drizzling")
+        let imageDataEntry3 = ChartDataEntry(x: 5, y: 0, data: "weather_foggy")
+        let imageDataEntry4 = ChartDataEntry(x: 7, y: 0, data: "weather_heavy_rain")
+        let imageDataEntry5 = ChartDataEntry(x: 8, y: 0, data: "weather_snowy")
+        let imageDataEntry6 = ChartDataEntry(x: 10, y: 0, data: "weather_snowy")
+        let imageDataEntry7 = ChartDataEntry(x: 12, y: 0, data: "weather_heavy_rain")
+        let imageDataEntry8 = ChartDataEntry(x: 20, y: 0, data: "weather_cloudy")
+        barChartView.xImageAxis.dataEntries = [imageDataEntry1, imageDataEntry2, imageDataEntry3, imageDataEntry4, imageDataEntry5, imageDataEntry6, imageDataEntry7, imageDataEntry8]
+        
+        
         let jsonDataArray = getModelArayWithFileName("month03")
 //        jsonDataArray.removeLast()
         var dataSets = [BarChartDataSet]()
