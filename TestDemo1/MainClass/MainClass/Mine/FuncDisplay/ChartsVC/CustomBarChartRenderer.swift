@@ -9,6 +9,7 @@
 import Foundation
 
 class CustomBarChartRenderer: BarChartRenderer {
+    
     open override func drawHighlighted(context: CGContext, indices: [Highlight]) {
         guard let dataProvider = dataProvider, let barData = dataProvider.barData else {
             return
@@ -54,5 +55,13 @@ class CustomBarChartRenderer: BarChartRenderer {
         rect.size.width = CGFloat(right - left)
         rect.size.height = CGFloat(bottom - top)
         transformer.rectValueToPixel(&rect, phaseY: animator.phaseY )
+    }
+    
+    // 绘制顶部value判断方法
+    open override func isDrawingValuesAllowed(dataProvider: ChartDataProvider?) -> Bool {
+        guard let data = dataProvider?.data else { return false }
+        let number = viewPortHandler.maxScaleX/viewPortHandler.scaleX*Double(data.dataSetCount)
+        return number < 10.0
+//        return data.entryCount < Int(CGFloat(dataProvider?.maxVisibleCount ?? 0) * viewPortHandler.scaleX)
     }
 }

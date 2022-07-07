@@ -30,6 +30,9 @@ public protocol ChartViewDelegate
     /// Called when a user stops panning between values on the chart
     @objc optional func chartViewDidEndPanning(_ chartView: ChartViewBase)
     
+    /// 自增，滑动手势开始
+    @objc optional func chartViewDidBeganPanning(_ chartView: ChartViewBase, numberOfTouches: Int)
+    
     // Called when nothing has been selected or an "un-select" has been made.
     @objc optional func chartValueNothingSelected(_ chartView: ChartViewBase)
     

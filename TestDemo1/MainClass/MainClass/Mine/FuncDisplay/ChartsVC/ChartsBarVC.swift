@@ -31,6 +31,7 @@ import UIKit
         barChartView.backgroundColor = UIColor(hex: 0xAD59E7, alpha: 0.1)
         self.barChartView = barChartView
         self.barChartView.doubleTapToZoomEnabled = false
+        self.barChartView.delegate = self
         
         let button = UIButton()
         button.backgroundColor = UIColor.fontColorBlue()
@@ -210,6 +211,11 @@ import UIKit
             // 高亮颜色
             set.highlightColor = UIColor(hex: 0x4E95F8)
             
+            let valueFormatter = DefaultValueFormatter()
+            valueFormatter.decimals = 0
+            // 数据显示类型
+            set.valueFormatter = valueFormatter
+            
             dataSets.append(set)
         }
         let barNum = entriesArray.count
@@ -316,12 +322,21 @@ import UIKit
         let barWidth = (1 - groupSpace)/Double(barNum) - barSpace
         
         let data = BarChartData(dataSets: dataSets)
+        
+        
+        
         // bar的宽度比例，默认0.85
         data.barWidth = barWidth
         barChartView.xAxis.axisMinimum = 0
         barChartView.xAxis.axisMaximum = 0 + data.groupWidth(groupSpace: groupSpace, barSpace: barSpace) * Double(jsonDataArray.count)
         data.groupBars(fromX: 0, groupSpace: groupSpace, barSpace: barSpace)
+        
         self.barChartView.data = data
+        
+        // 数据展示格式，两位小数展示
+        let valueFormatter = DefaultValueFormatter(decimals: 2)
+        self.barChartView.barData?.setValueFormatter(valueFormatter)
+        
         
         barChartView.xAxis.centerAxisLabelsEnabled = true
         barChartView.setVisibleXRangeMinimum(1)
@@ -552,6 +567,28 @@ import UIKit
             return 30
         default:
             return 31
+        }
+    }
+}
+
+extension ChartsBarVC: ChartViewDelegate {
+    public func chartViewDidEndPanning(_ chartView: ChartViewBase) {
+        print("endPanning");
+                
+        let viewPortHandler = chartView.viewPortHandler
+        
+        let scaleX = min(max(viewPortHandler.minScaleX, viewPortHandler.touchMatrix.a), viewPortHandler.maxScaleX)
+        
+        let maxTransX = -viewPortHandler.contentRect.width * (scaleX - 1.0)
+        
+        print("endPanning-maxTransX:\(maxTransX)")
+        
+        print("endPanning-transX:\(viewPortHandler.transX)")
+        
+        if (viewPortHandler.transX == 0) {
+            print("右切换下一个")
+        }else if (viewPortHandler.transX == (maxTransX)) {
+            print("左切换上一个")
         }
     }
 }

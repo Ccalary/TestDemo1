@@ -530,6 +530,9 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     private weak var _outerScrollView: NSUIScrollView?
     
     private var _lastPanPoint = CGPoint() /// This is to prevent using setTranslation which resets velocity
+    private var _lastTempPanPoint = CGPoint()
+    /// 左滑动
+    open var isDragLeft = false
     
     private var _decelerationLastTime: TimeInterval = 0.0
     private var _decelerationDisplayLink: NSUIDisplayLink!
@@ -685,6 +688,9 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     {
         if recognizer.state == NSUIGestureRecognizerState.began && recognizer.nsuiNumberOfTouches() > 0
         {
+            delegate?.chartViewDidBeganPanning?(self, numberOfTouches: recognizer.nsuiNumberOfTouches())
+            _lastTempPanPoint = recognizer.translation(in: self)
+            
             stopDeceleration()
             
             if data === nil || !self.isDragEnabled
@@ -695,6 +701,8 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
             // If drag is enabled and we are in a position where there's something to drag:
             //  * If we're zoomed in, then obviously we have something to drag.
             //  * If we have a drag offset - we always have something to drag
+            // hasNoDragOffset 是否有x、y轴的偏移
+            // self.isFullyZoomedOut, x轴和y轴全部展示，没有放大
             if !self.hasNoDragOffset || !self.isFullyZoomedOut
             {
                 _isDragging = true
@@ -747,6 +755,17 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
         }
         else if recognizer.state == NSUIGestureRecognizerState.changed
         {
+            let originalTranslation = recognizer.translation(in: self)
+            let translation = CGPoint(x: originalTranslation.x - _lastTempPanPoint.x, y: originalTranslation.y - _lastTempPanPoint.y)
+            if (translation.x > 0) {
+//                print("右滑动")
+                self.isDragLeft = false
+            }else {
+//                print("左滑动")
+                self.isDragLeft = true
+            }
+            _lastTempPanPoint = originalTranslation
+                        
             if _isDragging
             {
                 let originalTranslation = recognizer.translation(in: self)
@@ -767,15 +786,16 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
             }
             else if isHighlightPerDragEnabled
             {
-                let h = getHighlightByTouchPoint(recognizer.location(in: self))
-                
-                let lastHighlighted = self.lastHighlighted
-                
-                if h != lastHighlighted
-                {
-                    self.lastHighlighted = h
-                    self.highlightValue(h, callDelegate: true)
-                }
+                // 取消高亮
+//                let h = getHighlightByTouchPoint(recognizer.location(in: self))
+//
+//                let lastHighlighted = self.lastHighlighted
+//
+//                if h != lastHighlighted
+//                {
+//                    self.lastHighlighted = h
+//                    self.highlightValue(h, callDelegate: true)
+//                }
             }
         }
         else if recognizer.state == NSUIGestureRecognizerState.ended || recognizer.state == NSUIGestureRecognizerState.cancelled

@@ -14,6 +14,10 @@ import HandyJSON
     
     private var lineChartView = LineChartView()
     
+    /// 最左侧，最右侧
+    private var isFarLeft = false
+    private var isFarRight = false
+    
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -28,10 +32,13 @@ import HandyJSON
         self.view.backgroundColor = UIColor.white
         
         let lineChartView = CustomLineChartView(frame: CGRect(x: 0, y: 50, width: UIScreen.main.bounds.width, height: 400))
-        lineChartView.backgroundColor = UIColor(hex: 0xAD59E7, alpha: 0.1)
+//        lineChartView.backgroundColor = UIColor(hex: 0xAD59E7, alpha: 0.1)
         view.addSubview(lineChartView)
         self.lineChartView = lineChartView
-                
+        self.lineChartView.delegate = self
+        
+//        self.lineChartView.highlightPerDragEnabled = false
+        
         // 禁止双击手势
         lineChartView.doubleTapToZoomEnabled = false
         // 禁止y轴缩放
@@ -144,20 +151,27 @@ import HandyJSON
         for item in jsonDataArray {
             if let dateTime = item.dateTime {
                 if let power = item.generationPower {
-                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(arc4random()%4))
+                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(arc4random()%1000))
 //                    let entry = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(10000))
                     entries.append(entry)
                     
                     yMax = max(power, yMax)
                     yMin = min(power, yMin)
                     
-//                    if let usePower = item.usePower {
-//                        let entry2 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: usePower)
-//                        entries2.append(entry2)
-//                        yMax = max(usePower, yMax)
-//                        yMin = min(usePower, yMin)
-//                    }
-//
+                    if let usePower = item.usePower {
+                        let entry2 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(arc4random()%1200))
+                        entries2.append(entry2)
+                        yMax = max(usePower, yMax)
+                        yMin = min(usePower, yMin)
+                    }
+
+                    if let batteryPower = item.batteryPower {
+                        let entry3 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: Double(arc4random()%1000))
+                        entries3.append(entry3)
+                        yMax = max(batteryPower, yMax)
+                        yMin = min(batteryPower, yMin)
+                    }
+                    
 //                    if let batteryPower = item.batteryPower, dateTime == 1612464296 {
 //                        let entry3 = ChartDataEntry(x: Double(dateTime) - timeStamp, y: batteryPower)
 //                        entries3.append(entry3)
@@ -176,15 +190,15 @@ import HandyJSON
             let set = LineChartDataSet(entries: entry, label: "图例")
             let color = colors[i % colors.count]
             let alphaColor = alphaColors[i % colors.count]
-            // 渐变色
-            let gradientColors = [alphaColor.cgColor,
-                                  color.cgColor]
-            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
-            // 填充色
-            set.fill = LinearGradientFill(gradient: gradient, angle: 90)
-            set.fillAlpha = 1
+//            // 渐变色
+//            let gradientColors = [alphaColor.cgColor,
+//                                  color.cgColor]
+//            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
+//            // 填充色
+//            set.fill = LinearGradientFill(gradient: gradient, angle: 90)
+//            set.fillAlpha = 1
             // 是否增加填充色
-            set.drawFilledEnabled = true
+//            set.drawFilledEnabled = true
             // 是否绘制圆点
             set.drawCirclesEnabled = false
             // 折线样式，平滑的曲线、折线
@@ -262,6 +276,49 @@ import HandyJSON
 //        lineChartView.data = data
 //    }
 }
+
+extension ChartsTestVC: ChartViewDelegate {
+    
+    
+    public func chartViewDidBeganPanning(_ chartView: ChartViewBase, numberOfTouches: Int) {
+        let viewPortHandler = chartView.viewPortHandler
+        let scaleX = min(max(viewPortHandler.minScaleX, viewPortHandler.touchMatrix.a), viewPortHandler.maxScaleX)
+        let maxTransX = -viewPortHandler.contentRect.width * (scaleX - 1.0)
+        self.isFarLeft = false
+        self.isFarRight = false
+        /// 避免捏合手势操作
+        guard numberOfTouches == 1 else {
+            return
+        }
+        if (viewPortHandler.transX == 0) {
+            print("开始的时候在最----左-------侧")
+            self.isFarLeft = true
+        }else if (viewPortHandler.transX == (maxTransX)) {
+            print("开始的时候在最----右-------侧")
+            self.isFarRight = true
+        }
+    }
+    
+    public func chartViewDidEndPanning(_ chartView: ChartViewBase) {
+        let viewPortHandler = chartView.viewPortHandler
+        let scaleX = min(max(viewPortHandler.minScaleX, viewPortHandler.touchMatrix.a), viewPortHandler.maxScaleX)
+        let maxTransX = -viewPortHandler.contentRect.width * (scaleX - 1.0)
+        if (viewPortHandler.transX == 0) {
+            if (self.isFarLeft) {
+                if ((chartView as! BarLineChartViewBase).isDragLeft) {
+                    print("左切换下一个")
+                }else {
+                    print("右切换上一个")
+                }
+            }
+        }else if (viewPortHandler.transX == (maxTransX)) {
+            if (self.isFarRight) {
+            print("左切换下一个")
+            }
+        }
+    }
+}
+
 
 extension ChartsTestVC {
     // 计算一个月的天数
