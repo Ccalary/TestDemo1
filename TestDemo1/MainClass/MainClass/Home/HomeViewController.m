@@ -10,6 +10,7 @@
 #import "HHPopButton.h"
 #import "OCPathAnimationView.h"
 #import "TestDemo1-Swift.h"
+#import "TestViewController.h"
 
 @interface HomeViewController ()<ChartViewDelegate>
 
@@ -24,11 +25,11 @@
 
 - (void)initView {
     
-    NSString *a = @"a";
-    NSString *b = a;
-    a = @"c";
-    
-    NSLog(@"a-%p,b-%p", a, b);
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    LayoutVC *vc = [[LayoutVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end
 

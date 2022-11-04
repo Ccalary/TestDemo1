@@ -59,10 +59,10 @@ class LayoutView: UIView {
         _panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognized(_:)))
         _pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinchGestureRecognized(_:)))
         
-        self.addGestureRecognizer(_tapGestureRecognizer)
-        self.addGestureRecognizer(_longPressGestureRecognizer)
-        self.addGestureRecognizer(_panGestureRecognizer)
-        self.addGestureRecognizer(_pinchGestureRecognizer)
+//        self.addGestureRecognizer(_tapGestureRecognizer)
+//        self.addGestureRecognizer(_longPressGestureRecognizer)
+//        self.addGestureRecognizer(_panGestureRecognizer)
+//        self.addGestureRecognizer(_pinchGestureRecognizer)
     }
     
     deinit{

@@ -86,7 +86,7 @@ class LayoutVC: UIViewController {
             dataSet.yaxisIndex = (arc4random()%2 == 0) ? -Double(arc4random()%1000) : Double(arc4random()%1000)
             dataSet.rowNum = Int(rowNum)
             dataSet.columnNum = Int(columnNum)
-            dataSet.angle = Double(arc4random()%360)
+            dataSet.angle = 0//Double(arc4random()%360)
 //            dataSets.append(dataSet)
         }
         
@@ -107,7 +107,7 @@ class LayoutVC: UIViewController {
         dataSet.yaxisIndex = -2000
         dataSet.rowNum = 2
         dataSet.columnNum = 4
-        dataSet.angle = 30
+        dataSet.angle = 0
         
         dataSets.append(dataSet)
         

@@ -10,8 +10,6 @@
 #import "HHCountingLabel.h"
 #import "UICountingLabel.h"
 
-
-
 @interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;

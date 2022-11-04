@@ -18,5 +18,6 @@ pod 'FMDB'
 pod 'FDFullscreenPopGesture', '1.1'
 pod 'SnapKit', '~> 4.2.0'
 pod 'HandyJSON', '~> 5.0.2'
+pod 'CocoaAsyncSocket'
 end
 
