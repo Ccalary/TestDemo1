@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+source 'http://gitlab.igen/caohouhong/specs.git'
 platform :ios, '12.0'
 use_frameworks!
 
@@ -19,5 +20,7 @@ pod 'FDFullscreenPopGesture', '1.1'
 pod 'SnapKit', '~> 4.2.0'
 pod 'HandyJSON', '~> 5.0.2'
 pod 'CocoaAsyncSocket'
+pod 'FlowDiagram_iOS'
+pod 'SystemLayoutKit'
 end
 

@@ -238,16 +238,6 @@
 		0D61E68220A4313200665577 /* FPSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E68120A4313200665577 /* FPSTools.m */; };
 		0D61E68620A43AF600665577 /* CNPPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E68520A43AF600665577 /* CNPPopupController.m */; };
 		0D621BFA282F5A4B00241558 /* YDecimalsAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621BF9282F5A4B00241558 /* YDecimalsAxisValueFormatter.swift */; };
-		0D621C05282F5A6300241558 /* LayoutDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621BFC282F5A6300241558 /* LayoutDataEntry.swift */; };
-		0D621C06282F5A6300241558 /* LayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621BFD282F5A6300241558 /* LayoutUtils.swift */; };
-		0D621C07282F5A6300241558 /* LayoutHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621BFE282F5A6300241558 /* LayoutHighlight.swift */; };
-		0D621C08282F5A6300241558 /* LayoutDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621BFF282F5A6300241558 /* LayoutDataSet.swift */; };
-		0D621C09282F5A6300241558 /* LayoutViewPortHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C00282F5A6300241558 /* LayoutViewPortHandler.swift */; };
-		0D621C0A282F5A6300241558 /* LayoutDataRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C01282F5A6300241558 /* LayoutDataRenderer.swift */; };
-		0D621C0B282F5A6300241558 /* LayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C02282F5A6300241558 /* LayoutVC.swift */; };
-		0D621C0C282F5A6300241558 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C03282F5A6300241558 /* LayoutView.swift */; };
-		0D621C0D282F5A6300241558 /* LayoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C04282F5A6300241558 /* LayoutData.swift */; };
-		0D621C1528332FB800241558 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D621C1428332FB800241558 /* Test.swift */; };
 		0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */; };
 		0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77DF471ED6AD9E000F3C1A /* HHCountingLabel.m */; };
 		0D7E7F8526465CE700DB06CB /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7F8426465CE600DB06CB /* CHTCollectionViewWaterfallLayout.m */; };
@@ -298,6 +288,7 @@
 		0DBBE4BD1FC474DD00645A85 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BC1FC474DD00645A85 /* ImageViewController.m */; };
 		0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */; };
 		0DC3D69F24B84F7300E4353A /* ImageTransformVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC3D69E24B84F7300E4353A /* ImageTransformVC.m */; };
+		0DD95AF8292E148D00969FFA /* LayoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD95AF7292E148D00969FFA /* LayoutVC.swift */; };
 		0DDA2887262D5B9200B049EA /* FMDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA2886262D5B9200B049EA /* FMDBViewController.m */; };
 		0DDA28AE262E81C500B049EA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA28AD262E81C500B049EA /* DetailViewController.m */; };
 		0DDA28C3262EAA1200B049EA /* WaterFallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA28C2262EAA1200B049EA /* WaterFallViewController.m */; };
@@ -656,16 +647,6 @@
 		0D61E68420A43AF600665577 /* CNPPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPPopupController.h; sourceTree = "<group>"; };
 		0D61E68520A43AF600665577 /* CNPPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPPopupController.m; sourceTree = "<group>"; };
 		0D621BF9282F5A4B00241558 /* YDecimalsAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDecimalsAxisValueFormatter.swift; sourceTree = "<group>"; };
-		0D621BFC282F5A6300241558 /* LayoutDataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDataEntry.swift; sourceTree = "<group>"; };
-		0D621BFD282F5A6300241558 /* LayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutUtils.swift; sourceTree = "<group>"; };
-		0D621BFE282F5A6300241558 /* LayoutHighlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutHighlight.swift; sourceTree = "<group>"; };
-		0D621BFF282F5A6300241558 /* LayoutDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDataSet.swift; sourceTree = "<group>"; };
-		0D621C00282F5A6300241558 /* LayoutViewPortHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutViewPortHandler.swift; sourceTree = "<group>"; };
-		0D621C01282F5A6300241558 /* LayoutDataRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDataRenderer.swift; sourceTree = "<group>"; };
-		0D621C02282F5A6300241558 /* LayoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutVC.swift; sourceTree = "<group>"; };
-		0D621C03282F5A6300241558 /* LayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
-		0D621C04282F5A6300241558 /* LayoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutData.swift; sourceTree = "<group>"; };
-		0D621C1428332FB800241558 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		0D77DF431ED69FBE000F3C1A /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		0D77DF441ED69FBE000F3C1A /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		0D77DF461ED6AD9E000F3C1A /* HHCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCountingLabel.h; sourceTree = "<group>"; };
@@ -746,6 +727,7 @@
 		0DBBE4BF1FC4763900645A85 /* ImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		0DC3D69D24B84F7300E4353A /* ImageTransformVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTransformVC.h; sourceTree = "<group>"; };
 		0DC3D69E24B84F7300E4353A /* ImageTransformVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTransformVC.m; sourceTree = "<group>"; };
+		0DD95AF7292E148D00969FFA /* LayoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutVC.swift; sourceTree = "<group>"; };
 		0DDA2885262D5B9200B049EA /* FMDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBViewController.h; sourceTree = "<group>"; };
 		0DDA2886262D5B9200B049EA /* FMDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBViewController.m; sourceTree = "<group>"; };
 		0DDA28AC262E81C500B049EA /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -996,14 +978,14 @@
 			children = (
 				0D1A82B228127DD5002359EA /* AxisRenderer.swift */,
 				0D1A82A228127DD5002359EA /* BarChartRenderer.swift */,
+				0D1A829D28127DD5002359EA /* LineChartRenderer.swift */,
 				0D1A82A528127DD5002359EA /* BarLineScatterCandleBubbleRenderer.swift */,
 				0D1A829C28127DD5002359EA /* BubbleChartRenderer.swift */,
 				0D1A82A128127DD5002359EA /* CandleStickChartRenderer.swift */,
 				0D1A82A028127DD5002359EA /* CombinedChartRenderer.swift */,
-				0D1A82B328127DD5002359EA /* DataRenderer.swift */,
 				0D1A82B028127DD5002359EA /* HorizontalBarChartRenderer.swift */,
+				0D1A82B328127DD5002359EA /* DataRenderer.swift */,
 				0D1A829A28127DD5002359EA /* LegendRenderer.swift */,
-				0D1A829D28127DD5002359EA /* LineChartRenderer.swift */,
 				0D1A82A428127DD5002359EA /* LineRadarRenderer.swift */,
 				0D1A82B728127DD5002359EA /* LineScatterCandleRadarRenderer.swift */,
 				0D1A82B528127DD5002359EA /* PieChartRenderer.swift */,
@@ -1653,22 +1635,6 @@
 			path = CNPPopupController;
 			sourceTree = "<group>";
 		};
-		0D621BFB282F5A6300241558 /* LayoutVC */ = {
-			isa = PBXGroup;
-			children = (
-				0D621C02282F5A6300241558 /* LayoutVC.swift */,
-				0D621BFC282F5A6300241558 /* LayoutDataEntry.swift */,
-				0D621BFD282F5A6300241558 /* LayoutUtils.swift */,
-				0D621BFE282F5A6300241558 /* LayoutHighlight.swift */,
-				0D621BFF282F5A6300241558 /* LayoutDataSet.swift */,
-				0D621C00282F5A6300241558 /* LayoutViewPortHandler.swift */,
-				0D621C01282F5A6300241558 /* LayoutDataRenderer.swift */,
-				0D621C03282F5A6300241558 /* LayoutView.swift */,
-				0D621C04282F5A6300241558 /* LayoutData.swift */,
-			);
-			path = LayoutVC;
-			sourceTree = "<group>";
-		};
 		0D77DF421ED69F90000F3C1A /* CountingLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1773,7 +1739,6 @@
 		0D99563627E864680060F4FA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0D621BFB282F5A6300241558 /* LayoutVC */,
 				0D99563E27E864680060F4FA /* View */,
 				0D99563927E864680060F4FA /* FirstViewController.h */,
 				0D99563A27E864680060F4FA /* FirstViewController.m */,
@@ -1781,7 +1746,7 @@
 				0D99563727E864680060F4FA /* HomeViewController.m */,
 				0D5C6BE128E28ECC00A76262 /* TestViewController.h */,
 				0D5C6BE228E28ECC00A76262 /* TestViewController.m */,
-				0D621C1428332FB800241558 /* Test.swift */,
+				0DD95AF7292E148D00969FFA /* LayoutVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2288,6 +2253,7 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/FlowDiagram_iOS/FlowDiagram_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
@@ -2296,6 +2262,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SystemLayoutKit/SystemLayoutKit.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -2306,6 +2273,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlowDiagram_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
@@ -2314,6 +2282,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SystemLayoutKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -2353,7 +2322,6 @@
 				0D1A837D28127DD5002359EA /* Description.swift in Sources */,
 				0D8BBC4327F15BA1002E8AA1 /* DayModel.swift in Sources */,
 				0D99563527E863980060F4FA /* File.swift in Sources */,
-				0D621C05282F5A6300241558 /* LayoutDataEntry.swift in Sources */,
 				FE8AA5341F5699D200BE4842 /* DisTestViewController.m in Sources */,
 				0D5A5FB42655F2130067FB66 /* TakePhotoViewController.m in Sources */,
 				0D1A838328127DD5002359EA /* XAxis.swift in Sources */,
@@ -2371,14 +2339,11 @@
 				0D1A838928127DD5002359EA /* ViewPortJob.swift in Sources */,
 				0D1A839928127DD5002359EA /* LineRadarChartDataSet.swift in Sources */,
 				0D1A835A28127DD5002359EA /* Highlighter.swift in Sources */,
-				0D621C07282F5A6300241558 /* LayoutHighlight.swift in Sources */,
 				0D1A839E28127DD5002359EA /* PieChartDataSet.swift in Sources */,
 				0D4B28DF1EE7C4D100BB9CC9 /* SelectAndDeleteVC.m in Sources */,
 				0D8BBC6727F58D10002E8AA1 /* RecordModel.swift in Sources */,
 				0D35FBFE2629746100F6B862 /* UIButton+MCButton.m in Sources */,
-				0D621C0C282F5A6300241558 /* LayoutView.swift in Sources */,
 				0D1A839028127DD5002359EA /* BarChartDataSet.swift in Sources */,
-				0D621C0D282F5A6300241558 /* LayoutData.swift in Sources */,
 				0D1A837C28127DD5002359EA /* ChartUtils.swift in Sources */,
 				0D5C6BE328E28ECC00A76262 /* TestViewController.m in Sources */,
 				FE89B8FA1F7B975E00576C53 /* RoundCoverView.m in Sources */,
@@ -2452,7 +2417,6 @@
 				FED04B2420205646000F415F /* StudentsModel.m in Sources */,
 				0D1A833D28127DD5002359EA /* XAxisRenderer.swift in Sources */,
 				0D77DF451ED69FBE000F3C1A /* UICountingLabel.m in Sources */,
-				0D621C09282F5A6300241558 /* LayoutViewPortHandler.swift in Sources */,
 				0D1A83A628127DD5002359EA /* BubbleChartDataSet.swift in Sources */,
 				0D1A838C28127DD5002359EA /* AnimatedViewPortJob.swift in Sources */,
 				0D1A839828127DD5002359EA /* CandleChartDataSet.swift in Sources */,
@@ -2503,7 +2467,6 @@
 				0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */,
 				0D1A837228127DD5002359EA /* Platform+Touch Handling.swift in Sources */,
 				0D61E67E20A419D500665577 /* MyCustomTableViewCell.m in Sources */,
-				0D621C1528332FB800241558 /* Test.swift in Sources */,
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
 				FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */,
 				0D05891020A13B1300223199 /* SDImageCacheConfig.m in Sources */,
@@ -2564,7 +2527,6 @@
 				0D1A834628127DD5002359EA /* TriangleShapeRenderer.swift in Sources */,
 				0D1A83A828127DD5002359EA /* BarChartData.swift in Sources */,
 				0D1A838D28127DD5002359EA /* AnimatedMoveViewJob.swift in Sources */,
-				0D621C0A282F5A6300241558 /* LayoutDataRenderer.swift in Sources */,
 				0D9EB2B22806964800ABE632 /* FlowLegendRenderer.swift in Sources */,
 				0D1A83B128127DD5002359EA /* BarLineScatterCandleBubbleChartDataSetProtocol.swift in Sources */,
 				0D817F7420B29E1600D77751 /* MCCache.m in Sources */,
@@ -2592,9 +2554,9 @@
 				0D1A833328127DD5002359EA /* RadarChartRenderer.swift in Sources */,
 				0D1A836128127DD5002359EA /* ChartViewBase.swift in Sources */,
 				0D1A83B628127DD5002359EA /* BarChartDataProvider.swift in Sources */,
+				0DD95AF8292E148D00969FFA /* LayoutVC.swift in Sources */,
 				0D1A83B228127DD5002359EA /* ChartDataSetProtocol.swift in Sources */,
 				FED04B1D20203488000F415F /* FluencyTableViewCell.m in Sources */,
-				0D621C06282F5A6300241558 /* LayoutUtils.swift in Sources */,
 				0D1A835528127DD5002359EA /* HorizontalBarHighlighter.swift in Sources */,
 				0D1A835D28127DD5002359EA /* BarLineChartViewBase.swift in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
@@ -2610,11 +2572,9 @@
 				0D05890F20A13B1300223199 /* SDWebImageGIFCoder.m in Sources */,
 				0D1A833528127DD5002359EA /* YAxisRendererHorizontalBarChart.swift in Sources */,
 				FEEFEBED2074A87900B1E803 /* UIImage+IconFont.m in Sources */,
-				0D621C0B282F5A6300241558 /* LayoutVC.swift in Sources */,
 				FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */,
 				0D1A83B728127DD5002359EA /* ChartDataProvider.swift in Sources */,
 				0DADA50A21D1DB86005BB347 /* LoadingAnimation.m in Sources */,
-				0D621C08282F5A6300241558 /* LayoutDataSet.swift in Sources */,
 				0D1A833128127DD5002359EA /* DataApproximator.swift in Sources */,
 				0D1A83B528127DD5002359EA /* RadarChartDataSetProtocol.swift in Sources */,
 				0D77DF481ED6AD9E000F3C1A /* HHCountingLabel.m in Sources */,
