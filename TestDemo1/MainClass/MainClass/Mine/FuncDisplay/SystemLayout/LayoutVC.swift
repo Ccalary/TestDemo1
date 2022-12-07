@@ -19,6 +19,7 @@ class LayoutVC: UIViewController {
     }
     
     func initView() {
+        self.navigationItem.title = "系统布局"
         self.view.backgroundColor = UIColor.lightGray
         
         layoutView.frame = CGRect(x: 0, y: 80, width: UIScreen.main.bounds.size.width, height: 400)
@@ -58,11 +59,12 @@ class LayoutVC: UIViewController {
         
         dataSets.append(contentsOf: normalData())
         dataSets.append(modulesGroupData())
-//        dataSets.append(inverterData())
+        dataSets.append(inverterData())
         
         let data = LayoutData(dataSets: dataSets)
         
         layoutView.drawBorderEnabled = true
+        layoutView.isDrawGroupBorderEnabled = true
         layoutView.isElectricLayout = false
         layoutView.data = data
     }
@@ -72,6 +74,7 @@ class LayoutVC: UIViewController {
         let data = LayoutData(lineDataSets: eleBuildData())
         /// 是否绘制外框
         layoutView.drawBorderEnabled = true
+        layoutView.isDrawGroupBorderEnabled = true
         /// 是否是电气布局
         layoutView.isElectricLayout = true
         layoutView.data = data
@@ -84,6 +87,7 @@ class LayoutVC: UIViewController {
             entry.xaxisIndex = 1
             entry.yaxisIndex = 1
             entry.fillColor = UIColor("#1D489C")
+            entry.state = .bind
             
             let dataSet = InverterLayoutDataSet(entries: [entry], name: "group")
             dataSet.rows = 1
@@ -123,8 +127,8 @@ class LayoutVC: UIViewController {
                     }else {
                         entry.fillColor = UIColor("#9BC9F5")
                     }
-                    entry.xaxisIndex = Int(m + 1)
-                    entry.yaxisIndex = Int(n + 1)
+                    entry.xaxisIndex = Int(n + 1)
+                    entry.yaxisIndex = Int(m + 1)
                     entries.append(entry)
                 }
             }
@@ -143,15 +147,15 @@ class LayoutVC: UIViewController {
         
         for _ in 0...10 {
             let inverterDataSet = inverterData()
-            inverterDataSet.groupId = Int(arc4random()%11)
+            inverterDataSet.groupId = Int(arc4random()%111)
             dataSets.append(inverterDataSet)
             
             let moduleDataSet1 = eleNormalData()
-            moduleDataSet1.groupId = Int(arc4random()%11)
+            moduleDataSet1.groupId = Int(arc4random()%111)
             dataSets.append(moduleDataSet1)
             
             let moduleDataSet2 = eleNormalData()
-            moduleDataSet2.groupId = Int(arc4random()%11)
+            moduleDataSet2.groupId = Int(arc4random()%111)
             dataSets.append(moduleDataSet2)
         }
         return dataSets
@@ -192,15 +196,15 @@ class LayoutVC: UIViewController {
                     }else {
                         entry.fillColor = UIColor("#9BC9F5")
                     }
-                    entry.xaxisIndex = Int(m + 1)
-                    entry.yaxisIndex = Int(n + 1)
+                    entry.xaxisIndex = Int(n + 1)
+                    entry.yaxisIndex = Int(m + 1)
                     entries.append(entry)
                 }
             }
 
             let dataSet = ModuleLayoutDataSet(entries: entries, name: "group\(i)")
-            dataSet.xaxisPoint = (arc4random()%2 == 0) ? -Double(arc4random()%1000) : Double(arc4random()%1000)
-            dataSet.yaxisPoint = (arc4random()%2 == 0) ? -Double(arc4random()%1000) : Double(arc4random()%1000)
+            dataSet.xaxisPoint = (arc4random()%2 == 0) ? -Double(arc4random()%10000) : Double(arc4random()%10000)
+            dataSet.yaxisPoint = (arc4random()%2 == 0) ? -Double(arc4random()%10000) : Double(arc4random()%10000)
             dataSet.rows = Int(rowNum)
             dataSet.columns = Int(columnNum)
             dataSet.angle = Double(arc4random()%360)
@@ -218,12 +222,16 @@ class LayoutVC: UIViewController {
         
         let entry1 = ModuleLayoutDataEntry(title: "1.2.2", content: "1401.31", subContent: "W", state: .bind)
         entry1.fillColor = UIColor("#9BC9F5")
-        entry1.xaxisIndex = 1
-        entry1.yaxisIndex = 2
+        entry1.xaxisIndex = 2
+        entry1.yaxisIndex = 1
         
         let entry2 = ModuleLayoutDataEntry(title: "1.1.3", content: "120.29", subContent: "W", state: .unbound)
-        entry2.xaxisIndex = 1
-        entry2.yaxisIndex = 3
+        entry2.xaxisIndex = 3
+        entry2.yaxisIndex = 1
+        
+        let entry3 = ModuleLayoutDataEntry(title: "1.1.4", content: "120.29", subContent: "W", state: .unbound)
+        entry3.xaxisIndex = 4
+        entry3.yaxisIndex = 1
         
         let dataSet = ModuleLayoutDataSet(entries: [entry, entry1, entry2], name: "group")
         dataSet.xaxisPoint = -0
@@ -247,11 +255,24 @@ class LayoutVC: UIViewController {
         let entry = InverterLayoutDataEntry(title: "1", content: "9000000012-1")
         entry.xaxisIndex = 1
         entry.yaxisIndex = 1
-        entry.fillColor = UIColor("#1D489C")
+        entry.fillColor = UIColor("#BDBFC3")
+//        entry.fillColor = UIColor("#292C42")
+        entry.state = .bind
+        if (entry.state == .bind) {
+            entry.fillColor = UIColor("#1D489C")
+        }else {
+            entry.fillColor = UIColor("#BDBFC3")
+        }
         
         let dataSet = InverterLayoutDataSet(entries: [entry], name: "group")
-        dataSet.xaxisPoint = -2000
-        dataSet.yaxisPoint = -2000
+        if (entry.state == .bind) {
+            dataSet.itemIconFillColor = UIColor("#ffffff",alpha: 0.1)
+        }else {
+            dataSet.itemIconFillColor = UIColor("#292C42",alpha: 0.2)
+        }
+        
+        dataSet.xaxisPoint = -0
+        dataSet.yaxisPoint = -100
         dataSet.rows = 1
         dataSet.columns = 1
         dataSet.angle = 0//Double(arc4random()%360)
@@ -271,3 +292,4 @@ class LayoutVC: UIViewController {
         layoutView.resetZoom()
     }
 }
+

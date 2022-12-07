@@ -33,6 +33,7 @@
     self.dataArray = @[].mutableCopy;
     self.classNameArray = @[].mutableCopy;
     
+    [self addCell:@"系统布局" class:@"LayoutVC"];
     [self addCell:@"多个label横向布局" class:@"AutoLayoutVC"];
     [self addCell:@"采集器动画" class:@"FlowMapMainVC"];
     [self addCell:@"Charts" class:@"ChartDemoVC"];
@@ -165,7 +166,11 @@
     
     //运用runningTime 判断VC进行跳转
     NSString *className = self.classNameArray[indexPath.row];
-    if ([className isEqualToString:@"FlowMapMainVC"]) { // swift
+    if ([className isEqualToString:@"LayoutVC"]) { // swift
+        LayoutVC *vc = [[LayoutVC alloc] init];
+        vc.navigationItem.title = self.dataArray[indexPath.row];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if ([className isEqualToString:@"FlowMapMainVC"]) { // swift
         FlowMapMainVC *vc = [[FlowMapMainVC alloc] init];
         vc.navigationItem.title = self.dataArray[indexPath.row];
         [self.navigationController pushViewController:vc animated:YES];
