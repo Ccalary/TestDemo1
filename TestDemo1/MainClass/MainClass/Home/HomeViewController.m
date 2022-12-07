@@ -7,10 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "HHPopButton.h"
-#import "OCPathAnimationView.h"
 #import "TestDemo1-Swift.h"
-#import "TestViewController.h"
 
 @interface HomeViewController ()<ChartViewDelegate>
 
@@ -24,12 +21,17 @@
 }
 
 - (void)initView {
-    
+    SceneFlowView *flowView = [[SceneFlowView alloc] init];
+    [self.view addSubview:flowView];
+    [flowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(self.view);
+        make.height.mas_equalTo(270*UIRate);
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    LayoutVC *vc = [[LayoutVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    SceneFlowVC *vc = [[SceneFlowVC alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 @end
 
