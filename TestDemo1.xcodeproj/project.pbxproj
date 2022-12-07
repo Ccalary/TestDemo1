@@ -248,6 +248,8 @@
 		0D817F7C20B4015400D77751 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D817F7B20B4015400D77751 /* BlockViewController.m */; };
 		0D840ADC1EBFFF28005E078A /* Draw2DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D840ADB1EBFFF28005E078A /* Draw2DView.m */; };
 		0D87C9E629403C0100D110E8 /* SceneFlowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9E529403C0100D110E8 /* SceneFlowVC.swift */; };
+		0D87C9E829407E5000D110E8 /* SceneFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9E729407E5000D110E8 /* SceneFlowView.swift */; };
+		0D87C9EA294090C900D110E8 /* SceneFlowPathLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9E9294090C900D110E8 /* SceneFlowPathLayer.swift */; };
 		0D8BBC3D27F14BBC002E8AA1 /* day0321.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8BBC3C27F14BBC002E8AA1 /* day0321.json */; };
 		0D8BBC4027F14CB6002E8AA1 /* ToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC3F27F14CB6002E8AA1 /* ToolsHelper.m */; };
 		0D8BBC4327F15BA1002E8AA1 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC4227F15BA1002E8AA1 /* DayModel.swift */; };
@@ -667,6 +669,8 @@
 		0D840ADA1EBFFF28005E078A /* Draw2DView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw2DView.h; sourceTree = "<group>"; };
 		0D840ADB1EBFFF28005E078A /* Draw2DView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw2DView.m; sourceTree = "<group>"; };
 		0D87C9E529403C0100D110E8 /* SceneFlowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowVC.swift; sourceTree = "<group>"; };
+		0D87C9E729407E5000D110E8 /* SceneFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowView.swift; sourceTree = "<group>"; };
+		0D87C9E9294090C900D110E8 /* SceneFlowPathLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowPathLayer.swift; sourceTree = "<group>"; };
 		0D8BBC3C27F14BBC002E8AA1 /* day0321.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = day0321.json; sourceTree = "<group>"; };
 		0D8BBC3E27F14CB6002E8AA1 /* ToolsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsHelper.h; sourceTree = "<group>"; };
 		0D8BBC3F27F14CB6002E8AA1 /* ToolsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsHelper.m; sourceTree = "<group>"; };
@@ -1713,6 +1717,8 @@
 			isa = PBXGroup;
 			children = (
 				0D87C9E529403C0100D110E8 /* SceneFlowVC.swift */,
+				0D87C9E729407E5000D110E8 /* SceneFlowView.swift */,
+				0D87C9E9294090C900D110E8 /* SceneFlowPathLayer.swift */,
 			);
 			path = SceneFlow;
 			sourceTree = "<group>";
@@ -2498,6 +2504,7 @@
 				0D05890B20A13B1300223199 /* SDWebImageTransition.m in Sources */,
 				0D4B29151EEA717700BB9CC9 /* LayerAnimationVC.m in Sources */,
 				0D7E7F8526465CE700DB06CB /* CHTCollectionViewWaterfallLayout.m in Sources */,
+				0D87C9E829407E5000D110E8 /* SceneFlowView.swift in Sources */,
 				0D1A838128127DD5002359EA /* YAxis.swift in Sources */,
 				0D1A83B428127DD5002359EA /* ScatterChartDataSetProtocol.swift in Sources */,
 				0D8BBC5127F2A6E9002E8AA1 /* CustomXAxisRenderer.swift in Sources */,
@@ -2583,6 +2590,7 @@
 				0D1A83A028127DD5002359EA /* ChartDataSet.swift in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				0D99564427E864680060F4FA /* HomeViewController.m in Sources */,
+				0D87C9EA294090C900D110E8 /* SceneFlowPathLayer.swift in Sources */,
 				0D1A83BD28127DD5002359EA /* BubbleChartDataProvider.swift in Sources */,
 				0DBBE4C01FC4763900645A85 /* ImageTableViewCell.m in Sources */,
 				0D1A833228127DD5002359EA /* DataApproximator+N.swift in Sources */,
