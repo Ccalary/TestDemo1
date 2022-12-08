@@ -20,7 +20,7 @@ pod 'FDFullscreenPopGesture', '1.1'
 pod 'SnapKit', '~> 4.2.0'
 pod 'HandyJSON', '~> 5.0.2'
 pod 'CocoaAsyncSocket'
-pod 'FlowDiagram_iOS'
+pod 'FlowDiagram_iOS', '~> 0.0.4'
 # 使用远程地址 + 'commit'提交记录
 pod 'SystemLayoutKit', :git => 'http://gitlab.igen/caohouhong/SystemLayoutKit_iOS.git', :commit => 'aa2488299a9648e9a370a54b1025a79c95213c08'
 end

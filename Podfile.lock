@@ -42,7 +42,7 @@ DEPENDENCIES:
   - AGGeometryKit
   - CocoaAsyncSocket
   - FDFullscreenPopGesture (= 1.1)
-  - FlowDiagram_iOS
+  - FlowDiagram_iOS (~> 0.0.4)
   - FMDB
   - HandyJSON (~> 5.0.2)
   - IQKeyboardManager
@@ -105,6 +105,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SystemLayoutKit: f2222a56c5552d3ab033a2f912795c2bfecdf3e5
 
-PODFILE CHECKSUM: 5a321aebfdb6b713db2170349ecae16d404333c7
+PODFILE CHECKSUM: 94f8c44e68a64865c114a5140d02817d5c7d39c2
 
 COCOAPODS: 1.11.3
