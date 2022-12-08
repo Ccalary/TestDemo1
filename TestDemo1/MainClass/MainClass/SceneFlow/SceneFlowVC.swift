@@ -24,7 +24,23 @@ class SceneFlowVC: UIViewController {
         self.view.addSubview(sceneFlowView)
         sceneFlowView.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(270)
+            make.height.equalTo(300)
         }
+        
+        let button = UIButton()
+        button.setTitle("刷新", for: .normal)
+        button.setTitleColor(UIColor.blue, for: .normal)
+        button.addTarget(self, action: #selector(refreshAction), for: .touchUpInside)
+        self.view.addSubview(button)
+        button.snp.makeConstraints { make in
+            make.top.equalTo(sceneFlowView.snp_bottom)
+            make.centerX.equalTo(sceneFlowView)
+            make.width.equalTo(60)
+            make.height.equalTo(40)
+        }
+    }
+    
+    @objc func refreshAction() {
+        
     }
 }

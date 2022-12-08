@@ -20,7 +20,6 @@ pod 'FDFullscreenPopGesture', '1.1'
 pod 'SnapKit', '~> 4.2.0'
 pod 'HandyJSON', '~> 5.0.2'
 pod 'CocoaAsyncSocket'
-pod 'FlowDiagram_iOS'
-pod 'SystemLayoutKit'
+pod 'FlowDiagram_iOS', '~> 0.0.4'
 end
 

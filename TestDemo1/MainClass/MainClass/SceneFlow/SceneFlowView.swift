@@ -33,7 +33,7 @@ class SceneFlowView: UIView {
         self.addSubview(topImageView)
         topImageView.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(182*UIRate)
+            make.height.equalToSuperview().multipliedBy(0.6)
         }
         
         self.addSubview(bottomImageView)
@@ -46,8 +46,7 @@ class SceneFlowView: UIView {
         self.addSubview(dcAcImageView)
         dcAcImageView.snp.makeConstraints { make in
             make.width.height.equalTo(37*UIRate)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(bottomImageView).offset(35*UIRate)
+            make.center.equalTo(bottomImageView)
         }
         
         /// 发电
@@ -158,6 +157,25 @@ class SceneFlowView: UIView {
         let gridPathLayer = SceneFlowPathLayer(pointArray: gridPointArray)
         self.layer.addSublayer(gridPathLayer)
         
+        let generationAnimation = SceneFlowAnimationLayer()
+        generationAnimation.animationPath = generationPathLayer.linePath
+        self.layer.addSublayer(generationAnimation)
+        
+        let generationHouseAnimation = SceneFlowAnimationLayer()
+        generationHouseAnimation.animationPath = generationHousePathLayer.linePath
+        self.layer.addSublayer(generationHouseAnimation)
+        
+        let houseAnimation = SceneFlowAnimationLayer()
+        houseAnimation.animationPath = housePathLayer.linePath
+        self.layer.addSublayer(houseAnimation)
+        
+        let energyAnimation = SceneFlowAnimationLayer()
+        energyAnimation.animationPath = energyPathLayer.linePath
+        self.layer.addSublayer(energyAnimation)
+        
+        let gridAnimation = SceneFlowAnimationLayer()
+        gridAnimation.animationPath = gridPathLayer.linePath
+        self.layer.addSublayer(gridAnimation)
     }
     
     /* 顶部图片 */

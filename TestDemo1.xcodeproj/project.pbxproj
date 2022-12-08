@@ -250,6 +250,7 @@
 		0D87C9E629403C0100D110E8 /* SceneFlowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9E529403C0100D110E8 /* SceneFlowVC.swift */; };
 		0D87C9E829407E5000D110E8 /* SceneFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9E729407E5000D110E8 /* SceneFlowView.swift */; };
 		0D87C9EA294090C900D110E8 /* SceneFlowPathLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9E9294090C900D110E8 /* SceneFlowPathLayer.swift */; };
+		0D87C9EC29418C2100D110E8 /* SceneFlowAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9EB29418C2100D110E8 /* SceneFlowAnimationLayer.swift */; };
 		0D8BBC3D27F14BBC002E8AA1 /* day0321.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8BBC3C27F14BBC002E8AA1 /* day0321.json */; };
 		0D8BBC4027F14CB6002E8AA1 /* ToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC3F27F14CB6002E8AA1 /* ToolsHelper.m */; };
 		0D8BBC4327F15BA1002E8AA1 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC4227F15BA1002E8AA1 /* DayModel.swift */; };
@@ -671,6 +672,7 @@
 		0D87C9E529403C0100D110E8 /* SceneFlowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowVC.swift; sourceTree = "<group>"; };
 		0D87C9E729407E5000D110E8 /* SceneFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowView.swift; sourceTree = "<group>"; };
 		0D87C9E9294090C900D110E8 /* SceneFlowPathLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowPathLayer.swift; sourceTree = "<group>"; };
+		0D87C9EB29418C2100D110E8 /* SceneFlowAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowAnimationLayer.swift; sourceTree = "<group>"; };
 		0D8BBC3C27F14BBC002E8AA1 /* day0321.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = day0321.json; sourceTree = "<group>"; };
 		0D8BBC3E27F14CB6002E8AA1 /* ToolsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsHelper.h; sourceTree = "<group>"; };
 		0D8BBC3F27F14CB6002E8AA1 /* ToolsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsHelper.m; sourceTree = "<group>"; };
@@ -1719,6 +1721,7 @@
 				0D87C9E529403C0100D110E8 /* SceneFlowVC.swift */,
 				0D87C9E729407E5000D110E8 /* SceneFlowView.swift */,
 				0D87C9E9294090C900D110E8 /* SceneFlowPathLayer.swift */,
+				0D87C9EB29418C2100D110E8 /* SceneFlowAnimationLayer.swift */,
 			);
 			path = SceneFlow;
 			sourceTree = "<group>";
@@ -2466,6 +2469,7 @@
 				0D1FF1651EAEE1F30034CC47 /* HHRefreshNormalHeader.m in Sources */,
 				0D8BBC4A27F191E3002E8AA1 /* TimeAxisValueFormatter.swift in Sources */,
 				0D05891420A13B1300223199 /* UIButton+WebCache.m in Sources */,
+				0D87C9EC29418C2100D110E8 /* SceneFlowAnimationLayer.swift in Sources */,
 				0D1A839F28127DD5002359EA /* BubbleChartData.swift in Sources */,
 				0D1A83B928127DD5002359EA /* CombinedChartDataProvider.swift in Sources */,
 				0DC3D69F24B84F7300E4353A /* ImageTransformVC.m in Sources */,

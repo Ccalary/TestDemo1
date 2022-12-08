@@ -25,13 +25,13 @@
     [self.view addSubview:flowView];
     [flowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(self.view);
-        make.height.mas_equalTo(270*UIRate);
+        make.height.mas_equalTo(300*UIRate);
     }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    SceneFlowVC *vc = [[SceneFlowVC alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
+    SceneFlowVC *vc = [[SceneFlowVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end
 
