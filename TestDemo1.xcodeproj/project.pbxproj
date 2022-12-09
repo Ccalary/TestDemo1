@@ -231,7 +231,6 @@
 		0D5B07351EA84B8200FB1AC2 /* LCProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B07321EA84B8200FB1AC2 /* LCProgressHUD.bundle */; };
 		0D5B07361EA84B8200FB1AC2 /* LCProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B07341EA84B8200FB1AC2 /* LCProgressHUD.m */; };
 		0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B073D1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m */; };
-		0D5C6BE328E28ECC00A76262 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5C6BE228E28ECC00A76262 /* TestViewController.m */; };
 		0D61E67720A4178B00665577 /* MyWebImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E67620A4178B00665577 /* MyWebImageVC.m */; };
 		0D61E67A20A417B200665577 /* WebImageTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E67920A417B200665577 /* WebImageTableVC.m */; };
 		0D61E67E20A419D500665577 /* MyCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D61E67D20A419D500665577 /* MyCustomTableViewCell.m */; };
@@ -251,6 +250,9 @@
 		0D87C9E829407E5000D110E8 /* SceneFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9E729407E5000D110E8 /* SceneFlowView.swift */; };
 		0D87C9EA294090C900D110E8 /* SceneFlowPathLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9E9294090C900D110E8 /* SceneFlowPathLayer.swift */; };
 		0D87C9EC29418C2100D110E8 /* SceneFlowAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9EB29418C2100D110E8 /* SceneFlowAnimationLayer.swift */; };
+		0D87C9EF2942045C00D110E8 /* DesignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9EE2942045C00D110E8 /* DesignVC.swift */; };
+		0D87C9F22942059900D110E8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 0D87C9F12942059900D110E8 /* Readme.md */; };
+		0D87C9F42942080100D110E8 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D87C9F32942080100D110E8 /* Calculator.swift */; };
 		0D8BBC3D27F14BBC002E8AA1 /* day0321.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8BBC3C27F14BBC002E8AA1 /* day0321.json */; };
 		0D8BBC4027F14CB6002E8AA1 /* ToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC3F27F14CB6002E8AA1 /* ToolsHelper.m */; };
 		0D8BBC4327F15BA1002E8AA1 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BBC4227F15BA1002E8AA1 /* DayModel.swift */; };
@@ -638,8 +640,6 @@
 		0D5B07341EA84B8200FB1AC2 /* LCProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCProgressHUD.m; sourceTree = "<group>"; };
 		0D5B073C1EA8AECC00FB1AC2 /* NSMutableArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Extension.h"; sourceTree = "<group>"; };
 		0D5B073D1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Extension.m"; sourceTree = "<group>"; };
-		0D5C6BE128E28ECC00A76262 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		0D5C6BE228E28ECC00A76262 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		0D61E67520A4178B00665577 /* MyWebImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyWebImageVC.h; sourceTree = "<group>"; };
 		0D61E67620A4178B00665577 /* MyWebImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyWebImageVC.m; sourceTree = "<group>"; };
 		0D61E67820A417B200665577 /* WebImageTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebImageTableVC.h; sourceTree = "<group>"; };
@@ -673,6 +673,9 @@
 		0D87C9E729407E5000D110E8 /* SceneFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowView.swift; sourceTree = "<group>"; };
 		0D87C9E9294090C900D110E8 /* SceneFlowPathLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowPathLayer.swift; sourceTree = "<group>"; };
 		0D87C9EB29418C2100D110E8 /* SceneFlowAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFlowAnimationLayer.swift; sourceTree = "<group>"; };
+		0D87C9EE2942045C00D110E8 /* DesignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignVC.swift; sourceTree = "<group>"; };
+		0D87C9F12942059900D110E8 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		0D87C9F32942080100D110E8 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		0D8BBC3C27F14BBC002E8AA1 /* day0321.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = day0321.json; sourceTree = "<group>"; };
 		0D8BBC3E27F14CB6002E8AA1 /* ToolsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsHelper.h; sourceTree = "<group>"; };
 		0D8BBC3F27F14CB6002E8AA1 /* ToolsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsHelper.m; sourceTree = "<group>"; };
@@ -1527,6 +1530,7 @@
 				0D87C9E429403BF500D110E8 /* SceneFlow */,
 				0D99563627E864680060F4FA /* Home */,
 				0D08192E1EB0F19E00F4E034 /* Discover */,
+				0D87C9ED2942043E00D110E8 /* Design */,
 				0D4B28B51EE7C4D100BB9CC9 /* Mine */,
 			);
 			path = MainClass;
@@ -1726,6 +1730,24 @@
 			path = SceneFlow;
 			sourceTree = "<group>";
 		};
+		0D87C9ED2942043E00D110E8 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0D87C9F02942054B00D110E8 /* Calculator */,
+				0D87C9EE2942045C00D110E8 /* DesignVC.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		0D87C9F02942054B00D110E8 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				0D87C9F12942059900D110E8 /* Readme.md */,
+				0D87C9F32942080100D110E8 /* Calculator.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
 		0D8BBC3B27F14AFC002E8AA1 /* Json */ = {
 			isa = PBXGroup;
 			children = (
@@ -1773,8 +1795,6 @@
 				0D99563A27E864680060F4FA /* FirstViewController.m */,
 				0D99564327E864680060F4FA /* HomeViewController.h */,
 				0D99563727E864680060F4FA /* HomeViewController.m */,
-				0D5C6BE128E28ECC00A76262 /* TestViewController.h */,
-				0D5C6BE228E28ECC00A76262 /* TestViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2222,6 +2242,7 @@
 				0D35FBD226296E7A00F6B862 /* README.md in Resources */,
 				0D2A5F401EC55B7E00F41D4D /* Main.storyboard in Resources */,
 				0D37982A20A578B30039352F /* WebImagePlist.plist in Resources */,
+				0D87C9F22942059900D110E8 /* Readme.md in Resources */,
 				0D8BBC6327F58ADD002E8AA1 /* year2021.json in Resources */,
 				0D8BBC6527F58B6C002E8AA1 /* total.json in Resources */,
 				FEEFEBF12074A8E700B1E803 /* iconfont.ttf in Resources */,
@@ -2374,7 +2395,6 @@
 				0D35FBFE2629746100F6B862 /* UIButton+MCButton.m in Sources */,
 				0D1A839028127DD5002359EA /* BarChartDataSet.swift in Sources */,
 				0D1A837C28127DD5002359EA /* ChartUtils.swift in Sources */,
-				0D5C6BE328E28ECC00A76262 /* TestViewController.m in Sources */,
 				FE89B8FA1F7B975E00576C53 /* RoundCoverView.m in Sources */,
 				0D2428AD1ED951D4002B52F3 /* HHPopButton.m in Sources */,
 				0D1A83A428127DD5002359EA /* CandleChartData.swift in Sources */,
@@ -2573,6 +2593,7 @@
 				0DA4F3EE1EE677F500ED17B2 /* BaseTabBarController.m in Sources */,
 				0D1A836728127DD5002359EA /* ChartAnimationEasing.swift in Sources */,
 				0D0588FE20A13B1300223199 /* UIImage+ForceDecode.m in Sources */,
+				0D87C9EF2942045C00D110E8 /* DesignVC.swift in Sources */,
 				0D1A839328127DD5002359EA /* PieChartDataEntry.swift in Sources */,
 				0D05890620A13B1300223199 /* SDWebImageCoder.m in Sources */,
 				0D1A837128127DD5002359EA /* Transformer.swift in Sources */,
@@ -2591,6 +2612,7 @@
 				0D1A835528127DD5002359EA /* HorizontalBarHighlighter.swift in Sources */,
 				0D1A835D28127DD5002359EA /* BarLineChartViewBase.swift in Sources */,
 				0D1FF1681EAEE9D70034CC47 /* HHRefreshNormalFooter.m in Sources */,
+				0D87C9F42942080100D110E8 /* Calculator.swift in Sources */,
 				0D1A83A028127DD5002359EA /* ChartDataSet.swift in Sources */,
 				0D4B29081EE9594200BB9CC9 /* BezierPathViewSquare.m in Sources */,
 				0D99564427E864680060F4FA /* HomeViewController.m in Sources */,

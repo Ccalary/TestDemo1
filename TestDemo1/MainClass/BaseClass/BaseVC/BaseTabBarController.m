@@ -46,7 +46,7 @@
 //添加子控制器
 - (void)addChildViewControllers{
     [self addChildrenViewController:[[HomeViewController alloc] init] andTitle:@"首页" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
-    [self addChildrenViewController:[[ChartsBarVC alloc] init] andTitle:@"首页" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
+    [self addChildrenViewController:[[DesignVC alloc] init] andTitle:@"设计" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
     [self addChildrenViewController:[[DiscoverViewController alloc] init] andTitle:@"发现" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
     [self addChildrenViewController:[[MineViewController alloc] init] andTitle:@"我" andImageName:@"tab_me" andSelectImage:@"tab_me_pre"];
 //    [self addChildrenViewController:homeVC andTitle:@"首页" andImageName:@"\U0000e6ba"];
