@@ -1363,6 +1363,7 @@
 		0D4B28B61EE7C4D100BB9CC9 /* FuncDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				0D87C9E429403BF500D110E8 /* SceneFlow */,
 				0D87C9E329403AF300D110E8 /* SystemLayout */,
 				0D8BBC7027FD3051002E8AA1 /* ChartsVC */,
 				0D5035E927EC38A70089B72E /* FlowMap */,
@@ -1527,7 +1528,6 @@
 		0D4F94721E8ABE7800070950 /* MainClass */ = {
 			isa = PBXGroup;
 			children = (
-				0D87C9E429403BF500D110E8 /* SceneFlow */,
 				0D99563627E864680060F4FA /* Home */,
 				0D08192E1EB0F19E00F4E034 /* Discover */,
 				0D87C9ED2942043E00D110E8 /* Design */,
