@@ -23,6 +23,18 @@ class DesignVC: UIViewController {
     func initView() {
         self.navigationItem.title = "模式"
         self.view.backgroundColor = UIColor.white
+    
+        let startBtn = UIButton()
+        startBtn.setTitle("Start", for: .normal)
+        startBtn.backgroundColor = UIColor.main()
+        startBtn.addTarget(self, action: #selector(startAction), for: .touchUpInside)
+        self.view.addSubview(startBtn)
+        startBtn.snp.makeConstraints { make in
+            make.width.equalTo(100)
+            make.height.equalTo(45)
+            make.bottom.equalToSuperview().offset(-100)
+            make.centerX.equalToSuperview()
+        }
         
         contentLabel.numberOfLines = 0
         self.view.addSubview(contentLabel)
@@ -33,7 +45,7 @@ class DesignVC: UIViewController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    @objc func startAction() {
         print("开始计算")
         let content = Calculator().start()
         contentLabel.text = "计算器\n\n\(content)"
