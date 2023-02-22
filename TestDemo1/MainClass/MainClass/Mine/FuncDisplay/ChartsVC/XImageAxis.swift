@@ -16,6 +16,8 @@ open class XImageAxis {
     }
     // 图标位置
     open var iconPosition = IconPosition.none
+    // 图标距离顶部距离
+    open var iconMarginTop = 0.0
     // 图标大小
     open var iconSize = CGSize.zero
     // 坐标数据data为图片名称

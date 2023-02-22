@@ -21,7 +21,7 @@ class DesignVC: UIViewController {
     }
     
     func initView() {
-        self.navigationItem.title = "模式"
+        self.navigationItem.title = "设计模式"
         self.view.backgroundColor = UIColor.white
     
         let startBtn = UIButton()

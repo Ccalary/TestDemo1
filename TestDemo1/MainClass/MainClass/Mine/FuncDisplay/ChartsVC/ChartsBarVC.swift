@@ -159,8 +159,6 @@ import UIKit
         var entries2 = [BarChartDataEntry]()
         var entries3 = [BarChartDataEntry]()
         var entries4 = [BarChartDataEntry]()
-        var entries5 = [BarChartDataEntry]()
-        var entries6 = [BarChartDataEntry]()
         
         var yMin = 0.0
         var yMax = 0.0
@@ -181,29 +179,29 @@ import UIKit
                 let entry3 = BarChartDataEntry(x: Double(day), y: buyValue)
                 entries3.append(entry3)
                 
-                let entry4 = BarChartDataEntry(x: Double(day), y: buyValue)
+                let entry4 = BarChartDataEntry(x: Double(day), yValues: [-buyValue/3.0, useValue/3.0, power/3.0])
                 entries4.append(entry4)
                 
-                let entry5 = BarChartDataEntry(x: Double(day), y: useValue)
-                entries5.append(entry5)
-                
-                let entry6 = BarChartDataEntry(x: Double(day), y: power)
-                entries6.append(entry6)
-                
-                yMin = min(power, useValue, buyValue, yMin)
-                yMax = max(power, useValue, buyValue, yMax)
+                let entry4Y = buyValue/3.0 + useValue/3.0 + power/3.0
+                yMin = min(power, useValue, buyValue, entry4Y, yMin)
+                yMax = max(power, useValue, buyValue, entry4Y, yMax)
                 
                 valueFormatterValues.append("\(day)")
             }
         }
-        let entriesArray = [entries1, entries2, entries3, entries4, entries5, entries6]
+        let entriesArray = [entries1, entries2, entries3, entries4]
         
         for i in 0..<entriesArray.count {
             let entries = entriesArray[i]
             let set = BarChartDataSet(entries: entries, label: "")
             let color = colors[i % colors.count]
             // 柱状颜色
-            set.colors = [color]
+            if entries.first?.stackSize == 1 {
+                set.colors = [color]
+            }else {
+                set.colors = [color, colors[(i+1) % colors.count], colors[(i+2) % colors.count]]
+            }
+            
             // 是否显示label数据
             set.drawValuesEnabled = true
             // 是否支持高亮

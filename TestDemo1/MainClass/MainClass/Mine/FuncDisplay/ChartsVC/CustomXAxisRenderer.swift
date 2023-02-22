@@ -95,7 +95,11 @@ open class CustomXAxisRenderer: XAxisRenderer {
         switch axis.labelPosition {
         case .bottom:
             if (self.imageAxis.iconPosition == .bottom) {
-                drawIcons(context: context, pos: viewPortHandler.contentBottom + xlabelheight, anchor: CGPoint(x: 0.5, y: 0.0))
+                if (self.xAxisType == .line) {
+                    drawLineIcons(context: context, pos: viewPortHandler.contentBottom + xlabelheight, anchor: CGPoint(x: 0.5, y: 0.0))
+                }else if (self.xAxisType == .bar) {
+                    drawBarIcons(context: context, pos: viewPortHandler.contentBottom + xlabelheight, anchor: CGPoint(x: 0.5, y: 0.0))
+                }
             }
         default:
             break
@@ -103,7 +107,7 @@ open class CustomXAxisRenderer: XAxisRenderer {
     }
     
     /// 绘制icon
-    @objc open func drawIcons(context: CGContext, pos: CGFloat, anchor: CGPoint) {
+    @objc open func drawLineIcons(context: CGContext, pos: CGFloat, anchor: CGPoint) {
         guard let transformer = self.transformer else { return }
         
         let valueToPixelMatrix = transformer.valueToPixelMatrix
@@ -125,11 +129,42 @@ open class CustomXAxisRenderer: XAxisRenderer {
             /// 增加icon
             if let icon = UIImage(named: icons[i] as! String) {
                 context.drawImage(icon,
-                                  atCenter: CGPoint(x: position.x, y: pos + imageAxis.iconSize.height / 2.0),
+                                  atCenter: CGPoint(x: position.x, y: pos + imageAxis.iconSize.height / 2.0 + imageAxis.iconMarginTop),
                                   size: imageAxis.iconSize)
             }
         }
-    }
+      }
+      
+      // bar天气图标绘制
+      @objc open func drawBarIcons(context: CGContext, pos: CGFloat, anchor: CGPoint) {
+          guard let transformer = self.transformer else { return }
+
+          let isCenteringEnabled = axis.isCenterAxisLabelsEnabled
+          let valueToPixelMatrix = transformer.valueToPixelMatrix
+
+          var position = CGPoint.zero
+          let entries = axis.entries
+
+          for i in entries.indices {
+              let px = isCenteringEnabled ? CGFloat(axis.centeredEntries[i]) : CGFloat(entries[i])
+              position = CGPoint(x: px, y: 0)
+                  .applying(valueToPixelMatrix)
+
+              guard viewPortHandler.isInBoundsX(position.x) else { continue }
+
+              let label = axis.valueFormatter?.stringForValue(axis.entries[i], axis: axis) ?? ""
+
+              for item in imageAxis.dataEntries {
+                  if (item.x == Double(label)) {
+                      if let icon = UIImage(named: item.data as! String) {
+                          context.drawImage(icon,
+                                            atCenter: CGPoint(x: position.x, y: pos + imageAxis.iconSize.height / 2.0 + imageAxis.iconMarginTop),
+                                            size: imageAxis.iconSize)
+                      }
+                  }
+              }
+          }
+      }
 }
 
 

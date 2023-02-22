@@ -9,6 +9,7 @@
 import Foundation
 
 class CustomBarChartRenderer: BarChartRenderer {
+
     
     open override func drawHighlighted(context: CGContext, indices: [Highlight]) {
         guard let dataProvider = dataProvider, let barData = dataProvider.barData else {

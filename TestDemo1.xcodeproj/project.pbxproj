@@ -306,7 +306,6 @@
 		FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE54466E1FC3C3D6005B96BE /* HHPopSelectView.m */; };
 		FE5446731FC3C3D7005B96BE /* SendCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5446701FC3C3D7005B96BE /* SendCodeButton.m */; };
 		FE5446791FC3C58B005B96BE /* WidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5446781FC3C58B005B96BE /* WidgetViewController.m */; };
-		FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */; };
 		FE89B8FA1F7B975E00576C53 /* RoundCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89B8F91F7B975E00576C53 /* RoundCoverView.m */; };
 		FE8AA5341F5699D200BE4842 /* DisTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8AA5331F5699D200BE4842 /* DisTestViewController.m */; };
 		FE8AA53C1F56B38900BE4842 /* RunLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8AA53B1F56B38900BE4842 /* RunLabelView.m */; };
@@ -767,8 +766,6 @@
 		FE5446701FC3C3D7005B96BE /* SendCodeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendCodeButton.m; sourceTree = "<group>"; };
 		FE5446771FC3C58B005B96BE /* WidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetViewController.h; sourceTree = "<group>"; };
 		FE5446781FC3C58B005B96BE /* WidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WidgetViewController.m; sourceTree = "<group>"; };
-		FE5FD53B1F344A21003D3C3D /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
-		FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
 		FE89B8F81F7B975E00576C53 /* RoundCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundCoverView.h; sourceTree = "<group>"; };
 		FE89B8F91F7B975E00576C53 /* RoundCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundCoverView.m; sourceTree = "<group>"; };
 		FE8AA5321F5699D200BE4842 /* DisTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisTestViewController.h; sourceTree = "<group>"; };
@@ -1269,8 +1266,6 @@
 				0D4B28F61EE94C2700BB9CC9 /* UIView+Extension.m */,
 				0DA4F3F71EE6925B00ED17B2 /* NSArray+Dlog.h */,
 				0DA4F3F81EE6925B00ED17B2 /* NSArray+Dlog.m */,
-				FE5FD53B1F344A21003D3C3D /* NSObject+Description.h */,
-				FE5FD53C1F344A21003D3C3D /* NSObject+Description.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1772,17 +1767,17 @@
 		0D8BBC7027FD3051002E8AA1 /* ChartsVC */ = {
 			isa = PBXGroup;
 			children = (
-				0D621BF9282F5A4B00241558 /* YDecimalsAxisValueFormatter.swift */,
 				0D1A83C22812809F002359EA /* ChartDemoVC.swift */,
 				0D5035EA27EC3BE60089B72E /* ChartsBarVC.swift */,
 				0D5035EC27EC92980089B72E /* ChartsLineVC.swift */,
-				0DAC65FA2862F75500A1E29E /* XImageAxis.swift */,
+				0D8BBC6827F6A7F8002E8AA1 /* CustomBarChartRenderer.swift */,
+				0D8BBC6A27F6A8DF002E8AA1 /* CustomBarChartView.swift */,
+				0D8BBC5627F30901002E8AA1 /* CustomLineChartRenderer.swift */,
 				0DAC65F82862BAD400A1E29E /* CustomLineChartView.swift */,
 				0D8BBC5027F2A6E9002E8AA1 /* CustomXAxisRenderer.swift */,
 				0D8BBC4927F191E3002E8AA1 /* TimeAxisValueFormatter.swift */,
-				0D8BBC5627F30901002E8AA1 /* CustomLineChartRenderer.swift */,
-				0D8BBC6A27F6A8DF002E8AA1 /* CustomBarChartView.swift */,
-				0D8BBC6827F6A7F8002E8AA1 /* CustomBarChartRenderer.swift */,
+				0DAC65FA2862F75500A1E29E /* XImageAxis.swift */,
+				0D621BF9282F5A4B00241558 /* YDecimalsAxisValueFormatter.swift */,
 			);
 			path = ChartsVC;
 			sourceTree = "<group>";
@@ -2410,7 +2405,6 @@
 				0D1A834128127DD5002359EA /* SquareShapeRenderer.swift in Sources */,
 				0D99564827E864680060F4FA /* FlowPathAnimationLayer.swift in Sources */,
 				0D1A837428127DD5002359EA /* Platform+Gestures.swift in Sources */,
-				FE5FD53D1F344A21003D3C3D /* NSObject+Description.m in Sources */,
 				0D05891220A13B1300223199 /* UIView+WebCache.m in Sources */,
 				0D1A834328127DD5002359EA /* ChevronDownShapeRenderer.swift in Sources */,
 				0D2DAFA320BFCE0900988EF1 /* MCRuleCollectionReusableView.m in Sources */,
