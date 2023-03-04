@@ -92,22 +92,65 @@ open class CustomXAxisRenderer: XAxisRenderer {
         /// 高度
         let xlabelheight = axis.labelRotatedHeight + axis.yOffset
         
-        switch axis.labelPosition {
-        case .bottom:
-            if (self.imageAxis.iconPosition == .bottom) {
-                if (self.xAxisType == .line) {
-                    drawLineIcons(context: context, pos: viewPortHandler.contentBottom + xlabelheight, anchor: CGPoint(x: 0.5, y: 0.0))
-                }else if (self.xAxisType == .bar) {
-                    drawBarIcons(context: context, pos: viewPortHandler.contentBottom + xlabelheight, anchor: CGPoint(x: 0.5, y: 0.0))
-                }
+        if (axis.labelPosition == .top) {
+            switch self.imageAxis.iconPosition {
+                case .top:
+                    drawIcons(context: context, pos: viewPortHandler.contentTop - self.imageAxis.iconSize.height - xlabelheight - self.imageAxis.iconYOffset)
+                case .bottom:
+                    drawIcons(context: context, pos: viewPortHandler.contentBottom + self.imageAxis.iconYOffset)
+                case .none:
+                    break
             }
-        default:
-            break
+        }else if (axis.labelPosition == .bottom) {
+            switch self.imageAxis.iconPosition {
+                case .top:
+                    drawIcons(context: context, pos: viewPortHandler.contentTop - self.imageAxis.iconSize.height - self.imageAxis.iconYOffset)
+                case .bottom:
+                    drawIcons(context: context, pos: viewPortHandler.contentBottom + xlabelheight + self.imageAxis.iconYOffset)
+                case .none:
+                    break
+            }
+        }else if (axis.labelPosition == .bothSided) {
+            switch self.imageAxis.iconPosition {
+                case .top:
+                    drawIcons(context: context, pos: viewPortHandler.contentTop - self.imageAxis.iconSize.height - xlabelheight - self.imageAxis.iconYOffset)
+                case .bottom:
+                    drawIcons(context: context, pos: viewPortHandler.contentBottom + xlabelheight + self.imageAxis.iconYOffset)
+                case .none:
+                    break
+            }
+        }else if (axis.labelPosition == .topInside) {
+            switch self.imageAxis.iconPosition {
+                case .top:
+                    drawIcons(context: context, pos: viewPortHandler.contentTop - self.imageAxis.iconSize.height - self.imageAxis.iconYOffset)
+                case .bottom:
+                    drawIcons(context: context, pos: viewPortHandler.contentBottom + self.imageAxis.iconYOffset)
+                case .none:
+                    break
+            }
+        }else if (axis.labelPosition == .bottomInside) {
+            switch self.imageAxis.iconPosition {
+                case .top:
+                    drawIcons(context: context, pos: viewPortHandler.contentTop - self.imageAxis.iconSize.height - self.imageAxis.iconYOffset)
+                case .bottom:
+                    drawIcons(context: context, pos: viewPortHandler.contentBottom + self.imageAxis.iconYOffset)
+                case .none:
+                    break
+            }
+        }
+    }
+    
+    private func drawIcons(context: CGContext, pos: CGFloat) {
+        switch self.xAxisType {
+            case .line:
+                drawLineIcons(context: context, pos: pos)
+            case .bar:
+                drawBarIcons(context: context, pos: pos)
         }
     }
     
     /// 绘制icon
-    @objc open func drawLineIcons(context: CGContext, pos: CGFloat, anchor: CGPoint) {
+    @objc open func drawLineIcons(context: CGContext, pos: CGFloat) {
         guard let transformer = self.transformer else { return }
         
         let valueToPixelMatrix = transformer.valueToPixelMatrix
@@ -129,14 +172,14 @@ open class CustomXAxisRenderer: XAxisRenderer {
             /// 增加icon
             if let icon = UIImage(named: icons[i] as! String) {
                 context.drawImage(icon,
-                                  atCenter: CGPoint(x: position.x, y: pos + imageAxis.iconSize.height / 2.0 + imageAxis.iconMarginTop),
+                                  atCenter: CGPoint(x: position.x, y: pos + imageAxis.iconSize.height / 2.0),
                                   size: imageAxis.iconSize)
             }
         }
       }
       
       // bar天气图标绘制
-      @objc open func drawBarIcons(context: CGContext, pos: CGFloat, anchor: CGPoint) {
+      @objc open func drawBarIcons(context: CGContext, pos: CGFloat) {
           guard let transformer = self.transformer else { return }
 
           let isCenteringEnabled = axis.isCenterAxisLabelsEnabled
@@ -158,7 +201,7 @@ open class CustomXAxisRenderer: XAxisRenderer {
                   if (item.x == Double(label)) {
                       if let icon = UIImage(named: item.data as! String) {
                           context.drawImage(icon,
-                                            atCenter: CGPoint(x: position.x, y: pos + imageAxis.iconSize.height / 2.0 + imageAxis.iconMarginTop),
+                                            atCenter: CGPoint(x: position.x, y: pos + imageAxis.iconSize.height / 2.0),
                                             size: imageAxis.iconSize)
                       }
                   }

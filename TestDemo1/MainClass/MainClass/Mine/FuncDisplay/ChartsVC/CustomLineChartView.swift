@@ -52,12 +52,6 @@ open class CustomLineChartView: LineChartView {
                 if xAxis.labelPosition == .bottom
                 {
                     offsetBottom += xlabelheight
-                    // 自定义render，计算高度
-                    if let render = xAxisRenderer as? CustomXAxisRenderer {
-                        if render.imageAxis.iconPosition == .bottom {
-                            offsetBottom += render.imageAxis.iconSize.height
-                        }
-                    }
                 }
                 else if xAxis.labelPosition == .top
                 {
@@ -67,6 +61,18 @@ open class CustomLineChartView: LineChartView {
                 {
                     offsetBottom += xlabelheight
                     offsetTop += xlabelheight
+                }
+                // 自定义render，计算高度
+                if let render = xAxisRenderer as? CustomXAxisRenderer {
+                    let iconHeight = render.imageAxis.iconSize.height + render.imageAxis.iconYOffset
+                    switch render.imageAxis.iconPosition {
+                        case .top:
+                            offsetTop += iconHeight
+                        case .bottom:
+                            offsetBottom += iconHeight
+                        case .none:
+                            break
+                    }
                 }
             }
             

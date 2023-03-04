@@ -26,7 +26,7 @@ import UIKit
         self.navigationItem.title = "BarChart"
         self.view.backgroundColor = UIColor.white
         
-        let barChartView = CustomBarChartView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
+        let barChartView = CustomBarChartView(frame: CGRect(x: 0, y: 50, width: UIScreen.main.bounds.width, height: 400))
         view.addSubview(barChartView)
         barChartView.backgroundColor = UIColor(hex: 0xAD59E7, alpha: 0.1)
         self.barChartView = barChartView
@@ -94,7 +94,7 @@ import UIKit
         xAxis.granularity = 1
         // label局中
         xAxis.centerAxisLabelsEnabled = true
-        
+        xAxis.labelPosition = .bottom
         
         // MARK: - leftYAxis
         let leftAxis = barChartView.leftAxis
@@ -115,7 +115,7 @@ import UIKit
         rightAxis.labelTextColor = UIColor(0x92959C)
         rightAxis.labelFont = UIFont.systemFont(ofSize: 11)
         
-        barChartView.xImageAxis.iconPosition = .bottom
+        barChartView.xImageAxis.iconPosition = .top
         barChartView.xImageAxis.iconSize = CGSize(width: 15, height: 15)
         // 设置自定义渲染方式
         barChartView.setupCustomRenderer()
