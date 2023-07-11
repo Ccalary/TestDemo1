@@ -756,8 +756,8 @@
 		0DF39CF42093228F007518B7 /* TransitonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitonViewController.h; sourceTree = "<group>"; };
 		0DF39CF52093228F007518B7 /* TransitonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitonViewController.m; sourceTree = "<group>"; };
 		14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.release.xcconfig"; sourceTree = "<group>"; };
+		2FB6B1E786D05F466F207569 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
 		6F597CFA8E44962A5C80EAB6 /* Pods_TestDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo1/Pods-TestDemo1.debug.xcconfig"; sourceTree = "<group>"; };
 		FE54466B1FC3C3D6005B96BE /* SendCodeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendCodeButton.h; sourceTree = "<group>"; };
 		FE54466C1FC3C3D6005B96BE /* HHPopSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHPopSelectView.h; sourceTree = "<group>"; };
 		FE54466D1FC3C3D6005B96BE /* HHAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHAlertController.m; sourceTree = "<group>"; };
@@ -1999,8 +1999,8 @@
 		A62C75E16A9E796E6EA8DBA6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */,
 				14217EE5DD81A544F4ECB7D3 /* Pods-TestDemo1.release.xcconfig */,
+				2FB6B1E786D05F466F207569 /* Pods-TestDemo1.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2779,11 +2779,15 @@
 		};
 		0DAD4D231E7960F5008018BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C49ADFA351A9ACFDA2946ED3 /* Pods-TestDemo1.debug.xcconfig */;
+			baseConfigurationReference = 2FB6B1E786D05F466F207569 /* Pods-TestDemo1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UL42249NMK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestDemo1",
+				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TestDemo1/AppFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TestDemo1/AppFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2807,6 +2811,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UL42249NMK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestDemo1",
+				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/TestDemo1/AppFiles/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TestDemo1/AppFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
