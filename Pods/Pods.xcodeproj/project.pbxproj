@@ -4307,7 +4307,7 @@
 			baseConfigurationReference = 7E7C631CAF989CE7D07CAECE0B77B854 /* FlowDiagram_iOS.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlowDiagram_iOS";
-				DEVELOPMENT_TEAM = UL42249NMK;
+				DEVELOPMENT_TEAM = VLVHRULUN5;
 				IBSC_MODULE = FlowDiagram_iOS;
 				INFOPLIST_FILE = "Target Support Files/FlowDiagram_iOS/ResourceBundle-FlowDiagram_iOS-FlowDiagram_iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -4396,7 +4396,7 @@
 			baseConfigurationReference = 05F9F737EF6214C981E6D48705BC2913 /* FlowDiagram_iOS.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlowDiagram_iOS";
-				DEVELOPMENT_TEAM = UL42249NMK;
+				DEVELOPMENT_TEAM = VLVHRULUN5;
 				IBSC_MODULE = FlowDiagram_iOS;
 				INFOPLIST_FILE = "Target Support Files/FlowDiagram_iOS/ResourceBundle-FlowDiagram_iOS-FlowDiagram_iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
