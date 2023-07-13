@@ -17,5 +17,6 @@ class DayModel: HandyJSON {
     var wirePower: Double?
     var batteryPower: Double?
     var chargePower: Double?
+    var timeStamp: String?
     required init() {}
 }

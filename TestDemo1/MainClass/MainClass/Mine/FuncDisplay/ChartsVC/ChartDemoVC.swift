@@ -43,6 +43,16 @@ import Foundation
             make.width.height.centerX.equalTo(button)
             make.top.equalTo(button.snp_bottom).offset(50)
         }
+        
+        let lineWeekButton = UIButton()
+        lineWeekButton.backgroundColor = UIColor.fontColorBlue()
+        lineWeekButton.addTarget(self, action: #selector(lineWeekAction), for: .touchUpInside)
+        lineWeekButton.setTitle("LineWeek", for: .normal)
+        self.view.addSubview(lineWeekButton)
+        lineWeekButton.snp.makeConstraints { make in
+            make.width.height.centerX.equalTo(button)
+            make.top.equalTo(lineButton.snp_bottom).offset(50)
+        }
     }
     
     @objc func barAction() {
@@ -52,4 +62,9 @@ import Foundation
     @objc func lineAction() {
         self.navigationController?.pushViewController(ChartsLineVC(), animated: true)
     }
+    
+    @objc func lineWeekAction() {
+        self.navigationController?.pushViewController(ChartsLineWeekVC(), animated: true)
+    }
+    
 }
