@@ -285,6 +285,8 @@
 		0DA4F3EF1EE677F500ED17B2 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3EC1EE677F500ED17B2 /* BaseViewController.m */; };
 		0DA4F3F31EE6782800ED17B2 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3F21EE6782800ED17B2 /* BaseModel.m */; };
 		0DA4F3F91EE6925B00ED17B2 /* NSArray+Dlog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4F3F81EE6925B00ED17B2 /* NSArray+Dlog.m */; };
+		0DA7491E2A5FBD7800EDDEF3 /* ChartsLineWeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA7491D2A5FBD7800EDDEF3 /* ChartsLineWeekVC.swift */; };
+		0DA749202A5FBF8B00EDDEF3 /* week.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DA7491F2A5FBF8B00EDDEF3 /* week.json */; };
 		0DAC65F92862BAD400A1E29E /* CustomLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC65F82862BAD400A1E29E /* CustomLineChartView.swift */; };
 		0DAC65FB2862F75500A1E29E /* XImageAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC65FA2862F75500A1E29E /* XImageAxis.swift */; };
 		0DAD4D131E7960F5008018BB /* TestDemo1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAD4D121E7960F5008018BB /* TestDemo1Tests.m */; };
@@ -719,6 +721,8 @@
 		0DA4F3F21EE6782800ED17B2 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		0DA4F3F71EE6925B00ED17B2 /* NSArray+Dlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Dlog.h"; sourceTree = "<group>"; };
 		0DA4F3F81EE6925B00ED17B2 /* NSArray+Dlog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Dlog.m"; sourceTree = "<group>"; };
+		0DA7491D2A5FBD7800EDDEF3 /* ChartsLineWeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLineWeekVC.swift; sourceTree = "<group>"; };
+		0DA7491F2A5FBF8B00EDDEF3 /* week.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = week.json; sourceTree = "<group>"; };
 		0DAC65F82862BAD400A1E29E /* CustomLineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLineChartView.swift; sourceTree = "<group>"; };
 		0DAC65FA2862F75500A1E29E /* XImageAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XImageAxis.swift; sourceTree = "<group>"; };
 		0DAD4CF51E7960F4008018BB /* TestDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1746,6 +1750,7 @@
 		0D8BBC3B27F14AFC002E8AA1 /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				0DA7491F2A5FBF8B00EDDEF3 /* week.json */,
 				0D8BBC3C27F14BBC002E8AA1 /* day0321.json */,
 				0D8BBC5E27F55461002E8AA1 /* day0205.json */,
 				0D8BBC6027F5894D002E8AA1 /* month03.json */,
@@ -1770,6 +1775,7 @@
 				0D1A83C22812809F002359EA /* ChartDemoVC.swift */,
 				0D5035EA27EC3BE60089B72E /* ChartsBarVC.swift */,
 				0D5035EC27EC92980089B72E /* ChartsLineVC.swift */,
+				0DA7491D2A5FBD7800EDDEF3 /* ChartsLineWeekVC.swift */,
 				0D8BBC6827F6A7F8002E8AA1 /* CustomBarChartRenderer.swift */,
 				0D8BBC6A27F6A8DF002E8AA1 /* CustomBarChartView.swift */,
 				0D8BBC5627F30901002E8AA1 /* CustomLineChartRenderer.swift */,
@@ -2244,6 +2250,7 @@
 				0D2A5F3F1EC55B7E00F41D4D /* LaunchScreen.storyboard in Resources */,
 				0DADA50C21D1DB90005BB347 /* loading_a.json in Resources */,
 				0D8BBC6127F5894D002E8AA1 /* month03.json in Resources */,
+				0DA749202A5FBF8B00EDDEF3 /* week.json in Resources */,
 				0D4F944C1E8AB98900070950 /* Assets.xcassets in Resources */,
 				0D8BBC5F27F55461002E8AA1 /* day0205.json in Resources */,
 			);
@@ -2513,6 +2520,7 @@
 				0D5B073E1EA8AECC00FB1AC2 /* NSMutableArray+Extension.m in Sources */,
 				FE5446721FC3C3D7005B96BE /* HHPopSelectView.m in Sources */,
 				0D05891020A13B1300223199 /* SDImageCacheConfig.m in Sources */,
+				0DA7491E2A5FBD7800EDDEF3 /* ChartsLineWeekVC.swift in Sources */,
 				0D05891120A13B1300223199 /* UIView+WebCacheOperation.m in Sources */,
 				0D1A838728127DD5002359EA /* ComponentBase.swift in Sources */,
 				0D4B28F71EE94C2700BB9CC9 /* UIView+Extension.m in Sources */,

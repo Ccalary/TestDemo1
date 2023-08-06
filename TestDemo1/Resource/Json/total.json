@@ -26,7 +26,8 @@
             "offsetDay": null,
             "deviceData": null,
             "loss": null,
-            "lossRatio": null
+            "lossRatio": null,
+            "x": "2020/7/1",
         },
         {
             "systemId": 1196815,
@@ -55,7 +56,8 @@
             "offsetDay": null,
             "deviceData": null,
             "loss": null,
-            "lossRatio": null
+            "lossRatio": null,
+            "x": "2021/7/1",
         },
         {
             "systemId": 1196815,
@@ -84,6 +86,7 @@
             "offsetDay": null,
             "deviceData": null,
             "loss": null,
-            "lossRatio": null
+            "lossRatio": null,
+            "x": "2022/7/1",
         }
     ]
