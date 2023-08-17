@@ -35,7 +35,7 @@ PODS:
   - MJRefresh (3.1.15.7)
   - pop (1.0.12)
   - SnapKit (4.2.0)
-  - SystemLayoutKit (0.0.1)
+  - SystemLayoutKit (0.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -54,11 +54,12 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.15.1)
   - pop (~> 1.0)
   - SnapKit (~> 4.2.0)
-  - SystemLayoutKit (from `http://gitlab.igen/caohouhong/SystemLayoutKit_iOS.git`, commit `aa2488299a9648e9a370a54b1025a79c95213c08`)
+  - SystemLayoutKit (= 0.0.2)
 
 SPEC REPOS:
   http://gitlab.igen/caohouhong/specs.git:
     - FlowDiagram_iOS
+    - SystemLayoutKit
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - AGGeometryKit
@@ -76,18 +77,8 @@ SPEC REPOS:
     - pop
     - SnapKit
 
-EXTERNAL SOURCES:
-  SystemLayoutKit:
-    :commit: aa2488299a9648e9a370a54b1025a79c95213c08
-    :git: http://gitlab.igen/caohouhong/SystemLayoutKit_iOS.git
-
-CHECKOUT OPTIONS:
-  SystemLayoutKit:
-    :commit: aa2488299a9648e9a370a54b1025a79c95213c08
-    :git: http://gitlab.igen/caohouhong/SystemLayoutKit_iOS.git
-
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   AGGeometryKit: 5e820bd2a8290e3b1e3a1517a49c65ae42c239c9
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
@@ -103,8 +94,8 @@ SPEC CHECKSUMS:
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SystemLayoutKit: f2222a56c5552d3ab033a2f912795c2bfecdf3e5
+  SystemLayoutKit: 46fdb9a34f186b14ffccbc549350107bd69cb6c2
 
-PODFILE CHECKSUM: 94f8c44e68a64865c114a5140d02817d5c7d39c2
+PODFILE CHECKSUM: 518894d212c8c26a01ad0e96614023203ffa0111
 
 COCOAPODS: 1.11.3

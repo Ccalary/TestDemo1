@@ -74,11 +74,6 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>Kingfisher.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>20</integer>
-		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
