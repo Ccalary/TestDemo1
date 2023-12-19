@@ -26,6 +26,8 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - HandyJSON (5.0.2)
+  - IgCharts (0.0.1):
+    - SwiftAlgorithms (~> 1.0)
   - IQKeyboardManager (6.5.9)
   - KVOController (1.2.0)
   - lottie-ios (2.5.3)
@@ -35,6 +37,7 @@ PODS:
   - MJRefresh (3.1.15.7)
   - pop (1.0.12)
   - SnapKit (4.2.0)
+  - SwiftAlgorithms (1.0.0)
   - SystemLayoutKit (0.0.2)
 
 DEPENDENCIES:
@@ -45,6 +48,7 @@ DEPENDENCIES:
   - FlowDiagram_iOS (~> 0.0.4)
   - FMDB
   - HandyJSON (~> 5.0.2)
+  - IgCharts (from `http://gitlab.igen/caohouhong/IgCharts.git`, commit `42821f59107f6d5c1d99967a4415876827c07fea`)
   - IQKeyboardManager
   - KVOController
   - lottie-ios (~> 2.5.3)
@@ -76,6 +80,17 @@ SPEC REPOS:
     - MJRefresh
     - pop
     - SnapKit
+    - SwiftAlgorithms
+
+EXTERNAL SOURCES:
+  IgCharts:
+    :commit: 42821f59107f6d5c1d99967a4415876827c07fea
+    :git: http://gitlab.igen/caohouhong/IgCharts.git
+
+CHECKOUT OPTIONS:
+  IgCharts:
+    :commit: 42821f59107f6d5c1d99967a4415876827c07fea
+    :git: http://gitlab.igen/caohouhong/IgCharts.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
@@ -85,6 +100,7 @@ SPEC CHECKSUMS:
   FlowDiagram_iOS: 28556889c3b330a4c0a1654504708fc7a173bf79
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  IgCharts: f0037af3a1d00e998b7a5ac7d2d41e5fbf20c4df
   IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
@@ -94,8 +110,9 @@ SPEC CHECKSUMS:
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SystemLayoutKit: 46fdb9a34f186b14ffccbc549350107bd69cb6c2
 
-PODFILE CHECKSUM: 518894d212c8c26a01ad0e96614023203ffa0111
+PODFILE CHECKSUM: 916b261843995e2af36275fdea0d9ec7af105aba
 
 COCOAPODS: 1.11.3

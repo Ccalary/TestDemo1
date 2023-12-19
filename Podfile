@@ -21,10 +21,15 @@ pod 'SnapKit', '~> 4.2.0'
 pod 'HandyJSON', '~> 5.0.2'
 pod 'CocoaAsyncSocket'
 pod 'FlowDiagram_iOS', '~> 0.0.4'
-# 使用远程地址 + 'commit'提交记录
+# 使用版本号
 pod 'SystemLayoutKit', '0.0.2'
 # 使用远程地址 + 'commit'提交记录
 #pod 'SystemLayoutKit', :git => 'http://gitlab.igen/caohouhong/SystemLayoutKit_iOS.git', :commit => 'aa2488299a9648e9a370a54b1025a79c95213c08'
+
+#pod 'IgCharts', '0.0.1'
+# 使用远程地址 + 'commit'提交记录
+pod 'IgCharts', :git => 'http://gitlab.igen/caohouhong/IgCharts.git', :commit => '42821f59107f6d5c1d99967a4415876827c07fea'
+
 
 post_install do |installer|
   # 增加后将忽略资源文件签名，pod install后Pods里面的资源文件不用配置签名

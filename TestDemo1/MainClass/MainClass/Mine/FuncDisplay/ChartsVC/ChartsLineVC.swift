@@ -7,8 +7,9 @@
 //
 
 import Foundation
-import simd
 import HandyJSON
+import simd
+import IgCharts
 
 @objc public class ChartsLineVC: UIViewController {
     

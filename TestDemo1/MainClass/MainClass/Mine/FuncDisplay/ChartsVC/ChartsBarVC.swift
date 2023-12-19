@@ -6,10 +6,10 @@
 //  Copyright © 2022 caohouhong. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import IgCharts
 
-@objc public class ChartsBarVC: UIViewController {
+public class ChartsBarVC: UIViewController {
     
     private var barChartView = CustomBarChartView()
     

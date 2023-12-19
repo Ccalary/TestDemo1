@@ -9,6 +9,7 @@
 import Foundation
 import simd
 import HandyJSON
+import IgCharts
 
 @objc public class ChartsLineWeekVC: UIViewController {
     
